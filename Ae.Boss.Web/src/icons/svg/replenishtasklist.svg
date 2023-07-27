@@ -1,0 +1,25 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="28px" height="24px">
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M1.000,9.289 L13.500,1.000 L26.000,9.389 "/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M5.013,9.092 L5.013,20.910 "/>
+<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+ d="M8.000,10.000 L11.200,10.000 L11.200,12.880 L8.000,12.880 L8.000,10.000 Z"/>
+<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+ d="M12.800,10.000 L16.000,10.000 L16.000,12.880 L12.800,12.880 L12.800,10.000 Z"/>
+<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+ d="M12.800,14.320 L16.000,14.320 L16.000,17.200 L12.800,17.200 L12.800,14.320 Z"/>
+<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+ d="M8.000,14.320 L11.200,14.320 L11.200,17.200 L8.000,17.200 L8.000,14.320 Z"/>
+<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+ d="M8.000,19.120 L11.200,19.120 L11.200,22.000 L8.000,22.000 L8.000,19.120 Z"/>
+<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+ d="M12.800,19.120 L16.000,19.120 L16.000,22.000 L12.800,22.000 L12.800,19.120 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M19.000,16.293 C19.000,16.293 19.017,18.679 19.798,19.550 C20.578,20.421 21.886,19.860 22.190,19.550 C22.494,19.239 23.083,18.653 22.988,16.700 C22.892,14.747 22.835,14.151 22.190,12.628 C21.545,11.106 21.371,11.029 20.994,11.000 C20.616,10.971 21.129,16.561 20.994,16.700 C20.858,16.838 20.463,17.302 20.196,16.293 C19.930,15.283 19.194,13.978 19.000,16.293 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M19.500,21.000 L22.500,21.000 C22.776,21.000 23.000,21.224 23.000,21.500 C23.000,21.776 22.776,22.000 22.500,22.000 L19.500,22.000 C19.224,22.000 19.000,21.776 19.000,21.500 C19.000,21.224 19.224,21.000 19.500,21.000 Z"/>
+</svg>

@@ -1,0 +1,140 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+@import "./transition.scss";
+@import "./element-ui.scss";
+@import "./sidebar.scss";
+@import "./common.scss";
+
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// main-container global css
+.app-container {
+  padding: 20px;
+}
+
+.container {
+  margin-left: 15px;
+  margin-right: 15px;
+  .bodyTop {
+    height: 88px;
+    display: flex;
+    align-items: center;
+  }
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+  }
+}
+
+// Global Style
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+// account-authority
+.account-authority {
+  // table expand style
+  .account-table-expand {
+    font-size: 0;
+
+    label {
+      width: 90px;
+      color: #99a9bf;
+    }
+    .el-form-item {
+      margin-right: 0;
+      margin-bottom: 0;
+      width: 50%;
+    }
+  }
+
+  //disabled custom style
+  .el-input.is-disabled .el-input__inner,
+  .el-textarea.is-disabled .el-textarea__inner {
+    background-color: #ffffff !important;
+    color: #606266 !important;
+  }
+
+  .custom-el-table-vh {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .custom-el-dialog-vh {
+    max-height: 560px;
+    overflow-y: auto;
+  }
+}
+
+// .el-table td, .el-table th{
+//   padding:5px !important;
+// }
+// .el-tag{
+//   height:22px !important;
+//   line-height: 22px !important;
+// }

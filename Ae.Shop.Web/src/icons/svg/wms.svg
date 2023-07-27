@@ -1,0 +1,25 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="28px" height="25px">
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M1.000,9.289 L13.500,1.000 L26.000,9.389 "/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M5.013,9.092 L5.013,20.910 "/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M12.419,10.090 L17.872,10.090 L17.872,18.836 "/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M18.767,13.156 L21.616,13.156 L22.919,15.590 L22.919,18.926 L9.326,18.926 "/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M9.000,15.000 L11.000,15.000 L11.000,17.000 L9.000,17.000 L9.000,15.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M9.000,12.000 L11.000,12.000 L11.000,14.000 L9.000,14.000 L9.000,12.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M13.000,15.000 L15.000,15.000 L15.000,17.000 L13.000,17.000 L13.000,15.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M13.000,12.000 L15.000,12.000 L15.000,14.000 L13.000,14.000 L13.000,12.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M12.744,18.844 C13.508,18.844 14.128,19.530 14.128,20.377 C14.128,21.224 13.508,21.910 12.744,21.910 C11.980,21.910 11.360,21.224 11.360,20.377 C11.360,19.530 11.980,18.844 12.744,18.844 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M20.477,18.844 C21.241,18.844 21.860,19.530 21.860,20.377 C21.860,21.224 21.241,21.910 20.477,21.910 C19.713,21.910 19.093,21.224 19.093,20.377 C19.093,19.530 19.713,18.844 20.477,18.844 Z"/>
+</svg>

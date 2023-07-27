@@ -1,0 +1,358 @@
+.app-main {
+  min-height: calc(100vh - 50px);
+  height    : 100%;
+  width     : 100%;
+  position  : relative;
+  overflow  : hidden;
+
+  .full-height {
+    height    : 100%;
+    overflow-y: auto;
+  }
+}
+
+.fixed-header+.app-main {
+  padding-top: 100px;
+}
+
+// fix css style bug in open el-dialog
+.el-popup-parent--hidden {
+  .fixed-header {
+    padding-right: 15px;
+  }
+}
+
+#app {
+  .main-container {
+    overflow: hidden;
+    height  : 100vh;
+  }
+}
+
+.container {
+  margin       : 0 !important;
+  padding      : 0 !important;
+  // overflow-y: hidden;
+}
+
+.pagination {
+  height: 50px !important;
+}
+
+.el-pagination {
+  padding: 0;
+}
+
+.app-main>main {
+  padding: 5px !important;
+}
+
+.header-search {
+  display: block;
+  width  : 100%;
+
+  .el-checkbox__inner {
+    z-index: 0 !important;
+  }
+
+  .el-input__inner {
+    height     : 28px;
+    line-height: 28px;
+  }
+
+  .el-form--inline .el-form-item {
+    margin-right  : unset;
+    padding-bottom: unset !important;
+  }
+
+
+  .searchbar {
+    float      : left;
+    height     : 30px;
+    line-height: 30px;
+    margin-top : -1px;
+    margin-left: 5px;
+
+    .el-button-group {
+      display: inline-flex !important;
+
+      .el-button {
+        padding      : 6px 10px !important;
+        border-radius: unset;
+      }
+    }
+
+    .el-dropdown {
+      height     : 25px;
+      line-height: 24px;
+
+      .el-button-group {
+
+        // height: 100%;
+        .el-button {
+          border-radius: unset;
+        }
+      }
+    }
+  }
+}
+
+.header-search,
+.search-line {
+  height: 32px;
+}
+
+.s-mini {
+  padding: 6px 12px;
+}
+
+.getTextWidth {
+  padding-left : 10px;
+  padding-right: 10px;
+  font-size    : 12px;
+}
+
+.el-table {
+  .cell {
+    padding-left : 5px;
+    padding-right: 5px;
+
+    button {
+      padding: 5px 7px !important;
+    }
+  }
+
+  th>.cell {
+    text-align : center !important;
+    white-space: pre-line;
+  }
+}
+
+.el-date-editor .el-range-separator {
+  width: auto;
+}
+
+#app {
+  height  : 100vh;
+  overflow: hidden;
+}
+.dialogTitle,
+.el-divider__text {
+  color    : lightgray;
+  font-size: 14px;
+}
+
+.el-table {
+  .red {
+    color: red;
+  }
+
+  .yellowgreen {
+    color: yellowgreen;
+  }
+
+  .orange {
+    color: orange;
+  }
+
+  .overage {
+    color: orange;
+
+    .cell {
+      &::before {
+        content: "盘盈";
+        float  : left;
+      }
+    }
+  }
+
+  .loss {
+    color: red;
+
+    .cell {
+      &::before {
+        content: "盘亏";
+        float  : left;
+      }
+    }
+  }
+
+  .invalid {
+    background: lightgray;
+
+    &:hover {
+      background: lightgray;
+    }
+
+    td {
+      background: lightgray !important;
+    }
+  }
+
+  .cell>label {
+    display: inline-block;
+    width  : 100%;
+  }
+
+  .gray {
+    color: gray;
+  }
+}
+
+.jpre-input {
+  .el-input-group__prepend {
+    background: none;
+    padding   : 0 5px;
+    border    : none;
+    position  : absolute;
+    top       : 6px;
+    color     : lightgray;
+  }
+
+  input {
+    border-top-left-radius   : 4px !important;
+    border-bottom-left-radius: 4px !important;
+  }
+}
+
+.el-select[rg="-1"],
+.el-select[rg="0"] {
+  input {
+    color: #999;
+  }
+}
+
+$pre-lens: (35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155);
+
+@for $i from 1 through length($pre-lens) {
+  $item: nth($pre-lens, $i);
+
+  .pre-#{$item}px {
+    input {
+      padding-left: #{$item}px;
+    }
+  }
+}
+
+.no-radius-left {
+  input {
+    border-top-left-radius   : 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
+.no-radius-right {
+  input {
+    border-top-right-radius   : 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}
+
+.col-2 .el-form-item {
+  width: 50%;
+  float: left;
+}
+
+.col-3 .el-form-item {
+  width: 33.3%;
+  float: left;
+}
+
+.col-4 .el-form-item {
+  width: 25%;
+  float: left;
+}
+
+.input-width-fill {
+
+  .el-date-editor.el-input,
+  .el-date-editor.el-input__inner {
+    width: -webkit-fill-available;
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+// 统一表单输入元素高度 mini
+.el-form-item {
+  margin-bottom: 5px !important;
+
+  .el-form-item__label {
+    color       : #909399;
+    // font-size: 12px;
+  }
+
+  .el-form-item__content {
+    .el-input__prefix {
+      line-height: 28px;
+      color      : #909399;
+    }
+  }
+
+  // .el-range-separator,
+  // .el-input__icon,
+  // .el-input__inner,
+  // .el-form-item__label {
+  //   height: 28px !important;
+  //   line-height: 28px !important;
+  // }
+  // .el-form-item__content {
+  //   line-height: 28px !important;
+  // }
+
+  // .el-button {
+  //   padding: 6px 10px !important;
+  // }
+
+  // .el-input-number__decrease,
+  // .el-input-number__increase {
+  //   line-height: 26px;
+  // }
+  // .el-input-number.is-controls-right [class*="decrease"],
+  // .el-input-number.is-controls-right [class*="increase"] {
+  //   line-height: 13px;
+  // }
+}
+
+.el-form-item__error {
+  display    : inline-block;
+  position   : static !important;
+  margin-left: 5px;
+}
+
+.el-message-box {
+  .el-message-box__btns {
+    text-align: center;
+  }
+
+  .el-message-box__btns button:nth-child(2) {
+    margin-left: -120px;
+  }
+}
+
+// 表格内输入框样式
+td {
+  .el-input__inner {
+    padding     : unset;
+    padding-left: 5px;
+  }
+
+  // 只读样式
+  .el-input.is-disabled {
+    .el-input__inner {
+      border    : unset;
+      background: unset;
+      color     : unset;
+    }
+
+    .el-input__icon {
+      visibility: hidden;
+    }
+
+    input[type="number"] {
+      text-align: right;
+    }
+  }
+}

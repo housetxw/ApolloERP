@@ -1,0 +1,17 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="28px" height="28px">
+<path fill-rule="evenodd"  fill="rgb(48, 65, 86)"
+ d="M-0.000,-0.000 L27.000,-0.000 L27.000,27.000 L-0.000,27.000 L-0.000,-0.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M4.000,3.000 L10.000,3.000 C11.105,3.000 12.000,3.895 12.000,5.000 L12.000,11.000 C12.000,12.105 11.105,13.000 10.000,13.000 L4.000,13.000 C2.895,13.000 2.000,12.105 2.000,11.000 L2.000,5.000 C2.000,3.895 2.895,3.000 4.000,3.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M16.000,3.000 L22.000,3.000 C23.105,3.000 24.000,3.895 24.000,5.000 L24.000,11.000 C24.000,12.105 23.105,13.000 22.000,13.000 L16.000,13.000 C14.895,13.000 14.000,12.105 14.000,11.000 L14.000,5.000 C14.000,3.895 14.895,3.000 16.000,3.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M4.000,15.000 L10.000,15.000 C11.105,15.000 12.000,15.895 12.000,17.000 L12.000,23.000 C12.000,24.105 11.105,25.000 10.000,25.000 L4.000,25.000 C2.895,25.000 2.000,24.105 2.000,23.000 L2.000,17.000 C2.000,15.895 2.895,15.000 4.000,15.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M18.500,15.000 C20.985,15.000 23.000,17.015 23.000,19.500 C23.000,21.985 20.985,24.000 18.500,24.000 C16.015,24.000 14.000,21.985 14.000,19.500 C14.000,17.015 16.015,15.000 18.500,15.000 Z"/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round"
+ d="M21.000,22.000 L24.000,24.000 "/>
+</svg>

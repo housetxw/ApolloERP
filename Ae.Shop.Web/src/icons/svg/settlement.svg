@@ -1,0 +1,12 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="25px" height="29px">
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" 
+ d="M4.136,7.724 L20.978,7.724 C22.083,7.724 22.978,8.619 22.978,9.724 L22.978,24.600 C22.978,25.705 22.083,26.600 20.978,26.600 L4.136,26.600 C3.031,26.600 2.136,25.705 2.136,24.600 L2.136,9.724 C2.136,8.619 3.031,7.724 4.136,7.724 Z"/>
+<text font-family="Microsoft YaHei" fill="rgb(255, 255, 255)" transform="matrix( 0.84980087444688, 2.29239313760067e-15, 0, 0.84980087444688,9.38834628360075, 21.6739048094578)" font-weight="bold" font-size="14px">&#65509;</text>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round"
+ d="M2.994,9.089 C2.994,9.089 4.417,5.658 4.689,5.439 C4.961,5.219 5.430,4.354 8.642,5.439 C11.854,6.523 14.976,6.906 15.419,7.264 C15.862,7.621 15.984,7.476 15.984,8.176 C15.984,8.876 15.984,9.089 15.984,9.089 "/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M7.252,7.474 C7.252,7.474 8.678,3.635 8.950,3.389 C9.223,3.143 9.693,2.175 12.912,3.389 C16.131,4.603 19.259,5.031 19.703,5.431 C20.147,5.832 20.269,5.669 20.269,6.453 C20.269,7.236 20.269,7.474 20.269,7.474 "/>
+</svg>

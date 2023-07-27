@@ -1,0 +1,12 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="32px" height="23px">
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M25.380,11.693 C25.380,15.793 25.380,18.416 25.380,18.416 C25.380,19.015 24.894,19.500 24.295,19.500 L6.402,19.500 C5.803,19.500 5.318,19.015 5.318,18.416 C5.318,18.416 5.318,17.851 5.318,15.744 M5.318,10.389 C5.318,6.979 5.318,3.776 5.318,3.776 C5.318,3.177 5.803,2.692 6.402,2.692 L24.295,2.692 C24.894,2.692 25.380,3.177 25.380,3.776 C25.380,3.776 25.380,5.628 25.380,6.700 "/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M2.409,9.430 L5.485,12.561 L8.562,9.430 "/>
+<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" 
+ d="M21.983,15.032 L25.001,11.977 L28.019,15.032 "/>
+<text font-family="Microsoft YaHei" fill="rgb(255, 255, 255)" transform="matrix( 0.54220678323681, 0, 0, 0.54220678323682,11.8823109963883, 14.7954474826577)" font-weight="bold" font-size="18px">&#65509;</text>
+</svg>
