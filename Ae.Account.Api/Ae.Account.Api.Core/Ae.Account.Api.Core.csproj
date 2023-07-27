@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\Rg.M.AccountAuthority.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.Account.Api.Client\Ae.Account.Api.Client.csproj" />
+    <ProjectReference Include="..\Ae.Account.Api.Common\Ae.Account.Api.Common.csproj" />
+  </ItemGroup>
+
+</Project>

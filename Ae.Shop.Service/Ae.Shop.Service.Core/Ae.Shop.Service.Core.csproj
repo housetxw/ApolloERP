@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\Ae.Shop.Service.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ApolloErp.Web" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.Shop.Service.Client\Ae.Shop.Service.Client.csproj" />
+    <ProjectReference Include="..\Ae.Shop.Service.Common\Ae.Shop.Service.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Response\BOSS\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.BasicData.Service.Client\Ae.BasicData.Service.Client.csproj" />
+    <ProjectReference Include="..\Ae.BasicData.Service.Common\Ae.BasicData.Service.Common.csproj" />
+    <ProjectReference Include="..\Ae.BasicData.Service.Core\Ae.BasicData.Service.Core.csproj" />
+    <ProjectReference Include="..\Ae.BasicData.Service.Dal\Ae.BasicData.Service.Dal.csproj" />
+  </ItemGroup>
+
+</Project>
