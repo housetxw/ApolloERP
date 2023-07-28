@@ -58,6 +58,6 @@
 ### 捐助
 如果您觉得我们的开源软件对你有所帮助，请扫下方二维码打赏我们一杯咖啡。
 
-![输入图片说明](https://foruda.gitee.com/images/1690517120531754279/e09320fd_12783671.jpeg "微信个人收款码 - 副本.jpg")![输入图片说明](https://foruda.gitee.com/images/1690517137030385902/ac602e24_12783671.jpeg "支付宝个人收款码 - 副本.jpg")
+![输入图片说明](https://foruda.gitee.com/images/1690517120531754279/e09320fd_12783671.jpeg "微信个人收款码 - 副本.jpg"){width=50% height=50%} ![输入图片说明](https://foruda.gitee.com/images/1690517137030385902/ac602e24_12783671.jpeg "支付宝个人收款码 - 副本.jpg"){width=50% height=50%}
 
 
