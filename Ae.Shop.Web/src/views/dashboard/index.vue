@@ -40,6 +40,12 @@
 QQ：19652594<br>
 Email：zhidash2020@163.com<br>
 
+<h4>源码地址</h4>
+https://gitee.com/aerphouse/ApolloERP.git <br>
+
+<h4>其他说明</h4>
+测试环境为低配服务器，请大家手下留情。 <br>
+
 <br><br><br>
         </div>
       </div>
@@ -95,8 +101,9 @@ export default {
 //     margin: 30px;
 //   }
 //   &-text {
-//     font-size: 30px;
+   
 //     line-height: 46px;
+//     overflow: auto;
 //   }
 // }
 .dashboard-container {

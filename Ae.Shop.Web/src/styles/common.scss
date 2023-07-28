@@ -22,12 +22,12 @@
   }
 }
 
-#app {
-  .main-container {
-    overflow: hidden;
-    height  : 100vh;
-  }
-}
+// #app {
+//   .main-container {
+//     overflow: hidden;
+//     height  : 100vh;
+//   }
+// }
 
 .container {
   margin       : 0 !important;
@@ -132,10 +132,10 @@
   width: auto;
 }
 
-#app {
-  height  : 100vh;
-  overflow: hidden;
-}
+// #app {
+//   height  : 100vh;
+//   overflow: hidden;
+// }
 .dialogTitle,
 .el-divider__text {
   color    : lightgray;
