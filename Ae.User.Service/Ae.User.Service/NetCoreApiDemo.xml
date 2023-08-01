@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ae.User.Service.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Ae.User.Service.WebApi.Controllers.DemoController">
+            <summary>
+            示例API
+            </summary>
+        </member>
+        <member name="M:Ae.User.Service.WebApi.Controllers.DemoController.GetPageList(Ae.User.Service.Core.Request.GetListRequest)">
+            <summary>
+            Get接口带分页
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ae.User.Service.WebApi.Controllers.DemoController.GetShopInfo(Ae.User.Service.Core.Request.GetShopInfoRequest)">
+            <summary>
+            Get接口
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ae.User.Service.WebApi.Controllers.DemoController.UpdateShopInfo(ApolloErp.Web.WebApi.ApiRequest{Ae.User.Service.Core.Request.UpdataShopInfo})">
+            <summary>
+            POST接口
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ae.User.Service.WebApi.Controllers.HomeController">
+            <summary>
+            Home
+            </summary>
+        </member>
+        <member name="M:Ae.User.Service.WebApi.Controllers.HomeController.Index">
+            <summary>
+            Index
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ae.User.Service.WebApi.Controllers.HomeController.Health">
+            <summary>
+            健康检查
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ae.User.Service.WebApi.Controllers.HomeController.Actuator">
+            <summary>
+            actuator
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Ae.User.Service.WebApi.Filters.FilterAttribute">
+            <summary>
+            过滤器
+            </summary>
+        </member>
+        <member name="M:Ae.User.Service.WebApi.Filters.FilterAttribute.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="categoryName"></param>
+        </member>
+    </members>
+</doc>
