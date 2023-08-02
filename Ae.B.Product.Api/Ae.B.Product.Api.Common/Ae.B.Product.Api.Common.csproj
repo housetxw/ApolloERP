@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Swagger\**" />
+    <Compile Remove="WebApi\**" />
+    <EmbeddedResource Remove="Swagger\**" />
+    <EmbeddedResource Remove="WebApi\**" />
+    <None Remove="Swagger\**" />
+    <None Remove="WebApi\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetCore.NPOI" Version="1.2.2" />
+    <PackageReference Include="ApolloErp.Log" Version="1.0.2" />
+    <PackageReference Include="ApolloErp.Login.Auth" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

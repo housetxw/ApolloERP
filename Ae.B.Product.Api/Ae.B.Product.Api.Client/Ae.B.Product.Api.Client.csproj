@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ApolloErp.Component.Http" Version="2.0.1" />
+    <PackageReference Include="ApolloErp.Web" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.B.Product.Api.Common\Ae.B.Product.Api.Common.csproj" />
+    <ProjectReference Include="..\Ae.B.Product.Api.Core\Ae.B.Product.Api.Core.csproj" />
+  </ItemGroup>
+
+</Project>

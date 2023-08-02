@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+
+namespace Ae.B.User.Api.Core.Request.Vehicle
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class UserVehicleByCarIdRequest
+    {
+        /// <summary>
+        /// 用户Id
+        /// </summary>
+        [Required(ErrorMessage = "CarId不能为空")]
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// 车Id
+        /// </summary>
+        [Required(ErrorMessage = "CarId不能为空")]
+        public string CarId { get; set; }
+    }
+}

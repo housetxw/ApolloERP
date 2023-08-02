@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ApolloErp.Component.Http" Version="2.0.1" />
+    <PackageReference Include="ApolloErp.Web" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.B.FMS.Api.Common\Ae.B.FMS.Api.Common.csproj" />
+    <ProjectReference Include="..\Ae.B.FMS.Api.Core\Ae.B.FMS.Api.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Response\" />
+  </ItemGroup>
+
+</Project>

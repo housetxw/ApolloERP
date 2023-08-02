@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Ae.B.Product.Api.Core.Model.Coupon
+{
+    /// <summary>
+    /// 用户优惠券活动
+    /// </summary>
+    public class CouponActivityVo
+    {
+        /// <summary>
+        /// 活动Id
+        /// </summary>
+        public long CouponActivityId { get; set; }
+
+        /// <summary>
+        /// 活动名称
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 优惠券Id
+        /// </summary>
+        public long CouponId { get; set; }
+
+        /// <summary>
+        /// 优惠券名称
+        /// </summary>
+        public string CouponName { get; set; }
+
+        /// <summary>
+        /// 开始时间
+        /// </summary>
+        public DateTime StartTime { get; set; }
+
+        /// <summary>
+        /// 结束时间
+        /// </summary>
+        public DateTime EndTime { get; set; }
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        public DateTime CreateTime { get; set; }
+
+        /// <summary>
+        /// 状态（0未发布 1可领取 2暂停领取 3已作废）
+        /// </summary>
+        public int Status { get; set; }
+
+        /// <summary>
+        /// 状态显示名
+        /// </summary>
+        public string StatusName { get; set; }
+
+        /// <summary>
+        /// 发放总数
+        /// </summary>
+        public int TotalNum { get; set; }
+
+        /// <summary>
+        /// 领取总数
+        /// </summary>
+        public int ReceiveNum { get; set; }
+
+        /// <summary>
+        /// 兑换码
+        /// </summary>
+        public string Code { get; set; }
+    }
+}

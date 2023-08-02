@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Web" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.Product.Service.Client\Ae.Product.Service.Client.csproj" />
+    <ProjectReference Include="..\Ae.Product.Service.Common\Ae.Product.Service.Common.csproj" />
+    <ProjectReference Include="..\Ae.Product.Service.Dal\Ae.Product.Service.Dal.csproj" />
+    <ProjectReference Include="..\Ae.Product.Service.Core\Ae.Product.Service.Core.csproj" />
+  </ItemGroup>
+
+</Project>
