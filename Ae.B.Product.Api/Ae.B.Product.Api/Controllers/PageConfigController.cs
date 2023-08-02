@@ -24,30 +24,51 @@ namespace Ae.B.Product.Api.Controllers
         }
 
         #region 首页促销配置
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResult<string>> DeleteConfigAdvertisement([FromBody]ApiRequest<ConfigAdvertisementVo> request)
         {
             return await _pageConfigService.DeleteConfigAdvertisement(request.Data);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ApiPagedResult<ConfigAdvertisementVo>> GetConfigAdvertisements([FromQuery]GetConfigAdvertisementsRequest request)
         {
             return await _pageConfigService.GetConfigAdvertisements(request);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResult<string>> AddConfigAdvertisement([FromBody]ApiRequest<ConfigAdvertisementVo> request)
         {
             return await _pageConfigService.AddConfigAdvertisement(request.Data);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ApiResult<ConfigAdvertisementVo>> GetConfigAdvertisement([FromQuery]ConfigAdvertisementVo request)
         {
             return await _pageConfigService.GetConfigAdvertisement(request);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResult<string>> UpdateConfigAdvertisement([FromBody]ApiRequest<ConfigAdvertisementVo> request)
         {

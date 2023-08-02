@@ -19,19 +19,31 @@ namespace Ae.B.Product.Api.Controllers
         {
             _flashSaleConfigService = flashSaleConfigService;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResult<string>> CreatFlashSaleConfig([FromBody]ApiRequest<FlashSaleConfigDTO> request)
         {
             return await _flashSaleConfigService.CreatFlashSaleConfig(request.Data);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ApiPagedResult<FlashSaleConfigDTO>> GetFlashSaleConfigs([FromQuery]GetFlashSaleConfigRequest request)
         {
             return await _flashSaleConfigService.GetFlashSaleConfigs(request);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResult<string>> UpdateFlashSaleConfig([FromBody]ApiRequest<FlashSaleConfigDTO> request)
         {

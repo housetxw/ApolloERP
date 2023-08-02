@@ -107,7 +107,11 @@ namespace Ae.B.Product.Api.Controllers
 
             return Result.Success(result);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiPagedResult<GetCouponActivityListForShopResponse>> GetCouponActivityListForShop(
           [FromBody] ApiRequest<GetCouponActivityListForShopRequest> request)
@@ -115,7 +119,11 @@ namespace Ae.B.Product.Api.Controllers
 
             return await _promotionService.GetCouponActivityListForShop(request);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResult<bool>> SaveShopGrantCoupon([FromBody] ApiRequest<ShopGrantCouponDTO> request)
         {
