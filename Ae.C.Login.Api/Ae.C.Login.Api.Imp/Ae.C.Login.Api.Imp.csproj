@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="aliyun-net-sdk-core" Version="1.5.3" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.C.Login.Api.Client\Ae.C.Login.Api.Client.csproj" />
+    <ProjectReference Include="..\Ae.C.Login.Api.Common\Ae.C.Login.Api.Common.csproj" />
+    <ProjectReference Include="..\Ae.C.Login.Api.Core\Ae.C.Login.Api.Core.csproj" />
+    <ProjectReference Include="..\Ae.C.Login.Api.Dal\Ae.C.Login.Api.Dal.csproj" />
+  </ItemGroup>
+
+</Project>
