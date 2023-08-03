@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Response\ShopManage\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ApolloErp.Component.Http" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.Shop.Api.Common\Ae.Shop.Api.Common.csproj" />
+    <ProjectReference Include="..\Ae.Shop.Api.Core\Ae.Shop.Api.Core.csproj" />
+  </ItemGroup>
+
+</Project>

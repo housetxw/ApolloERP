@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.1\Rg.M.AccountAuthority.WebApi.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp2.1\Ae.Account.Api.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.1\Rg.M.AccountAuthority.WebApi.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp2.1\Ae.Account.Api.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

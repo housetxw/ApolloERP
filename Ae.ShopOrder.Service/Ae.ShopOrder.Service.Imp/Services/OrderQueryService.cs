@@ -55,7 +55,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
         private readonly IOrderNotAdapterRepository orderNotAdapterRepo;
         private readonly IOrderRepository _orderRepository;
         private readonly IOrderClient _orderClient;
-        private readonly IApolloErpWMSClient _ApolloErpWmsClient;
+        private readonly IWMSClient _WMSClient;
         private readonly IShopOrderRepository shopOrderRepo;
         private readonly IOrderAddressRepository orderAddressRepo;
         private readonly IOrderUserRepository _orderUserRepository;
@@ -83,7 +83,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
         private readonly IOrderPackageCardRepository _orderPackageCardRepository;
 
         public OrderQueryService(IOrderQueryForCClient orderQueryClient, IMapper mapper,
-            ApolloErpLogger<OrderQueryService> logger, IOrderRepository orderRepository, IOrderClient orderClient, IApolloErpWMSClient ApolloErpWmsClient,
+            ApolloErpLogger<OrderQueryService> logger, IOrderRepository orderRepository, IOrderClient orderClient, IWMSClient WMSClient,
             IShopOrderRepository shopOrderRepo, IOrderAddressRepository orderAddressRepo, IOrderUserRepository orderUserRepository,
             IOrderCarRepository orderCarRepo, IPayClient payClient, IOrderProductRepository orderProductRepo, IOrderLogRepository orderLogRepository,
             IOrderNotAdapterRepository orderNotAdapterRepo,
@@ -98,7 +98,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
             this.logger = logger;
             _orderRepository = orderRepository;
             _orderClient = orderClient;
-            _ApolloErpWmsClient = ApolloErpWmsClient;
+            _WMSClient = WMSClient;
 
             this.shopOrderRepo = shopOrderRepo;
             this.orderAddressRepo = orderAddressRepo;
@@ -303,7 +303,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
         public async Task<ApiResult<GetWareHouseTransferResponse>> GetWarehouseTransferAllTask(GetWareHouseTransferRequest request)
         {
             var clientResponse = mapper.Map<GetWareHouseTransferClientRequest>(request);
-            var getWarehouseTransferAllTask = await _ApolloErpWmsClient.GetWarehouseTransferAllTask(clientResponse);
+            var getWarehouseTransferAllTask = await _WMSClient.GetWarehouseTransferAllTask(clientResponse);
             ApiResult<GetWareHouseTransferResponse> response =
                 mapper.Map<ApiResult<GetWareHouseTransferResponse>>(getWarehouseTransferAllTask);
             return response;
@@ -316,7 +316,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
         /// <returns></returns>
         public async Task<ApiResult<List<GetBatchWarehouseTransferPackagesDTO>>> GetBatchWarehouseTransferPackages(GetBatchWarehouseTransferPackagesRequest request)
         {
-            return await _ApolloErpWmsClient.GetBatchWarehouseTransferPackages(request);
+            return await _WMSClient.GetBatchWarehouseTransferPackages(request);
         }
 
 
@@ -1600,7 +1600,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
 
         public async Task<ApiResult<List<GetShopInfoByRefSmallWarehouseIdResponse>>> GetShopInfoByRefSmallWarehouseId(GetShopInfoByRefSmallWarehouseIdRequest request)
         {
-            var getShopOccpupy = await _ApolloErpWmsClient.GetShopOccupyMappingsByRelationId(new GetShopOccupyMappingsByRelationIdRequest()
+            var getShopOccpupy = await _WMSClient.GetShopOccupyMappingsByRelationId(new GetShopOccupyMappingsByRelationIdRequest()
             {
                 RelationShopId = request.SmallWarehouseId
             });
@@ -1691,7 +1691,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
 
             //if (getOrderOutProducts?.Items?.Count > 0)
             //{
-            //    var getOrderOccupyShopProductPurchaseInfo = await _ApolloErpWmsClient.GetOrderOccupyShopProductPurchaseInfo(
+            //    var getOrderOccupyShopProductPurchaseInfo = await _WMSClient.GetOrderOccupyShopProductPurchaseInfo(
             //        new GetOrderOccupyShopProductPurchaseInfoReqeust()
             //        {
             //            OrderNos = getOrderOutProducts?.Items.Select(_ => _.OrderNo)?.ToList(),

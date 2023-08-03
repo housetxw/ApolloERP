@@ -39,7 +39,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
     {
         private readonly IMapper _mapper;
         private readonly ApolloErpLogger<SignService> _logger;
-        private readonly IApolloErpWMSClient _ApolloErpWmsClient;
+        private readonly IWMSClient _WMSClient;
         private readonly ISignRepository _signRepository;
         private readonly IOrderClient _orderClient;
         private readonly IOrderCommandForCClient _orderCommandForCClient;
@@ -49,10 +49,10 @@ namespace Ae.ShopOrder.Service.Imp.Services
         private readonly IDelegateUserOrderRepository _delegateUserOrderRepository;
 
 
-        public SignService(IApolloErpWMSClient ApolloErpWmsClient, IMapper mapper, ApolloErpLogger<SignService> logger,
+        public SignService(IWMSClient WMSClient, IMapper mapper, ApolloErpLogger<SignService> logger,
             ISignRepository signRepository, IOrderClient orderClient, IOrderCommandForCClient orderCommandForCClient, IOrderQueryService orderQueryService, IShopStockClient shopStockClient, IOrderRepository orderRepository, IDelegateUserOrderRepository delegateUserOrderRepository)
         {
-            _ApolloErpWmsClient = ApolloErpWmsClient;
+            _WMSClient = WMSClient;
             _mapper = mapper;
             _logger = logger;
             _signRepository = signRepository;
@@ -128,7 +128,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                 TransferType = transferTypeName,
                 TransferId = request.Content.Trim()
             };
-            var getWarehouseTransferAllTaskResponse = await _ApolloErpWmsClient.GetWarehouseTransferAllTask(getWareHouseTransferClientRequest);
+            var getWarehouseTransferAllTaskResponse = await _WMSClient.GetWarehouseTransferAllTask(getWareHouseTransferClientRequest);
             if (getWarehouseTransferAllTaskResponse.Code == ResultCode.Success &&
                 getWarehouseTransferAllTaskResponse.Data != null)
             {
@@ -169,7 +169,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
             }
             else
             {
-                var getTransferPackageTaskResponse = await _ApolloErpWmsClient.GetTransferPackageTask(new GetWareHouseTransferPackageClientRequest
+                var getTransferPackageTaskResponse = await _WMSClient.GetTransferPackageTask(new GetWareHouseTransferPackageClientRequest
                 {
                     DeliveryCode = request.Content.Trim()
                 });
@@ -195,7 +195,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                 }
 
                 //为了验证物流单号是否属于此门店
-                var getWarehouseTransferAllTaskAllResponse = await _ApolloErpWmsClient.GetWarehouseTransferAllTask(new GetWareHouseTransferClientRequest
+                var getWarehouseTransferAllTaskAllResponse = await _WMSClient.GetWarehouseTransferAllTask(new GetWareHouseTransferClientRequest
                 {
                     TargetWarehouse = request.ShopId,
                     TransferType = transferType,
@@ -314,7 +314,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
         //        TransferType = WmsStockOutTypeEnum.Order.GetDescription(),
         //        TransferId = request.Content.Trim()
         //    };
-        //    var getWarehouseTransferAllTaskResponse = await _ApolloErpWmsClient.GetWarehouseTransferAllTask(getWareHouseTransferClientRequest);
+        //    var getWarehouseTransferAllTaskResponse = await _WMSClient.GetWarehouseTransferAllTask(getWareHouseTransferClientRequest);
         //    if (getWarehouseTransferAllTaskResponse.Code == ResultCode.Success &&
         //        getWarehouseTransferAllTaskResponse.Data != null)
         //    {
@@ -355,7 +355,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
         //    }
         //    else
         //    {
-        //        var getTransferPackageTaskResponse = await _ApolloErpWmsClient.GetTransferPackageTask(new GetWareHouseTransferPackageClientRequest
+        //        var getTransferPackageTaskResponse = await _WMSClient.GetTransferPackageTask(new GetWareHouseTransferPackageClientRequest
         //        {
         //            DeliveryCode = request.Content.Trim()
         //        });
@@ -368,7 +368,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
         //            };
         //        var transferId = getTransferPackageTaskResponse?.Data?.FirstOrDefault()?.TransferId;
         //        //为了验证物流单号是否属于此门店
-        //        var getWarehouseTransferAllTaskAllResponse = await _ApolloErpWmsClient.GetWarehouseTransferAllTask(new GetWareHouseTransferClientRequest
+        //        var getWarehouseTransferAllTaskAllResponse = await _WMSClient.GetWarehouseTransferAllTask(new GetWareHouseTransferClientRequest
         //        {
         //            TargetWarehouse = request.ShopId,
         //            TransferType = WmsStockOutTypeEnum.Order.GetDescription(),
@@ -526,7 +526,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                 {
                     DeliveryCode = request.Content?.FirstOrDefault()
                 };
-                var getTransferPackageTaskResponse = await _ApolloErpWmsClient.GetTransferPackageTask(getWareHouseTransferPackageClientRequest);
+                var getTransferPackageTaskResponse = await _WMSClient.GetTransferPackageTask(getWareHouseTransferPackageClientRequest);
 
                 if (getTransferPackageTaskResponse.Code == ResultCode.Success)
                 {
@@ -559,7 +559,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                         TransferType = transferTypeName,
                         TransferId = transferId
                     };
-                    var getWarehouseTransferAllTaskResponse = await _ApolloErpWmsClient.GetWarehouseTransferAllTask(getWareHouseTransferClientRequest);
+                    var getWarehouseTransferAllTaskResponse = await _WMSClient.GetWarehouseTransferAllTask(getWareHouseTransferClientRequest);
                     if (getWarehouseTransferAllTaskResponse.Code == ResultCode.Success &&
                         getWarehouseTransferAllTaskResponse.Data != null)
                     {
@@ -839,7 +839,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                     }
 
                     //WMS签收主表
-                    var updateWarehouseTransferSignUpResponse = await _ApolloErpWmsClient.UpdateWarehouseTransferSignUp(new UpdateWarehouseTransferSignUpClientRequest()
+                    var updateWarehouseTransferSignUpResponse = await _WMSClient.UpdateWarehouseTransferSignUp(new UpdateWarehouseTransferSignUpClientRequest()
                     {
                         TransferId = transferClientDto?.TransferId,
                         TransferType = transferClientDto.TransferType,
@@ -848,7 +848,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                     });
                     if (updateWarehouseTransferSignUpResponse == null || updateWarehouseTransferSignUpResponse.Code != ResultCode.Success)
                     {
-                        _logger.Error($"_ApolloErpWmsClient UpdateWarehouseTransferSignUp {transferClientDto?.TransferId} {UpdateOrderStatusTypeEnum.SignStatus} 更新失败 {updateWarehouseTransferSignUpResponse?.Message}");
+                        _logger.Error($"_WMSClient UpdateWarehouseTransferSignUp {transferClientDto?.TransferId} {UpdateOrderStatusTypeEnum.SignStatus} 更新失败 {updateWarehouseTransferSignUpResponse?.Message}");
                     }
 
                     //WMS入库主表
@@ -864,7 +864,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                     //签收时  订单回写出库任务的收货数量
                     if (transferClientDto.TransferType == WmsStockOutTypeEnum.Order.ToString())
                     {
-                        var updateWarehouseTransferProductReceiveNumResponse = await _ApolloErpWmsClient.UpdateWarehouseTransferProductReceiveNum(
+                        var updateWarehouseTransferProductReceiveNumResponse = await _WMSClient.UpdateWarehouseTransferProductReceiveNum(
                                new UpdateWarehouseTransferProductReceiveNumClientRequest()
                                {
                                    TransferId = transferClientDto.TransferId,
@@ -875,7 +875,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
 
                         if (updateWarehouseTransferProductReceiveNumResponse == null || updateWarehouseTransferProductReceiveNumResponse.Code != ResultCode.Success)
                         {
-                            _logger.Error($"_ApolloErpWmsClient updateWarehouseTransferProductReceiveNumResponse {transferClientDto?.TransferId} {UpdateOrderStatusTypeEnum.SignStatus} 更新失败 {updateWarehouseTransferProductReceiveNumResponse?.Message}");
+                            _logger.Error($"_WMSClient updateWarehouseTransferProductReceiveNumResponse {transferClientDto?.TransferId} {UpdateOrderStatusTypeEnum.SignStatus} 更新失败 {updateWarehouseTransferProductReceiveNumResponse?.Message}");
                         }
                     }
                 }
@@ -885,7 +885,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                 }
 
                 //WMS签收包裹明细
-                UpdateWarehouseTransferPackageStatusResponse = await _ApolloErpWmsClient.UpdateWarehouseTransferPackageStatus(new UpdateWarehouseTransferPackageStatusClientRequest()
+                UpdateWarehouseTransferPackageStatusResponse = await _WMSClient.UpdateWarehouseTransferPackageStatus(new UpdateWarehouseTransferPackageStatusClientRequest()
                 {
                     TransferId = transferClientDto?.TransferId,
                     TransferType = transferClientDto?.TransferType,
@@ -896,7 +896,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
 
                 if (UpdateWarehouseTransferPackageStatusResponse == null || UpdateWarehouseTransferPackageStatusResponse.Code != ResultCode.Success)
                 {
-                    _logger.Error($"_ApolloErpWmsClient UpdateWarehouseTransferSignUp {transferClientDto?.TransferId} {UpdateOrderStatusTypeEnum.SignStatus} 更新失败 {UpdateWarehouseTransferPackageStatusResponse?.Message}");
+                    _logger.Error($"_WMSClient UpdateWarehouseTransferSignUp {transferClientDto?.TransferId} {UpdateOrderStatusTypeEnum.SignStatus} 更新失败 {UpdateWarehouseTransferPackageStatusResponse?.Message}");
                 }
             }
             catch (Exception ex)

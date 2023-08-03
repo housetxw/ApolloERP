@@ -71,7 +71,7 @@ namespace Ae.Account.Api
                 //    Version = "v1",
                 //});
 
-                var xmlFile = "Rg.M.AccountAuthority.WebApi.xml";
+                var xmlFile = "Ae.Account.Api.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
