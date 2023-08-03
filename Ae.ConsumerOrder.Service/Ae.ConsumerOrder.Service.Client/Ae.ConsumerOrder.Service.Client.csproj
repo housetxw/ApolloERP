@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ApolloErp.Component.Http" Version="2.0.1" />
+    <PackageReference Include="ApolloErp.Web" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.ConsumerOrder.Service.Core\Ae.ConsumerOrder.Service.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Response\BaoYang\" />
+    <Folder Include="Response\Order\" />
+    <Folder Include="Response\Product\" />
+    <Folder Include="Response\Stock\" />
+    <Folder Include="Response\Vehicle\" />
+  </ItemGroup>
+
+</Project>

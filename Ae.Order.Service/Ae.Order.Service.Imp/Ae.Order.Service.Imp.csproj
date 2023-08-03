@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.Order.Service.Client\Ae.Order.Service.Client.csproj" />
+    <ProjectReference Include="..\Ae.Order.Service.Common\Ae.Order.Service.Common.csproj" />
+    <ProjectReference Include="..\Ae.Order.Service.Core\Ae.Order.Service.Core.csproj" />
+    <ProjectReference Include="..\Ae.Order.Service.Dal\Ae.Order.Service.Dal.csproj" />
+  </ItemGroup>
+
+</Project>

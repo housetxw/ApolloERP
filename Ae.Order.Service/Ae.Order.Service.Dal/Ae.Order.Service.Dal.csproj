@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Model\ShopOrder\**" />
+    <Compile Remove="Condition\Order\**" />
+    <Compile Remove="Repository\Order\Impl\**" />
+    <EmbeddedResource Remove="Model\ShopOrder\**" />
+    <EmbeddedResource Remove="Condition\Order\**" />
+    <EmbeddedResource Remove="Repository\Order\Impl\**" />
+    <None Remove="Model\ShopOrder\**" />
+    <None Remove="Condition\Order\**" />
+    <None Remove="Repository\Order\Impl\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ae.Order.Service.Common\Ae.Order.Service.Common.csproj" />
+    <ProjectReference Include="..\Ae.Order.Service.Core\Ae.Order.Service.Core.csproj" />
+  </ItemGroup>
+
+</Project>

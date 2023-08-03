@@ -1,0 +1,22 @@
+﻿using System.Collections.Generic;
+
+namespace Ae.ConsumerOrder.Service.Client.Model
+{
+    public class ProductDetailDTO
+    {
+        /// <summary>
+        /// 商品信息
+        /// </summary>
+        public ProductAllInfoDTO Product { get; set; }
+
+        /// <summary>
+        /// 安装服务list
+        /// </summary>
+        public List<ProductInstallserviceDTO> InstallationServices { get; set; }
+
+        /// <summary>
+        /// 商品属性 List
+        /// </summary>
+        public List<ProductAttributevalueDTO> Attributevalues { get; set; }
+    }
+}
