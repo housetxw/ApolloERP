@@ -164,7 +164,7 @@ namespace Ae.Order.Service.Dal.Repository.Order
                 return result;
             }
 
-            var sql = $@"SELECT DISTINCT
+            var sql = $@"SELECT DISTINCT  a.id ,
 	                        a.order_no OrderNo,
 	                        a.order_status OrderStatus,
 	                        a.channel Channel,
