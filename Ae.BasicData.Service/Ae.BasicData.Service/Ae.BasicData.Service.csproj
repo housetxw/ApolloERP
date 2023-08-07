@@ -13,7 +13,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn>1701;1702</NoWarn>
-    <DocumentationFile>bin\Debug\netcoreapp2.1\Ae.BasicData.Service.WebApi.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netcoreapp2.1\Ae.BasicData.Service.WebApi.xml</DocumentationFile>
     <OutputPath></OutputPath>
   </PropertyGroup>
 

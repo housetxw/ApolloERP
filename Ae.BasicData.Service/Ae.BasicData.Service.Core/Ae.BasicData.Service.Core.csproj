@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.1\Ae.BasicData.Service.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp2.1\Ae.BasicData.Service.Core.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
