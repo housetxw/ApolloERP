@@ -144,26 +144,26 @@ namespace Ae.C.MiniApp.Api.Controllers
         {
             var host = HttpContext.Request.Host.Value;
             _logger.Info("域名 GetWebSiteInfo：" + host);
-            string beiAnHao = "皖ICP备19025011号-1";
+            string beiAnHao = "沪ICP备19000011号-1";
             //if (host.Contains("ApolloErp.cn"))
             //{
-            //    beiAnHao = "皖ICP备19025011号";
+            //    beiAnHao = "沪ICP备19000011号";
             //}
             //else if (host.Contains("ApolloErp.work"))
             //{
-            //    beiAnHao = "皖ICP备19025011号-3";
+            //    beiAnHao = "沪ICP备19000011号-3";
             //}
             //else if (host.Contains("ApolloErp.com.cn"))
             //{
-            //    beiAnHao = "皖ICP备19025011号-4";
+            //    beiAnHao = "沪ICP备19000011号-4";
             //}
             //else if (host.Contains("ApolloErp.net.cn"))
             //{
-            //    beiAnHao = "皖ICP备19025011号-5";
+            //    beiAnHao = "沪ICP备19000011号-5";
             //}
             //else if (host.Contains("ApolloErp.net"))
             //{
-            //    beiAnHao = "皖ICP备19025011号-2";
+            //    beiAnHao = "沪ICP备19000011号-2";
             //}
             var result = new GetWebSiteInfoResponse()
             {

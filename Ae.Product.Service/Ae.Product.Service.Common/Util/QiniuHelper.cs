@@ -6,20 +6,28 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace Ae.Product.Service.Common.Util
 {
     public  class QiniuHelper
     {
-        private const string AccessKey = "Nv5pENmqw4cchiI7yKUgP5vcsCAgzqGqoeuZtKLl";//管理文件 认证
-        private const string SecretKey = "xWiW-CKZpC30gxRBlc9wNbisz7lT1oRIF_lZKf2F";//管理文件 认证
-        private const string Domain = "https://m.ApolloErp.cn";//文件管理 外链默认域名
-        private const string Bucket = "ApolloErp";//空间名，可以是公开或者私有的
-        private const string Directory = "productImage/";//目录名称 默认可以空，存储到 /目录下
+        private readonly IConfiguration _configuration;
+        private string AccessKey = "";//管理文件 认证
+        private string SecretKey = "";//管理文件 认证
+        private string Domain = "https://m.aerp.com.cn";//文件管理 外链默认域名
+        private string Bucket = "ApolloErp";//空间名，可以是公开或者私有的
+        private string Directory = "productImage/";//目录名称 默认可以空，存储到 /目录下
 
 
-        public  QiniuHelper()
+        public  QiniuHelper(IConfiguration configuration)
         {
+            this._configuration = configuration;
+            AccessKey = _configuration["QiNiu:AccessKey"];
+            SecretKey = _configuration["QiNiu:SecretKey"];
+            Domain = _configuration["QiNiu:Domain"];
+            Bucket = _configuration["QiNiu:Bucket"];
+            Directory = _configuration["QiNiu:Directory"];
             // AK = ACCESS_KEY
             // USE_HTTPS = (true|false) 是否使用HTTPS
             // 使用前请确保AK和BUCKET正确，否则此函数会抛出异常(比如code612/631等错误)

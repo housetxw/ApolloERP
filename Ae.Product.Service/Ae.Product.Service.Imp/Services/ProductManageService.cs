@@ -1810,7 +1810,7 @@ namespace Ae.Product.Service.Imp.Services
             //更新的字段信息
             var filds = new List<string>()
                 {"Image1", "Image2", "Image3", "Image4", "Image5", "UpdateBy", "UpdateTime", "Remark"};
-            var qiniuHelper = new QiniuHelper();
+            var qiniuHelper = new QiniuHelper(_configuration);
             foreach (FctProductDO item in fctProductDtos)
             {
                 var filePath = mainDirectory + "//" + item.PartCode.Replace('/', '-');

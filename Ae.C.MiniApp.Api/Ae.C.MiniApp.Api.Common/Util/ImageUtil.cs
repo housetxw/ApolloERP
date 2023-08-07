@@ -35,7 +35,7 @@ namespace Ae.C.MiniApp.Api.Common.Util
 
                 return string.Empty;
             }
-            var imageDomain = "https://m.ApolloErp.cn";
+            var imageDomain = "https://m.aerp.com.cn";
             //var imageUrl = url.TrimStart('/');
             var imageUrl = url.Trim();
             int len = imageUrl.IndexOf("://");
