@@ -303,7 +303,7 @@ namespace Ae.B.Product.Api.Imp.Services
             request.AddQueryParameters("SignName", "总部");
             if (auditStatus == 1)
             {
-                request.AddQueryParameters("TemplateCode", "SMS_185247340");
+                request.AddQueryParameters("TemplateCode", "SMS_185");
                 request.AddQueryParameters("TemplateParam", "{\"project_name\":\"" + project_name + "\"}");
             }
             else
@@ -311,7 +311,7 @@ namespace Ae.B.Product.Api.Imp.Services
                 var reason = auditOpinion;
                 var shop_controller = shopInfo.Head;
                 var shop_controller_phone = shopInfo.HeadPhone;
-                request.AddQueryParameters("TemplateCode", "SMS_185212559"); 
+                request.AddQueryParameters("TemplateCode", "SMS_185"); 
                 request.AddQueryParameters("TemplateParam", "{\"project_name\":\""+ project_name + "\",\"reason\":\""+ reason + "\",\"shop_controller\":\""+ shop_controller + "\",\"phone\":\""+ shop_controller_phone + "\"}");
             }
             try

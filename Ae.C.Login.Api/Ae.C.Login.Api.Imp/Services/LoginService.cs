@@ -455,7 +455,7 @@ namespace Ae.C.Login.Api.Imp.Services
             request.Action = "SendSms";
             request.AddQueryParameters("PhoneNumbers", phone);
             request.AddQueryParameters("SignName", "总部");
-            request.AddQueryParameters("TemplateCode", "SMS_175710093");
+            request.AddQueryParameters("TemplateCode", "SMS_175");
             request.AddQueryParameters("TemplateParam", "{\"code\":\"" + code + "\"}");
             try
             {
