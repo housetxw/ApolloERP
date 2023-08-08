@@ -232,7 +232,7 @@ namespace Ae.C.MiniApp.Api.Imp.Services
         private void SendSms(string phone, string code)
         {
             IClientProfile profile =
-                DefaultProfile.GetProfile("", "LTAI4FoMX4fsLkPARfT8YGjZ", "dw3dRafVJWon0loBXciaq9c4rC6UJs");
+                DefaultProfile.GetProfile("", "", "");
             DefaultAcsClient client = new DefaultAcsClient(profile);
             CommonRequest request = new CommonRequest();
             request.Method = MethodType.POST;
@@ -241,7 +241,7 @@ namespace Ae.C.MiniApp.Api.Imp.Services
             request.Action = "SendSms";
             request.AddQueryParameters("PhoneNumbers", phone);
             request.AddQueryParameters("SignName", "总部");
-            request.AddQueryParameters("TemplateCode", "SMS_175710089");
+            request.AddQueryParameters("TemplateCode", "SMS_175");
             request.AddQueryParameters("TemplateParam", "{\"code\":\"" + code + "\"}");
             try
             {
