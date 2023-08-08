@@ -446,7 +446,7 @@ namespace Ae.C.Login.Api.Imp.Services
 
         public void SendSms(string phone, string code)
         {
-            IClientProfile profile = DefaultProfile.GetProfile("", "LTAI4FoMX4fsLkPARfT8YGjZ", "dw3dRafVJWon0loBXciaq9c4rC6UJs");
+            IClientProfile profile = DefaultProfile.GetProfile("", "", "");
             DefaultAcsClient client = new DefaultAcsClient(profile);
             CommonRequest request = new CommonRequest();
             request.Method = MethodType.POST;
@@ -454,8 +454,8 @@ namespace Ae.C.Login.Api.Imp.Services
             request.Version = "2017-05-25";
             request.Action = "SendSms";
             request.AddQueryParameters("PhoneNumbers", phone);
-            request.AddQueryParameters("SignName", "车邦");
-            request.AddQueryParameters("TemplateCode", "SMS_175710093");
+            request.AddQueryParameters("SignName", "总部");
+            request.AddQueryParameters("TemplateCode", "SMS_175");
             request.AddQueryParameters("TemplateParam", "{\"code\":\"" + code + "\"}");
             try
             {
