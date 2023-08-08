@@ -60,10 +60,7 @@
 ![输入图片说明](shop.web.png)
   
 ## 客户端小程序界面预览
-![输入图片说明](http://image.aerp.com.cn/miniApp/demo/miniapp1.jpg)
-![输入图片说明](http://image.aerp.com.cn/miniApp/demo/miniapp2.jpg)
-![输入图片说明](http://image.aerp.com.cn/miniApp/demo/miniapp3.jpg)
-![输入图片说明](http://image.aerp.com.cn/miniApp/demo/miniapp4.jpg)
+![输入图片说明](Images/miniapp1.jpg)
 
 ## 捐助
 如果您觉得我们的开源软件对你有所帮助，请扫下方二维码打赏我们一杯咖啡。
