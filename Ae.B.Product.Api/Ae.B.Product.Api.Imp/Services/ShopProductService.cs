@@ -292,7 +292,7 @@ namespace Ae.B.Product.Api.Imp.Services
         {
             var project_name = projectName;
             var phoneNumber = shopInfo.OwnerPhone;
-            IClientProfile profile = DefaultProfile.GetProfile("", "LTAI4FoMX4fsLkPARfT8YGjZ", "dw3dRafVJWon0loBXciaq9c4rC6UJs");
+            IClientProfile profile = DefaultProfile.GetProfile("", "", "");
             DefaultAcsClient client = new DefaultAcsClient(profile);
             CommonRequest request = new CommonRequest();
             request.Method = MethodType.POST;
