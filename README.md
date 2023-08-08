@@ -52,12 +52,18 @@
   Ae.Shop.Web - 门店\公司管理web端    
   Ae.xxx.Api - api相关接口  
   Ae.xxx.Service - 业务处理微服务  
+  MiniAppC - 客户端小程序    
   
 
-## 界面预览
+## 管理端界面预览
 ![输入图片说明](boss.web.png)
 ![输入图片说明](shop.web.png)
   
+## 客户端小程序界面预览
+![输入图片说明](http://image.aerp.com.cn/miniApp/demo/miniapp1.jpg)
+![输入图片说明](http://image.aerp.com.cn/miniApp/demo/miniapp2.jpg)
+![输入图片说明](http://image.aerp.com.cn/miniApp/demo/miniapp3.jpg)
+![输入图片说明](http://image.aerp.com.cn/miniApp/demo/miniapp4.jpg)
 
 ## 捐助
 如果您觉得我们的开源软件对你有所帮助，请扫下方二维码打赏我们一杯咖啡。
