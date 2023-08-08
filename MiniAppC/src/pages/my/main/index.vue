@@ -423,8 +423,8 @@ export default {
           break
         case 7: // 在线客服
             wx.openCustomerServiceChat({
-              extInfo: {url: 'https://work.weixin.qq.com/kfid/kfccd9327fbcde02b4d'},
-              corpId: 'ww53f79834a2874e28',
+              extInfo: {url: 'https://work.weixin.qq.com/kfid/'},
+              corpId: '',
               success(res) {}
             } )
           break

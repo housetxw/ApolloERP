@@ -513,8 +513,8 @@ export default {
     // 客服事件
     serviceClick() {
             wx.openCustomerServiceChat({
-              extInfo: {url: 'https://work.weixin.qq.com/kfid/kfccd9327fbcde02b4d'},
-              corpId: 'ww53f79834a2874e28',
+              extInfo: {url: 'https://work.weixin.qq.com/kfid/'},
+              corpId: '',
               success(res) {}
             } )
 

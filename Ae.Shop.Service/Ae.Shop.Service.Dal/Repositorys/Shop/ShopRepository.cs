@@ -366,9 +366,9 @@ AND check_status = 2 AND online = 1 ");
             //经纬度计算距离
             if (request.Longitude > 0 && request.Latitude > 0)
             {
-                condition.Append(@" ,CAST(SQRT(
+                sql = sql + @" ,CAST(SQRT(
     POW(111.2 * (s.latitude - @Latitude), 2) +
-    POW(111.2 * (@Longitude - s.longitude) * COS(s.latitude / 57.3), 2)) AS DECIMAL(20,2)) AS distance ");
+    POW(111.2 * (@Longitude - s.longitude) * COS(s.latitude / 57.3), 2)) AS DECIMAL(20,2)) AS distance ";
             }
             //20210127 过滤掉平台先生
             condition.Append(@" FROM  ( SELECT * FROM shop WHERE is_deleted = 0 AND status != 1 AND check_status = 2 AND online = 1 and nature<>1 and type<>32 ");
