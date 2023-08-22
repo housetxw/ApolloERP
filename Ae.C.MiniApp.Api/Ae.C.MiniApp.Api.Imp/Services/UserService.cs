@@ -241,7 +241,7 @@ namespace Ae.C.MiniApp.Api.Imp.Services
             request.Action = "SendSms";
             request.AddQueryParameters("PhoneNumbers", phone);
             request.AddQueryParameters("SignName", "总部");
-            request.AddQueryParameters("TemplateCode", "SMS_17541");
+            request.AddQueryParameters("TemplateCode", "SMS_175");
             request.AddQueryParameters("TemplateParam", "{\"code\":\"" + code + "\"}");
             try
             {
