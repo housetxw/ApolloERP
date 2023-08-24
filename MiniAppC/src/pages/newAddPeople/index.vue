@@ -9,7 +9,7 @@
         style="position:relative;"
       />
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/ordercheck_address_icon.png"
+        src="https://m.aerp.com.cn/mini-app-main/ordercheck_address_icon.png"
         alt
         class="img_card"
         @click="toPeople"
@@ -48,7 +48,7 @@
     <div class="box1">
       <p class="p1">设置默认地址</p>
       <img
-        :src="switchdis?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'"
+        :src="switchdis?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'"
         @tap="imgClick"
         class="img1"
       />
@@ -85,9 +85,9 @@ export default {
       addressvalue: '', // 详细地址
       detailsvalue: '', // 详细的街道信息/门牌
       rightIcon:
-        'https://m.aerp.com.cn/mini-RG-main/ordercheck_address_icon.png',
+        'https://m.aerp.com.cn/mini-app-main/ordercheck_address_icon.png',
       rightIcon1:
-        'https://m.aerp.com.cn/mini-RG-main/ordercheck_location_icon.png',
+        'https://m.aerp.com.cn/mini-app-main/ordercheck_location_icon.png',
       mealArr: ['公司', '家', '学校'],
       switchdis: true,
       mealActiveIndex: -1,

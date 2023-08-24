@@ -9,7 +9,7 @@
       <text class="txt1" v-if="!carArrFirst.brandUrl" style="color:red">需点此选车后再为您推荐搜索产品</text>
       <img :src="carArrFirst.brandUrl" alt class="img" />
       <text class="txt1">{{carArrFirst.vehicle}}{{carArrFirst.salesName}}</text>
-      <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt style="width:24rpx;height:24rpx" />
+      <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt style="width:24rpx;height:24rpx" />
     </p>
     <!-- 下拉菜单 -->
     <div class="top_mask">

@@ -16,20 +16,20 @@
             <cover-image
               class="back-image1"
               @tap="backC"
-              src="https://m.aerp.com.cn/mini-RG-main/maintenance_back_icon.png"
+              src="https://m.aerp.com.cn/mini-app-main/maintenance_back_icon.png"
             ></cover-image>
             <cover-view class="border"></cover-view>
             <cover-image
               class="back-image2"
               @tap="indexClick"
-              src="https://m.aerp.com.cn/mini-RG-main/maintenance_home_icon.png"
+              src="https://m.aerp.com.cn/mini-app-main/maintenance_home_icon.png"
             ></cover-image>
           </cover-view>
           <cover-view class="searchBarR" @tap="titleClcik">
             <cover-view class="searchBarRWord">{{title}}</cover-view>
             <cover-image
               class="back-image3"
-              src="https://m.aerp.com.cn/mini-RG-main/order_down_icon.png"
+              src="https://m.aerp.com.cn/mini-app-main/order_down_icon.png"
             ></cover-image>
           </cover-view>
         </cover-view>

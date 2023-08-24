@@ -1,7 +1,7 @@
 <template>
   <div class="demo_page">
     <img
-      src="https://m.aerp.com.cn/mini-RG-main/getMoneyTop.png"
+      src="https://m.aerp.com.cn/mini-app-main/getMoneyTop.png"
       alt
       style="width:360rpx;height:100rpx;margin-bottom:80rpx;margin-top:120rpx"
     />

@@ -12,7 +12,7 @@
             </p>
           </div>
         </div>
-        <img src="https://m.aerp.com.cn/mini-RG-main/mine_whtie_jump.png" alt style="width:24rpx;height:24rpx;" />
+        <img src="https://m.aerp.com.cn/mini-app-main/mine_whtie_jump.png" alt style="width:24rpx;height:24rpx;" />
       </div>
       <div class="top_infor">
         <div class="coupon" @tap="couponClick">
@@ -37,7 +37,7 @@
         <text class="my_order1">我的订单</text>
         <p class="my_order2">
           全部订单
-          <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt style="width:24rpx;height:24rpx;margin-left:15rpx;" />
+          <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt style="width:24rpx;height:24rpx;margin-left:15rpx;" />
         </p>
       </div>
       <!-- <div class="order_self">
@@ -95,7 +95,7 @@
         </div>
       </div>
       <div class="share_img">
-        <img src="https://m.aerp.com.cn/mini-RG-main/mine_ad_picture.png" alt />
+        <img src="https://m.aerp.com.cn/mini-app-main/mine_ad_picture.png" alt />
       </div>
     </div>
   </div>
@@ -159,7 +159,7 @@ export default {
       ],
       usedarr: [
         {
-          src: `http://m.aerp.com.cn/mini-RG-main/myService.png`,
+          src: `http://m.aerp.com.cn/mini-app-main/myService.png`,
           txt: '服务记录'
         },
         // {
@@ -171,7 +171,7 @@ export default {
           txt: '爱车档案'
         },
         // {
-        //   src: 'https://m.aerp.com.cn/mini-RG-main/mine_appointment1.png',
+        //   src: 'https://m.aerp.com.cn/mini-app-main/mine_appointment1.png',
         //   txt: '我的预约'
         // },
         {

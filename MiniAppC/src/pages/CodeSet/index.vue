@@ -14,14 +14,14 @@
         >ID:{{item.code}}</div>
         <!-- 核销码状图图 -->
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/Label used.png"
+          src="https://m.aerp.com.cn/mini-app-main/Label used.png"
           alt
           class="hxmStatus"
           v-if="item.status == 1"
         />
         <!-- 已使用 -->
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/Expired.png"
+          src="https://m.aerp.com.cn/mini-app-main/Expired.png"
           alt
           class="hxmStatus"
           v-if="item.status == 2"
@@ -64,7 +64,7 @@ export default {
       // status:0,//核销码使用状态
       // ewmid:'',//二维码id
       userdata: '', //使用时间
-      // hxmUrl:'https://m.aerp.com.cn/mini-RG-main/Label used.png',//核销码图片路径
+      // hxmUrl:'https://m.aerp.com.cn/mini-app-main/Label used.png',//核销码图片路径
       userdataA: '', //范围
       userdataB: '', //门店
       userdataC: '', //规则

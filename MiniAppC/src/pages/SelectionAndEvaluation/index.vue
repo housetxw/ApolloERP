@@ -4,12 +4,12 @@
     <div class="carInfo">
       <div class="car">
         <p class="p1">{{carName}}</p>
-        <!-- <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt=""> -->
+        <!-- <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt=""> -->
       </div>
       <div class="line"></div>
       <div class="stor">
         <p class="p2">{{shopName}}</p>
-        <!-- <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt=""> -->
+        <!-- <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt=""> -->
       </div>
     </div>
     <!-- 技师信息 -->

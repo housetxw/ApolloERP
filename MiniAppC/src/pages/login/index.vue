@@ -1,7 +1,7 @@
 <template>
   <div class="demo_page">
     <div class="logo_img">
-      <img src="https://m.aerp.com.cn/mini-RG-main/login_logo_img.png" alt />
+      <img src="https://m.aerp.com.cn/mini-app-main/login_logo_img.png" alt />
     </div>
     <div class="button">
       <van-cell-group>
@@ -63,7 +63,7 @@ export default {
       this.value1 = event.mp.detail
       if (this.value1) {
         this.leftIcon =
-          'https://m.aerp.com.cn/mini-RG-main/login_iphone_click.png'
+          'https://m.aerp.com.cn/mini-app-main/login_iphone_click.png'
       }else{
         this.leftIcon = `${this.globalData.imgPubUrl}login_iphone.png`
       }
@@ -78,7 +78,7 @@ export default {
       this.value2 = event.mp.detail
       if (this.value2) {
         this.rightIcon =
-          'https://m.aerp.com.cn/mini-RG-main/login_yzm_click.png'
+          'https://m.aerp.com.cn/mini-app-main/login_yzm_click.png'
       }else{
         this.rightIcon = `${this.globalData.imgPubUrl}login_yzm.png`
       }
@@ -92,7 +92,7 @@ export default {
     inputCode() {
       //  if (this.value1 !== '') {
       //   this.leftIcon =
-      //     'https://m.aerp.com.cn/mini-RG-main/login_iphone_click.png'
+      //     'https://m.aerp.com.cn/mini-app-main/login_iphone_click.png'
       // }
       //  if (this.value1 !== '' && this.value2 !== '') {
       //   this.signInColor = '#FF6324'
@@ -102,7 +102,7 @@ export default {
     inputdaunxin() {
       // if (this.value2 !== '') {
       //   this.rightIcon =
-      //     'https://m.aerp.com.cn/mini-RG-main/login_yzm_click.png'
+      //     'https://m.aerp.com.cn/mini-app-main/login_yzm_click.png'
       // }
       // if (this.value1 !== '' && this.value2 !== '') {
       //   this.signInColor = '#FF6324'

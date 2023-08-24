@@ -1,10 +1,10 @@
 <template>
   <div class="page">
     <div class="back" @click="back">
-      <image src="https://m.aerp.com.cn/mini-RG-main/white_back.png" style="width:16rpx;height:29rpx;"></image>
+      <image src="https://m.aerp.com.cn/mini-app-main/white_back.png" style="width:16rpx;height:29rpx;"></image>
     </div>
-    <image src="https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_01.png" mode="widthFix" style="width:100%;position:relative;margin-top: -1rpx;">  </image>
-    <image src="https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_02.png" mode="widthFix" style="width:100%;position:relative;margin-top: -1rpx;">   
+    <image src="https://m.aerp.com.cn/mini-app-main/new_gift_autumn_01.png" mode="widthFix" style="width:100%;position:relative;margin-top: -1rpx;">  </image>
+    <image src="https://m.aerp.com.cn/mini-app-main/new_gift_autumn_02.png" mode="widthFix" style="width:100%;position:relative;margin-top: -1rpx;">   
       <div class="content">
         <div class="coupon">
           <div class="couponItem" v-for="(item, index) in couponList" :key="index">
@@ -15,12 +15,12 @@
           </div>
         </div>
         <div class="button" @click="exchangeCouponByActId">
-                <image src="https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_button.png" style="width:555rpx;height:145rpx;"></image>
+                <image src="https://m.aerp.com.cn/mini-app-main/new_gift_autumn_button.png" style="width:555rpx;height:145rpx;"></image>
         </div>
       </div>
     </image>
-     <image src="https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_03.png" mode="widthFix" style="width:100%;position:relative;margin-top: -1rpx;"></image>
-     <image src="https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_04.png" mode="widthFix" style="width:100%;position:relative;margin-top: -1rpx;"></image>
+     <image src="https://m.aerp.com.cn/mini-app-main/new_gift_autumn_03.png" mode="widthFix" style="width:100%;position:relative;margin-top: -1rpx;"></image>
+     <image src="https://m.aerp.com.cn/mini-app-main/new_gift_autumn_04.png" mode="widthFix" style="width:100%;position:relative;margin-top: -1rpx;"></image>
   </div>
 
 </template>
@@ -58,7 +58,7 @@ export default {
       path: `/pages/newGift/main?shopId=0&activeId=${that.CouponActivityId }&isFromShare=true&isFromSearch=''&activedId=1&shareUserId=${
         that.globalData.userInfo?that.globalData.userInfo.userId:''
       } `,
-      imageUrl:'https://m.aerp.com.cn/mini-RG-main/new_gift_summer_01.png',
+      imageUrl:'https://m.aerp.com.cn/mini-app-main/new_gift_summer_01.png',
       success(res) {
         console.log(`res分享按钮`, res)
         // 转发成功
@@ -165,7 +165,7 @@ page {
         margin-left: 30rpx;
         margin-right:30rpx;
         flex-shrink: 0;
-        background: url(https://m.aerp.com.cn/mini-RG-main/new_gift_item_bg_autumn.png)
+        background: url(https://m.aerp.com.cn/mini-app-main/new_gift_item_bg_autumn.png)
           no-repeat;
         background-size: contain;
         display: flex;

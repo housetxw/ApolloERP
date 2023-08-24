@@ -13,7 +13,7 @@
         </div>
       </div>
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_close_icon.png"
+        src="https://m.aerp.com.cn/mini-app-main/goodsdetail_close_icon.png"
         alt
         class="ximg"
         @tap="disPopupClick"
@@ -58,7 +58,7 @@ export default {
     .top_title {
       width: 100%;
       height: 90rpx;
-      background: url(https://m.aerp.com.cn/mini-RG-main/goodsdetail_title_bg.png)
+      background: url(https://m.aerp.com.cn/mini-app-main/goodsdetail_title_bg.png)
         no-repeat;
       background-size: cover;
       border-radius: 14rpx 14rpx 0rpx 1rpx;

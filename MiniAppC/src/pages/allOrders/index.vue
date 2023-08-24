@@ -472,7 +472,7 @@ export default {
             item.products.forEach((item1, index1) => {
               if (item1.imageUrl == '') {
                 item1.imageUrl =
-                  'https://m.aerp.com.cn/mini-RG-main/produceNo.png'
+                  'https://m.aerp.com.cn/mini-app-main/produceNo.png'
               }
             })
           })

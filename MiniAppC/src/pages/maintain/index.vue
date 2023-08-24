@@ -8,7 +8,7 @@
           <p class="p2">{{carArrFirst.carNumber}}</p>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;">
-          <img src="https://m.aerp.com.cn/mini-RG-main/changeCarIcon.png" alt style="width:60rpx;height:60rpx;margin-top:20rpx;" />
+          <img src="https://m.aerp.com.cn/mini-app-main/changeCarIcon.png" alt style="width:60rpx;height:60rpx;margin-top:20rpx;" />
           <p class="p2">换车</p>
         </div>
       </div>
@@ -19,7 +19,7 @@
           <p class="p1_p1">{{storeArr.simpleName}}</p>
           <p class="p2_p2">{{storeArr.address}}</p>
         </div>
-        <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt style="width:24rpx;height:24rpx" />
+        <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt style="width:24rpx;height:24rpx" />
       </div>
       <div class="store_add" @tap="changeStore" v-else>请选择服务门店</div>
     </div>
@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="byservice_right">
-            <img :src="itema.isDefaultExpand?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'" alt mode="aspectFit" />
+            <img :src="itema.isDefaultExpand?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'" alt mode="aspectFit" />
           </div>
         </div>
         <!-- 爱车推荐  -->
@@ -75,7 +75,7 @@
                   </p>
                 </div>
                 <div class="byservice_right" @tap="selectCkick(itemb, indexa,boxarr ,indexb)" style="position:absolute;right:-10rpx;top: 15rpx">
-                  <img :src="itemb.isDefaultSelect?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'" alt mode="aspectFit" />
+                  <img :src="itemb.isDefaultSelect?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'" alt mode="aspectFit" />
                 </div>
               </div>
               <!-- 套餐 -->
@@ -107,20 +107,20 @@
               <div class="p_three" v-if="itemb.childProducts.length>0">
                 <p @tap="openClick(itemb,indexb)">
                   <text>{{itemb.isPackageProduct?'收起全部商品':'展开全部商品'}}</text>
-                  <img :src="itemb.isPackageProduct?'https://m.aerp.com.cn/mini-RG-main/maintenance_up_icon.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_down_icon.png'" alt mode="aspectFit" />
+                  <img :src="itemb.isPackageProduct?'https://m.aerp.com.cn/mini-app-main/maintenance_up_icon.png':'https://m.aerp.com.cn/mini-app-main/maintenance_down_icon.png'" alt mode="aspectFit" />
                 </p>
                 <!-- 加入购物车图片  与  关注商品图片  -->
                 <!-- <div v-if="itemb.isPackageProduct">
                 <img
                   style="margin-left:80rpx;width:44rpx;height:44rpx;"
-                  src="https://m.aerp.com.cn/mini-RG-main/maintenance_collection_click.png"
+                  src="https://m.aerp.com.cn/mini-app-main/maintenance_collection_click.png"
                   alt
                 />
               </div>
               <div v-if="itemb.isPackageProduct">
                 <img
                   style="margin-left:30rpx;width:44rpx;height:44rpx;"
-                  src="https://m.aerp.com.cn/mini-RG-main/maintenance_cart_icon.png"
+                  src="https://m.aerp.com.cn/mini-app-main/maintenance_cart_icon.png"
                   alt
                 />
                 </div>-->
@@ -136,15 +136,15 @@
         </div>
         <!-- 暂无合适商品推荐 -->
         <div v-if="itema.isDefaultExpand && itema.items.length == 0" class="else_img_one">
-          <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_null_img.png" alt />
+          <img src="https://m.aerp.com.cn/mini-app-main/maintenance_null_img.png" alt />
           <text>暂无合适商品推荐</text>
         </div>
       </div>
     </div>
     <!-- 底部按钮 -->
     <div class="bottom" style="z-index:30">
-      <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_tel_icon.png" alt class="tel" @tap="telClick" />
-      <!-- <button open-type="contact" session-from="weapp" show-message-card send-message-path="/pages/detailsPages/main" send-message-title="【正品授权】美孚/Mobil 美孚1号全合成机油 5W-30SN级（4L装）" send-message-img="https://m.aerp.com.cn/mini-RG-main/goodsdetail_banner_pic.png">客服</button> -->
+      <img src="https://m.aerp.com.cn/mini-app-main/maintenance_tel_icon.png" alt class="tel" @tap="telClick" />
+      <!-- <button open-type="contact" session-from="weapp" show-message-card send-message-path="/pages/detailsPages/main" send-message-title="【正品授权】美孚/Mobil 美孚1号全合成机油 5W-30SN级（4L装）" send-message-img="https://m.aerp.com.cn/mini-app-main/goodsdetail_banner_pic.png">客服</button> -->
       <p style="min-width:220rpx;">
         合计：
         <span class="orange1">￥{{money}}</span>
@@ -152,8 +152,8 @@
 
       <div class="orange" @tap="downUp">
         明细
-        <img src="https://m.aerp.com.cn/mini-RG-main/downRed.png" alt class="down" v-if="downShow" />
-        <img src="https://m.aerp.com.cn/mini-RG-main/upRed.png" alt class="down" v-else />
+        <img src="https://m.aerp.com.cn/mini-app-main/downRed.png" alt class="down" v-if="downShow" />
+        <img src="https://m.aerp.com.cn/mini-app-main/upRed.png" alt class="down" v-else />
       </div>
 
       <text class="btn" @tap="sureJiesuan">确定</text>

@@ -82,7 +82,7 @@ page {
 
   .secTop {
     height: 170rpx;
-    background: url(https://m.aerp.com.cn/mini-RG-main/seckTop.png) no-repeat;
+    background: url(https://m.aerp.com.cn/mini-app-main/seckTop.png) no-repeat;
     background-size: contain;
     width: 100%;
     .time {

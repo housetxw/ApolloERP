@@ -229,7 +229,7 @@ export default {
   text-align: center;
   font-weight: bold;
   font-size: 52rpx;
-  background-image: url('https://m.aerp.com.cn/mini-RG-main/couponBg.png');
+  background-image: url('https://m.aerp.com.cn/mini-app-main/couponBg.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: #ff6324;

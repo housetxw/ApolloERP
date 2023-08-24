@@ -4,12 +4,12 @@
       <div class="box_Popup">
         <div class="top_title">{{imgTitle}}位置示意图</div>
         <div class="all_popup">
-          <img src="https://m.aerp.com.cn/mini-RG-main/DriversLicense.png" alt class="img_card_img" />
+          <img src="https://m.aerp.com.cn/mini-app-main/DriversLicense.png" alt class="img_card_img" />
           <!-- <p class="all_zhushi">这里可以是文字说明的地方随便多少字吧</p> -->
         </div>
       </div>
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_close_icon.png"
+        src="https://m.aerp.com.cn/mini-app-main/goodsdetail_close_icon.png"
         alt
         class="ximg"
         @tap="disPopupClick"
@@ -23,7 +23,7 @@
       <p class="p2">
         {{carInfo.vehicle}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -46,7 +46,7 @@
       <p class="p2">
         <input placeholder="请输入车架号" class="top_input" v-model="carInfo.vinCode" />
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/mine_help_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/mine_help_icon.png"
           alt
           class="img_img"
           @tap="showimg('车架号')"
@@ -58,7 +58,7 @@
       <p class="p2">
         <input placeholder="请输入发动机号" class="top_input" v-model="carInfo.engineNo" />
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/mine_help_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/mine_help_icon.png"
           alt
           class="img_img"
           @tap="showimg('发动机号')"
@@ -70,7 +70,7 @@
       <p class="p2">
         {{insuranceComany}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -81,7 +81,7 @@
       <p class="p2" @tap="starttimeSelect">
         {{currentDate1}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -101,7 +101,7 @@
       <p class="p2 p3">
         {{endDate1}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -346,7 +346,7 @@ export default {
     .top_title {
       width: 100%;
       height: 90rpx;
-      background: url(https://m.aerp.com.cn/mini-RG-main/goodsdetail_title_bg.png)
+      background: url(https://m.aerp.com.cn/mini-app-main/goodsdetail_title_bg.png)
         no-repeat;
       background-size: cover;
       border-radius: 14rpx 14rpx 0rpx 1rpx;

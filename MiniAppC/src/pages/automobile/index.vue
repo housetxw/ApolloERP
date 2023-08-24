@@ -23,9 +23,9 @@
       </van-grid>
     </div>
     <div class="activeTitle">
-      <img src="https://m.aerp.com.cn/mini-RG-main/title_left_icon.png" alt="" class="activeImg">
+      <img src="https://m.aerp.com.cn/mini-app-main/title_left_icon.png" alt="" class="activeImg">
       <span class="activeWord">超值活动</span>
-      <img src="https://m.aerp.com.cn/mini-RG-main/title_right_icon.png" alt="" class="activeImg">
+      <img src="https://m.aerp.com.cn/mini-app-main/title_right_icon.png" alt="" class="activeImg">
     </div>
     <swiper v-if="imgUrls.length > 0" 
         :indicator-dots='true'
@@ -50,42 +50,42 @@ export default {
       ],
       serveList: [
         {
-          serveImg: 'https://m.aerp.com.cn/mini-RG-main/car_icon_one.png',
+          serveImg: 'https://m.aerp.com.cn/mini-app-main/car_icon_one.png',
           serveTitle: '轮胎服务',
           serveSubTitle: '买轮胎送保险'
         },
         {
-          serveImg: 'https://m.aerp.com.cn/mini-RG-main/car_icon_two.png',
+          serveImg: 'https://m.aerp.com.cn/mini-app-main/car_icon_two.png',
           serveTitle: '套餐卡',
           serveSubTitle: '次卡 月卡 季卡'
         },
         {
-          serveImg: 'https://m.aerp.com.cn/mini-RG-main/car_icon_three.png',
+          serveImg: 'https://m.aerp.com.cn/mini-app-main/car_icon_three.png',
           serveTitle: '汽车维修',
           serveSubTitle: '二级标题说明'
         },
         {
-          serveImg: 'https://m.aerp.com.cn/mini-RG-main/car_icon_four.png',
+          serveImg: 'https://m.aerp.com.cn/mini-app-main/car_icon_four.png',
           serveTitle: '汽车用品',
           serveSubTitle: '免费安装'
         },
         {
-          serveImg: 'https://m.aerp.com.cn/mini-RG-main/car_icon_five.png',
+          serveImg: 'https://m.aerp.com.cn/mini-app-main/car_icon_five.png',
           serveTitle: '汽车保险',
           serveSubTitle: '智能核保 在线理赔'
         },
         {
-          serveImg: 'https://m.aerp.com.cn/mini-RG-main/newcar_icon.png',
+          serveImg: 'https://m.aerp.com.cn/mini-app-main/newcar_icon.png',
           serveTitle: '新能源车',
           serveSubTitle: '充电桩查询'
         },
         {
-          serveImg: 'https://m.aerp.com.cn/mini-RG-main/batteryservice_icon.png',
+          serveImg: 'https://m.aerp.com.cn/mini-app-main/batteryservice_icon.png',
           serveTitle: '电池服务',
           serveSubTitle: '电池查询'
         },
         {
-          serveImg: 'https://m.aerp.com.cn/mini-RG-main/detection_icon.png',
+          serveImg: 'https://m.aerp.com.cn/mini-app-main/detection_icon.png',
           serveTitle: '检测',
           serveSubTitle: '二级标题说明'
         }

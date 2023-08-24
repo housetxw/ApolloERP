@@ -1,15 +1,15 @@
 <template>
   <div class="demo_page">
-    <!-- <img src="https://m.aerp.com.cn/mini-RG-main/active.png" alt=""   class="image" v-if="show1">  -->
+    <!-- <img src="https://m.aerp.com.cn/mini-app-main/active.png" alt=""   class="image" v-if="show1">  -->
     <div class="img">
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/product2.png"
+        src="https://m.aerp.com.cn/mini-app-main/product2.png"
         alt
         style="width:680rpx;height:400rpx; display:block;"
         @tap="center('MP-RMP-SMP-10')"
       />
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/product1.png"
+        src="https://m.aerp.com.cn/mini-app-main/product1.png"
         alt
         style="width:680rpx;height:400rpx; padding-top:15rpx; display:block;"
         @tap="center('MP-RMP-SMP-12')"
@@ -40,7 +40,7 @@ export default {
   // flex-direction: column;
   // justify-content: flex-start;
   // align-items: center;
-  background-image: url('https://m.aerp.com.cn/mini-RG-main/active.png');
+  background-image: url('https://m.aerp.com.cn/mini-app-main/active.png');
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;

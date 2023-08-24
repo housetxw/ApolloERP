@@ -6,7 +6,7 @@
       <div class="shop_box">
         <!-- 标题 -->
         <div class="shop_top">
-          <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_banner_pic.png" alt class="img1" />
+          <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_banner_pic.png" alt class="img1" />
           <div class="shop_content">
             <p class="shop_content_p1">商品名称商品名称商品名称商品 名称，需要全部展示</p>
             <p class="shop_content_p2">
@@ -15,7 +15,7 @@
             </p>
           </div>
           <img
-            src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_close_black.png"
+            src="https://m.aerp.com.cn/mini-app-main/goodsdetail_close_black.png"
             alt
             @tap="disimgClick"
             class="img2"
@@ -45,7 +45,7 @@
             <div class="have_bottom">
               <p class="have_one">{{card.cartitle}}</p>
               <img
-                src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+                src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
                 alt
                 style="width:24rpx;height:24rpx;margin-left:15rpx;"
               />
@@ -70,7 +70,7 @@
             <div class="have_bottom">
               <p class="have_one">{{stor.address}}</p>
               <img
-                src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+                src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
                 alt
                 style="width:24rpx;height:24rpx;margin-left:15rpx;"
               />

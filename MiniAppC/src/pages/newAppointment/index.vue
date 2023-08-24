@@ -57,7 +57,7 @@
           </div>
           <div class="call" @tap="telClick">
             <img
-              src="https://m.aerp.com.cn/mini-RG-main/tel2.png"
+              src="https://m.aerp.com.cn/mini-app-main/tel2.png"
               alt
               style="width:50rpx;height:48rpx; margin-right:6rpx; "
             />

@@ -23,7 +23,7 @@
               <div class="top_one">
                 <div class="top_images">
                   <img
-                    src="https://m.aerp.com.cn/mini-RG-main/order_goods_img.png"
+                    src="https://m.aerp.com.cn/mini-app-main/order_goods_img.png"
                     alt
                     class="img1"
                   />
@@ -34,7 +34,7 @@
                     <p class="p3">{{item.text}}</p>
                     <div class="top_all">
                       <img
-                        src="https://m.aerp.com.cn/mini-RG-main/order_navigation_icon.png"
+                        src="https://m.aerp.com.cn/mini-app-main/order_navigation_icon.png"
                         alt
                         class="img2"
                       />

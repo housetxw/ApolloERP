@@ -3,16 +3,16 @@
     <div class="box" v-if="showHomeAndShop&&!isFromStore">
       <div style="width:100%;">
         <p class="p1" style="display:flex;align-items:center;">
-          <img src="https://m.aerp.com.cn/mini-RG-main/serviceTypeIcon.png" alt style="width:32rpx;height:32rpx;margin-right:12rpx;" mode="aspectFit" />
+          <img src="https://m.aerp.com.cn/mini-app-main/serviceTypeIcon.png" alt style="width:32rpx;height:32rpx;margin-right:12rpx;" mode="aspectFit" />
           服务方式
         </p>
         <div class="serviceType">
           <p class="serviceP" @click="serviceCheck1">
-            <img :src="serviceCheck==1?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'" alt class="roundSize" mode="aspectFit" />
+            <img :src="serviceCheck==1?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'" alt class="roundSize" mode="aspectFit" />
             <text class="user">上门服务</text>
           </p>
           <p class="serviceP" @click="serviceCheck2">
-            <img :src="serviceCheck==2?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'" alt class="roundSize" mode="aspectFit" />
+            <img :src="serviceCheck==2?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'" alt class="roundSize" mode="aspectFit" />
             <text class="user">到店服务</text>
           </p>
         </div>
@@ -23,13 +23,13 @@
     <div v-if="serviceCheck==2 && showHomeAndShop" style="margin-top:16rpx">
       <div class="top">
         <div class="customer">
-          <img src="https://m.aerp.com.cn/mini-RG-main/ordercheck_user_icon.png" alt class="img1" mode="aspectFit" />
+          <img src="https://m.aerp.com.cn/mini-app-main/ordercheck_user_icon.png" alt class="img1" mode="aspectFit" />
           <text class="user">{{receiverName}}</text>
         </div>
         <div class="customer">
-          <img src="https://m.aerp.com.cn/mini-RG-main/ordercheck_iphone_icon.png" alt class="img1" mode="aspectFit" />
+          <img src="https://m.aerp.com.cn/mini-app-main/ordercheck_iphone_icon.png" alt class="img1" mode="aspectFit" />
           <text class="user">{{receiverPhone}}</text>
-          <!-- <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt class="img" /> -->
+          <!-- <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt class="img" /> -->
         </div>
       </div>
 
@@ -40,7 +40,7 @@
           <p class="top_first_p2">{{storeArr.address}}</p>
         </div>
         <!-- <div class="top_first_right">
-        <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt class="img" />
+        <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt class="img" />
         </div>-->
       </div>
     </div>
@@ -49,26 +49,26 @@
       <div class="goHome" v-if="homeAddress">
         <div class="top1">
           <div class="customer">
-            <img src="https://m.aerp.com.cn/mini-RG-main/ordercheck_user_icon.png" alt class="img1" mode="aspectFit" />
+            <img src="https://m.aerp.com.cn/mini-app-main/ordercheck_user_icon.png" alt class="img1" mode="aspectFit" />
             <text class="user">{{homeAddress.userName}}</text>
           </div>
           <div class="customer">
-            <img src="https://m.aerp.com.cn/mini-RG-main/ordercheck_iphone_icon.png" alt class="img1" mode="aspectFit" />
+            <img src="https://m.aerp.com.cn/mini-app-main/ordercheck_iphone_icon.png" alt class="img1" mode="aspectFit" />
             <text class="user">{{homeAddress.mobileNumber}}</text>
           </div>
         </div>
         <div class="customer">
-          <img src="https://m.aerp.com.cn/mini-RG-main/city_location_icon1.png" alt class="img1" mode="aspectFit" />
+          <img src="https://m.aerp.com.cn/mini-app-main/city_location_icon1.png" alt class="img1" mode="aspectFit" />
           <text class="user">上门地址：{{homeAddress.province}}{{homeAddress.district}}{{homeAddress.city}}{{homeAddress.addressLine}}</text>
         </div>
       </div>
       <div v-else @click="toSelectAddress">请选择您的上门服务地址</div>
-      <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt style="width:40rpx;height:40rpx;" mode="aspectFit" />
+      <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt style="width:40rpx;height:40rpx;" mode="aspectFit" />
     </div>
     <div class="box" v-if="serviceCheck==1 && showHomeAndShop">
       <div style="width:100%;">
         <p class="p1" style="display:flex;align-items:center;">
-          <img src="https://m.aerp.com.cn/mini-RG-main/serviceTypeIcon.png" alt style="width:32rpx;height:32rpx;margin-right:12rpx;" mode="aspectFit" />
+          <img src="https://m.aerp.com.cn/mini-app-main/serviceTypeIcon.png" alt style="width:32rpx;height:32rpx;margin-right:12rpx;" mode="aspectFit" />
           预约上门服务日期:
           <span style="color:#666;">（选填）</span>
         </p>
@@ -78,7 +78,7 @@
               <div class="scrollDate" v-for="(itemx,indexx) in productsTime" :key="indexx" @click="checktime(itemx,indexx)" :class="['scrollDate',{'scrollDate1':itemx.isHighLight?true:false}]">
                 <p>{{itemx.reserveDate}} {{itemx.reserveWeekDay}}</p>
                 <p>{{itemx.reserveTime}}</p>
-                <img v-if="itemx.isHighLight" src="https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png" class="roundSize1" mode="aspectFit" />
+                <img v-if="itemx.isHighLight" src="https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png" class="roundSize1" mode="aspectFit" />
               </div>
             </scroll-view>
             <div class="moreDate" @click="toCalender">
@@ -147,14 +147,14 @@
         <p class="pay_box_p2">
           <text class="txt1" v-if="payment == 1">微信支付</text>
           <text class="txt1" v-if="payment == 2">现场支付</text>
-          <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt class="img" mode="aspectFit" />
+          <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt class="img" mode="aspectFit" />
         </p>
       </div>
       <div class="pay_box_one" @tap="cuoponClick">
         <p class="pay_box_p1">优惠券</p>
         <p class="pay_box_p2">
           <text class="txt1">{{userCouponDisplayName || '无适用优惠券'}}</text>
-          <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt class="img" mode="aspectFit" />
+          <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt class="img" mode="aspectFit" />
         </p>
       </div>
       <!-- <div class="pay_box_one" @tap="invoiceClick">
@@ -163,7 +163,7 @@
           <text class="txt1" v-if="isNeedInvoice">需要开票</text>
           <text class="txt1" v-else>无需开票</text>
           
-          <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt class="img" />
+          <img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt class="img" />
         </p>
       </div>-->
     </div>

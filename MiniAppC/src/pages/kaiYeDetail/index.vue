@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <div class="back" @click="back">
-      <image src="https://m.aerp.com.cn/mini-RG-main/white_back.png" style="width:16rpx;height:29rpx;"></image>
+      <image src="https://m.aerp.com.cn/mini-app-main/white_back.png" style="width:16rpx;height:29rpx;"></image>
     </div>
-    <image src="https://m.aerp.com.cn/mini-RG-main/kaiYeDetail.png" mode="widthFix" style="width:100%;position:relative;min-height:100%">
+    <image src="https://m.aerp.com.cn/mini-app-main/kaiYeDetail.png" mode="widthFix" style="width:100%;position:relative;min-height:100%">
 
       <div class="content">
 

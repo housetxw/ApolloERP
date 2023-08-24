@@ -33,7 +33,7 @@
               <img
                 v-if="item.orderEnabled&&isOrder"
                 class="byservice_right"
-                :src="item.isSelect?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'"
+                :src="item.isSelect?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'"
                 alt
               />
             </p>
@@ -41,32 +41,32 @@
           </div>
           <!-- 满减灰 -->
           <div class="coupon_img1" v-if="item.status == 1 || item.status == 2">
-            <img src="https://m.aerp.com.cn/mini-RG-main/mineyhq_labeltwo.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/mineyhq_labeltwo.png" alt />
           </div>
           <!-- 满减高亮 -->
           <div class="coupon_img1" v-if="item.type == 1 && item.status != 2 && item.status != 1 ">
-            <img src="https://m.aerp.com.cn/mini-RG-main/mineyhq_label_pic.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/mineyhq_label_pic.png" alt />
           </div>
           <!-- 已使用灰 -->
           <div class="coupon_img2" v-if="item.status == 1">
-            <img src="https://m.aerp.com.cn/mini-RG-main/mineyhq_uesd_icon.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/mineyhq_uesd_icon.png" alt />
           </div>
           <!-- 已过期灰 -->
           <div class="coupon_img2" v-if="item.status == 2">
-            <img src="https://m.aerp.com.cn/mini-RG-main/square_over.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/square_over.png" alt />
           </div>
           <!-- 已作废 -->
           <div class="coupon_img2" v-if="item.status == 3">
-            <img src="https://m.aerp.com.cn/mini-RG-main/Cancelled.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/Cancelled.png" alt />
           </div>
         </div>
       </div>
       <div v-else class="null_img" :style="{height:windowHeight}">
-        <img src="https://m.aerp.com.cn/mini-RG-main/mine_appointment_null.png" alt />
+        <img src="https://m.aerp.com.cn/mini-app-main/mine_appointment_null.png" alt />
         <text>暂无优惠券</text>
       </div>
       <!-- <img
-        :src="itema.isDefaultExpand?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'"
+        :src="itema.isDefaultExpand?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'"
         alt
       />-->
     </div>
@@ -74,7 +74,7 @@
       <span>不使用优惠券</span>
       <img
         class="byservice_right"
-        :src="noCoupon?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'"
+        :src="noCoupon?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'"
         alt
       />
     </div>

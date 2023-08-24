@@ -109,7 +109,7 @@
                 <p class="p_three" @tap="openClick(item2)">
                   {{item2.isDisplay?'收起':'展开'}}
                   <img
-                    :src="item2.isDisplay?'https://m.aerp.com.cn/mini-RG-main/maintenance_up_icon.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_down_icon.png'"
+                    :src="item2.isDisplay?'https://m.aerp.com.cn/mini-app-main/maintenance_up_icon.png':'https://m.aerp.com.cn/mini-app-main/maintenance_down_icon.png'"
                     alt
                   />
                 </p>

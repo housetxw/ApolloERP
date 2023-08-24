@@ -5,7 +5,7 @@
       <p class="p2">
         <img :src="src" alt class="user_img" />
         <!-- <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />-->
@@ -16,7 +16,7 @@
       <p class="p2">
         {{nickname}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -42,7 +42,7 @@
       <p class="p2">
         {{birthday}}
         <!-- <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />-->
@@ -53,7 +53,7 @@
       <p class="p2">
         {{username}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -64,7 +64,7 @@
       <p class="p2">
         {{userTelDes}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -75,7 +75,7 @@
       <p class="p2">
         {{drivingLicence}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -86,7 +86,7 @@
       <p class="p2">
         {{memberLevel}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -97,7 +97,7 @@
       <p class="p2">
         {{point}}
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -107,7 +107,7 @@
       <p class="p1">收货地址</p>
       <p class="p2">
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx"
         />
@@ -117,7 +117,7 @@
       <p class="p1">注销账号</p>
       <p class="p2">
         <!-- <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx"
         />-->

@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="back" @click="back">
-      <image src="https://m.aerp.com.cn/mini-RG-main/white_back.png" style="width:16rpx;height:29rpx;"></image>
+      <image src="https://m.aerp.com.cn/mini-app-main/white_back.png" style="width:16rpx;height:29rpx;"></image>
     </div>
 
     <div class="imgs">
@@ -40,12 +40,12 @@ export default {
       couponList: [],
       CouponActivityId: '',
       imgList:[
-          "https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_01.png",
-          "https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_02.png",
-          "https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_03.png",
-          "https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_04.png",
+          "https://m.aerp.com.cn/mini-app-main/new_gift_autumn_01.png",
+          "https://m.aerp.com.cn/mini-app-main/new_gift_autumn_02.png",
+          "https://m.aerp.com.cn/mini-app-main/new_gift_autumn_03.png",
+          "https://m.aerp.com.cn/mini-app-main/new_gift_autumn_04.png",
       ],
-      imgButton:"https://m.aerp.com.cn/mini-RG-main/new_gift_autumn_button.png",
+      imgButton:"https://m.aerp.com.cn/mini-app-main/new_gift_autumn_button.png",
       isFromShare: false,
       isFromScanCode:false,
     }
@@ -264,7 +264,7 @@ page {
         margin-left: 30rpx;
         margin-right:30rpx;
         flex-shrink: 0;
-        background: url(https://m.aerp.com.cn/mini-RG-main/new_gift_item_bg_autumn.png) no-repeat;
+        background: url(https://m.aerp.com.cn/mini-app-main/new_gift_item_bg_autumn.png) no-repeat;
         background-size: contain;
         display: flex;
         flex-direction: column;

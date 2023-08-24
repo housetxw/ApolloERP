@@ -2,24 +2,24 @@
   <div class="demo_page">
     <Swiper :images="images" />
     <div class="top_bao">
-      <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_safe_icon.png" alt class="img1" />
+      <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_safe_icon.png" alt class="img1" />
       <div class="top_one">
-        <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_hook_icon.png" alt />
+        <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_hook_icon.png" alt />
         <text>全正品</text>
       </div>
       <div class="top_one">
-        <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_hook_icon.png" alt />
+        <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_hook_icon.png" alt />
         <text>价格低</text>
       </div>
       <div class="top_one">
-        <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_hook_icon.png" alt />
+        <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_hook_icon.png" alt />
         <text>放心购</text>
       </div>
       <div class="top_one">
-        <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_hook_icon.png" alt />
+        <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_hook_icon.png" alt />
         <text>快送达</text>
       </div>
-      <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_more_icon.png" alt class="img2" />
+      <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_more_icon.png" alt class="img2" />
     </div>
     <div class="top_introduce">
       <div>
@@ -28,7 +28,7 @@
           <text class="top_txt2">￥589.00</text>
         </P>
         <p class="p2">
-          <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_share_icon.png" alt />
+          <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_share_icon.png" alt />
           <text>分享</text>
         </p>
       </div>
@@ -42,7 +42,7 @@
         <text class="top_txt">积分可用</text>
         <text class="top_txt">积分可用</text>
       </p>
-      <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_share_black.png" alt />
+      <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_share_black.png" alt />
     </div>
     <div class="top_pIcc">
       <div class="txt">
@@ -50,7 +50,7 @@
         <p class="txt2">30亿正品险担保 最高赔付200万</p>
       </div>
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+        src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
         alt
         style="width:24rpx;height:24rpx;margin-left:15rpx;"
       />
@@ -59,7 +59,7 @@
       <text>已选</text>
       <p>商品规格，区分不同的商品，商品规则内 全部显示，支持折行，的发挥地方体会让他回复的过分的话可选服务</p>
       <div>
-        <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_share_black.png" alt />
+        <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_share_black.png" alt />
       </div>
     </div>
     <div class="top_card">
@@ -69,7 +69,7 @@
         <text>上海汽车-eRX5 1.5T-混合力 2017 2017款 1.5T 自动而特色我要让他巨化股份服地黄方安慰人无尊贵旗舰版</text>
       </div>
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+        src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
         alt
         style="width:24rpx;height:24rpx;margin-left:15rpx;"
       />
@@ -92,18 +92,18 @@
         <text>上海市闵行区莲花南路3000号普洛斯闵行物流园 B3库，地址，全部展示，支持折行</text>
       </div>
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+        src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
         alt
         style="width:24rpx;height:24rpx;margin-left:15rpx;"
       />
     </div>
     <div class="activeTitle">
-      <img src="https://m.aerp.com.cn/mini-RG-main/title_left_icon.png" alt class="activeImg" />
+      <img src="https://m.aerp.com.cn/mini-app-main/title_left_icon.png" alt class="activeImg" />
       <span class="activeWord">超值活动</span>
-      <img src="https://m.aerp.com.cn/mini-RG-main/title_right_icon.png" alt class="activeImg" />
+      <img src="https://m.aerp.com.cn/mini-app-main/title_right_icon.png" alt class="activeImg" />
     </div>
     <div class="bottom_img">
-      <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_banner_pic.png" alt />
+      <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_banner_pic.png" alt />
     </div>
     <div class="btn">
       <van-button round color="#FF6324" type="default" size="large" @tap="selectClick">选择</van-button>

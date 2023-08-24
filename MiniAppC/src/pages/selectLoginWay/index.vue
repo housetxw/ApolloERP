@@ -1,12 +1,12 @@
 <template>
   <div>
   <view class="wx_quick_login">
-    <image class="wx_img" src="https://m.aerp.com.cn/mini-RG-main/select_we.png"></image>
+    <image class="wx_img" src="https://m.aerp.com.cn/mini-app-main/select_we.png"></image>
     <view class="wx_text">微信用户快速登录</view>
     <button class="wx_login_btn" form-type="submit" open-type="getPhoneNumber" @getphonenumber="getPhoneNumber"></button>
   </view>
   <view class="phone_login" @click="tapPhoneLogin">
-    <image class="phone_img" src="https://m.aerp.com.cn/mini-RG-main/select_phone.png"></image>
+    <image class="phone_img" src="https://m.aerp.com.cn/mini-app-main/select_phone.png"></image>
     <view class="phone_text">手机号登录</view>
     <button class="getformbtn" form-type="submit"></button>
   </view>

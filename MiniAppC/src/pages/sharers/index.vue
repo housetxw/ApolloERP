@@ -4,7 +4,7 @@
       <p class="topTitle">
         <span>亲爱的{{userName}}：</span>
         <span class="title" @tap="toHelp">
-          <img src="https://m.aerp.com.cn/mini-RG-main/help2.png" alt class="img3" />规则说明
+          <img src="https://m.aerp.com.cn/mini-app-main/help2.png" alt class="img3" />规则说明
         </span>
       </p>
       <p class="topTitle2">
@@ -45,7 +45,7 @@
               <img
                 v-if="couponarr.orderEnabled"
                 class="byservice_right"
-                :src="couponarr.isSelect?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'"
+                :src="couponarr.isSelect?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'"
                 alt
               />
             </p>
@@ -55,26 +55,26 @@
           </div>
           <!-- 满减灰 -->
           <div class="coupon_img1" v-if="couponarr.status == 1 || couponarr.status == 2">
-            <img src="https://m.aerp.com.cn/mini-RG-main/mineyhq_labeltwo.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/mineyhq_labeltwo.png" alt />
           </div>
           <!-- 满减高亮 -->
           <div
             class="coupon_img1"
             v-if="couponarr.type == 1 && couponarr.status != 2 && couponarr.status != 1 "
           >
-            <img src="https://m.aerp.com.cn/mini-RG-main/mineyhq_label_pic.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/mineyhq_label_pic.png" alt />
           </div>
           <!-- 已使用灰 -->
           <div class="coupon_img2" v-if="couponarr.status == 1">
-            <img src="https://m.aerp.com.cn/mini-RG-main/mineyhq_uesd_icon.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/mineyhq_uesd_icon.png" alt />
           </div>
           <!-- 已过期灰 -->
           <div class="coupon_img2" v-if="couponarr.status == 2">
-            <img src="https://m.aerp.com.cn/mini-RG-main/square_over.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/square_over.png" alt />
           </div>
           <!-- 已注销 -->
           <div class="coupon_img2" v-if="couponarr.status == 3">
-            <img src="https://m.aerp.com.cn/mini-RG-main/Cancelled.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/Cancelled.png" alt />
           </div>
         </div>
       </div>
@@ -83,12 +83,12 @@
         v-else
       >
         <div class="null_img" :style="{height:windowHeight}">
-          <img src="https://m.aerp.com.cn/mini-RG-main/mine_appointment_null.png" alt />
+          <img src="https://m.aerp.com.cn/mini-app-main/mine_appointment_null.png" alt />
           <text>暂无分享优惠券</text>
         </div>
       </div>
       <!-- <img
-        :src="itema.isDefaultExpand?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'"
+        :src="itema.isDefaultExpand?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'"
         alt
       />-->
     </div>
@@ -121,7 +121,7 @@
               </div>
               <div class="orderContent1" v-if="item1.products.length>1&&item1.products.length<5">
                 <img
-                  src="https://m.aerp.com.cn/mini-RG-main/mine_appointment_null.png"
+                  src="https://m.aerp.com.cn/mini-app-main/mine_appointment_null.png"
                   alt
                   class="orderimg"
                 />
@@ -136,7 +136,7 @@
 
         <div class="More" @tap="toMore" v-if="showMore&&allOrders.length>1">加载更多</div>
         <div class="null_img" v-if="allOrders.length<1">
-          <img src="https://m.aerp.com.cn/mini-RG-main/mine_appointment_null.png" alt />
+          <img src="https://m.aerp.com.cn/mini-app-main/mine_appointment_null.png" alt />
           <text>暂无订单</text>
         </div>
       </div>
@@ -160,7 +160,7 @@
 
         <div class="More" @tap="toShareUserMore" v-if="shareUserShowMore && shareUserList.length>1">加载更多</div>
         <div class="null_img" v-if="shareUserList.length<1">
-          <img src="https://m.aerp.com.cn/mini-RG-main/mine_appointment_null.png" alt />
+          <img src="https://m.aerp.com.cn/mini-app-main/mine_appointment_null.png" alt />
           <text>暂无分享用户</text>
         </div>
       </div>
@@ -677,7 +677,7 @@ export default {
   font-weight: bold;
   line-height: 100rpx;
   font-size: 35rpx;
-  background-image: url('https://m.aerp.com.cn/mini-RG-main/titleBg.png');
+  background-image: url('https://m.aerp.com.cn/mini-app-main/titleBg.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: #fff;

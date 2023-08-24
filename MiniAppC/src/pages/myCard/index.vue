@@ -16,7 +16,7 @@
           </div>
           <div class="top_images2" @tap="editClcik(item)">
             <!-- <div class="top_images2"> -->
-            <img src="https://m.aerp.com.cn/mini-RG-main/order_edit_icon.png" alt class="img2" />
+            <img src="https://m.aerp.com.cn/mini-app-main/order_edit_icon.png" alt class="img2" />
           </div>
         </div>
         <div slot="right" class="clear" @click="delCar(item.carId)">删除</div>

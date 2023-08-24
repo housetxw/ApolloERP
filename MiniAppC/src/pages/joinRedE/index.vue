@@ -34,7 +34,7 @@
           ></van-field>
           <!-- <p class="txt" @change="ChangeAddressvalue" @click="showPopup">{{city}}</p> -->
           <img
-            src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+            src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
             alt
             style="width:24rpx;height:24rpx;"
           />

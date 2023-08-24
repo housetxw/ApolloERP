@@ -6,7 +6,7 @@
         <div class="serviceType">
           <p class="serviceP">
             <img
-              :src="serviceCheck==1?'https://m.aerp.com.cn/mini-RG-main/roundCheck.png':'https://m.aerp.com.cn/mini-RG-main/round.png'"
+              :src="serviceCheck==1?'https://m.aerp.com.cn/mini-app-main/roundCheck.png':'https://m.aerp.com.cn/mini-app-main/round.png'"
               alt
               class="roundSize"
             />
@@ -14,7 +14,7 @@
           </p>
           <p class="serviceP">
             <img
-              :src="serviceCheck==2?'https://m.aerp.com.cn/mini-RG-main/roundCheck.png':'https://m.aerp.com.cn/mini-RG-main/round.png'"
+              :src="serviceCheck==2?'https://m.aerp.com.cn/mini-app-main/roundCheck.png':'https://m.aerp.com.cn/mini-app-main/round.png'"
               alt
               class="roundSize"
             />
@@ -29,21 +29,21 @@
     <!-- 用户信息 -->
     <div class="top" v-if="productType==5">
       <div class="customer">
-        <img src="https://m.aerp.com.cn/mini-RG-main/ordercheck_user_icon.png" alt class="img1" />
+        <img src="https://m.aerp.com.cn/mini-app-main/ordercheck_user_icon.png" alt class="img1" />
         <text class="user">联系人:{{receiverName}}</text>
       </div>
       <div class="customer">
-        <img src="https://m.aerp.com.cn/mini-RG-main/ordercheck_iphone_icon.png" alt class="img1" />
+        <img src="https://m.aerp.com.cn/mini-app-main/ordercheck_iphone_icon.png" alt class="img1" />
         <text class="user">电话:{{receiverPhone}}</text>
       </div>
     </div>
     <!-- <div class="customer customer1"  v-if="productType==5&&reserverTime!=''"> -->
     <div class="customer customer1" v-if="productType==5">
-      <img src="https://m.aerp.com.cn/mini-RG-main/time.png" alt class="img1" />
+      <img src="https://m.aerp.com.cn/mini-app-main/time.png" alt class="img1" />
       <span class="user">预约时间：{{reserverTime}}</span>
     </div>
     <div class="customer customer1" v-if="productType==5">
-      <img src="https://m.aerp.com.cn/mini-RG-main/address.png" alt class="img1" />
+      <img src="https://m.aerp.com.cn/mini-app-main/address.png" alt class="img1" />
       <span class="user">上门服务地址：{{shopAddress}}</span>
     </div>
     <!-- 门店信息 -->
@@ -60,7 +60,7 @@
             @click.stop="navigate(store_information.latitude, store_information.longitude)"
           >
             <img
-              src="https://m.aerp.com.cn/mini-RG-main/order_navigation_icon.png"
+              src="https://m.aerp.com.cn/mini-app-main/order_navigation_icon.png"
               alt
               class="img2"
             />
@@ -85,7 +85,7 @@
         <div class="allProduct">
           <img :src="itemm.image" alt class="productImg" v-if="itemm.image!=''" />
           <img
-            src="https://m.aerp.com.cn/mini-RG-main/produceNo.png"
+            src="https://m.aerp.com.cn/mini-app-main/produceNo.png"
             alt
             mode="widthFix"
             v-else
@@ -103,7 +103,7 @@
       <div @click="showMore" class="moreList" v-if="recommendProductInfos.length>1">
         <span>{{moretxt}}</span>
         <img
-          :src="isShow?'https://m.aerp.com.cn/mini-RG-main/viewAll.png':'https://m.aerp.com.cn/mini-RG-main/packUp.png'"
+          :src="isShow?'https://m.aerp.com.cn/mini-app-main/viewAll.png':'https://m.aerp.com.cn/mini-app-main/packUp.png'"
           alt
           class="moreImg"
         />
@@ -122,7 +122,7 @@
               v-if="item3.packageOrProduct.imageUrl!=''"
             />
 
-            <img src="https://m.aerp.com.cn/mini-RG-main/produceNo.png" alt mode="widthFix" v-else />
+            <img src="https://m.aerp.com.cn/mini-app-main/produceNo.png" alt mode="widthFix" v-else />
           </div>
           <div class="right">
             <p class="right_p1">{{item3.packageOrProduct.productName}}</p>
@@ -141,7 +141,7 @@
           <div class="img">
             <img :src="item1.imageUrl" mode="widthFix" alt class="img1" v-if="item1.imageUrl!=''" />
 
-            <img src="https://m.aerp.com.cn/mini-RG-main/produceNo.png" alt class="img1" v-else />
+            <img src="https://m.aerp.com.cn/mini-app-main/produceNo.png" alt class="img1" v-else />
           </div>
           <div class="content">
             <p class="p1">{{item1.productName}}</p>
@@ -161,7 +161,7 @@
       <div class="p2" v-for="(item4,index4) in services" :key="index4">
         <p class="p3">
           <img :src="item4.imageUrl" alt class="img1" v-if="item4.imageUrl!=''" />
-          <img src="https://m.aerp.com.cn/mini-RG-main/serviceIcon1.png" alt class="img1" v-else />
+          <img src="https://m.aerp.com.cn/mini-app-main/serviceIcon1.png" alt class="img1" v-else />
 
           <text class="txt1">{{item4.productName}}</text>
         </p>
@@ -241,7 +241,7 @@
     <div class="section_code" v-if="orderInstallCodeInfos.length > 0">
       <div class="section_code_top">
         <p class="txt1">致大安装码</p>
-        <!-- <p class="txt2" @tap="seeMoreClick">查看更多 <img src="https://m.aerp.com.cn/mini-RG-main/red.png" alt="" class="img1"/></p> -->
+        <!-- <p class="txt2" @tap="seeMoreClick">查看更多 <img src="https://m.aerp.com.cn/mini-app-main/red.png" alt="" class="img1"/></p> -->
       </div>
       <!-- <p class="section_code_data">有效期至：{{date1}}</p> -->
       <div class="ermcode">
@@ -273,7 +273,7 @@
         <p class="txt1">致大核销码</p>
         <p class="txt2" @tap="seeMoreClick">
           查看更多
-          <img src="https://m.aerp.com.cn/mini-RG-main/red.png" alt class="img1" />
+          <img src="https://m.aerp.com.cn/mini-app-main/red.png" alt class="img1" />
         </p>
       </div>
       <p
@@ -309,14 +309,14 @@
       </div>
       <!-- 核销码状图图 -->
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/Label used.png"
+        src="https://m.aerp.com.cn/mini-app-main/Label used.png"
         alt
         class="hxmStatus"
         v-if="orderVerificationCodeInfos[0].status == 1"
       />
       <!-- 已使用 -->
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/Expired.png"
+        src="https://m.aerp.com.cn/mini-app-main/Expired.png"
         alt
         class="hxmStatus"
         v-if="orderVerificationCodeInfos[0].status == 2"
@@ -339,7 +339,7 @@
     <!-- 联系客服按钮 -->
 
     <div class="service" @tap="serviceClick ">
-      <img src="https://m.aerp.com.cn/mini-RG-main/index_customer_icon.png" class="serviceImg" />
+      <img src="https://m.aerp.com.cn/mini-app-main/index_customer_icon.png" class="serviceImg" />
       <span class="serviceWord">客服</span>
     </div>
     <!-- 联系技师 -->
@@ -491,7 +491,7 @@ export default {
         // telephone: '18838959011',
         // techName: '致大',
         // createTime: '2020-07-09',
-        // userImgUrl: 'https://m.aerp.com.cn/mini-RG-main/gotel.png'
+        // userImgUrl: 'https://m.aerp.com.cn/mini-app-main/gotel.png'
       }, // 技师对象
       storeArr: {
         simpleName: '', // 门店名称

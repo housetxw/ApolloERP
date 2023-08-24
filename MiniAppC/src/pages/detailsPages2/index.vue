@@ -20,7 +20,7 @@
 
           <text class="top_txt2">￥{{originalPrice}}</text>
           <button open-type="share" class="p2">
-            <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_share_icon.png" alt />
+            <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_share_icon.png" alt />
             <text>分享</text>
           </button>
 
@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <!--        <button class="p2_button" size="default" open-type="share"><img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_share_icon.png" alt />分享</button>-->
+        <!--        <button class="p2_button" size="default" open-type="share"><img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_share_icon.png" alt />分享</button>-->
       </div>
       <p class="p3" style="margin-bottom:0;">{{shopTitle}}</p>
       <p class="p3" style="color:red;margin-bottom:0;" v-if="advertisement!=''">{{advertisement}}</p>
@@ -67,9 +67,9 @@
     </div>-->
     <!-- 商品描述 -->
     <div class="activeTitle">
-      <img src="https://m.aerp.com.cn/mini-RG-main/title_left_icon.png" alt class="activeImg" />
+      <img src="https://m.aerp.com.cn/mini-app-main/title_left_icon.png" alt class="activeImg" />
       <span class="activeWord">超值活动</span>
-      <img src="https://m.aerp.com.cn/mini-RG-main/title_right_icon.png" alt class="activeImg" />
+      <img src="https://m.aerp.com.cn/mini-app-main/title_right_icon.png" alt class="activeImg" />
     </div>
     <!-- 超值活动的图片 -->
     <div class="bottom_img">
@@ -77,7 +77,7 @@
     </div>
 
     <div class="goTop">
-      <img src="https://m.aerp.com.cn/mini-RG-main/toTop.png" alt @tap="goTopAction" />
+      <img src="https://m.aerp.com.cn/mini-app-main/toTop.png" alt @tap="goTopAction" />
     </div>
     <!-- <van-button type="primary" size="mini" round color="#FF6324" @tap="toPopup()">去选择</van-button> -->
 
@@ -93,7 +93,7 @@
     </div>
     <!-- 发动机弹框 -->
     <div style="width:100%;" v-if="showPopup">
-      <van-popup :show="showPopup" closeable @close="toHelp" position="center" :close-on-click-overlay="false" close-icon="https://m.aerp.com.cn/mini-RG-main/help.png" lock-scroll custom-style="height:70%;" round>
+      <van-popup :show="showPopup" closeable @close="toHelp" position="center" :close-on-click-overlay="false" close-icon="https://m.aerp.com.cn/mini-app-main/help.png" lock-scroll custom-style="height:70%;" round>
         <div class="popup_header">{{property.title}}</div>
         <div class="popup_title">{{property.content}}</div>
         <div class="popup_content">
@@ -106,7 +106,7 @@
               >-->
               <div class="popup_img" @tap="checkEngine(item,index)" :class="{'popup_img1':changeindex==index}">
                 <img :src="item.imageUrl" alt style="width:160rpx;height:160rpx;" />
-                <img src="https://m.aerp.com.cn/mini-RG-main/toLarge.png" alt style="width:60rpx;height:60rpx;position:absolute;right:5rpx; bottom:5rpx;" @tap="previewImage([item.imageUrl],item.imageUrl)" :data-src="item.imageUrl" />
+                <img src="https://m.aerp.com.cn/mini-app-main/toLarge.png" alt style="width:60rpx;height:60rpx;position:absolute;right:5rpx; bottom:5rpx;" @tap="previewImage([item.imageUrl],item.imageUrl)" :data-src="item.imageUrl" />
               </div>
             </div>
             <p class="popup_tit">{{item.displayValue}}</p>
@@ -151,8 +151,8 @@
           <div class="brandTit">铭牌位置：</div>
         </div>
         <div style="width:100%;display:flex;justify-content:space-bentween;">
-          <img src="https://m.aerp.com.cn/mini-RG-main/fadongji1.png" alt class="brandImg" />
-          <img src="https://m.aerp.com.cn/mini-RG-main/fadongji2.png " alt class="brandImg" />
+          <img src="https://m.aerp.com.cn/mini-app-main/fadongji1.png" alt class="brandImg" />
+          <img src="https://m.aerp.com.cn/mini-app-main/fadongji2.png " alt class="brandImg" />
         </div>
       </van-popup>
     </div>
@@ -1353,7 +1353,7 @@ button::after {
   font-weight: bold;
   line-height: 100rpx;
   font-size: 35rpx;
-  background-image: url('https://m.aerp.com.cn/mini-RG-main/titleBg.png');
+  background-image: url('https://m.aerp.com.cn/mini-app-main/titleBg.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }

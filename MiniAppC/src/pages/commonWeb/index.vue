@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="back" @click="back">
-      <image src="https://m.aerp.com.cn/mini-RG-main/white_back.png" style="width:16rpx;height:29rpx;"></image>
+      <image src="https://m.aerp.com.cn/mini-app-main/white_back.png" style="width:16rpx;height:29rpx;"></image>
     </div>
 
     <div class="content">

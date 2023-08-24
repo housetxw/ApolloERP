@@ -3,7 +3,7 @@
     <div class="calContent">
       <div class="tip" @click="showTip">
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/reverseTipImg@2x.png"
+          src="https://m.aerp.com.cn/mini-app-main/reverseTipImg@2x.png"
           style="width:28rpx;height:28rpx;margin:0 10rpx"
         />预约说明
       </div>

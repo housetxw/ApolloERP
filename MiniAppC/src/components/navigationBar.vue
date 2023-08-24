@@ -16,14 +16,14 @@
             <cover-view class="searchBarLWord">{{city}}</cover-view>
             <cover-image
               class="back-image1"
-              src="https://m.aerp.com.cn/mini-RG-main/triangle_icon.png"
+              src="https://m.aerp.com.cn/mini-app-main/triangle_icon.png"
             ></cover-image>
           </cover-view>
           <!-- <cover-view class="searchBarLine"></cover-view> -->
           <cover-view class="searchBarR" @tap="searchClick">
             <cover-image
               class="back-image2"
-              src="https://m.aerp.com.cn/mini-RG-main/search_icon.png"
+              src="https://m.aerp.com.cn/mini-app-main/search_icon.png"
             ></cover-image>
 
             <cover-view class="searchBarRWord">搜索关键词</cover-view>

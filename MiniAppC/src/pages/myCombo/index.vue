@@ -67,7 +67,7 @@ page {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: url(https://m.aerp.com.cn/mini-RG-main/myCombo.png) no-repeat;
+    background: url(https://m.aerp.com.cn/mini-app-main/myCombo.png) no-repeat;
     background-size: contain;
     .itemR {
       width: 31rpx;
@@ -113,7 +113,7 @@ page {
     }
   }
   .gray {
-    background: url(https://m.aerp.com.cn/mini-RG-main/myCombo_gray.png)
+    background: url(https://m.aerp.com.cn/mini-app-main/myCombo_gray.png)
       no-repeat !important;
     background-size: contain !important;
   }

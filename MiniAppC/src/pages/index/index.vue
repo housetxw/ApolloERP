@@ -4,7 +4,7 @@
     <div class='body'>
 
       <div class="car car1" @click="addCar" v-if="carArrFirst==null">
-        <img src="https://m.aerp.com.cn/mini-RG-main/home_add.png" alt class="img_card" mode="aspectFit" style="width:41rpx;height:41rpx;margin:10rpx 20rpx 0 0;" />
+        <img src="https://m.aerp.com.cn/mini-app-main/home_add.png" alt class="img_card" mode="aspectFit" style="width:41rpx;height:41rpx;margin:10rpx 20rpx 0 0;" />
         <span>点击添加我要保养的车型</span>
       </div>
       <div class="car car2" v-else>
@@ -15,7 +15,7 @@
             <p class="p2">{{carArrFirst.carNumber}}</p>
           </div>
           <div style="display:flex;flex-direction:column;align-items:center;">
-            <img src="https://m.aerp.com.cn/mini-RG-main/changeCarIcon.png" alt style="width:60rpx;height:60rpx;margin-top:20rpx;" />
+            <img src="https://m.aerp.com.cn/mini-app-main/changeCarIcon.png" alt style="width:60rpx;height:60rpx;margin-top:20rpx;" />
             <p class="p2">换车</p>
           </div>
         </div>
@@ -42,7 +42,7 @@
       <div class="combo" @click="toCombo">
         <div class="comboTop">
           <div class="comboTopL">套餐卡</div>
-          <div class="comboTopR">更多<img src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png" alt style="width:9rpx;height:16rpx;margin-left:13rpx;" /></div>
+          <div class="comboTopR">更多<img src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png" alt style="width:9rpx;height:16rpx;margin-left:13rpx;" /></div>
         </div>
         <div class="comboBot">
           <image class="comboBotItem" :src="item.image1" v-for="(item, index) in packageCard" :key="index">
@@ -59,7 +59,7 @@
               <text class="item">{{ timeData.seconds }}</text>
             </van-count-down>
           </div>
-          <div class="seckillTopR">超值好物 立即抢购<img src="https://m.aerp.com.cn/mini-RG-main/white_arrow.png" alt style="width:9rpx;height:16rpx;margin-left:13rpx;" /></div>
+          <div class="seckillTopR">超值好物 立即抢购<img src="https://m.aerp.com.cn/mini-app-main/white_arrow.png" alt style="width:9rpx;height:16rpx;margin-left:13rpx;" /></div>
         </div>
         <div class="seckillBottom">
           <div class="seckillItem" v-for="(item, index) in seckillList" :key="index">
@@ -92,9 +92,9 @@
       </div> -->
       <!-- 超值活动 -->
       <!-- <div class="activeTitle" v-if="show4">
-        <img src="https://m.aerp.com.cn/mini-RG-main/title_left_icon.png" alt="" class="activeImg">
+        <img src="https://m.aerp.com.cn/mini-app-main/title_left_icon.png" alt="" class="activeImg">
         <span class="activeWord">超值活动</span>
-        <img src="https://m.aerp.com.cn/mini-RG-main/title_right_icon.png" alt="" class="activeImg">
+        <img src="https://m.aerp.com.cn/mini-app-main/title_right_icon.png" alt="" class="activeImg">
       </div> -->
       <!-- <div class='activeList'  >
       <swiper v-if="imgUrls2.length >= 0" 
@@ -126,9 +126,9 @@
       </div>
 
       <div class="activeTitle" v-if="show4">
-        <img src="https://m.aerp.com.cn/mini-RG-main/title_left_icon.png" alt="" class="activeImg">
+        <img src="https://m.aerp.com.cn/mini-app-main/title_left_icon.png" alt="" class="activeImg">
         <span class="activeWord">热销产品</span>
-        <img src="https://m.aerp.com.cn/mini-RG-main/title_right_icon.png" alt="" class="activeImg">
+        <img src="https://m.aerp.com.cn/mini-app-main/title_right_icon.png" alt="" class="activeImg">
       </div>
 
       <div class="hot">
@@ -145,7 +145,7 @@
 
       <!-- 客服 -->
       <div class="service" @tap="serviceClick">
-        <img src="https://m.aerp.com.cn/mini-RG-main/index_customer_icon.png" alt="" class='serviceImg'>
+        <img src="https://m.aerp.com.cn/mini-app-main/index_customer_icon.png" alt="" class='serviceImg'>
         <span class="serviceWord">客服</span>
       </div>
     </div>

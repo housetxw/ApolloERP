@@ -210,7 +210,7 @@ export default {
     height: 519rpx;
     padding: 109rpx 30rpx 30rpx 30rpx;
     box-sizing: border-box;
-    background: url(https://m.aerp.com.cn/mini-RG-main/bg1.png) no-repeat;
+    background: url(https://m.aerp.com.cn/mini-app-main/bg1.png) no-repeat;
     background-size: cover;
     .box_one {
       width: 100%;
@@ -297,7 +297,7 @@ export default {
     height: 339rpx;
     padding: 109rpx 30rpx 30rpx 30rpx;
     box-sizing: border-box;
-    background: url(https://m.aerp.com.cn/mini-RG-main/bg3.png) no-repeat;
+    background: url(https://m.aerp.com.cn/mini-app-main/bg3.png) no-repeat;
     background-size: cover;
     .box_one {
       width: 100%;

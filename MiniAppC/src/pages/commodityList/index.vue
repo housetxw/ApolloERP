@@ -4,7 +4,7 @@
       <p class="p1">小保养服务</p>
       <div class="shop_one">
         <div class="img">
-          <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_good_pic.png" alt class="img1" />
+          <img src="https://m.aerp.com.cn/mini-app-main/maintenance_good_pic.png" alt class="img1" />
         </div>
         <div class="content">
           <p class="p_p1">美孚/Mobil-1号全合成机油5W-30SNdv级4L</p>
@@ -19,7 +19,7 @@
       </div>
       <div class="shop_one">
         <div class="img">
-          <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_good_pic.png" alt class="img1" />
+          <img src="https://m.aerp.com.cn/mini-app-main/maintenance_good_pic.png" alt class="img1" />
         </div>
         <div class="content">
           <p class="p_p1">美孚/Mobil-1号全合成机油5W-30SNdv级4L</p>
@@ -42,7 +42,7 @@
       <p class="free_p1">免费常规检测</p>
       <div class="free_p2">
         <p class="free_p3">
-          <img src="https://m.aerp.com.cn/mini-RG-main/ordercheck_free_icon.png" alt class="img1" />
+          <img src="https://m.aerp.com.cn/mini-app-main/ordercheck_free_icon.png" alt class="img1" />
           <text class="txt1">免费常规检测服务</text>
         </p>
         <p class="free_p4">

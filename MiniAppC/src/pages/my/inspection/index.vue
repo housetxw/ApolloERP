@@ -17,20 +17,20 @@
             <p class="title">车况检查</p>
             <p class="toCheck" v-if="itemm.statisticsData">
               去查看
-              <img src="https://m.aerp.com.cn/mini-RG-main/toCheck.png" alt class="tocheckimg" />
+              <img src="https://m.aerp.com.cn/mini-app-main/toCheck.png" alt class="tocheckimg" />
             </p>
           </div>
           <div class="conditionB" v-if="itemm.statisticsData">
             <p class="result">
-              <img src="https://m.aerp.com.cn/mini-RG-main/normal.png" alt class="resultimg" />
+              <img src="https://m.aerp.com.cn/mini-app-main/normal.png" alt class="resultimg" />
               正常({{itemm.statisticsData.normalCount}})
             </p>
             <p class="result">
-              <img src="https://m.aerp.com.cn/mini-RG-main/abnormal.png" alt class="resultimg" />
+              <img src="https://m.aerp.com.cn/mini-app-main/abnormal.png" alt class="resultimg" />
               异常({{itemm.statisticsData.abNormalCount}})
             </p>
             <p class="result">
-              <img src="https://m.aerp.com.cn/mini-RG-main/nochecked.png" alt class="resultimg" />
+              <img src="https://m.aerp.com.cn/mini-app-main/nochecked.png" alt class="resultimg" />
               未查({{itemm.statisticsData.uncheckCount}})
             </p>
           </div>
@@ -47,7 +47,7 @@
             <p class="title">车辆诊断报告</p>
             <p class="toCheck" v-if="item.carReportUrl">
               去查看
-              <img src="https://m.aerp.com.cn/mini-RG-main/toCheck.png" alt class="tocheckimg" />
+              <img src="https://m.aerp.com.cn/mini-app-main/toCheck.png" alt class="tocheckimg" />
             </p>
           </div>
           <div class="else" v-else>

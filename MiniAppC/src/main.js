@@ -11,7 +11,7 @@ Vue.prototype.$store = store
 const app = new Vue(App)
 app.$mount()
 let globalData = {}
-globalData.imgPubUrl = 'https://m.aerp.com.cn/mini-RG-main/'
+globalData.imgPubUrl = 'https://m.aerp.com.cn/mini-app-main/'
 globalData.currCityInfo = {}
 globalData.tokenInfo = ''
 

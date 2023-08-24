@@ -2,7 +2,7 @@
   <div class="page">
     <div class="top"></div>
     <div class="content">
-      <img src="https://m.aerp.com.cn/mini-RG-main/comboCouponDetailTop.png" alt="" style="width:717rpx;height:96rpx;">
+      <img src="https://m.aerp.com.cn/mini-app-main/comboCouponDetailTop.png" alt="" style="width:717rpx;height:96rpx;">
       <div class="content-main">
         <div class="tit">{{couponDetail.productName}}</div>
         <div class="date">有效期：{{couponDetail.startValidTime }}至{{couponDetail.endValidTime }}</div>

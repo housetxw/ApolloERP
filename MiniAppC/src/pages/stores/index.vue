@@ -28,7 +28,7 @@
           <div class="top_center">
             <p class="p3">{{item.address}}</p>
             <div class="top_all" @click.stop="navigate(item.latitude, item.longitude)">
-              <img src="https://m.aerp.com.cn/mini-RG-main/order_navigation_icon.png" alt class="img2" />
+              <img src="https://m.aerp.com.cn/mini-app-main/order_navigation_icon.png" alt class="img2" />
               <text class="txt3">{{item.distance}}KM</text>
             </div>
           </div>

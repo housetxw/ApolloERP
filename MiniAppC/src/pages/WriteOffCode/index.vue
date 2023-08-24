@@ -164,7 +164,7 @@
     </div>-->
     <div class="customer">
       <img
-        src="https://m.aerp.com.cn/mini-RG-main/order_navigation_icon.png"
+        src="https://m.aerp.com.cn/mini-app-main/order_navigation_icon.png"
         alt
         class="img"
         v-if="status == 0"

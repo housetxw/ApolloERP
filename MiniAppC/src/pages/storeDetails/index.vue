@@ -42,13 +42,13 @@
       <div class="top_content">
         <div class="top_left">
           <p class="p2">
-            <img src="https://m.aerp.com.cn/mini-RG-main/address1.png" alt class="img3" />
+            <img src="https://m.aerp.com.cn/mini-app-main/address1.png" alt class="img3" />
             <span class="s1">{{storeAddress}}</span>
           </p>
           <!-- <p class="p4">联系电话：{{storeNumber}}</p> -->
 
           <p class="p4">
-            <img src="https://m.aerp.com.cn/mini-RG-main/time1.png" alt class="img3" />
+            <img src="https://m.aerp.com.cn/mini-app-main/time1.png" alt class="img3" />
             <span>营业时间：{{storeTime}}</span>
           </p>
           <p class="p3">
@@ -61,11 +61,11 @@
         </div>
         <div class="top_right">
           <div @click.stop="navigate(latitude, longitude)" class="right_content">
-            <img src="https://m.aerp.com.cn/mini-RG-main/toAddress.png" alt class="img2" />
+            <img src="https://m.aerp.com.cn/mini-app-main/toAddress.png" alt class="img2" />
             <text class="txt3">路线</text>
           </div>
           <div @tap="telClick" class="right_content">
-            <img src="https://m.aerp.com.cn/mini-RG-main/toTell.png" alt class="img2" />
+            <img src="https://m.aerp.com.cn/mini-app-main/toTell.png" alt class="img2" />
             <text class="txt3">电话</text>
           </div>
         </div>
@@ -112,7 +112,7 @@
     <div class="top_store">
       <div class="top_box_store">
         <p class="store_title">门店技师</p>
-        <!-- <p class="technician_comment" @tap="technicianCommentClick">技师点评<img src="https://m.aerp.com.cn/mini-RG-main/rightArrow.png" alt="" class="technician_img"></p> -->
+        <!-- <p class="technician_comment" @tap="technicianCommentClick">技师点评<img src="https://m.aerp.com.cn/mini-app-main/rightArrow.png" alt="" class="technician_img"></p> -->
       </div>
       <div class="store_box">
         <div

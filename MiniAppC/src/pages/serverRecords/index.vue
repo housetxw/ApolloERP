@@ -10,7 +10,7 @@
         </div>
         <div class="card_add" @tap="changeCard" v-if="!carArrFirst.vehicle">请先选择车辆</div>
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx"
         />
@@ -24,7 +24,7 @@
       <div class="historyItem">最后公里数：{{consumptionHistory.lastKilometres}}</div>
     </div>
     <div class="NoStatus NoStatus1" v-else>
-      <img src="http://m.aerp.com.cn/mini-RG-main/servermessage.png" alt class="NoStatusImg1" />
+      <img src="http://m.aerp.com.cn/mini-app-main/servermessage.png" alt class="NoStatusImg1" />
       <div class="NoStatusWord">暂无历史信息</div>
     </div>
     <div class="subTitle">维修保养记录</div>
@@ -41,7 +41,7 @@
         <div class="itemBodyItem1">
           <div class="itemBodyItemLeft">
             <img
-              src="http://m.aerp.com.cn/mini-RG-main/appointment_project_icon.png"
+              src="http://m.aerp.com.cn/mini-app-main/appointment_project_icon.png"
               alt
               class="itemBodyIcon"
             />
@@ -52,7 +52,7 @@
         </div>
         <div class="itemBodyItem">
           <img
-            src="http://m.aerp.com.cn/mini-RG-main/appointment_store_icon.png"
+            src="http://m.aerp.com.cn/mini-app-main/appointment_store_icon.png"
             alt
             class="itemBodyIcon"
           />
@@ -61,7 +61,7 @@
         </div>
         <div class="itemBodyItem">
           <img
-            src="http://m.aerp.com.cn/mini-RG-main/appointment_time_icon.png"
+            src="http://m.aerp.com.cn/mini-app-main/appointment_time_icon.png"
             alt
             class="itemBodyIcon"
           />
@@ -70,7 +70,7 @@
         </div>
         <div class="itemBodyItem">
           <img
-            src="http://m.aerp.com.cn/mini-RG-main/appointment_number_icon.png"
+            src="http://m.aerp.com.cn/mini-app-main/appointment_number_icon.png"
             alt
             class="itemBodyIcon"
           />
@@ -79,7 +79,7 @@
         </div>
         <div class="itemBodyItem">
           <img
-            src="http://m.aerp.com.cn/mini-RG-main/appointment_car_icon.png"
+            src="http://m.aerp.com.cn/mini-app-main/appointment_car_icon.png"
             alt
             class="itemBodyIcon"
           />
@@ -91,7 +91,7 @@
       </div>
     </div>
     <div class="NoStatus" v-if="maintenanceRecordHistory.length == 0">
-      <img src="http://m.aerp.com.cn/mini-RG-main/servercar.png" alt class="NoStatusImg" />
+      <img src="http://m.aerp.com.cn/mini-app-main/servercar.png" alt class="NoStatusImg" />
       <div class="NoStatusWord">暂无维修保养记录</div>
     </div>
   </div>

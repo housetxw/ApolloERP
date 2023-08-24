@@ -4,7 +4,7 @@
       <div class="box_Popup">
         <div class="top_title">
           <p>优惠信息</p>
-          <img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_close_black.png" alt />
+          <img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_close_black.png" alt />
         </div>
         <div class="top_bottom">
           <p class="top_bottom_p1">优惠</p>

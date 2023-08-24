@@ -10,13 +10,13 @@
       <view class="selectedTitle">
         <view class="pailiang">{{selectCar.displacement}}</view>
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin: 0 15rpx;"
         />
         <view class="pailiang">{{selectCar.year}}</view>
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
           alt
           style="width:24rpx;height:24rpx;margin:0 15rpx;"
         />

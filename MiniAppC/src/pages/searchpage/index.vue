@@ -29,21 +29,21 @@
       <div class="p1">
         <p class="txt1">历史搜索</p>
         <img
-          src="https://m.aerp.com.cn/mini-RG-main/search_delete_icon.png"
+          src="https://m.aerp.com.cn/mini-app-main/search_delete_icon.png"
           alt
           class="img1"
           @tap="deleteAll"
         />
       </div>
       <div class="none_img" :style="{height:windowHeight}" v-if="historyArr.length === 0">
-        <img src="https://m.aerp.com.cn/mini-RG-main/search_null_pic.png" alt class="img2" />
+        <img src="https://m.aerp.com.cn/mini-app-main/search_null_pic.png" alt class="img2" />
         <text class="txt1">没有历史记录</text>
       </div>
       <div class="box" :style="{minHeight:windowHeight}" v-else>
         <p class="one" v-for="(item1, index1) in historyArr" :key="index1">
           <text class="txt1" @tap="historyClick(item1)">{{item1}}</text>
           <img
-            src="https://m.aerp.com.cn/mini-RG-main/search_clean_icon.png"
+            src="https://m.aerp.com.cn/mini-app-main/search_clean_icon.png"
             class="img1"
             alt
             @tap="deleteOne(index1)"

@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <!--        <button class="p2_button" size="default" open-type="share"><img src="https://m.aerp.com.cn/mini-RG-main/goodsdetail_share_icon.png" alt />分享</button>-->
+        <!--        <button class="p2_button" size="default" open-type="share"><img src="https://m.aerp.com.cn/mini-app-main/goodsdetail_share_icon.png" alt />分享</button>-->
       </div>
       <p class="p3">{{name}}</p>
 
@@ -76,16 +76,16 @@
     <!-- 商品描述 -->
 
     <div class="activeTitle">
-      <img src="https://m.aerp.com.cn/mini-RG-main/title_left_icon.png" alt class="activeImg" />
+      <img src="https://m.aerp.com.cn/mini-app-main/title_left_icon.png" alt class="activeImg" />
       <span class="activeWord">商品描述</span>
-      <img src="https://m.aerp.com.cn/mini-RG-main/title_right_icon.png" alt class="activeImg" />
+      <img src="https://m.aerp.com.cn/mini-app-main/title_right_icon.png" alt class="activeImg" />
     </div>
 
     <!--     超值活动的图片-->
 
     <!--    <div class="bottom_img">-->
     <!--      <img-->
-    <!--        src="https://m.aerp.com.cn/mini-RG-main/maintenance_null_img.png"-->
+    <!--        src="https://m.aerp.com.cn/mini-app-main/maintenance_null_img.png"-->
     <!--        alt-->
 
     <!--        mode="widthFix"-->
@@ -101,7 +101,7 @@
       <!-- <div  class="bbutton1" @tap="sure()">单独购买</div> -->
     </div>
     <div class="goTop">
-      <img src="https://m.aerp.com.cn/mini-RG-main/toTop.png" alt @tap="goTopAction" />
+      <img src="https://m.aerp.com.cn/mini-app-main/toTop.png" alt @tap="goTopAction" />
     </div>
   </div>
 </template>

@@ -10,7 +10,7 @@
         </div>
         <p class="change" @tap="changeCard">
           <img
-            src="https://m.aerp.com.cn/mini-RG-main/change.png"
+            src="https://m.aerp.com.cn/mini-app-main/change.png"
             alt
             style="width:46rpx;height:46rpx;margin-bottom:16rpx;"
           />
@@ -28,7 +28,7 @@
         <p class="rlues1">
           更换规格
           <img
-            src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+            src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
             alt
             style="width:24rpx;height:24rpx;margin-left:15rpx;"
           />
@@ -49,7 +49,7 @@
     <!-- <p class="rlues" v-if="item1.categoryType === 'ReTire'" @tap="guigeClick(index1,item1)">
             更换规格
             <img
-              src="https://m.aerp.com.cn/mini-RG-main/maintenance_jump_icon.png"
+              src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
               alt
               style="width:24rpx;height:24rpx;margin-left:15rpx;"
             />
@@ -101,7 +101,7 @@
     </div>-->
     <!-- 无商品 -->
     <!-- <div v-if="item1.isDefaultExpand && item1.products.length === 0" class="else_img_one">
-          <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_null_img.png" alt />
+          <img src="https://m.aerp.com.cn/mini-app-main/maintenance_null_img.png" alt />
           <text>暂无合适商品推荐</text>
     </div>-->
     <!-- </div>
@@ -135,7 +135,7 @@
                     <img
                       class="byservice_right"
                       @tap="serviceClick(itemb,indexb)"
-                      :src="itemb.isDefaultSelect?'https://m.aerp.com.cn/mini-RG-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_radio.png'"
+                      :src="itemb.isDefaultSelect?'https://m.aerp.com.cn/mini-app-main/maintenance_radio_click.png':'https://m.aerp.com.cn/mini-app-main/maintenance_radio.png'"
                       alt
                     />
                   </div>
@@ -202,7 +202,7 @@
                 <p @tap="openClick(itemb,indexb)">
                   <text>{{itemb.isPackageProduct?'收起':"服务明细"}}</text>
                   <img
-                    :src="itemb.isPackageProduct?'https://m.aerp.com.cn/mini-RG-main/maintenance_up_icon.png':'https://m.aerp.com.cn/mini-RG-main/maintenance_down_icon.png'"
+                    :src="itemb.isPackageProduct?'https://m.aerp.com.cn/mini-app-main/maintenance_up_icon.png':'https://m.aerp.com.cn/mini-app-main/maintenance_down_icon.png'"
                     alt
                   />
                 </p>
@@ -212,7 +212,7 @@
         </div>
         <!-- 暂无合适商品推荐 -->
         <div v-if="products.length ==0" class="else_img_one">
-          <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_null_img.png" alt />
+          <img src="https://m.aerp.com.cn/mini-app-main/maintenance_null_img.png" alt />
           <text>暂无合适商品推荐</text>
         </div>
       </div>
