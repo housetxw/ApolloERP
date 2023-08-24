@@ -12,12 +12,12 @@
 
       <!-- </navigator> -->
 
-      <!-- <img src="http://pyguln7uf.bkt.clouddn.com/mini-RG-main/activity_img.png" alt="" class="activeItem"> -->
+      <!-- <img src="http://pyguln7uf.bkt.clouddn.com/mini-app-main/activity_img.png" alt="" class="activeItem"> -->
     </div>
     <div class="topTitle" @click="addmore">
       <p class="titles">基本状况</p>
-      <img src="https://m.aerp.com.cn/mini-RG-main/more.png" alt class="moreimg" v-if="showmore" />
-      <img src="https://m.aerp.com.cn/mini-RG-main/toright.png" alt class="moreimg" v-else />
+      <img src="https://m.aerp.com.cn/mini-app-main/more.png" alt class="moreimg" v-if="showmore" />
+      <img src="https://m.aerp.com.cn/mini-app-main/toright.png" alt class="moreimg" v-else />
     </div>
     <div class="content" v-if="showmore">
       <div class="main">
@@ -49,12 +49,12 @@
     </div>
     <div class="topTitle" style="margin-top:0" @click="addmore1">
       <p class="titles">车辆部件状况</p>
-      <img src="https://m.aerp.com.cn/mini-RG-main/green.png" alt class="moreimg" />
+      <img src="https://m.aerp.com.cn/mini-app-main/green.png" alt class="moreimg" />
       <span class="font24">正常</span>
-      <img src="https://m.aerp.com.cn/mini-RG-main/danger.png" alt class="moreimg" />
+      <img src="https://m.aerp.com.cn/mini-app-main/danger.png" alt class="moreimg" />
       <span class="font24">有过异常、维修</span>
-      <img src="https://m.aerp.com.cn/mini-RG-main/more.png" alt class="moreimg" v-if="showmore1" />
-      <img src="https://m.aerp.com.cn/mini-RG-main/toright.png" alt class="moreimg" v-else />
+      <img src="https://m.aerp.com.cn/mini-app-main/more.png" alt class="moreimg" v-if="showmore1" />
+      <img src="https://m.aerp.com.cn/mini-app-main/toright.png" alt class="moreimg" v-else />
     </div>
     <div v-show="showmore1">
       <div class="content" v-if="carPartsSituation.length>0">
@@ -69,13 +69,13 @@
               :disabled="itemm.status==0"
             >
               <img
-                src="https://m.aerp.com.cn/mini-RG-main/green.png"
+                src="https://m.aerp.com.cn/mini-app-main/green.png"
                 alt
                 class="moreimg"
                 v-if="itemm.status==0"
               />
               <img
-                src="https://m.aerp.com.cn/mini-RG-main/danger.png"
+                src="https://m.aerp.com.cn/mini-app-main/danger.png"
                 alt
                 class="moreimg"
                 v-if="itemm.status==1"
@@ -83,11 +83,11 @@
               <span class="part">{{itemm.displayName}}</span>
             </button>
             <!-- <div class="button">
-              <img src="https://m.aerp.com.cn/mini-RG-main/danger.png" alt class="moreimg" />
+              <img src="https://m.aerp.com.cn/mini-app-main/danger.png" alt class="moreimg" />
               <span class="part">制动系统</span>
             </div>
             <div class="button">
-              <img src="https://m.aerp.com.cn/mini-RG-main/danger.png" alt class="moreimg" />
+              <img src="https://m.aerp.com.cn/mini-app-main/danger.png" alt class="moreimg" />
               <span class="part">全车喷漆</span>
             </div>-->
           </div>
@@ -96,8 +96,8 @@
     </div>
     <div class="topTitle" style="margin-top:0" @click="addmore2">
       <p class="titles">维修保养记录</p>
-      <img src="https://m.aerp.com.cn/mini-RG-main/more.png" alt class="moreimg" v-if="showmore2" />
-      <img src="https://m.aerp.com.cn/mini-RG-main/toright.png" alt class="moreimg" v-else />
+      <img src="https://m.aerp.com.cn/mini-app-main/more.png" alt class="moreimg" v-if="showmore2" />
+      <img src="https://m.aerp.com.cn/mini-app-main/toright.png" alt class="moreimg" v-else />
     </div>
     <div>
       <div class="content1" v-show="showmore2">
@@ -118,7 +118,7 @@
             <div style="padding:30px;width:100%;background:#fff;box-sizing:border-box;">
               <div class="tabContent" v-if="serviceRecord.length>0">
                 <div class="tabBorder" v-for="(item1,index1) in serviceRecord" :key="index1">
-                  <img src="https://m.aerp.com.cn/mini-RG-main/juxing.png" alt class="borderimg" />
+                  <img src="https://m.aerp.com.cn/mini-app-main/juxing.png" alt class="borderimg" />
                   <p class="tabTitle">
                     <span class="s1">{{item1.receiveTime}}</span>
                     <span
@@ -196,18 +196,18 @@ export default {
       showmore: true,
       showmore1: true,
       showmore2: true,
-      src2: 'https://m.aerp.com.cn/mini-RG-main/mine_appointment_null.png',
+      src2: 'https://m.aerp.com.cn/mini-app-main/mine_appointment_null.png',
 
       tabList: [' 全部', '美容', '保养', '轮胎', '钣喷', '改装', '其他'],
       imgUrls2: [
         {
           advertisingCode: 'ProminentActive1',
-          imageUrl: 'https://m.aerp.com.cn/mini-RG-main/newbanner.png',
+          imageUrl: 'https://m.aerp.com.cn/mini-app-main/newbanner.png',
           routeUrl: ''
         },
         {
           advertisingCode: 'ProminentActive1',
-          imageUrl: 'https://m.aerp.com.cn/mini-RG-main/newbanner.png',
+          imageUrl: 'https://m.aerp.com.cn/mini-app-main/newbanner.png',
           routeUrl: ''
         }
       ]

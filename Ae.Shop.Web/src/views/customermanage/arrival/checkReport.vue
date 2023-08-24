@@ -79,13 +79,13 @@
                   <span class="number">({{item.count}})</span>
                 </p>
                 <img
-                  src="https://m.aerp.com.cn/mini-RG-main/more.png"
+                  src="https://m.aerp.com.cn/mini-app-main/more.png"
                   alt
                   class="moreimg"
                   v-if="showmore"
                 />
                 <img
-                  src="https://m.aerp.com.cn/mini-RG-main/toright.png"
+                  src="https://m.aerp.com.cn/mini-app-main/toright.png"
                   alt
                   class="moreimg"
                   v-else
@@ -134,13 +134,13 @@
                   <span class="number">({{item.count}})</span>
                 </p>
                 <img
-                  src="https://m.aerp.com.cn/mini-RG-main/more.png"
+                  src="https://m.aerp.com.cn/mini-app-main/more.png"
                   alt
                   class="moreimg"
                   v-if="showmore1"
                 />
                 <img
-                  src="https://m.aerp.com.cn/mini-RG-main/toright.png"
+                  src="https://m.aerp.com.cn/mini-app-main/toright.png"
                   alt
                   class="moreimg"
                   v-else
@@ -186,13 +186,13 @@
                   <span class="number">({{item.count}})</span>
                 </p>
                 <img
-                  src="https://m.aerp.com.cn/mini-RG-main/more.png"
+                  src="https://m.aerp.com.cn/mini-app-main/more.png"
                   alt
                   class="moreimg"
                   v-if="showmore2"
                 />
                 <img
-                  src="https://m.aerp.com.cn/mini-RG-main/toright.png"
+                  src="https://m.aerp.com.cn/mini-app-main/toright.png"
                   alt
                   class="moreimg"
                   v-else

@@ -299,7 +299,7 @@ namespace Ae.C.MiniApp.Api.Imp.Services
                     new AdvertisingModel()
                     {
                         AdvertisingCode = "ProminentActive1",
-                        ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/home_actvie.png",
+                        ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/home_actvie.png",
                         RouteUrl = "/pages/detailsPages/main",
                         Key = _configuration["ProductServer:ApolloErpJiYouPackage"]
                     }

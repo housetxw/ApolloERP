@@ -350,17 +350,17 @@ namespace Ae.Vehicle.Service.Controllers
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "太平洋车险",
-                    ImageUrl = $"{domain}/mini-RG-main/PacificAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/PacificAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "保骉车险",
-                    ImageUrl = $"{domain}/mini-RG-main/AutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/AutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "中国人保车险",
-                    ImageUrl = $"{domain}/mini-RG-main/PICCAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/PICCAutoInsurance.png"
                 },
                 //new InsuranceCompanyVo()
                 //{
@@ -370,107 +370,107 @@ namespace Ae.Vehicle.Service.Controllers
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "天平汽车车险",
-                    ImageUrl = $"{domain}/mini-RG-main/BalanceAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/BalanceAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "太平车险",
-                    ImageUrl = $"{domain}/mini-RG-main/TaipingAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/TaipingAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "中国人寿车险",
-                    ImageUrl = $"{domain}/mini-RG-main/renshou.png"
+                    ImageUrl = $"{domain}/mini-app-main/renshou.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "中华联合车险",
-                    ImageUrl = $"{domain}/mini-RG-main/ChinaUnitedAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/ChinaUnitedAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "安邦车险",
-                    ImageUrl = $"{domain}/mini-RG-main/AmpangAutomobileInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/AmpangAutomobileInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "大地车险",
-                    ImageUrl = $"{domain}/mini-RG-main/LandInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/LandInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "天安车险",
-                    ImageUrl = $"{domain}/mini-RG-main/TiananAutomobileInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/TiananAutomobileInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "华泰车险",
-                    ImageUrl = $"{domain}/mini-RG-main/HuataiAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/HuataiAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "大众车险",
-                    ImageUrl = $"{domain}/mini-RG-main/VolkswageInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/VolkswageInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "阳光车险",
-                    ImageUrl = $"{domain}/mini-RG-main/SunshineInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/SunshineInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "永安车险",
-                    ImageUrl = $"{domain}/mini-RG-main/YonganAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/YonganAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "中银车险",
-                    ImageUrl = $"{domain}/mini-RG-main/BOCmotorInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/BOCmotorInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "华安车险",
-                    ImageUrl = $"{domain}/mini-RG-main/HuaanAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/HuaanAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "都邦车险",
-                    ImageUrl = $"{domain}/mini-RG-main/DuBangAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/DuBangAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "安诚车险",
-                    ImageUrl = $"{domain}/mini-RG-main/AnchengVehicleInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/AnchengVehicleInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "渤海车险",
-                    ImageUrl = $"{domain}/mini-RG-main/BohaiAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/BohaiAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "紫金车险",
-                    ImageUrl = $"{domain}/mini-RG-main/ZijinAutomobileInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/ZijinAutomobileInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "中煤车险",
-                    ImageUrl = $"{domain}/mini-RG-main/ChinaCoalAutomobileInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/ChinaCoalAutomobileInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "民安车险",
-                    ImageUrl = $"{domain}/mini-RG-main/MinAnAutoInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/MinAnAutoInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "浙商车险",
-                    ImageUrl = $"{domain}/mini-RG-main/ZhejiangAutomobileInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/ZhejiangAutomobileInsurance.png"
                 },
                 new InsuranceCompanyVo()
                 {
                     DisplayName = "美亚车险",
-                    ImageUrl = $"{domain}/mini-RG-main/MayaCarInsurance.png"
+                    ImageUrl = $"{domain}/mini-app-main/MayaCarInsurance.png"
                 }
             };
             if (!string.IsNullOrEmpty(request.SearchContent))

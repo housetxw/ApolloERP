@@ -3,7 +3,7 @@
     <div class="main">
       <div class="border"  v-for="(item,index) in abnormalDes" :key="index">
         <div class="condition">
-          <img src="https://m.aerp.com.cn/mini-RG-main/juxing.png" alt class="borderimg" />
+          <img src="https://m.aerp.com.cn/mini-app-main/juxing.png" alt class="borderimg" />
           <p class="title">
             <span class="date">{{item.checkDate}}</span>
             <span class="shopname">{{item.shopSimpleName}}</span>
@@ -30,7 +30,7 @@
           <!-- <div class="content">
             <p class="contentT">异常描述:漆面划痕</p>
             <div class="contentB">
-              <img src="https://m.aerp.com.cn/mini-RG-main/more.png" alt class="images" />
+              <img src="https://m.aerp.com.cn/mini-app-main/more.png" alt class="images" />
             </div>
           </div>-->
         </div>

@@ -1109,7 +1109,7 @@ namespace Ae.OrderComment.Service.Imp.Services
                 if (item.IsAnonymous)
                 {
                     item.NickName = "匿名用户";
-                    item.HeadUrl = $"{Configuration["BaseImageUrl"]}mini-RG-main/mine.png";
+                    item.HeadUrl = $"{Configuration["BaseImageUrl"]}mini-app-main/mine.png";
                 }
 
                 var defaultImage = images.Where(_ => _.CommentId == item.CommentId).ToList();

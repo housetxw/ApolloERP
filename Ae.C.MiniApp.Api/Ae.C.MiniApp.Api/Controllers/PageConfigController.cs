@@ -58,13 +58,13 @@ namespace Ae.C.MiniApp.Api.Controllers
             //         new AdvertisingModel()
             //         {
             //             AdvertisingCode = "activity1",
-            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/88banner.png",
+            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/88banner.png",
             //             RouteUrl = ""
             //         },
             //         new AdvertisingModel()
             //         {
             //             AdvertisingCode = "activity2",
-            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/redBanner.png",
+            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/redBanner.png",
             //             RouteUrl = ""
             //         }
             //     },
@@ -74,7 +74,7 @@ namespace Ae.C.MiniApp.Api.Controllers
             //         {
             //             Category = "BaoYang",
             //             DisplayName = "上门养护",
-            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/curingIcon.png",
+            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/curingIcon.png",
             //             RouteUrl = "/pages/littleMaintain/main",
             //             SubTitle = "更换机油，三滤",
             //             PackageType = new List<string>() {"xby"},
@@ -84,7 +84,7 @@ namespace Ae.C.MiniApp.Api.Controllers
             //         {
             //             Category = "BaoYang",
             //             DisplayName = "到店养护",
-            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/maintenance_icon.png",
+            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/maintenance_icon.png",
             //             RouteUrl = "/pages/maintain/main",
             //             SubTitle = "多种套餐适配查询"
             //         },
@@ -92,7 +92,7 @@ namespace Ae.C.MiniApp.Api.Controllers
             //         {
             //             Category = "Tire",
             //             DisplayName = "轮胎服务",
-            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/wheels_icon.png",
+            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/wheels_icon.png",
             //             RouteUrl = "/pages/tireService/main",
             //             SubTitle = "买轮胎送保险"
             //         },
@@ -100,7 +100,7 @@ namespace Ae.C.MiniApp.Api.Controllers
             //         {
             //             Category = "PackageCard",
             //             DisplayName = "套餐卡",
-            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/card_icon.png",
+            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/card_icon.png",
             //             RouteUrl = "/pages/packageCard/main",
             //             SubTitle = "次卡 月卡 季卡"
             //         },
@@ -108,7 +108,7 @@ namespace Ae.C.MiniApp.Api.Controllers
             //         {
             //             Category = "Wash",
             //             DisplayName = "美容洗车",
-            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/washcar_icon.png",
+            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/washcar_icon.png",
             //             RouteUrl = "/pages/washCar/main",
             //             SubTitle = "25元起洗车"
             //         },
@@ -116,7 +116,7 @@ namespace Ae.C.MiniApp.Api.Controllers
             //         {
             //             Category = "BaoYang",
             //             DisplayName = "紧急救援",
-            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/helpIcon.png",
+            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/helpIcon.png",
             //             RouteUrl = "/pages/littleMaintain/main",
             //             SubTitle = "更换冷却液、刹车片",
             //             PackageType = new List<string>() {"dby"},
@@ -128,7 +128,7 @@ namespace Ae.C.MiniApp.Api.Controllers
             //         new AdvertisingModel()
             //         {
             //             AdvertisingCode = "ProminentActive1",
-            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-RG-main/home_actvie.png",
+            //             ImageUrl = $"{_configuration["ImageDomain"]}/mini-app-main/home_actvie.png",
             //             RouteUrl = "/pages/detailsPages/main",
             //             Key = _configuration["ProductServer:ApolloErpJiYouPackage"]
             //         }
