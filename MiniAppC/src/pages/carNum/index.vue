@@ -5,7 +5,7 @@
       <!-- <view class="section">
         <view class="carNumFirst" bind:tap="showKeyboard" data-type="province">
           <input class="province" placeholder="沪" disabled placeholder-style="color:#D9D9D9;" value="{{carNumFist}}"/>
-          <image src="https://img3.tuhu.org/PeccancyCheXingYi/FnfyqrrPtO9Y_Ax_1uDVRiez32gi_w56_h56.png@100Q.png"></image>
+          <image src="https://img3.ApolloERP.org/PeccancyCheXingYi/FnfyqrrPtO9Y_Ax_1uDVRiez32gi_w56_h56.png@100Q.png"></image>
         </view>
         <input class="carNumlast" placeholder="车牌号" disabled placeholder-style="color:#D9D9D9;" bind:tap="showKeyboard" data-type="t41" value="{{carNumLast}}"/>
       </view>-->
@@ -16,7 +16,7 @@
     </view>
     <view class="carBrand">
       {{selectCar.vehicle}}
-      <!--<image src="https://img2.tuhu.org/PeccancyCheXingYi/d947/8e45/69136df2ebc416e9648abe4d_w128_h128.png@100Q.png"></image>-->
+      <!--<image src="https://img2.ApolloERP.org/PeccancyCheXingYi/d947/8e45/69136df2ebc416e9648abe4d_w128_h128.png@100Q.png"></image>-->
     </view>
 </div>
       <div style="margin-bottom:176rpx;"></div>

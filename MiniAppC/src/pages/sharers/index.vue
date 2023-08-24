@@ -218,7 +218,7 @@ export default {
       //     type: 1,
       //     useRuleDesc: "新用户首单，满300减120",
       //     userCouponId: 97,
-      //     userId: "1fe23753-9d73-425d-9d6a-a574c571de6d",
+      //     userId: "1fe23753-9d73-425d-1111-a574c571de6d",
       //     value: 120
       //   }
       // ],

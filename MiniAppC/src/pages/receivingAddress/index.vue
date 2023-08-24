@@ -137,16 +137,16 @@ export default {
       addressArr: [
         {
           title: '王珊',
-          phoneNumber: '1875182475',
-          licensePlate: '上海普陀区真北路2999弄77号401室',
+          phoneNumber: '18755558888',
+          licensePlate: '上海普陀区真北路2999弄',
           src2: `${this.globalData.imgPubUrl}order_edit_icon.png`,
           switchdis: true,
           meal: '家'
         },
         {
           title: '王珊',
-          phoneNumber: '1875182475',
-          licensePlate: '上海普陀区真北路2999弄77号401室',
+          phoneNumber: '18755558888',
+          licensePlate: '上海普陀区真北路2999弄',
           src2: `${this.globalData.imgPubUrl}order_edit_icon.png`,
           switchdis: false,
           meal: '学校'

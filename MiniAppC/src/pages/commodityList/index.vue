@@ -7,7 +7,7 @@
           <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_good_pic.png" alt class="img1" />
         </div>
         <div class="content">
-          <p class="p_p1">美孚/Mobil1号全合成机油地方了更好地地方管理科5W-30SNdv级4L</p>
+          <p class="p_p1">美孚/Mobil-1号全合成机油5W-30SNdv级4L</p>
           <div class="bottom">
             <p class="p2">共1件</p>
             <p class="p4">
@@ -22,7 +22,7 @@
           <img src="https://m.aerp.com.cn/mini-RG-main/maintenance_good_pic.png" alt class="img1" />
         </div>
         <div class="content">
-          <p class="p_p1">美孚/Mobil1号全合成机油地方了更好地地方管理科5W-30SNdv级4L</p>
+          <p class="p_p1">美孚/Mobil-1号全合成机油5W-30SNdv级4L</p>
           <div class="bottom">
             <p class="p2">共1件</p>
             <p class="p4">

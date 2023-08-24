@@ -48,7 +48,7 @@ export default {
       windowHeight: '',
       // ortherCouponArr:[
       //   {
-      //     title:'辛纳瑞咖啡通用代金券',
+      //     title:'咖啡通用代金券',
       //     sonArr:[
       //       {
       //         integral:'2000积分',

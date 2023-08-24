@@ -71,7 +71,7 @@ export default {
       color1: '#E8E8E8',
       yzmtext: '获取验证码',
       userTelDes: '',
-      leftIcon: 'https://m.aerp.com.cn/mini-RG-main/Mobile phone.png',
+      leftIcon: 'https://m.aerp.com.cn/mini-RG-main/Mobile_phone.png',
       leftIcon1: 'https://m.aerp.com.cn/mini-RG-main/Password.png'
     }
   },

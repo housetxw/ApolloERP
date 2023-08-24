@@ -11,16 +11,16 @@
           <p class="top_bottom_p2">【超级会员专享】每满800立减80，最高减400</p>
           <p class="top_bottom_p3">
             <text class="top_bottom_text">活动时间：</text>
-            <text class="top_bottom_text2">2019.09.09-2019.09.30</text>
+            <text class="top_bottom_text2">2022.09.09-2022.09.30</text>
           </p>
           <p class="top_bottom_p3">
             <text class="top_bottom_text">活动说明：</text>
             <text
               class="top_bottom_text2"
-            >京东JD.COM-专业综合网上购物商城，销售超数万 4020万种商品，囊括家电手机、电脑、服装、居家 婴、美妆、个护、食务！</text>
+            >专业综合网上购物商城，销售超数万 4020万种商品，囊括家电手机、电脑、服装、居家 婴、美妆、个护、食务！</text>
           </p>
           <p class="top_bottom_p4">积分可用</p>
-          <p class="top_bottom_p5">京东JD.COM全部商品分类,为您展示所有品类详细分布。选商品看分类,让您的购物更便捷、轻松!网购上京东,省钱又放心!</p>
+          <p class="top_bottom_p5">全部商品分类,为您展示所有品类详细分布。选商品看分类,让您的购物更便捷、轻松!网购上**,省钱又放心!</p>
         </div>
       </div>
     </div>

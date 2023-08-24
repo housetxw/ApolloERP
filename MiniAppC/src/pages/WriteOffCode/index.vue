@@ -227,7 +227,7 @@ export default {
       subSummary: '到货后会及时和客人预约到店服务时间',
       isNeedDelivery: '配送到个人',
       leftimg: `${this.globalData.imgPubUrl}personal@2x.png`,
-      rightimg: `${this.globalData.imgPubUrl}Mobile phone.png`,
+      rightimg: `${this.globalData.imgPubUrl}Mobile_phone.png`,
       receiverName: '红小',
       receiverPhone: '15675274444',
       displayVehicleName: 'R- 荣威RX5 -上海汽车',

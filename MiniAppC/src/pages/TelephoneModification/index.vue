@@ -62,7 +62,7 @@ import { postTyre, postMoreshop } from '../../api'
 export default {
   data() {
     return {
-      phone: '021-5415-0808',
+      phone: '021-5555-8888',
       value1: '',
       value2: '',
       isLock: false,
@@ -71,7 +71,7 @@ export default {
       color1: '#FF6324',
       yzmtext: '获取验证码',
       userTelDes: '',
-      leftIcon: 'https://m.aerp.com.cn/mini-RG-main/Mobile phone.png',
+      leftIcon: 'https://m.aerp.com.cn/mini-RG-main/Mobile_phone.png',
       leftIcon1: 'https://m.aerp.com.cn/mini-RG-main/Password.png',
       userTel: ''
     }

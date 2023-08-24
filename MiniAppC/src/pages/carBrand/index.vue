@@ -140,7 +140,7 @@ export default {
     },
     getBrandUrl(item) {
       return `https://img${item.Brand.substr(0, 1).charCodeAt() % 4 +
-        1}.tuhu.org${item.Url}`
+        1}.ApolloERP.org${item.Url}`
     },
     // getBrands () {
     //   return wx.fetch({
@@ -268,7 +268,7 @@ export default {
       // })
     },
     bindCharStart(ev) {
-      if (!wx.tuhu.util.isIOS()) {
+      if (!wx.ApolloERP.util.isIOS()) {
         return
       }
       const { item } = ev.currentTarget.dataset
@@ -282,7 +282,7 @@ export default {
       })
     },
     bindCharMove(ev) {
-      if (!wx.tuhu.util.isIOS()) {
+      if (!wx.ApolloERP.util.isIOS()) {
         return
       }
 
@@ -295,7 +295,7 @@ export default {
       })
     },
     bindCharEnd(ev) {
-      if (!wx.tuhu.util.isIOS()) {
+      if (!wx.ApolloERP.util.isIOS()) {
         return
       }
       this.setData({
@@ -947,7 +947,7 @@ page {
   position: absolute;
   width: 26rpx;
   height: 26rpx;
-  background: url('https://res.tuhu.org/images/xcx/search.png') no-repeat;
+  background: url('https://res.ApolloERP.org/images/xcx/search.png') no-repeat;
   background-size: 100%;
   top: 18rpx;
   left: 20rpx;
