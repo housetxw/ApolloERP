@@ -15,6 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="logs\" />
     <Folder Include="Validators\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>

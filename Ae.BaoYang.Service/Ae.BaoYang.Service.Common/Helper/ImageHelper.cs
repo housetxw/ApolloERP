@@ -20,7 +20,7 @@ namespace Ae.BaoYang.Service.Common.Helper
                 return string.Empty;
             }
 
-            var imageDomain = "https://m.ApolloErp.cn";
+            var imageDomain = "https://m.aerp.com.cn";
             var imageUrl = url.TrimStart('/');
             imageUrl = string.Concat(imageDomain, "/", imageUrl);
             return imageUrl;

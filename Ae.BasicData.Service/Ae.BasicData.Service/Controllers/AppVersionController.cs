@@ -26,7 +26,7 @@ namespace Ae.BasicData.Service.Controllers
 
 
         /// <summary>
-        /// 获取鹅管家App版本信息
+        /// 获取门店管家App版本信息
         /// </summary>
         /// <param name="req"></param>
         /// <returns></returns>
@@ -38,7 +38,7 @@ namespace Ae.BasicData.Service.Controllers
         }
 
         /// <summary>
-        /// 获取鹅管家App历史版本信息
+        /// 获取门店管家App历史版本信息
         /// </summary>
         /// <param name="req"></param>
         /// <returns></returns>
