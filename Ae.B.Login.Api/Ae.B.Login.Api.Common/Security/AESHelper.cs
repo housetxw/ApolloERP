@@ -12,7 +12,7 @@ namespace Ae.B.Login.Api.Common.Security
     public static class AESHelper
     {
         ///密钥,长度为80的字符串
-        private static string key = "r*(_gY;UiK^h!~(Y;r*(_gY;UiK^h!UF;N<>/)(_+=dff!~(Y;r*(_gY;UiK^h!UF&8YTjkhf./8.;RG";
+        private static string key = "r*(_gY;UiK^h!~(Y;r*(_gY;UiK^h!UF;N<>/)(_+=dff!~(Y;r*(_gY;UiK^h!UF&8YTjkhf./8.;AE";
 
         /// 偏移量,长度为16的字符串
         private static int ivT = 2 << 3;

@@ -30,10 +30,10 @@ namespace Ae.AccountAuthority.Service.Core.Enums
         CertificationStore = 8,
 
         /// <summary>
-        /// 红鹅先生（工作室)
+        /// 技师先生（工作室)
         /// </summary>
-        [Description("红鹅先生")]
-        RedGooseMen=16,
+        [Description("技师先生")]
+        TechnicianMen = 16,
 
     }
 }
