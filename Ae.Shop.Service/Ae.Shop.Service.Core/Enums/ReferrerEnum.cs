@@ -34,8 +34,8 @@ namespace Ae.Shop.Service.Core.Enums
         [Description("门店码")]
         ShopCode = 4,
 
-        [Description("鹅管家码")]
-        GooseAppCode = 5,
+        [Description("门店APP码")]
+        ShopAppCode = 5,
 
         [Description("商品促销")]
         ProductPromotion = 6,

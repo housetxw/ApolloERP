@@ -9,7 +9,7 @@ namespace Ae.ShopOrder.Service.Common.Template
         public readonly static string InitTemplate = @"
 
   {
-    ""tips"": ""建议戴上耳机联系客服,边拨打，边录入不适配信息，021-54150808"",
+    ""tips"": ""建议戴上耳机联系客服,边拨打，边录入不适配信息，021-55558888"",
     ""orderNo"": """",
     ""isHistory"": false,
     ""carInfoList"": [

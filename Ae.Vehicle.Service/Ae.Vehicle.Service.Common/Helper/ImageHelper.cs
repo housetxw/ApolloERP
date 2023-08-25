@@ -31,8 +31,8 @@ namespace Ae.Vehicle.Service.Common.Helper
             if (url.Contains("://"))
             {
                 ub = new UriBuilder(url);
-                if (!ub.Host.EndsWith(".tuhu.cn") &&
-                    !ub.Host.EndsWith(".tuhu.org") &&
+                if (!ub.Host.EndsWith(".aerp.com.cn") &&
+                    !ub.Host.EndsWith(".aerp.cn") &&
                     !ub.Host.EndsWith(".alikunlun.com") &&
                     !ub.Host.EndsWith(".qiniucdn.com"))
                     return url;
@@ -50,8 +50,8 @@ namespace Ae.Vehicle.Service.Common.Helper
 
             ub.Scheme = "https";
             ub.Port = 443;
-            ub.Host = "m.ApolloErp.cn";
-            //ub.Host = $"img{Math.Abs(ub.Path.GetHashCode() % 4) + 1}.tuhu.org";
+            ub.Host = "m.aerp.com.cn";
+            //ub.Host = $"img{Math.Abs(ub.Path.GetHashCode() % 4) + 1}.aerp.com.cn";
             ub.Query = "";
 
             string format;

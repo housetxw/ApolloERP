@@ -20,7 +20,7 @@ namespace Ae.Shop.Service.Core.Model
         public ChannelType Channel { get; set; } = ChannelType.None;
 
         /// <summary>
-        /// 类型（0未设置 1文章 2海报 3段子 4门店码 5鹅管家码 6商品促销 7自行搜索 8直接转发小程序）
+        /// 类型（0未设置 1文章 2海报 3段子 4门店码 5门店APP码 6商品促销 7自行搜索 8直接转发小程序）
         /// </summary>
         public ReferrerType ReferrerType { get; set; } = ReferrerType.None;
     }
