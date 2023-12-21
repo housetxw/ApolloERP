@@ -29,7 +29,7 @@
 
 ## 开发文档
 
-  [转到wiki](https://gitee.com/aerphouse/ApolloERP/wikis/Home){:target="_blank"} 
+  [转到wiki](https://gitee.com/aerphouse/ApolloERP/wikis/Home) {:target="_blank"}  
 
 ## 在线体验
 
