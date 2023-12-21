@@ -27,6 +27,9 @@
   前端技术：vue、vue-cli  
   后端技术：.net core 2.1、C#、微服务  
 
+## 开发文档
+    https://gitee.com/aerphouse/ApolloERP/wikis/Home
+
 ## 在线体验
 
   门店\公司管理地址：[http://shop.aerp.com.cn](http://shop.aerp.com.cn)  
