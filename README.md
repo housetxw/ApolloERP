@@ -28,7 +28,8 @@
   后端技术：.net core 2.1、C#、微服务  
 
 ## 开发文档
-    https://gitee.com/aerphouse/ApolloERP/wikis/Home
+
+  [转到wiki](https://gitee.com/aerphouse/ApolloERP/wikis/Home)
 
 ## 在线体验
 
