@@ -29,12 +29,12 @@
 
 ## 开发文档
 
-  [转到wiki](https://gitee.com/aerphouse/ApolloERP/wikis/Home) {:target="_blank"}  
+  [转到wiki](https://gitee.com/aerphouse/ApolloERP/wikis/Home)   
 
 ## 在线体验
 
-  门店\公司管理地址：[http://shop.aerp.com.cn](http://shop.aerp.com.cn){:target="_blank"}  
-  总部管理地址：[http://boss.aerp.com.cn](http://boss.aerp.com.cn){:target="_blank"}   
+  门店\公司管理地址：[http://shop.aerp.com.cn](http://shop.aerp.com.cn)  
+  总部管理地址：[http://boss.aerp.com.cn](http://boss.aerp.com.cn)  
   账户/密码：13811112222 / 12345678  
   技术交流QQ群：221525146  
 
