@@ -27,7 +27,7 @@ namespace Ae.OrderComment.Service.Dal.Repositorys.OrderComment
 
         public async Task<int> CheckOrderComment(CheckOrderCommentRequest request)
         {
-            var sql = @"UPDATE COMMENT 
+            var sql = @"UPDATE comment 
 	                    SET check_status = @check_status,
 	                    check_comment = @check_comment,
                         check_time = SYSDATE( ),
@@ -180,7 +180,7 @@ namespace Ae.OrderComment.Service.Dal.Repositorys.OrderComment
 
             var sqlCount = @"SELECT
 	                    count(oc.id) FROM
-	                    COMMENT oc
+	                    comment oc
 	                    INNER JOIN comment_detail_product cdp ON oc.id = cdp.comment_id 
                     WHERE
 	                    1 = 1 
@@ -213,7 +213,7 @@ namespace Ae.OrderComment.Service.Dal.Repositorys.OrderComment
 	                    cdp.product_image_url ProductImageUrl,
 	                    cdp.score  Score
                     FROM
-	                    COMMENT oc
+	                    comment oc
 	                    INNER JOIN comment_detail_product cdp ON oc.id = cdp.comment_id 
                     WHERE
 	                    1 = 1 
@@ -416,7 +416,7 @@ namespace Ae.OrderComment.Service.Dal.Repositorys.OrderComment
 
             var sqlCount = @"SELECT
 	                    count(oc.id) FROM
-	                    COMMENT oc
+	                    comment oc
 	                    INNER JOIN comment_detail_shop cds ON oc.id = cds.comment_id 
                     WHERE
 	                    1 = 1 
@@ -447,7 +447,7 @@ namespace Ae.OrderComment.Service.Dal.Repositorys.OrderComment
 	                    cds.shop_image_url ShopImageUrl,
 	                    cds.score 
                     FROM
-	                    COMMENT oc
+	                    comment oc
 	                    INNER JOIN comment_detail_shop cds ON oc.id = cds.comment_id 
                     WHERE
 	                    1 = 1 
@@ -561,7 +561,7 @@ namespace Ae.OrderComment.Service.Dal.Repositorys.OrderComment
 
             var sqlCount = @"SELECT
 	                    count(oc.id) FROM
-	                    COMMENT oc
+	                    comment oc
 	                    INNER JOIN comment_detail_tech cdt ON oc.id = cdt.comment_id 
                     WHERE
 	                    1 = 1 
@@ -594,7 +594,7 @@ namespace Ae.OrderComment.Service.Dal.Repositorys.OrderComment
 	                    cdt.tech_head_url TechHeadUrl,
 	                    cdt.score  Score
                     FROM
-	                    COMMENT oc
+	                    comment oc
 	                    INNER JOIN comment_detail_tech cdt ON oc.id = cdt.comment_id 
                     WHERE
 	                    1 = 1 
@@ -1010,7 +1010,7 @@ GROUP BY product_id";
         {
             var sqlCount = @"SELECT
 	                    count(id) cs FROM
-	                    COMMENT
+	                    comment
                     WHERE user_id = @UserId
 	                    AND is_deleted =0  ";
             var param = new DynamicParameters();
@@ -1036,7 +1036,7 @@ GROUP BY product_id";
 	like_num LikeNum,
     is_best IsBest,
     create_time CreateTime
-    FROM COMMENT
+    FROM comment
                     WHERE user_id = @UserId
 	                    AND is_deleted =0  ";
 
