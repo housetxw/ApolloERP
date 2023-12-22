@@ -180,7 +180,7 @@ namespace Ae.Shop.Api.Dal.Repositorys.Arrival
                                         AND a.shop_id = @ShopId {whrCla}
                                         AND arrival_time BETWEEN @Start AND @End
                                         GROUP BY CAST(arrival_time AS date) 
-                                        ORDER BY a.arrival_time DESC;";
+                                        ORDER BY CAST(arrival_time AS date) DESC;";
                     res = (await conn.QueryAsync<ArrivalTrendChartEntityDTO>(sql, param)).ToList();
                 });
             }

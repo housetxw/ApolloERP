@@ -55,7 +55,7 @@ namespace Ae.Shop.Api.Dal.Repositorys.ShopReport
             var sql = @"select a.id AS Id,a.shop_id AS ShopId,a.order_no AS OrderNo, a.order_status AS OrderStatus,
                         case when a.produce_type = 14 then 7 else a.order_type end AS OrderType,
                         case when a.produce_type = 15 then c.avg_price * c.num else a.`actual_amount` end as ActualAmount,a.install_status AS InstallStatus,DATE_FORMAT(a.install_time,'%Y-%m-%d') AS InstallTime, 
-                        a.user_id AS UserId from `orders`  a
+                        a.user_id AS UserId from `order`  a
                         left join order_package_card c on a.order_no = c.verify_order_no 
                         where a.produce_type  in (0,2,15,16,17,18,19,20)
                         and a.order_status=30
