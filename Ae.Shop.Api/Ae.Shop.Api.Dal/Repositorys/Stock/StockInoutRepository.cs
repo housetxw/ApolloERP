@@ -154,7 +154,7 @@ namespace Ae.Shop.Api.Dal.Repositorys.Stock
 				                        INNER JOIN stock_inout_item sii ON si.id = sii.inout_id and sii.is_deleted=0  
 			                          {conditions.ToString()}  
 			                        ORDER BY si.id
-		                        ) T
+		                        ) t
 		                        ORDER BY t.id DESC
 		                        LIMIT @index, @size
 	                        ) t
