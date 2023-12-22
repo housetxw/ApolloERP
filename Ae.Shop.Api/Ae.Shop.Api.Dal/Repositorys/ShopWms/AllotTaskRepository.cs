@@ -156,7 +156,7 @@ namespace Ae.Shop.Api.Dal.Repositorys
 				                        INNER JOIN allot_product ap ON alt.id = ap.task_id AND ap.is_deleted = 0 where 1=1
 			                          {sqlWhere.ToString()}  
 			                        ORDER BY alt.id 
-		                        ) T
+		                        ) t
 		                        ORDER BY t.id DESC
 		                        LIMIT @index, @size
 	                        ) t
