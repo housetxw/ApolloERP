@@ -754,11 +754,11 @@ namespace Ae.ShopOrder.Service.Dal.Repository
             var parameters = new DynamicParameters();
             var builder = new StringBuilder();
 
-            //  builder.AppendLine(" where B.is_deleted=0 and B.produce_type in ("+BuyProductTypeEnum.OfficeOrder.ToSbyte()+","+ BuyProductTypeEnum.ShopToSamllWarehouseOrder.ToSbyte()+" ) ");
+            //  builder.AppendLine(" where b.is_deleted=0 and b.produce_type in ("+BuyProductTypeEnum.OfficeOrder.ToSbyte()+","+ BuyProductTypeEnum.ShopToSamllWarehouseOrder.ToSbyte()+" ) ");
             builder.AppendLine(" where 1=1  ");
             if (!string.IsNullOrEmpty(request.OrderNo))
             {
-                builder.AppendLine(" and B.order_no=@OrderNo");
+                builder.AppendLine(" and b.order_no=@OrderNo");
                 parameters.Add("@OrderNo", request.OrderNo);
             }
 
@@ -770,13 +770,13 @@ namespace Ae.ShopOrder.Service.Dal.Repository
 
             if (!string.IsNullOrEmpty(request.ProductId))
             {
-                builder.AppendLine(" and A.product_id =@ProductId");
+                builder.AppendLine(" and a.product_id =@ProductId");
                 parameters.Add("@ProductId", request.ProductId);
             }
 
             if (request.ShopIds != null && request.ShopIds.Any())
             {
-                builder.AppendLine(" and B.shop_id in @ShopIds");
+                builder.AppendLine(" and b.shop_id in @ShopIds");
                 parameters.Add("@ShopIds", request.ShopIds);
             }
 
@@ -786,7 +786,7 @@ namespace Ae.ShopOrder.Service.Dal.Repository
                 bool isSuccess = DateTime.TryParse(request.StartCreateTime, out var startOrderTime);
                 if (isSuccess)
                 {
-                    builder.AppendLine(" and B.order_time>=@OrderTime");
+                    builder.AppendLine(" and b.order_time>=@OrderTime");
                     parameters.Add("@OrderTime", startOrderTime);
                 }
             }
@@ -796,19 +796,19 @@ namespace Ae.ShopOrder.Service.Dal.Repository
                 bool isSuccess = DateTime.TryParse(request.EndCreateTime, out var endDateTime);
                 if (isSuccess)
                 {
-                    builder.AppendLine(" and B.order_time<@EndTime");
+                    builder.AppendLine(" and b.order_time<@EndTime");
                     parameters.Add("@EndTime", endDateTime);
                 }
             }
 
-            string orderby = " P.create_time desc, B.order_time desc";
+            string orderby = " p.create_time desc, b.order_time desc";
 
 
-            var sqlCount = @"select count(1) from `order` B
-                                inner join order_product A   on B.order_no=A.order_no and A.is_deleted=0 and B.order_status=30 and A.product_attribute=5
-								inner join shop_purchase.purchase_order_product pp on pp.product_code = A.product_id and pp.is_deleted=0
+            var sqlCount = @"select count(1) from `order` b
+                                inner join order_product a   on b.order_no=a.order_no and a.is_deleted=0 and b.order_status=30 and a.product_attribute=5
+								inner join shop_purchase.purchase_order_product pp on pp.product_code = a.product_id and pp.is_deleted=0
 								inner join shop_purchase.purchase_order p on p.id = pp.po_id and p.purchase_type=2 and p.status=6
-                                left join order_car C on B.id=c.order_id and c.is_deleted=0 " + builder.ToString();
+                                left join order_car c on b.id=c.order_id and c.is_deleted=0 " + builder.ToString();
 
 
             var total = 0;
@@ -819,18 +819,18 @@ namespace Ae.ShopOrder.Service.Dal.Repository
 
             parameters.Add("@OrderBy", orderby);
 
-            var sql = @" select B.shop_id ShopId,s.simple_name SimpleName,  B.order_no SaleOrder,B.actual_amount ActualAmount,B.create_time CreateTime ,B.user_phone UserPhone,B.user_name UserName,
-A.product_id ProductId,A.product_name ProductName,A.price SalePrice,A.total_number TotalNumber,A.total_amount SaleOrderPrice,
+            var sql = @" select b.shop_id ShopId,s.simple_name SimpleName,  b.order_no SaleOrder,b.actual_amount ActualAmount,b.create_time CreateTime ,b.user_phone UserPhone,b.user_name UserName,
+a.product_id ProductId,a.product_name ProductName,a.price SalePrice,a.total_number TotalNumber,a.total_amount SaleOrderPrice,
 p.vender_short_name VenderShortName,p.id PurchaseOrder,pp.price PurchasePrice,pp.num PurchaseNumber,pp.amount PurchaseTotalPrice,
-                                C.car_number CarNumber,CONCAT(c.brand,'|',c.vehicle,'|',c.nian,'|',c.pai_liang,c.sales_name) CarInfo,
-								i.can_use_num StockNum,P.create_time PurchaseTime
-								from `order` B
-                                inner join order_product A   on B.order_no=A.order_no and A.is_deleted=0 and B.order_status=30 and A.product_attribute=5
-								inner join shop_purchase.purchase_order_product pp on pp.product_code = A.product_id and pp.is_deleted=0
+                                c.car_number CarNumber,CONCAT(c.brand,'|',c.vehicle,'|',c.nian,'|',c.pai_liang,c.sales_name) CarInfo,
+								i.can_use_num StockNum,p.create_time PurchaseTime
+								from `order` b
+                                inner join order_product a   on b.order_no=a.order_no and a.is_deleted=0 and b.order_status=30 and a.product_attribute=5
+								inner join shop_purchase.purchase_order_product pp on pp.product_code = a.product_id and pp.is_deleted=0
 								inner join shop_purchase.purchase_order p on p.id = pp.po_id and p.purchase_type=2 and p.status=6
-                                left join shop_manage.shop s on s.id = B.shop_id and s.is_deleted=0
-								left join shop_wms.inventory i on i.location_id = B.shop_id and i.product_id = A.product_id and i.is_deleted=0
-                                left join order_car C on B.id=c.order_id and c.is_deleted=0 " + builder.ToString() + @"
+                                left join shop_manage.shop s on s.id = b.shop_id and s.is_deleted=0
+								left join shop_wms.inventory i on i.location_id = b.shop_id and i.product_id = a.product_id and i.is_deleted=0
+                                left join order_car c on b.id=c.order_id and c.is_deleted=0 " + builder.ToString() + @"
                                 order by " + orderby + "  limit " + (request.PageIndex - 1) * request.PageSize + "," + request.PageSize;
 
 
