@@ -9,6 +9,16 @@ namespace Ae.B.Product.Api.Common.Constant
         #region Common
 
         /// <summary>
+        /// true
+        /// </summary>
+        public static readonly string TrueStr = "true";
+
+        /// <summary>
+        /// false
+        /// </summary>
+        public static readonly string FalseStr = "false";
+
+        /// <summary>
         /// 发生错误
         /// </summary>
         public static readonly string ErrorOccured = "发生错误";

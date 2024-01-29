@@ -27,6 +27,8 @@ using Ae.B.Product.Api.Imp.Services;
 using Ae.B.Product.Api.Extension;
 using ApolloErp.Login.Auth;
 using ApolloErp.Component.Http;
+using Ae.B.Product.Api.Common.Constant;
+using Ae.B.Product.Api.Common.Extension;
 
 namespace Ae.B.Product.Api
 {
@@ -133,6 +135,12 @@ namespace Ae.B.Product.Api
             {
                 app.UseHsts();
             };
+            var swaggerOnProd = Configuration["EnableSwagger"].EqualsIgnoreCase(CommonConstant.TrueStr);
+            if (swaggerOnProd)
+            {
+                app.UseSwagger(AssemblyName, Configuration, dev: true);
+            }
+
             //所有调用开启登录认证使用
             app.UseLoginAuth(Configuration);
 
