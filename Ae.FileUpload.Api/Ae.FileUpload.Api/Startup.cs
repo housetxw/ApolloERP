@@ -31,6 +31,8 @@ using NLog.Extensions.Logging;
 using ApolloErp.Log;
 using ApolloErp.Email.Message;
 using ApolloErp.Component.Http;
+using Ae.FileUpload.Api.Common.Constant;
+using Ae.FileUpload.Api.Common.Extension;
 
 namespace Ae.FileUpload.Api
 {
@@ -116,6 +118,12 @@ namespace Ae.FileUpload.Api
             {
                 app.UseHsts();
             };
+
+            var swaggerOnProd = Configuration["EnableSwagger"].EqualsIgnoreCase(CommonConstant.TrueStr);
+            if (swaggerOnProd)
+            {
+                app.UseSwagger(AssemblyName, Configuration, dev: true);
+            }
 
             //开启CorrelationId中间件
             app.UseApolloErpCorrelationId();

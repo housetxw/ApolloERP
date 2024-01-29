@@ -6,6 +6,16 @@ namespace Ae.FileUpload.Api.Common.Constant
 {
     public class CommonConstant
     {
+        /// <summary>
+        /// true
+        /// </summary>
+        public static readonly string TrueStr = "true";
+
+        /// <summary>
+        /// false
+        /// </summary>
+        public static readonly string FalseStr = "false";
+
         #region Common
 
         /// <summary>
