@@ -13,10 +13,10 @@ cd myproject
 yarn
 
 # 开发时构建
-npm dev
+npm run dev
 
 # 打包构建
-npm build
+npm run build
 
 # 指定平台的开发时构建(微信、百度、头条、支付宝)
 npm dev:wx

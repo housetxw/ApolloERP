@@ -36,12 +36,13 @@ namespace Ae.C.Login.Api.Client.Clients.WeChatService
         /// <returns></returns>
         public async Task<GetJsCodeResponse> GetJscode2session(LoginPlatform platform, string jsCode)
         {
+            GetJsCode2SessionRequest request = new GetJsCode2SessionRequest();
+            string openId = "";
             try
             {
                 //创建调用client
                 var client = clientFactory.CreateClient("WebChat");
                 //整合调用参数
-                GetJsCode2SessionRequest request = new GetJsCode2SessionRequest();
                 request.Js_Code = jsCode;
                 if (platform== LoginPlatform.YangChe)
                 {
@@ -63,13 +64,13 @@ namespace Ae.C.Login.Api.Client.Clients.WeChatService
                 }
 
                 //调微信接口
-                string openId = await client.GetAsStringAsync<GetJsCode2SessionRequest>(configuration["WebChat:jscode2session"], request);
+                openId = await client.GetAsStringAsync<GetJsCode2SessionRequest>(configuration["WebChat:jscode2session"], request);
                 GetJsCodeResponse result = JsonConvert.DeserializeObject<GetJsCodeResponse>(openId);
                 return result;
             }
             catch (Exception ex)
             {
-                logger.Error($"微信GetJscode2session:Request:{JsonConvert.SerializeObject(new { platform=platform, jsCode=jsCode })}调用失败", ex);
+                logger.Error($"微信GetJscode2session:Request:{JsonConvert.SerializeObject(request)}, openId={openId}", ex);
                 return null;
             }
         }
