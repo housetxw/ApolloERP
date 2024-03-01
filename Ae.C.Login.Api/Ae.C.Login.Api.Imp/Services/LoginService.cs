@@ -103,6 +103,7 @@ namespace Ae.C.Login.Api.Imp.Services
                 logger.Warn($"微信GetJscode2session:Request:{request.WxCode}调用失败{ermg}");
                 throw new CustomException("登录失败,请手动登录");
             }
+            //logger.Info($"微信GetJscode2session:Request:{JsonConvert.SerializeObject(request)},wxOpenId:{JsonConvert.SerializeObject(wxOpenId)}");
 
             //缓存微信的session_key
             await redisClient.Redis.StringSetAsync(redisKey + ":session_key:" + wxOpenId.openid, wxOpenId.session_key,
@@ -115,7 +116,8 @@ namespace Ae.C.Login.Api.Imp.Services
                 GetWxUnionid unionid = JsonConvert.DeserializeObject<GetWxUnionid>(UnionidStr);
                 if (unionid == null || string.IsNullOrEmpty(unionid.UnionId))
                 {
-                    logger.Error($"微信unionid解密失败:Request:{JsonConvert.SerializeObject(request)}");
+                    logger.Error($"微信unionid解密失败:Request:{JsonConvert.SerializeObject(request)}，session_key：{wxOpenId.session_key}" +
+                        $",UnionidStr = {UnionidStr}");
                     throw new CustomException("登录失败");
                 }
                 else
