@@ -98,21 +98,21 @@ namespace Ae.B.Login.Api.Imp.Services
             switch (smsType)
             {
                 case SMSType.Login:
-                    tmplCode = "SMS_175710093";
+                    tmplCode = "SMS_213970043";
                     break;
                 case SMSType.ChangePassword:
-                    tmplCode = "SMS_175710090";
+                    tmplCode = "SMS_213970040";
                     break;
                 case SMSType.AppQuickRegister:
-                    tmplCode = "SMS_175710093";
+                    tmplCode = "SMS_213970041";
                     break;
                 case SMSType.QuickCompanyRegister:
-                    tmplCode = "SMS_175710093";
+                    tmplCode = "SMS_213970044";
                     break;
             }
 
-            var chlType = "门店APP签名";
-            if (channel.Contains("b-pc") || channel.Contains("pc")) chlType = "Web登录短信签名";
+            var chlType = "侬田田";//门店APP签名
+            if (channel.Contains("b-pc") || channel.Contains("pc")) chlType = "侬田田";//Web登录短信签名
 
             var reqSms = new SmsParameter
             {

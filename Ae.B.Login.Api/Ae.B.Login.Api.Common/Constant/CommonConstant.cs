@@ -268,10 +268,10 @@ namespace Ae.B.Login.Api.Common.Constant
         #region NoSQL Redis
 
         /// <summary>
-        /// R.LAA:Login:
-        /// Rg.LoginAuth.Api:Login:
+        /// A.BLA:Login:
+        /// Ae.B.Login.Api:Login:
         /// </summary>
-        public static string RedisLoginFolder { get; set; } = "R.LAA:Login:";
+        public static string RedisLoginFolder { get; set; } = "A.BLA:Login:";
 
         /// <summary>
         /// AC:
