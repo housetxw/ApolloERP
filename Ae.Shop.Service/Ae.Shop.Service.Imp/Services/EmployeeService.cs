@@ -588,13 +588,13 @@ namespace Ae.Shop.Service.Imp.Services
                 {
                     PhoneNumbers = req.Mobile,
                     SignName = "平台总部",
-                    TemplateCode = "SMS_185845857",
+                    TemplateCode = "SMS_213970041",
                     TemplateParam = JsonConvert.SerializeObject(new { phone = req.Mobile, password = pwd })
                 };
                 if (account.HasAccount)
                 {
                     pwd = "您的原密码";
-                    sms.TemplateCode = "SMS_185821593";
+                    sms.TemplateCode = "SMS_213970040";
                     sms.TemplateParam = JsonConvert.SerializeObject(new { phone = req.Mobile, password = pwd });
 
                 }
