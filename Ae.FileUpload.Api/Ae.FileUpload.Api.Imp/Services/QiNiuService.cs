@@ -14,29 +14,43 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace Ae.FileUpload.Api.Imp.Services
 {
     public class QiNiuService : IQiNiuService
     {
-        private const string AccessKey = "_Igfnj2QmaHxXs****";//管理文件 认证
-        private const string SecretKey = "D9fhN79BqJwVsp****";//管理文件 认证
-       // private const string Domain = "https://m.aerp.com.cn";//文件管理 外链默认域名
+        private readonly IConfiguration _configuration;
+
+        private string AccessKey = "_Igfnj2QmaHxXs****";//管理文件 认证
+        private string SecretKey = "D9fhN79BqJwVsp****";//管理文件 认证
+       // private string Domain = "https://m.aerp.com.cn";//文件管理 外链默认域名
 
         private string ImageDomain = "http://image.aerp.com.cn";
         private string VideoDomain = "http://video.aerp.com.cn";
-
-
+        private bool useHttps = false;
 
         private string ImageBucket = "aerp";//空间名，可以是公开或者私有的
         private string VideoBucket = "video";
-        public QiNiuService()
+
+        public QiNiuService(IConfiguration configuration)
         {
+            _configuration = configuration;
+
+
+            AccessKey = _configuration["Qiniu:AccessKey"];//管理文件 认证
+            SecretKey = _configuration["Qiniu:SecretKey"];
+            ImageDomain = _configuration["Qiniu:ImageDomain"];//文件管理 外链默认域名
+            VideoDomain = _configuration["Qiniu:VideoDomain"];
+            ImageBucket = _configuration["Qiniu:ImageBucket"];//空间名，可以是公开或者私有的
+            VideoBucket = _configuration["Qiniu:VideoBucket"];
+            useHttps = _configuration["Qiniu:UseHttps"]=="true";//是否使用HTTPS
+
             // AK = ACCESS_KEY
             // USE_HTTPS = (true|false) 是否使用HTTPS
             // 使用前请确保AK和BUCKET正确，否则此函数会抛出异常(比如code612/631等错误)
-            Qiniu.Common.Config.AutoZone(AccessKey, ImageBucket, true);
-            Qiniu.Common.Config.AutoZone(AccessKey, VideoBucket, true);
+            Qiniu.Common.Config.AutoZone(AccessKey, ImageBucket, useHttps);
+            Qiniu.Common.Config.AutoZone(AccessKey, VideoBucket, useHttps);
         }
 
         //public Tuple<string, string> GetBucketAndHostByFileName(string fileName)

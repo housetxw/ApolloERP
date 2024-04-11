@@ -578,7 +578,7 @@ namespace Ae.Shop.Service.Imp.Services
                             + DateTime.Now.Second.ToString()
                             + DateTime.Now.Millisecond.ToString() + ".png";
 
-                        fullName = "Shops/" + fileName;
+                        fullName = "Shops/QRCode/" + fileName;
                         await _fileUploadClient.UploadBytes(new UploadByteRequest
                         {
                             Bytes = result.CodeBytes,
