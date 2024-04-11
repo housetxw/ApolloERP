@@ -19,8 +19,8 @@ namespace Ae.FileUpload.Api.Imp.Services
 {
     public class QiNiuService : IQiNiuService
     {
-        private const string AccessKey = "6lAkQuitIJayl-***";//管理文件 认证
-        private const string SecretKey = "wGiDzEoH995Wwx-***";//管理文件 认证
+        private const string AccessKey = "_Igfnj2QmaHxXs****";//管理文件 认证
+        private const string SecretKey = "D9fhN79BqJwVsp****";//管理文件 认证
        // private const string Domain = "https://m.aerp.com.cn";//文件管理 外链默认域名
 
         private string ImageDomain = "http://image.aerp.com.cn";
@@ -28,7 +28,7 @@ namespace Ae.FileUpload.Api.Imp.Services
 
 
 
-        private string ImageBucket = "image";//空间名，可以是公开或者私有的
+        private string ImageBucket = "aerp";//空间名，可以是公开或者私有的
         private string VideoBucket = "video";
         public QiNiuService()
         {
