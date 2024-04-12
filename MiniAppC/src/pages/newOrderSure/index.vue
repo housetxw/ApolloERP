@@ -3,7 +3,7 @@
     <div class="seckillItem">
       <image src="https://m.aerp.com.cn/mini-app-main/changeCarIcon.png" mode="widthFix" style="width:192rpx;height:252rpx;"></image>
       <div class="seckillItemR">
-        <div class="seckillItemTit">致大H1000 5W-30 全合成机...</div>
+        <div class="seckillItemTit">AERPH1000 5W-30 全合成机...</div>
         <div class="seckillItemDec">SN PLUS级 减少油耗 抑制油泥</div>
         <div class="seckillItemPrice">¥99.99</div>
         <div class="seckillItemRBottom">立即抢购</div>

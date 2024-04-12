@@ -238,7 +238,7 @@ export function PostNearbyStore(data) {
   return post(`${publicUrl}/Shop/GetNearShopList`, data)
 }
 
-// 加盟致大
+// 加盟AERP
 export function PostAddRedE(data) {
   return post(`${publicUrl}/Shop/JoinIn`, data)
 }

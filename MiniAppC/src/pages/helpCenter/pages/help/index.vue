@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <!-- <div class="group_title">关于致大</div> -->
-    <!-- <van-cell title="致大养车介绍" is-link  @tap="introduce"/>
+    <!-- <div class="group_title">关于</div> -->
+    <!-- <van-cell title="AERP介绍" is-link  @tap="introduce"/>
     <van-cell title="企业文化" is-link   @tap="culture"/>-->
-    <van-cell title="致大用户注册协议" is-link @tap="agreement" />
-    <van-cell title="致大隐私政策" is-link @tap="policy" />
+    <van-cell title="用户注册协议" is-link @tap="agreement" />
+    <van-cell title="隐私政策" is-link @tap="policy" />
     <van-cell title="订单共享与安全" is-link @tap="orderSharing" />
     <van-cell title="访问信息的使用" is-link @tap="accessInformation" />
     <van-cell title="上传内容的使用" is-link @tap="UploadUse" />

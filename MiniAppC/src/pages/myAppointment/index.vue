@@ -159,7 +159,7 @@ export default {
           conent: '2018款 2.0T 手自一体 上市特别版',
           num: 13,
           date: '2019-10-10 08:00',
-          store: '致大养车-黄山店【迎客松路】',
+          store: 'AERP-黄山店【迎客松路】',
           project: '大保养，更换轮胎及雨刮器',
           number: 'BY00000001',
           switchdisplay: false
@@ -170,7 +170,7 @@ export default {
           conent: '2018款 2.0T 手自一体 上市特别版',
           num: 13,
           date: '2019-10-10 08:00',
-          store: '致大养车-黄山店【迎客松路】',
+          store: 'AERP-黄山店【迎客松路】',
           project: '大保养，更换轮胎及雨刮器',
           number: 'BY00000001',
           switchdisplay: false
@@ -181,7 +181,7 @@ export default {
           conent: '2018款 2.0T 手自一体 上市特别版',
           num: 13,
           date: '2019-10-10 08:00',
-          store: '致大养车-黄山店【迎客松路】',
+          store: 'AERP-黄山店【迎客松路】',
           project: '大保养，更换轮胎及雨刮器',
           number: 'BY00000001',
           switchdisplay: false
@@ -192,7 +192,7 @@ export default {
           conent: '2018款 2.0T 手自一体 上市特别版',
           num: 13,
           date: '2019-10-10 08:00',
-          store: '致大养车-黄山店【迎客松路】',
+          store: 'AERP-黄山店【迎客松路】',
           project: '大保养，更换轮胎及雨刮器',
           number: 'BY00000001',
           switchdisplay: true
@@ -233,7 +233,7 @@ export default {
       let that = this
       wx.showModal({
         title: '修改预约',
-        content: '确定需要修改当前预约时间？致大将重新和您确认预约时间。',
+        content: '确定需要修改当前预约时间？AERP将重新和您确认预约时间。',
         success(res) {
           if (res.confirm) {
             that.$router.push('/pages/newAppointment/main')

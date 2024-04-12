@@ -593,7 +593,7 @@ export default {
       console.log(res.target)
     }
     return {
-      title: '致大养车',
+      title: 'AERP',
       path: `/pages/index/main?activedId=1&shareUserId=${that.globalData.userInfo?that.globalData.userInfo.userId:''}`
     }
   },

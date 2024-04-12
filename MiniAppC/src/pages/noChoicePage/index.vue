@@ -46,7 +46,7 @@
     </div>
     <div class="top_pIcc">
       <div class="txt">
-        <p class="txt1">致大正品保 PICC中国人保承担</p>
+        <p class="txt1">AERP正品保 PICC中国人保承担</p>
         <p class="txt2">30亿正品险担保 最高赔付200万</p>
       </div>
       <img

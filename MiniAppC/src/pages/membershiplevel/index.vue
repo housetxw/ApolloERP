@@ -33,7 +33,7 @@
             </div>
           </div>
           <div>
-            <p class="hemember">致大养车会员成长</p>
+            <p class="hemember">AERP会员成长</p>
             <p class="tab">
               <text class="txt1">会员等级</text>
               <text class="txt2">成长值</text>

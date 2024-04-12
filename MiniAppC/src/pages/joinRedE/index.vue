@@ -120,7 +120,7 @@ export default {
       this.show = false
       this.show1 = true
     },
-    // 加盟致大
+    // 加盟AERP
     joinEmao() {
       let that = this
       if (that.username != '' && that.password != '' && that.city != '') {
@@ -138,7 +138,7 @@ export default {
           .then(res => {
             if (res.data) {
               wx.showToast({
-                title: '报名表已收到，致大会尽快和您联系，谢谢',
+                title: '报名表已收到，AERP会尽快和您联系，谢谢',
                 icon: 'none'
               })
               setTimeout(() => {

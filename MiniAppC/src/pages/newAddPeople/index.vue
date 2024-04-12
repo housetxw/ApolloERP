@@ -229,9 +229,9 @@ export default {
       let that = this
       if (that.globalData.addressSure == false) {
         wx.showModal({
-          title: '“致大”想访问您的通讯录',
+          title: '“AERP”想访问您的通讯录',
           content:
-            '致大需要访问您的通讯录，以便您在购物时正常查阅、取用您的联系人信息',
+            'AERP需要访问您的通讯录，以便您在购物时正常查阅、取用您的联系人信息',
           confirmText: '好',
           cancelText: '不允许',
           success(res) {

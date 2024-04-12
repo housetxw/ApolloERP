@@ -208,7 +208,7 @@ export default {
         // },
         // {
         //   src: `${this.globalData.imgPubUrl}mine_join_us.png`,
-        //   txt: '加盟致大'
+        //   txt: '加盟AERP'
         // },
         {
           src: `${this.globalData.imgPubUrl}Help center.png`,
@@ -412,7 +412,7 @@ export default {
         // case 9: // 我的发票
         //   wx.showToast({ title: '敬请期待', icon: 'none' })
         //   break
-        // case 5: // 加盟致大
+        // case 5: // 加盟AERP
         //   this.$router.push('/pages/joinRedE/main')
         //   break
         case 5: // 帮助中心

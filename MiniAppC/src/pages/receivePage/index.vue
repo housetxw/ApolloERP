@@ -41,7 +41,7 @@
           </div>
           <div class="main">
             <p class="yuan"></p>
-            <p class="p1">具体解释权归致大养车所有。</p>
+            <p class="p1">具体解释权归AERP所有。</p>
           </div>
         </div>
       </div>

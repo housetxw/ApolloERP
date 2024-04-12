@@ -8,7 +8,7 @@
         </span>
       </p>
       <p class="topTitle2">
-        通过您的分享来到致大养车注册的新用户已有
+        通过您的分享来到AERP注册的新用户已有
         <span class="title1">{{referrerUserNum}}</span>人，     
         其中完成养车服务的用户已有
         <span class="title1">{{numberOfSharedUsers}}</span>人，     
@@ -208,7 +208,7 @@ export default {
       //   {
       //     couponActivityId: 2,
       //     couponRuleId: 1,
-      //     displayName: "致大养车到店保养券",
+      //     displayName: "AERP到店保养券",
       //     endValidTime: "2030.12.31",
       //     imageUrl: "",
       //     name: "满300元减120",

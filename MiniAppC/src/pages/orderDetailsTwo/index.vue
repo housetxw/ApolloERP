@@ -240,7 +240,7 @@
     <!-- 安装码 -->
     <div class="section_code" v-if="orderInstallCodeInfos.length > 0">
       <div class="section_code_top">
-        <p class="txt1">致大安装码</p>
+        <p class="txt1">AERP安装码</p>
         <!-- <p class="txt2" @tap="seeMoreClick">查看更多 <img src="https://m.aerp.com.cn/mini-app-main/red.png" alt="" class="img1"/></p> -->
       </div>
       <!-- <p class="section_code_data">有效期至：{{date1}}</p> -->
@@ -270,7 +270,7 @@
     <!-- 核销码 -->
     <div class="section_code_code" v-if="orderVerificationCodeInfos.length > 0">
       <div class="section_code_top">
-        <p class="txt1">致大核销码</p>
+        <p class="txt1">AERP核销码</p>
         <p class="txt2" @tap="seeMoreClick">
           查看更多
           <img src="https://m.aerp.com.cn/mini-app-main/red.png" alt class="img1" />
@@ -489,7 +489,7 @@ export default {
       orderDispatchtrue: true,
       orderDispatch: {
         // telephone: '18838959011',
-        // techName: '致大',
+        // techName: 'AERP',
         // createTime: '2020-07-09',
         // userImgUrl: 'https://m.aerp.com.cn/mini-app-main/gotel.png'
       }, // 技师对象

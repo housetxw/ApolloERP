@@ -1,6 +1,6 @@
 <template>
   <div class="demo_page" :style="{minHeight:windowHeight}">
-    <!-- 致大优惠券 -->
+    <!-- AERP优惠券 -->
     <div class="top">
       <p class="p1">{{couponTitle}}</p>
       <div class="box" v-for="(items,indexs) in couponArr" :key="indexs">
@@ -43,7 +43,7 @@ import {GetActive, PostCouponActivityId} from '../../api'
 export default {
   data () {
     return {
-      couponArr: [], // 致大优惠券数组
+      couponArr: [], // AERP优惠券数组
       couponTitle: '', // 优惠券标题
       windowHeight: '',
       // ortherCouponArr:[
@@ -75,7 +75,7 @@ export default {
     }
   },
   methods: {
-    // 致大兑换
+    // AERP兑换
     redeemRedE (indexs, items) {
       let that = this
       // 根据userId和couponActivityId，积分兑换优惠券

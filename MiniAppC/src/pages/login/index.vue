@@ -37,7 +37,7 @@
     </div>
     <p class="position">
       登录即代表您已阅读并同意
-      <text @click="privacyClick">《致大用户协议》</text>
+      <text @click="privacyClick">《AERP用户协议》</text>
     </p>
   </div>
 </template>

@@ -282,7 +282,7 @@ export default {
       let that = this
       wx.showModal({
         title: '修改预约',
-        content: '确定需要修改当前预约时间？致大将重新和您确认预约时间。',
+        content: '确定需要修改当前预约时间？AERP将重新和您确认预约时间。',
         success(res) {
           if (res.confirm) {
             that.$router.push({
