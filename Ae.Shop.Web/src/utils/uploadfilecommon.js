@@ -17,7 +17,7 @@ export const upload = (token, key, obj, next, error, complete) => {
   const config = {
     // 上传是否使用cdn加速
     useCdnDomain: true,
-    region: qiniu.region.z2,
+    region: qiniu.region.z0,//华东-浙江
     // 是否使用https域名
     useHttpsDomain: true
   }
