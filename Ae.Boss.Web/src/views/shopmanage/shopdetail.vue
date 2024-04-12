@@ -498,7 +498,7 @@
         </el-container>
         <!-- 配置信息结束 -->
         <!-- 服务信息开始 -->
-        <el-container>
+        <!-- <el-container>
           <el-header>服务信息</el-header>
           <el-main>
             <el-form
@@ -591,7 +591,7 @@
               </el-row>
             </el-form>
           </el-main>
-        </el-container>
+        </el-container> -->
         <!-- 服务信息结束 -->
         <!-- 图片信息开始 -->
         <el-container>
