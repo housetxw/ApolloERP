@@ -50,7 +50,10 @@ namespace Ae.FileUpload.Api.Imp.Services
             // USE_HTTPS = (true|false) 是否使用HTTPS
             // 使用前请确保AK和BUCKET正确，否则此函数会抛出异常(比如code612/631等错误)
             Qiniu.Common.Config.AutoZone(AccessKey, ImageBucket, useHttps);
-            Qiniu.Common.Config.AutoZone(AccessKey, VideoBucket, useHttps);
+            if (!string.IsNullOrWhiteSpace(VideoBucket))
+            {
+                Qiniu.Common.Config.AutoZone(AccessKey, VideoBucket, useHttps);
+            }
         }
 
         //public Tuple<string, string> GetBucketAndHostByFileName(string fileName)
