@@ -439,7 +439,18 @@ namespace Ae.C.Login.Api.Imp.Services
 
             //生成验证码
             string code = ValidateCodeHelper.CreateValidateCode(4);
-            SendSms(request.MobilePhone, code);
+            //发短信
+            //SendSms(request.MobilePhone, code);
+            var sms = new SmsParameter
+            {
+                PhoneNumbers = request.MobilePhone,
+                SignName = configuration["AliSms:SignName"],
+                TemplateCode = configuration["AliSms:LoginCode"],
+                TemplateParam = JsonConvert.SerializeObject(new { code = code })
+            };
+            var sendSmsResult = smsClient.SendSms(sms);
+            var isSendSuccess = sendSmsResult.Code.Equals("10000");
+
             //验证码放到缓存中
             await redisClient.Redis.StringSetAsync(redisKey + ":VerCodeSend:" + request.MobilePhone, code, TimeSpan.FromSeconds(55));
             await redisClient.Redis.StringSetAsync(redisKey + ":VerCodeValite:" + request.MobilePhone, code, TimeSpan.FromSeconds(295));
@@ -456,8 +467,8 @@ namespace Ae.C.Login.Api.Imp.Services
             request.Version = "2017-05-25";
             request.Action = "SendSms";
             request.AddQueryParameters("PhoneNumbers", phone);
-            request.AddQueryParameters("SignName", "总部");
-            request.AddQueryParameters("TemplateCode", "SMS_175");
+            request.AddQueryParameters("SignName", "AERP");
+            request.AddQueryParameters("TemplateCode", "SMS_213970043");
             request.AddQueryParameters("TemplateParam", "{\"code\":\"" + code + "\"}");
             try
             {
