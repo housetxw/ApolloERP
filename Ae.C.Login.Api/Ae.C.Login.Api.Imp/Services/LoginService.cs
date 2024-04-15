@@ -431,6 +431,7 @@ namespace Ae.C.Login.Api.Imp.Services
 
         public async Task SendLoginVerificationCodeSms(VerificationCodeSmsRequest request)
         {
+            string signName = configuration["AliSms:SignName"];
             //一分钟内只能发送一次请求
             if (await redisClient.Redis.KeyExistsAsync(redisKey + ":VerCodeSend:" + request.MobilePhone))
             {
@@ -441,7 +442,6 @@ namespace Ae.C.Login.Api.Imp.Services
             string code = ValidateCodeHelper.CreateValidateCode(4);
             //发短信
             //SendSms(request.MobilePhone, code);
-            string signName = configuration["AliSms:SignName"];
             var sms = new SmsParameter
             {
                 PhoneNumbers = request.MobilePhone,
