@@ -441,6 +441,7 @@ namespace Ae.C.Login.Api.Imp.Services
             string code = ValidateCodeHelper.CreateValidateCode(4);
             //发短信
             //SendSms(request.MobilePhone, code);
+            string signName = configuration["AliSms:SignName"];
             var sms = new SmsParameter
             {
                 PhoneNumbers = request.MobilePhone,
@@ -448,6 +449,8 @@ namespace Ae.C.Login.Api.Imp.Services
                 TemplateCode = configuration["AliSms:LoginCode"],
                 TemplateParam = JsonConvert.SerializeObject(new { code = code })
             };
+
+            //logger.Info($"短信:signName:{signName},sms:{JsonConvert.SerializeObject(sms)}");
             var sendSmsResult = smsClient.SendSms(sms);
             var isSendSuccess = sendSmsResult.Code.Equals("10000");
 

@@ -22,7 +22,7 @@
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.0" />
     <PackageReference Include="ApolloErp.Common" Version="1.0.6" />
     <PackageReference Include="ApolloErp.Log" Version="1.0.2" />
-    <PackageReference Include="ApolloErp.Message" Version="1.0.1" />
+    <PackageReference Include="ApolloErp.Message" Version="1.0.2" />
     <PackageReference Include="ApolloErp.Redis" Version="1.0.1" />
     <PackageReference Include="System.Drawing.Common" Version="4.6.0" />
   </ItemGroup>
