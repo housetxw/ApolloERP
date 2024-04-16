@@ -38,13 +38,13 @@ export default {
       this.globalData.encryptedData = e.mp.detail.encryptedData
       this.globalData.iv = e.mp.detail.iv
       let data = {
-        loginType: 'WeChat',
+        loginType: 'Test',//正式发布改为：WeChat
         openId: this.globalData.openId,
         unionId: this.globalData.unionId,
         nickName: this.globalData.nickName,
         headUrl: this.globalData.avatarUrl,
-        encryptedData: this.globalData.encryptedData,
-        iv: this.globalData.iv,
+        encryptedData: 'Test',//正式发布改为：this.globalData.encryptedData,
+        iv: 'Test',//正式发布改为：this.globalData.iv,
         gender: this.globalData.gender,
         sceneId: this.globalData.sceneId,
         shareUserId: this.globalData.shareUserId

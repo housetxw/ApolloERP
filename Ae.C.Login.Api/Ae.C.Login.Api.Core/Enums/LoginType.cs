@@ -12,6 +12,11 @@ namespace Ae.C.Login.Api.Core.Enums
     public enum ThirtyLoginType
     {
         /// <summary>
+        /// 测试
+        /// </summary>
+        [Display(Name = "测试")]
+        Test = 0,
+        /// <summary>
         /// 微信
         /// </summary>
         [Display(Name = "微信")]

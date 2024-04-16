@@ -169,6 +169,32 @@ namespace Ae.C.Login.Api.Imp.Services
 
         public async Task<LoginResponse> ThirtyLoginRegister(ThirtyLoginRequest request, string refreshUri) 
         {
+            //增加测试登录
+            if(request.LoginType == ThirtyLoginType.Test)
+            {
+                LoginResponse resultTest = new LoginResponse();
+                var userTest = await iUserRespository.GetUserInfoByMobile("13811112222", (int)request.LoginType);
+                
+                if (userTest == null)
+                {
+                    logger.Error($"用户信息获取失败:Request:{JsonConvert.SerializeObject(request)}");
+                    throw new CustomException("登录失败");
+                }
+
+                var userInfoTest = mapper.Map<UserInfoVO>(userTest);
+                var tokenInfoTest = iLoginAuthService.GetTokenInfo(userInfoTest, refreshUri);
+                if (string.IsNullOrEmpty(userInfoTest.NickName))
+                {
+                    userInfoTest.NickName = userInfoTest.MobileNumber ?? string.Empty;
+                }
+
+                resultTest.TokenInfo = tokenInfoTest;
+                resultTest.UserInfo = userInfoTest;
+               
+                return resultTest;
+
+            }
+
             SysLoginLogDO log = new SysLoginLogDO();
             log.IpAddress = GetIp();
             log.LoginTime = DateTime.Now;
