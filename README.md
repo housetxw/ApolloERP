@@ -42,6 +42,9 @@
 
 ![输入图片说明](Images/%E6%BC%94%E7%A4%BA%E7%89%88APP%E4%B8%8B%E8%BD%BD%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 
+## 小程序体验版
+
+![输入图片说明](Images/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%93%E9%AA%8C.jpg)
 
 ## 开源及商务合作说明
 
