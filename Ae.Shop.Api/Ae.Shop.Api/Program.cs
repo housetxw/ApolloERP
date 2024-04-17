@@ -16,14 +16,14 @@ namespace Ae.Shop.Api
             var logger = ApolloErpNLogBuilder.ConfigureNLog();
             try
             {
-                logger.Info("init shop api");
+                //logger.Info("init shop.api");
                 //logger.Debug("init main");
                 CreateWebHostBuilder(args).Build().Run();
             }
             catch (Exception ex)
             {
                 //NLog: catch setup errors
-                logger.Error(ex, "Stopped program because of exception");
+                logger.Error(ex, "Stopped shop.api because of exception");
                 throw;
             }
             finally
