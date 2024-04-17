@@ -747,7 +747,7 @@ export default {
       if (data.organizationId) {
         data.organizationId = data.organizationId.split("|")[0];
       } else {
-        data.organizationId = undefined;
+        data.organizationId = -1;
       }
       if (!data.id) {
         data.id = undefined;
