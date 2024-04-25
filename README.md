@@ -24,7 +24,7 @@
 ## 安装说明
 
   开发环境：VS2019、MySql8.0、Redis  
-  前端技术：vue、vue-cli  
+  前端技术：vue2、vue-cli  
   后端技术：.net core 2.1、C#、微服务  
 
 ## 开发文档
