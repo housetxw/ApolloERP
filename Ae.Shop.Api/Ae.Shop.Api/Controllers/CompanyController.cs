@@ -33,13 +33,19 @@ namespace Ae.Shop.Api.Controllers
             _logger = logger;
             _identityService = identityService;
         }
-
+        /// <summary>
+        /// 获取当前登录公司类型
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ApiResult<string>> GetOrgType()
         {
             return Result.Success<string>(_identityService.GetOrgType());
         }
-
+        /// <summary>
+        /// 获取当前登录用户
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ApiResult<string>> GetCurrentUser()
         {

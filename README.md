@@ -24,21 +24,31 @@
 ## 安装说明
 
   开发环境：VS2019、MySql8.0、Redis  
-  前端技术：vue、vue-cli  
+  前端技术：vue2、vue-cli  
   后端技术：.net core 2.1、C#、微服务  
 
 ## 开发文档
 
   [转到wiki](https://gitee.com/aerphouse/ApolloERP/wikis/Home)   
 
-## 在线体验
+## 开源地址
+
+  [https://gitee.com/aerphouse/ApolloERP](https://gitee.com/aerphouse/ApolloERP)    
+  [https://github.com/housetxw/ApolloERP](https://github.com/housetxw/ApolloERP)    
+  [https://gitcode.com/aerphouse/ApolloERP](https://gitcode.com/aerphouse/ApolloERP/overview)    
+  [https://gitcode.net/aerphouse/ApolloERP](https://gitcode.net/aerphouse/ApolloERP)    
+
+## 在线体验（演示环境服务器配置较低，操作时会出现卡顿或者超时，敬请谅解）
 
   门店\公司管理地址：[http://shop.aerp.com.cn](http://shop.aerp.com.cn)  
   总部管理地址：[http://boss.aerp.com.cn](http://boss.aerp.com.cn)  
   账户/密码：13811112222 / 12345678  
   技术交流QQ群：221525146  
+  QQ：19652594   
+  邮箱：zhidash2020@163.com 
 
-## 演示版门店管家APP下载 （目前仅支持安卓版）
+## 演示版门店管家APP下载 （目前仅支持安卓版） 
+  账户/密码：13811112222 / 12345678    
 
 ![输入图片说明](Images/%E6%BC%94%E7%A4%BA%E7%89%88APP%E4%B8%8B%E8%BD%BD%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 
