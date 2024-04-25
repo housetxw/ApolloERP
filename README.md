@@ -38,7 +38,7 @@
   [https://gitcode.com/aerphouse/ApolloERP](https://gitcode.com/aerphouse/ApolloERP/overview)    
   [https://gitcode.net/aerphouse/ApolloERP](https://gitcode.net/aerphouse/ApolloERP)    
 
-## 在线体验
+## 在线体验（演示环境服务器配置较低，操作时会出现卡顿或者超时，敬请谅解）
 
   门店\公司管理地址：[http://shop.aerp.com.cn](http://shop.aerp.com.cn)  
   总部管理地址：[http://boss.aerp.com.cn](http://boss.aerp.com.cn)  
