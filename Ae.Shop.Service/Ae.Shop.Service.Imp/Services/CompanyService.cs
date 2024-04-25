@@ -80,11 +80,11 @@ namespace Ae.Shop.Service.Imp.Services
             CompanyDO company = _mapper.Map<CompanyDO>(request);
 
             //company.BusinessLicense = company.BusinessLicense.Substring(company.BusinessLicense.IndexOf(".cn/") + 4, company.BusinessLicense.Length - company.BusinessLicense.IndexOf(".cn/") - 4);
-            company.BusinessLicense = company.BusinessLicense.Replace("https://m.ApolloErp.cn/", "")
-                .Replace("http://m.ApolloErp.cn/", "");
+            company.BusinessLicense = company.BusinessLicense.Replace("https://m.aerp.com.cn/", "")
+                .Replace("http://m.aerp.com.cn/", "");
             //company.AccountOpeningLicense = company.AccountOpeningLicense.Substring(company.AccountOpeningLicense.IndexOf(".cn/") + 4, company.AccountOpeningLicense.Length - company.AccountOpeningLicense.IndexOf(".cn/") - 4);
-            company.AccountOpeningLicense = company.AccountOpeningLicense.Replace("https://m.ApolloErp.cn/", "")
-                .Replace("http://m.ApolloErp.cn/", "");
+            company.AccountOpeningLicense = company.AccountOpeningLicense.Replace("https://m.aerp.com.cn/", "")
+                .Replace("http://m.aerp.com.cn/", "");
             company.CreateBy = string.IsNullOrEmpty(company.CreateBy) ? _identityService.GetUserName() : company.CreateBy;
             company.CreateTime = DateTime.Now;
             company.DepositAmount = 0;
@@ -124,11 +124,11 @@ namespace Ae.Shop.Service.Imp.Services
             CompanyDO company = _mapper.Map<CompanyDO>(request);
 
             //company.BusinessLicense = company.BusinessLicense.Substring(company.BusinessLicense.IndexOf(".cn/") + 4, company.BusinessLicense.Length - company.BusinessLicense.IndexOf(".cn/") - 4);
-            company.BusinessLicense = company.BusinessLicense.Replace("https://m.ApolloErp.cn/", "")
-                .Replace("http://m.ApolloErp.cn/", "");
+            company.BusinessLicense = company.BusinessLicense.Replace("https://m.aerp.com.cn/", "")
+                .Replace("http://m.aerp.com.cn/", "");
             //company.AccountOpeningLicense = company.AccountOpeningLicense.Substring(company.AccountOpeningLicense.IndexOf(".cn/") + 4, company.AccountOpeningLicense.Length - company.AccountOpeningLicense.IndexOf(".cn/") - 4);
-            company.AccountOpeningLicense = company.AccountOpeningLicense.Replace("https://m.ApolloErp.cn/", "")
-                .Replace("http://m.ApolloErp.cn/", "");
+            company.AccountOpeningLicense = company.AccountOpeningLicense.Replace("https://m.aerp.com.cn/", "")
+                .Replace("http://m.aerp.com.cn/", "");
             company.CreateBy = string.IsNullOrEmpty(company.CreateBy) ? _identityService.GetUserName() : company.CreateBy;
             company.CreateTime = DateTime.Now;
             company.DepositAmount = 0;
@@ -289,13 +289,13 @@ namespace Ae.Shop.Service.Imp.Services
             }
 
             CompanyDO company = _mapper.Map<CompanyDO>(request);
-            company.BusinessLicense = company.BusinessLicense.Replace("https://m.ApolloErp.cn/", "")
-                .Replace("http://m.ApolloErp.cn/", "");
+            company.BusinessLicense = company.BusinessLicense.Replace("https://m.aerp.com.cn/", "")
+                .Replace("http://m.aerp.com.cn/", "");
 
             //company.BusinessLicense = company.BusinessLicense.Substring(company.BusinessLicense.IndexOf(".cn/") + 4, company.BusinessLicense.Length - company.BusinessLicense.IndexOf(".cn/") - 4);
             //company.AccountOpeningLicense = company.AccountOpeningLicense.Substring(company.AccountOpeningLicense.IndexOf(".cn/") + 4, company.AccountOpeningLicense.Length - company.AccountOpeningLicense.IndexOf(".cn/") - 4);
-            company.AccountOpeningLicense = company.AccountOpeningLicense.Replace("https://m.ApolloErp.cn/", "")
-                .Replace("http://m.ApolloErp.cn/", "");
+            company.AccountOpeningLicense = company.AccountOpeningLicense.Replace("https://m.aerp.com.cn/", "")
+                .Replace("http://m.aerp.com.cn/", "");
             company.CreateBy = companyInfo.CreateBy;
             company.CreateTime = companyInfo.CreateTime;
             company.UpdateBy = string.IsNullOrEmpty(company.UpdateBy) ? _identityService.GetUserName() : company.UpdateBy;

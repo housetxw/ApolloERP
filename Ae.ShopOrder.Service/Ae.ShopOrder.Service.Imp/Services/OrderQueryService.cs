@@ -1519,7 +1519,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                     _.Goods = mapper.Map<List<GetOrdersForOfficeProductDTO>>(products);
                     _.Goods?.ForEach(item =>
                     {
-                        item.ImageUrl = "https://m.ApolloErp.cn//" + item.ImageUrl;
+                        item.ImageUrl = "https://m.aerp.com.cn//" + item.ImageUrl;
                     });
                 });
 

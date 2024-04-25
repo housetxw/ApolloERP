@@ -228,7 +228,7 @@ namespace Ae.Shop.Service.Imp.Services
                     {
                         foreach (var item in shopInfo.HeadImg)
                         {
-                            var newUrl = item.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", "");
+                            var newUrl = item.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", "");
                             shopImgs.Add(new ShopImgDO()
                             {
                                 ImgUrl = newUrl,
@@ -244,7 +244,7 @@ namespace Ae.Shop.Service.Imp.Services
                     {
                         foreach (var item in shopInfo.FrontImg)
                         {
-                            var newUrl = item.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", "");
+                            var newUrl = item.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", "");
                             shopImgs.Add(new ShopImgDO()
                             {
                                 ImgUrl = newUrl,
@@ -262,7 +262,7 @@ namespace Ae.Shop.Service.Imp.Services
                         {
 
                             ShopId = shopId,
-                            ImgUrl = o.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", ""),
+                            ImgUrl = o.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", ""),
 
                             Type = 2,
                             CreateBy = shop.CreateBy,
@@ -274,7 +274,7 @@ namespace Ae.Shop.Service.Imp.Services
                         shopInfo.ShopProofImgs.ForEach(o => shopImgs.Add(new ShopImgDO()
                         {
                             ShopId = shopId,
-                            ImgUrl = o.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", ""),
+                            ImgUrl = o.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", ""),
                             Type = 3,
                             CreateBy = shop.CreateBy,
                             CreateTime = dt
@@ -286,7 +286,7 @@ namespace Ae.Shop.Service.Imp.Services
                         shopInfo.BusinessLienseImgs.ForEach(o => shopImgs.Add(new ShopImgDO()
                         {
                             ShopId = shopId,
-                            ImgUrl = o.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", ""),
+                            ImgUrl = o.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", ""),
                             Type = 5,
                             CreateBy = shop.CreateBy,
                             CreateTime = dt
@@ -299,7 +299,7 @@ namespace Ae.Shop.Service.Imp.Services
                         shopInfo.ManagementLicenseImgs.ForEach(o => shopImgs.Add(new ShopImgDO()
                         {
                             ShopId = shopId,
-                            ImgUrl = o.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", ""),
+                            ImgUrl = o.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", ""),
                             Type = 7,
                             CreateBy = shop.CreateBy,
                             CreateTime = dt
@@ -836,7 +836,7 @@ namespace Ae.Shop.Service.Imp.Services
             {
                 foreach (var item in request.HeadImg)
                 {
-                    var newUrl = item.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", "");
+                    var newUrl = item.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", "");
                     shopImgs.Add(new ShopImgDO()
                     {
                         ImgUrl = newUrl,
@@ -853,7 +853,7 @@ namespace Ae.Shop.Service.Imp.Services
             {
                 foreach (var item in request.FrontImg)
                 {
-                    var newUrl = item.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", "");
+                    var newUrl = item.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", "");
                     shopImgs.Add(new ShopImgDO()
                     {
                         ImgUrl = newUrl,
@@ -872,7 +872,7 @@ namespace Ae.Shop.Service.Imp.Services
                 {
 
                     ShopId = shopId,
-                    ImgUrl = o.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", ""),
+                    ImgUrl = o.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", ""),
                     Type = 2,
                     CreateBy = createBy,
                     CreateTime = dt
@@ -884,7 +884,7 @@ namespace Ae.Shop.Service.Imp.Services
                 request.ShopProofImgs.ForEach(o => shopImgs.Add(new ShopImgDO()
                 {
                     ShopId = shopId,
-                    ImgUrl = o.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", ""),
+                    ImgUrl = o.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", ""),
                     Type = 3,
                     CreateBy = createBy,
                     CreateTime = dt
@@ -896,7 +896,7 @@ namespace Ae.Shop.Service.Imp.Services
                 request.BusinessLicenseImgs.ForEach(o => shopImgs.Add(new ShopImgDO()
                 {
                     ShopId = shopId,
-                    ImgUrl = o.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", ""),
+                    ImgUrl = o.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", ""),
                     Type = 5,
                     CreateBy = createBy,
                     CreateTime = dt
@@ -908,7 +908,7 @@ namespace Ae.Shop.Service.Imp.Services
                 request.ManagementLicenseImgs.ForEach(o => shopImgs.Add(new ShopImgDO()
                 {
                     ShopId = shopId,
-                    ImgUrl = o.Url.Replace("https://m.ApolloErp.cn/", "").Replace("http://m.ApolloErp.cn/", ""),
+                    ImgUrl = o.Url.Replace("https://m.aerp.com.cn/", "").Replace("http://m.aerp.com.cn/", ""),
                     Type = 7,
                     CreateBy = createBy,
                     CreateTime = dt

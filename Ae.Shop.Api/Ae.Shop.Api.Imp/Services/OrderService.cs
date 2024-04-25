@@ -192,7 +192,7 @@ namespace Ae.Shop.Api.Imp.Services
             getOrderProducts?.Data?.ToList()?.ForEach(_ =>
             {
                 _.Number = _.TotalNumber;
-                _.ImageUrl = $"https://m.ApolloErp.cn/{_.ImageUrl}";
+                _.ImageUrl = $"https://m.aerp.com.cn/{_.ImageUrl}";
             });
             return getOrderProducts;
         }

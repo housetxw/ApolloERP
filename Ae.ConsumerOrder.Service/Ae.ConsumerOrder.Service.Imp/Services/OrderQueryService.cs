@@ -1413,7 +1413,7 @@ namespace Ae.ConsumerOrder.Service.Imp.Services
                             CategoryCode = _.CategoryId.ToString(),
                             ItemCode = string.Empty,
                             Label = string.Empty,
-                            ImageUrl = _.Icon.Replace("http://m.ApolloErp.cn/", ""),
+                            ImageUrl = _.Icon.Replace("http://m.aerp.com.cn/", ""),
                             PriceId = 0,
                             MarketingPrice = price,
                             Price = price,
