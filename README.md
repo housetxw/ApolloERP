@@ -31,6 +31,12 @@
 
   [转到wiki](https://gitee.com/aerphouse/ApolloERP/wikis/Home)   
 
+## 开源地址
+
+  [https://gitee.com/aerphouse/ApolloERP](https://gitee.com/aerphouse/ApolloERP)
+  [https://github.com/housetxw/ApolloERP](https://github.com/housetxw/ApolloERP)
+  [https://gitcode.com/aerphouse/ApolloERP](https://gitcode.com/aerphouse/ApolloERP/overview)
+
 ## 在线体验
 
   门店\公司管理地址：[http://shop.aerp.com.cn](http://shop.aerp.com.cn)  
