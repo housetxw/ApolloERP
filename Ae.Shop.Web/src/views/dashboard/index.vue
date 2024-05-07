@@ -38,7 +38,7 @@
 
 <h4>商务合作联系方式</h4>
 QQ：19652594<br>
-Email：zhidash2020@163.com<br>
+Email：apolloerp@189.cn<br>
 
 <h4>源码地址</h4>
 https://gitee.com/aerphouse/ApolloERP.git <br>
