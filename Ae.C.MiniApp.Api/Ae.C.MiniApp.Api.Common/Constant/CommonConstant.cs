@@ -155,7 +155,7 @@ namespace Ae.C.MiniApp.Api.Common.Constant
         /// <summary>
         /// 小程序ID
         /// </summary>
-        public const string AppId = "wx2a3a6d4c560d5288";
+        public const string AppId = "wx48091b1fd1f7ad7d";
 
         /// <summary>
         /// 
