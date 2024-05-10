@@ -52,7 +52,7 @@ namespace Ae.AccountAuthority.Service.Dal.Repositorys.DAL
 
                 sql = @"SELECT DISTINCT er.employee_id employeeId, ra.authority_id authorityId, a.name authorityName, a.parent_id parentId, 
                             a.route, a.menu_icon menuIcon, a.route_parameter routeParameter, a.type authorityType, 
-                            a.application_id applicationId, app.`name` applicationName
+                            a.application_id applicationId, app.`name` applicationName,a.sort
                             FROM employee_role er
                             INNER JOIN role r ON r.id = er.role_id 
                             INNER JOIN role_authority ra ON r.id = ra.role_id
@@ -60,7 +60,7 @@ namespace Ae.AccountAuthority.Service.Dal.Repositorys.DAL
                             INNER JOIN application app ON a.application_id = app.id
                             WHERE er.is_deleted = 0 AND r.is_deleted = 0 AND ra.is_deleted = 0 AND a.is_deleted = 0 AND app.is_deleted = 0
                             AND (r.organization_id = @OrganizationId Or r.organization_id=0) AND r.type = @EmployeeType AND er.employee_id = @EmployeeId 
-                         --   ORDER BY a.sort";
+                            ORDER BY a.sort";
 
 
                 res = new List<AuthorizationDO>();
@@ -95,7 +95,7 @@ namespace Ae.AccountAuthority.Service.Dal.Repositorys.DAL
 
                 var sql = @"SELECT DISTINCT @EmployeeId employeeId, ra.authority_id authorityId, a.name authorityName, a.parent_id parentId, 
                             a.route, a.menu_icon menuIcon, a.route_parameter routeParameter, a.type authorityType, 
-                            a.application_id applicationId, app.`name` applicationName
+                            a.application_id applicationId, app.`name` applicationName,a.sort
                             FROM role r
                             INNER JOIN role_authority ra ON r.id = ra.role_id
                             INNER JOIN authority a ON ra.authority_id = a.id
