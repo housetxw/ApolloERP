@@ -19,6 +19,9 @@ using Ae.AccountAuthority.Service.Filters;
 
 namespace Ae.AccountAuthority.Service.Controllers
 {
+    /// <summary>
+    /// 员工角色
+    /// </summary>
     [Route("[controller]/[action]")]
     //[Filter(nameof(EmployeeRoleController))]
     public class EmployeeRoleController : Controller
@@ -122,7 +125,7 @@ namespace Ae.AccountAuthority.Service.Controllers
         [HttpGet]
         public async Task<ApiResult<List<EmployeeRoleListDTO>>> GetEmployeeRoleListByEmpId([FromQuery] EmployeeRoleListReqDTO req)
         {
-            var res = await GetEmployeeRoleListByEmpIdAsync(req);
+            var res = await GetEmployeeRoleListByEmpIdSrv(req);
             return Result.Success(res, CommonConstant.QuerySuccess);
         }
 
@@ -187,7 +190,7 @@ namespace Ae.AccountAuthority.Service.Controllers
         /// <param name="req"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<List<EmployeeRoleListDTO>> GetEmployeeRoleListByEmpIdAsync([FromQuery] EmployeeRoleListReqDTO req)
+        public async Task<List<EmployeeRoleListDTO>> GetEmployeeRoleListByEmpIdSrv([FromQuery] EmployeeRoleListReqDTO req)
         {
             List<EmployeeRoleListDTO> res = new List<EmployeeRoleListDTO>();
 

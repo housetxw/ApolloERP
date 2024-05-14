@@ -8,6 +8,9 @@ using Ae.AccountAuthority.Service.Filters;
 
 namespace Ae.AccountAuthority.Service.Controllers
 {
+    /// <summary>
+    /// 应用程序
+    /// </summary>
     [Route("[controller]/[action]")]
     //[Filter(nameof(ApplicationController))]
     public class ApplicationController : Controller
