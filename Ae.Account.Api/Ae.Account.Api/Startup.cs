@@ -14,6 +14,9 @@ using Ae.Account.Api.Common.Constant;
 using Ae.Account.Api.Common.Extension;
 using ApolloErp.Component.Http;
 using Ae.Account.Api.Filters;
+using Ae.Account.Api.Common.Format;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Ae.Account.Api
 {
@@ -39,14 +42,16 @@ namespace Ae.Account.Api
                 {
                     builder.AllowAnyOrigin() //允许任何来源的主机访问
                         .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials(); //指定处理cookie
+                        .AllowAnyHeader();
+                        //.AllowCredentials(); //指定处理cookie
                 });
             });
 
-            services.AddMvc()
-                .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc()
+            //    .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddControllers()
+                .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
 
             services.AddRouting(options => options.LowercaseUrls = true);
 
@@ -92,9 +97,10 @@ namespace Ae.Account.Api
             #endregion Extended configuration
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (!env.IsProduction())
+            app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -124,11 +130,23 @@ namespace Ae.Account.Api
             //开启CorrelationId中间件
             app.UseApolloErpCorrelationId();
             app.UseHttpsRedirection();
-            app.UseMvc(routes =>
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        "default",
+            //        "{controller=ZHome}/{action=Index}");
+            //});
+            
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    "default",
-                    "{controller=ZHome}/{action=Index}");
+                // 设置默认路由
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello, World!");
+                });
+
+                // 配置控制器路由
+                endpoints.MapControllers();
             });
         }
     }

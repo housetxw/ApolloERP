@@ -9,7 +9,8 @@ namespace Ae.Account.Api.Controllers
     /// <summary>
     /// Home
     /// </summary>
-    //[Filter(nameof(ZDemoController))]
+    [Route("[controller]/[action]")]
+    //[Filter(nameof(ZHomeController))]
     public class ZHomeController : ControllerBase
     {
         private readonly ApolloErpLogger<ZHomeController> logger;
