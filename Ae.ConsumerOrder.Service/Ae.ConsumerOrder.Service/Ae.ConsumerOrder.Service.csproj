@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
-    <PackageReference Include="ApolloErp.Common" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Common" Version="6.0.1" />
     <PackageReference Include="ApolloErp.CorrelationId" Version="6.0.0" />
     <PackageReference Include="ApolloErp.SkyWalking" Version="6.0.0" />
     <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
