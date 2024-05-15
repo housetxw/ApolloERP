@@ -35,6 +35,9 @@ using Ae.Receive.Service.Dal.Repositorys;
 using Ae.Receive.Service.Client.Inteface;
 using Ae.Receive.Service.Extension;
 using ApolloErp.Component.Http;
+using Ae.Receive.Service.Common.Format;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Ae.Receive.Service
 {
@@ -60,17 +63,20 @@ namespace Ae.Receive.Service
                 {
                     builder.AllowAnyOrigin() //允许任何来源的主机访问
                     .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials();//指定处理cookie
+                    .AllowAnyHeader();
+                    //.AllowCredentials();//指定处理cookie
                 });
             });
 
-            services.AddMvc()
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-                })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc()
+            //    .AddJsonOptions(options =>
+            //    {
+            //        options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            //    })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddControllers()
+            .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
+
             services.AddRouting(options => options.LowercaseUrls = true);
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -107,9 +113,10 @@ namespace Ae.Receive.Service
 
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (!env.IsProduction())
+            app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -132,13 +139,23 @@ namespace Ae.Receive.Service
 
             app.UseHttpsRedirection();
             app.UseCors("AllowCors");
-            app.UseMvc(routes =>
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        "default",
+            //        "{controller=Home}/{action=Index}");
+            //});
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    "default",
-                    "{controller=Home}/{action=Index}");
-            });
+                // 设置默认路由
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello, World!");
+                });
 
+                // 配置控制器路由
+                endpoints.MapControllers();
+            });
 
         }
     }
