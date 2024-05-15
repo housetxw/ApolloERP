@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Newtonsoft.Json;
-using ApolloErp.Web.WebApi;
 using Ae.ShopOrder.Service.Core.Model;
 
 namespace Ae.ShopOrder.Service.Core.Response.Sign
