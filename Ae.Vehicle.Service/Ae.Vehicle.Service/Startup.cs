@@ -26,6 +26,9 @@ using Ae.Vehicle.Service.Imp.Services;
 using Ae.Vehicle.Service.Validators;
 using ApolloErp.Redis;
 using Ae.Vehicle.Service.Filters;
+using Ae.Vehicle.Service.Common.Format;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Ae.Vehicle.Service
 {
@@ -41,15 +44,17 @@ namespace Ae.Vehicle.Service
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc()
-                .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation(o =>
-                {
-                    o.RegisterValidatorsFromAssemblyContaining<GetVehicleListByBrandRequestValidator>();
-                    o.RegisterValidatorsFromAssemblyContaining<PaiLiangByVehicleIdRequestValidator>();
-                    o.RegisterValidatorsFromAssemblyContaining<VehicleNianByPaiLiangRequestValidator>();
-                    o.RegisterValidatorsFromAssemblyContaining<VehicleSalesNameByNianRequestValidator>();
-                });
+            //services.AddMvc()
+            //    .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation(o =>
+            //    {
+            //        o.RegisterValidatorsFromAssemblyContaining<GetVehicleListByBrandRequestValidator>();
+            //        o.RegisterValidatorsFromAssemblyContaining<PaiLiangByVehicleIdRequestValidator>();
+            //        o.RegisterValidatorsFromAssemblyContaining<VehicleNianByPaiLiangRequestValidator>();
+            //        o.RegisterValidatorsFromAssemblyContaining<VehicleSalesNameByNianRequestValidator>();
+            //    });
+            services.AddControllers()
+            .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
 
             // override modelstate
             services.Configure<ApiBehaviorOptions>(options =>
@@ -120,9 +125,10 @@ namespace Ae.Vehicle.Service
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (!env.IsProduction())
+            app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -150,11 +156,22 @@ namespace Ae.Vehicle.Service
             app.UseApolloErpCorrelationId();
 
             app.UseHttpsRedirection();
-            app.UseMvc(routes =>
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        "default",
+            //        "{controller=Home}/{action=Index}");
+            //});
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    "default",
-                    "{controller=Home}/{action=Index}");
+                // 设置默认路由
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello, World!");
+                });
+
+                // 配置控制器路由
+                endpoints.MapControllers();
             });
         }
     }
