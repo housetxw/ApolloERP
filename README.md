@@ -27,6 +27,10 @@
   前端技术：vue2、vue-cli  
   后端技术：.net core 2.1、C#、微服务  
 
+## 升级.net 6.0
+  master分支：.net core 2.1
+  net6分支：.net 6.0
+
 ## 开发文档
 
   [转到wiki](https://gitee.com/aerphouse/ApolloERP/wikis/Home)   
