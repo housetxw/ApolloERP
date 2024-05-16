@@ -13,9 +13,9 @@ using Ae.Vehicle.Service.Core.Model;
 using Ae.Vehicle.Service.Core.Request;
 using Ae.Vehicle.Service.Core.Response;
 using Microsoft.Extensions.Configuration;
-using LiYangService;
+//using LiYangService;
 using Newtonsoft.Json;
-using static LiYangService.RequestSoapClient;
+//using static LiYangService.RequestSoapClient;
 using ApolloErp.Redis;
 using ApolloErp.Log;
 
@@ -37,7 +37,7 @@ namespace Ae.Vehicle.Service.Imp.Services
         private readonly string _vinAppKey = "dafbe5aae9045d4e";
         private readonly string _vinAppSecret = "9e30dea9fe5749279bf3653f89b84d6c";
         private readonly string _vinMethod = "level.vehicle.vin.mix";
-        private readonly string redisKey = "Rg:Vehicle:Service:Vehicle";
+        private readonly string redisKey = "Ae:Vehicle:Service:Vehicle";
         private readonly RedisClient _redisClient;
         private readonly ApolloErpLogger<VehicleService> _logger;
         private readonly IVehicleTypeTimingIdMapRepository _vehicleTypeTimingIdMapRepository;
@@ -977,18 +977,22 @@ namespace Ae.Vehicle.Service.Imp.Services
         /// <returns></returns>
         private async Task<LevelDataVo> LevelData(string vinCode)
         {
-            string input =
-                $"<root><appkey>{_vinAppKey}</appkey><appsecret>{_vinAppSecret}</appsecret><method>{_vinMethod}</method><requestformat>json</requestformat><vin>{vinCode}</vin></root>";
+            //txw 2024-5-16 暂时不调用力洋服务
+            var result = new LevelDataVo();
+            return result;
 
-            _logger.Info($"LevelData_Para = {input}");
+            //string input =
+            //    $"<root><appkey>{_vinAppKey}</appkey><appsecret>{_vinAppSecret}</appsecret><method>{_vinMethod}</method><requestformat>json</requestformat><vin>{vinCode}</vin></root>";
 
-            var client = new RequestSoapClient(EndpointConfiguration.RequestSoap);
+            //_logger.Info($"LevelData_Para = {input}");
 
-            var result = await client.LevelDataAsync(input); //返回结果
+            //var client = new RequestSoapClient(EndpointConfiguration.RequestSoap);
 
-            _logger.Info($"LevelData_Result={result}，Para={input}");
+            //var result = await client.LevelDataAsync(input); //返回结果
 
-            return JsonConvert.DeserializeObject<LevelDataVo>(result);
+            //_logger.Info($"LevelData_Result={result}，Para={input}");
+
+            //return JsonConvert.DeserializeObject<LevelDataVo>(result);
         }
 
         private string GetManufactureYearByVin(string vinCode, string vinYear, string listedYear)
