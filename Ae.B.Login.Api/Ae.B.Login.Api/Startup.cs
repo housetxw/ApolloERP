@@ -19,6 +19,8 @@ using Ae.B.Login.Api.Common.Extension;
 using Ae.B.Login.Api.Core.Model;
 using ApolloErp.Component.Http;
 using Ae.B.Login.Api.Filters;
+using Ae.B.Login.Api.Common.Format;
+using Microsoft.Extensions.Hosting;
 
 namespace Ae.B.Login.Api
 {
@@ -46,17 +48,19 @@ namespace Ae.B.Login.Api
                 {
                     builder.AllowAnyOrigin() //允许任何来源的主机访问
                     .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials();//指定处理cookie
+                    .AllowAnyHeader();
+                    //.AllowCredentials();//指定处理cookie
                 });
             });
 
-            services.AddMvc()
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-                })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc()
+            //    .AddJsonOptions(options =>
+            //    {
+            //        options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            //    })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddControllers()
+            .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
 
             services.AddRouting(options => options.LowercaseUrls = true);
 
@@ -107,9 +111,10 @@ namespace Ae.B.Login.Api
             #endregion Extended configuration
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (!env.IsProduction())
+            app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -139,13 +144,23 @@ namespace Ae.B.Login.Api
             app.UseApolloErpCorrelationId();
             app.UseCors("AllowCors");
             app.UseHttpsRedirection();
-            app.UseMvc(routes =>
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        "default",
+            //        "{controller=ZHome}/{action=Index}");
+            //});
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    "default",
-                    "{controller=ZHome}/{action=Index}");
-            });
+                // 设置默认路由
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello, World!");
+                });
 
+                // 配置控制器路由
+                endpoints.MapControllers();
+            });
         }
     }
 }
