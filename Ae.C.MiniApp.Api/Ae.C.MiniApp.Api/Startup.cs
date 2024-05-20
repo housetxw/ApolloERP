@@ -19,6 +19,9 @@ using Ae.C.MiniApp.Api.Common.Constant;
 using Ae.C.MiniApp.Api.Common.Extension;
 using ApolloErp.Component.Http;
 using Ae.C.MiniApp.Api.Filters;
+using Ae.C.MiniApp.Api.Common.Format;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Ae.C.MiniApp.Api
 {
@@ -44,18 +47,22 @@ namespace Ae.C.MiniApp.Api
                 {
                     builder.AllowAnyOrigin() //允许任何来源的主机访问
                     .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials();//指定处理cookie
+                    .AllowAnyHeader();
+                    //.AllowCredentials();//指定处理cookie
                 });
             });
 
-            services.AddMvc()
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-                })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                .AddXmlSerializerFormatters();
+            //services.AddMvc()
+            //    .AddJsonOptions(options =>
+            //    {
+            //        options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            //    })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+            //    .AddXmlSerializerFormatters();
+            services.AddControllers()
+            .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); })
+            .AddXmlSerializerFormatters();
+
             services.AddRouting(options => options.LowercaseUrls = true);
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -108,9 +115,10 @@ namespace Ae.C.MiniApp.Api
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (!env.IsProduction())
+            app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -140,11 +148,22 @@ namespace Ae.C.MiniApp.Api
             //开启CorrelationId中间件
             app.UseApolloErpCorrelationId();
             app.UseHttpsRedirection();
-            app.UseMvc(routes =>
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        "default",
+            //        "{controller=Home}/{action=Index}");
+            //});
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    "default",
-                    "{controller=Home}/{action=Index}");
+                // 设置默认路由
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello, World!");
+                });
+
+                // 配置控制器路由
+                endpoints.MapControllers();
             });
         }
     }
