@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <Version>6.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -10,9 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="aliyun-net-sdk-core" Version="1.5.3" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
-    <PackageReference Include="ApolloErp.Login.Auth" Version="1.0.0" />
+    <PackageReference Include="aliyun-net-sdk-core" Version="1.5.11" />
+	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
