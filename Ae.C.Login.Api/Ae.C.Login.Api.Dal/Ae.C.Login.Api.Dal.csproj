@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <Version>6.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="1.0.1" />
+    <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
