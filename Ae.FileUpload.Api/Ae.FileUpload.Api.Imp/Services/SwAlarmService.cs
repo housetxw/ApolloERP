@@ -28,7 +28,7 @@ namespace Ae.FileUpload.Api.Imp.Services
             string[] toArr = toString.Split(",");
             foreach(var i in toArr)
             {
-                MailboxAddress to = new MailboxAddress(i);
+                MailboxAddress to = new MailboxAddress("aerp",i);
                 toList.Add(to);
             }
             string msg = GetContent(alarmList);
