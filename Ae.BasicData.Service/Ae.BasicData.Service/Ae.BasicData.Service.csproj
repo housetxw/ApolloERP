@@ -8,8 +8,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\net6.0\Ae.BasicData.Service.WebApi.xml</DocumentationFile>
     <WarningLevel>0</WarningLevel>
-    <OutputPath>bin\Debug\net6.0\</OutputPath>
-    <NoWarn>1701;1702</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
