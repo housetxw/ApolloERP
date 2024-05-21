@@ -51,13 +51,21 @@ namespace Ae.BaoYang.Service
             //    {
             //        o.RegisterValidatorsFromAssemblyContaining<BaoYangPartAdaptationsRequestValidator>();
             //    });
-            services.AddControllers()
+            //services.AddControllers()
+            //    .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); })
+            //    .AddFluentValidation(o =>
+            //    {
+            //        o.RegisterValidatorsFromAssemblyContaining<BaoYangPartAdaptationsRequestValidator>();
+            //    });
+            services.AddMvc(options => {
+                options.EnableEndpointRouting = false;  //关闭Endpoint的路由支持来兼容
+                options.SuppressAsyncSuffixInActionNames = false;  //关闭新特性：Async结尾会默认去除
+            })
                 .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); })
                 .AddFluentValidation(o =>
                 {
                     o.RegisterValidatorsFromAssemblyContaining<BaoYangPartAdaptationsRequestValidator>();
                 });
-
 
             // override modelstate
             services.Configure<ApiBehaviorOptions>(options =>
@@ -110,7 +118,7 @@ namespace Ae.BaoYang.Service
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseRouting();
+            //app.UseRouting();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -139,23 +147,23 @@ namespace Ae.BaoYang.Service
             app.UseApolloErpCorrelationId();
 
             app.UseHttpsRedirection();
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        "default",
-            //        "{controller=Home}/{action=Index}");
-            //});
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                // 设置默认路由
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello, World!");
-                });
-
-                // 配置控制器路由
-                endpoints.MapControllers();
+                routes.MapRoute(
+                    "default",
+                    "{controller=Home}/{action=Index}");
             });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    // 设置默认路由
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello, World!");
+            //    });
+
+            //    // 配置控制器路由
+            //    endpoints.MapControllers();
+            //});
         }
     }
 }

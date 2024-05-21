@@ -59,7 +59,11 @@ namespace Ae.B.Login.Api
             //        options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
             //    })
             //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddControllers()
+ 
+            services.AddMvc(options => {
+                options.EnableEndpointRouting = false;
+                options.SuppressAsyncSuffixInActionNames = false;
+            })
             .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
 
             services.AddRouting(options => options.LowercaseUrls = true);
@@ -113,8 +117,8 @@ namespace Ae.B.Login.Api
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseRouting();
-            if (env.IsDevelopment())
+            //app.UseRouting();
+            if (!env.IsProduction())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -144,23 +148,23 @@ namespace Ae.B.Login.Api
             app.UseApolloErpCorrelationId();
             app.UseCors("AllowCors");
             app.UseHttpsRedirection();
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        "default",
-            //        "{controller=ZHome}/{action=Index}");
-            //});
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                // 设置默认路由
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello, World!");
-                });
-
-                // 配置控制器路由
-                endpoints.MapControllers();
+                routes.MapRoute(
+                    "default",
+                    "{controller=ZHome}/{action=Index}");
             });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    // 设置默认路由
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello, World!");
+            //    });
+
+            //    // 配置控制器路由
+            //    endpoints.MapControllers();
+            //});
         }
     }
 }
