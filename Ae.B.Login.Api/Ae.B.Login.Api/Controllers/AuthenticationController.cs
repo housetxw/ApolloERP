@@ -101,6 +101,7 @@ namespace Ae.B.Login.Api.Controllers
         [AllowAnonymous]
         public async Task<ApiResult<LoginInfoResVO>> LoginAsync([FromBody] ApiRequest<LoginVO> req)
         {
+            var temp = new Uri(Request.GetUri(), Url.Action("RefreshToken")).ToString();
             var chkMsg = BasicCheckLoginPwdReq(req);
             if (chkMsg.IsNotNullOrWhiteSpace()) return Result.Failed<LoginInfoResVO>(ResultCode.INVALID_FORMAT, chkMsg);
 

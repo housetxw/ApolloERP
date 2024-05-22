@@ -13,6 +13,9 @@ using Ae.B.Login.Api.Client.Response.ShopManage.Employee;
 using Ae.B.Login.Api.Common.Extension;
 using Ae.B.Login.Api.Core.Model;
 using Ae.B.Login.Api.Core.Response;
+using Ae.B.Login.Api.Common.Constant;
+using Ae.B.Login.Api.Common.Exceptions;
+using Org.BouncyCastle.Ocsp;
 
 namespace Ae.B.Login.Api.Imp.Services
 {
@@ -127,29 +130,37 @@ namespace Ae.B.Login.Api.Imp.Services
         /// <returns></returns>
         private Token CreateToken(DateTime now, Claim[] claims, TokenType tokenType)
         {
-            var expires = now.Add(
-                TimeSpan.FromMinutes(tokenType.Equals(TokenType.AccessToken)
-                ? options.Value.AccessTokenExpiresMinutes
-                : options.Value.RefreshTokenExpiresMinutes));
-
-            var token = new JwtSecurityToken(
-                issuer: options.Value.Issuer,
-                audience: tokenType.Equals(TokenType.AccessToken)
-                    ? options.Value.AccessTokenAudience
-                    : options.Value.RefreshTokenAudience,
-                claims: claims,
-                notBefore: now,
-                expires: expires,
-                signingCredentials: new SigningCredentials(
-                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.Value.IssuerSigningKey)),
-                    SecurityAlgorithms.HmacSha256));
-
-            Token tokenRes = new Token
+            try
             {
-                TokenContent = new JwtSecurityTokenHandler().WriteToken(token),
-                Expires = Convert.ToInt32(options.Value.AccessTokenExpiresMinutes) * 60
-            };
-            return tokenRes;
+                var expires = now.Add(
+                    TimeSpan.FromMinutes(tokenType.Equals(TokenType.AccessToken)
+                    ? options.Value.AccessTokenExpiresMinutes
+                    : options.Value.RefreshTokenExpiresMinutes));
+
+                var token = new JwtSecurityToken(
+                    issuer: options.Value.Issuer,
+                    audience: tokenType.Equals(TokenType.AccessToken)
+                        ? options.Value.AccessTokenAudience
+                        : options.Value.RefreshTokenAudience,
+                    claims: claims,
+                    notBefore: now,
+                    expires: expires,
+                    signingCredentials: new SigningCredentials(
+                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.Value.IssuerSigningKey)),
+                        SecurityAlgorithms.HmacSha256));
+
+                Token tokenRes = new Token
+                {
+                    TokenContent = new JwtSecurityTokenHandler().WriteToken(token),
+                    Expires = Convert.ToInt32(options.Value.AccessTokenExpiresMinutes) * 60
+                };
+                return tokenRes;
+            }
+            catch (Exception e)
+            {
+                throw new CustomException(e.Message.ToString());
+            }
+
         }
 
         /// <summary>

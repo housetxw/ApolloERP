@@ -54,7 +54,7 @@ namespace Ae.BasicData.Service
             services.AddMvc(options => {
                 options.EnableEndpointRouting = false;  //关闭Endpoint的路由支持来兼容
                 options.SuppressAsyncSuffixInActionNames = false;  //关闭新特性：Async结尾会默认去除
-            })
+            }).AddNewtonsoftJson()
                 .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
 
 

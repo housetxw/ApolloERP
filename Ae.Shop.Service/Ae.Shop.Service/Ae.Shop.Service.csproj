@@ -20,12 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
     <PackageReference Include="ApolloErp.SkyWalking" Version="6.0.0" />
     <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
 	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.1" />
 	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.30" />
   </ItemGroup>
 
   <ItemGroup>

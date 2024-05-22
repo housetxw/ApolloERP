@@ -59,11 +59,11 @@ namespace Ae.B.Login.Api
             //        options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
             //    })
             //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
- 
+        
             services.AddMvc(options => {
                 options.EnableEndpointRouting = false;
                 options.SuppressAsyncSuffixInActionNames = false;
-            })
+            }).AddNewtonsoftJson()
             .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
 
             services.AddRouting(options => options.LowercaseUrls = true);
@@ -156,14 +156,8 @@ namespace Ae.B.Login.Api
             });
             //app.UseEndpoints(endpoints =>
             //{
-            //    // 设置默认路由
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello, World!");
-            //    });
-
-            //    // 配置控制器路由
-            //    endpoints.MapControllers();
+                //endpoints.MapControllers();
+            //    endpoints.MapControllerRoute("default", "{controller=ZHome}/{action=Index}");
             //});
         }
     }

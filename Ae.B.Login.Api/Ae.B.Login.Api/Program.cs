@@ -3,6 +3,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using ApolloErp.Log;
 using ApolloErp.SkyWalking;
+using Microsoft.Extensions.Hosting;
 
 namespace Ae.B.Login.Api
 {
@@ -21,6 +22,7 @@ namespace Ae.B.Login.Api
 
 
                 CreateWebHostBuilder(args).Build().Run();
+                //CreateHostBuilder(args).Build().Run();
 
 
                 logger.Info("Ae.B.Login.Api Application Start Succeed");
@@ -45,5 +47,11 @@ namespace Ae.B.Login.Api
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .ApolloErpConfigureLogging();
+        //public static IHostBuilder CreateHostBuilder(string[] args) =>
+        //    Host.CreateDefaultBuilder(args)
+        //        .ConfigureWebHostDefaults(webBuilder =>
+        //        {
+        //            webBuilder.UseStartup<Startup>();
+        //        });
     }
 }
