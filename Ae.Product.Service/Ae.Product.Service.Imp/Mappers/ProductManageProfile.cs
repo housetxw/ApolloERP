@@ -15,44 +15,43 @@ namespace Ae.Product.Service.Imp.Mappers
     {
         public ProductManageProfile()
         {
-            CreateMap<DimBrandDO, BrandVO>();
-            CreateMap<RelProductInstallserviceDO, ProductInstallserviceVo>();
-            CreateMap<FctProductDO, ProductSearchInfoVo>();
-            CreateMap<FctProductDO, PackageInfoVo>().ForMember(t => t.PackageId, (m) => m.MapFrom(t => t.Id));
-            CreateMap<DimUnitDO, UnitVo>();
+            CreateMap<DimBrandDO, BrandVO>().ReverseMap();
+            CreateMap<RelProductInstallserviceDO, ProductInstallserviceVo>().ReverseMap();
+            CreateMap<FctProductDO, ProductSearchInfoVo>().ReverseMap();
+            CreateMap<FctProductDO, PackageInfoVo>().ForMember(t => t.PackageId, (m) => m.MapFrom(t => t.Id)).ReverseMap();
+            CreateMap<DimUnitDO, UnitVo>().ReverseMap();
             CreateMap<DimCategoryDO, CategoryInfoVo>().ReverseMap();
             CreateMap<RelProductPackageDO, ProductPackageDetailVo>();
             CreateMap<FctProductDO, ProductAllInfoVo>().ReverseMap();
             CreateMap<DimAttributemameDO, AttributeNameVo>().ReverseMap();
 
-            CreateMap<DimBrandDO, GetProductBrandVo>();
-            CreateMap<PagedEntity<DimBrandDO>, ApiPagedResultData<GetProductBrandVo>>();
+            CreateMap<DimBrandDO, GetProductBrandVo>().ReverseMap();
+            CreateMap<PagedEntity<DimBrandDO>, ApiPagedResultData<GetProductBrandVo>>().ReverseMap();
 
-            CreateMap<DimUnitDO, GetProductUnitListVo>();
-            CreateMap<PagedEntity<DimUnitDO>, ApiPagedResultData<GetProductUnitListVo>>();
+            CreateMap<DimUnitDO, GetProductUnitListVo>().ReverseMap();
+            CreateMap<PagedEntity<DimUnitDO>, ApiPagedResultData<GetProductUnitListVo>>().ReverseMap();
 
             CreateMap<DimCategoryDO, DimCategoryVo>().ReverseMap();
-            CreateMap<DimCategoryDO, ListCategoryVo>();
-            CreateMap<DimCategoryDO, SecondCategoryVo>();
-            CreateMap<DimCategoryDO, ThirdCategoryVo>();
+            CreateMap<DimCategoryDO, ListCategoryVo>().ReverseMap();
+            CreateMap<DimCategoryDO, SecondCategoryVo>().ReverseMap();
+            CreateMap<DimCategoryDO, ThirdCategoryVo>().ReverseMap();
 
             CreateMap<DimCategoryVo, TreeSelectVo>()
-                .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.DisplayName));
+                .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.DisplayName)).ReverseMap();
             CreateMap<ListCategoryVo, CategoryTreeSelectVo>()
-                .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.DisplayName));
+                .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.DisplayName)).ReverseMap();
             CreateMap<SecondCategoryVo, SecondCategoryTreeSelectVo>()
-                .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.DisplayName));
+                .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.DisplayName)).ReverseMap();
             CreateMap<ThirdCategoryVo, ThirdCategoryTreeSelectVo>()
-                .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.DisplayName));
+                .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.DisplayName)).ReverseMap();
 
-            CreateMap<FctProductDO, ProductBaseInfoVo>();
+            CreateMap<FctProductDO, ProductBaseInfoVo>().ReverseMap();
 
-            CreateMap<DoorProductDTO, DoorProductVo>();
+            CreateMap<DoorProductDTO, DoorProductVo>().ReverseMap();
 
-            CreateMap<DoorProductDTO, DoorProductVo>();
 
-            CreateMap<FlashSaleConfigDO, FlashSaleConfigDTO>();
-            CreateMap<FlashSaleConfigDTO, FlashSaleConfigDO>();
+            CreateMap<FlashSaleConfigDO, FlashSaleConfigDTO>().ReverseMap();
+            CreateMap<PagedEntity<FlashSaleConfigDO>, ApiPagedResultData<FlashSaleConfigDTO>>().ReverseMap();
         }
     }
 }
