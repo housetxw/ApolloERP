@@ -454,7 +454,7 @@ export {
 
 export function LoginAsync(data) {
   return request2({
-    url: `${domain2}Authentication/LoginAsync`,
+    url: `${domain2}/Authentication/LoginAsync`,
     method: 'post',
     data
   })
@@ -479,7 +479,7 @@ export function logout() {
 
 export function GetOrgPageListByAuthCodeAsync(data) {
   return request2({
-    url: `${domain2}Authentication/GetOrgPageListByAuthCodeAsync`,
+    url: `${domain2}/Authentication/GetOrgPageListByAuthCodeAsync`,
     method: 'post',
     data
   })
@@ -487,7 +487,7 @@ export function GetOrgPageListByAuthCodeAsync(data) {
 
 export function GetTokenInfoByAuthCode(data) {
   return request2({
-    url: `${domain2}Authentication/GetTokenInfoByAuthCode`,
+    url: `${domain2}/Authentication/GetTokenInfoByAuthCode`,
     method: 'post',
     data
   })
@@ -495,7 +495,7 @@ export function GetTokenInfoByAuthCode(data) {
 
 export function GetSMSCodeAsync(data) {
   return request2({
-    url: `${domain2}Authentication/GetSMSCodeAsync`,
+    url: `${domain2}/Authentication/GetSMSCodeAsync`,
     method: 'post',
     data
   })
@@ -503,7 +503,7 @@ export function GetSMSCodeAsync(data) {
 
 export function LoginWithSMSAsync(data) {
   return request2({
-    url: `${domain2}Authentication/LoginWithSMSAsync`,
+    url: `${domain2}/Authentication/LoginWithSMSAsync`,
     method: 'post',
     data
   })
