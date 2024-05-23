@@ -238,31 +238,51 @@ namespace Ae.Product.Service.Controllers
         #endregion
 
         #region 首页促销配置
-
+        /// <summary>
+        /// 刪除促銷活動
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResult<string>> DeleteConfigAdvertisement([FromBody]ConfigAdvertisementVo request)
         {
             return await _pageConfigService.DeleteConfigAdvertisement(request);
         }
-
+        /// <summary>
+        /// 查詢促銷活動列表
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ApiPagedResult<ConfigAdvertisementVo>> GetConfigAdvertisements([FromQuery]GetConfigAdvertisementsRequest request)
         {
             return await _pageConfigService.GetConfigAdvertisements(request);
         }
-
+        /// <summary>
+        /// 添加促銷活動
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResult<string>> AddConfigAdvertisement([FromBody]ConfigAdvertisementVo request)
         {
             return await _pageConfigService.AddConfigAdvertisement(request);
         }
-
+        /// <summary>
+        /// 查詢促銷活動
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ApiResult<ConfigAdvertisementVo>> GetConfigAdvertisement([FromQuery]ConfigAdvertisementVo request)
         {
             return await _pageConfigService.GetConfigAdvertisement(request);
         }
-
+        /// <summary>
+        /// 更新促銷活動配置
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResult<string>> UpdateConfigAdvertisement([FromBody]ConfigAdvertisementVo request)
         {
