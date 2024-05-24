@@ -69,12 +69,12 @@ namespace Ae.Shop.Api.Imp.Mappers.Stock
             CreateMap<AllotProductDO, AllotProductDTO>();
 
 
-            CreateMap<ProductStockDTO, ProductStockResponse>()
-                .ForMember(dest => dest.AvailableNum, opt => opt.MapFrom(o => o.ActualNum))
-                .ForMember(dest => dest.StockUnit, opt => opt.MapFrom(o => o.UomText));
+            //CreateMap<ProductStockDTO, ProductStockResponse>()
+            //    .ForMember(dest => dest.AvailableNum, opt => opt.MapFrom(o => o.ActualNum))
+            //    .ForMember(dest => dest.StockUnit, opt => opt.MapFrom(o => o.UomText)).ReverseMap();
 
-            CreateMap<List<ProductStockDTO>, List<ProductStockResponse>>();
-            CreateMap< ApiResult<List<ProductStockDTO>>, ApiResult<List<ProductStockResponse>>>();
+            //CreateMap<List<ProductStockDTO>, List<ProductStockResponse>>().ReverseMap();
+            //CreateMap< ApiResult<List<ProductStockDTO>>, ApiResult<List<ProductStockResponse>>>().ReverseMap();
         }
     }
 }
