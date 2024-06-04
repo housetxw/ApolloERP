@@ -21,15 +21,21 @@
   2、本项目包含总部管理web端、公司管理web端、门店管理web端，支持多公司、多门店。  
 
 
-## 安装说明
+## 安装说明  
+  已经升级为.net6.0  
+  开发环境：VS2022、MySql8.0、Redis  
+  前端技术：vue2、vue-cli  
+  后端技术：.net 6.0、C#、微服务  
 
+  原.net2.1  
   开发环境：VS2019、MySql8.0、Redis  
   前端技术：vue2、vue-cli  
   后端技术：.net core 2.1、C#、微服务  
 
-## 升级.net 6.0
-  master分支：.net core 2.1
-  net6分支：.net 6.0
+## 升级.net 6.0  
+  master分支：.net 6.0  
+  net6分支：.net 6.0  
+  net2.1分支：.net core 2.1  
 
 ## 开发文档
 
@@ -73,7 +79,7 @@
   
 ## 目录说明  
   Doc - 文档  
-  DB - 数据库sql文件  
+  DB - 数据库sql文件，包含测试数据库，每个sql为一个数据库，文件名就是数据库名      
   Ae.Boss.Web - 总部管理web端  
   Ae.Shop.Web - 门店\公司管理web端    
   Ae.xxx.Api - api相关接口  
