@@ -17,6 +17,9 @@ using Ae.AccountAuthority.Service.Core.Response;
 
 namespace Ae.AccountAuthority.Service.Controllers
 {
+    /// <summary>
+    /// 菜单
+    /// </summary>
     [Route("[controller]/[action]")]
     //[Filter(nameof(AuthorizationController))]
     public class AuthorizationController : Controller

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Query.Sql.Internal;
+//using Microsoft.EntityFrameworkCore.Query.Sql.Internal;
 using ApolloErp.Web.WebApi;
 using Ae.FMS.Service.Common.Constant;
 using Ae.FMS.Service.Core.Interfaces;

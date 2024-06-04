@@ -1770,8 +1770,8 @@ namespace Ae.Shop.Service.Imp.Services
                 {
                     subject = $"门店注册邮件 Dev 环境";
                 }
-
-                MailboxAddress to = new MailboxAddress(_configuration["ShopManageDefault:Email"]);
+                
+                MailboxAddress to = new MailboxAddress(_configuration["ShopManageDefault:Name"], _configuration["ShopManageDefault:Email"]);
                 List<MailboxAddress> tolist = new List<MailboxAddress>();
                 tolist.Add(to);
                 await _eMailClient.SendEMailAsync(subject, $"{requestData.OwnerName} 电话 {requestData.OwnerPhone} 在 {DateTime.Now.ToString()} 注册了名称为： { requestData.SimpleName} 门店,请登录boss系统查看详细信息", tolist);

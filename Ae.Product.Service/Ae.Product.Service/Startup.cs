@@ -27,6 +27,9 @@ using Ae.Product.Service.Core.Interfaces;
 using Ae.Product.Service.Validators;
 using Ae.Product.Service.Core.Extension;
 using Ae.Product.Service.Filters;
+using Ae.Product.Service.Common.Format;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Ae.Product.Service
 {
@@ -43,12 +46,21 @@ namespace Ae.Product.Service
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc()
-                .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation(o =>
-                {
-                    o.RegisterValidatorsFromAssemblyContaining<AddBrandRequestValidator>();
-                });
+            //services.AddMvc()
+            //    .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation(o =>
+            //    {
+            //        o.RegisterValidatorsFromAssemblyContaining<AddBrandRequestValidator>();
+            //    });
+            //services.AddControllers()
+            //.AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
+            services.AddMvc(options => {
+                options.EnableEndpointRouting = false;  //关闭Endpoint的路由支持来兼容
+                options.SuppressAsyncSuffixInActionNames = false;  //关闭新特性：Async结尾会默认去除
+            })
+                .AddNewtonsoftJson()
+                .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
+
             //配置跨域处理
             services.AddCors(options =>
             {
@@ -56,8 +68,8 @@ namespace Ae.Product.Service
                 {
                     builder.AllowAnyOrigin() //允许任何来源的主机访问
                         .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials(); //指定处理cookie
+                        .AllowAnyHeader();
+                        //.AllowCredentials(); //指定处理cookie
                 });
             });
             // override modelstate
@@ -111,9 +123,10 @@ namespace Ae.Product.Service
             services.AddMvcCore(option => { option.Filters.Add(new FilterCorrelationIdAttribute(string.Empty)); });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (!env.IsProduction())
+            //app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -150,6 +163,17 @@ namespace Ae.Product.Service
                     "default",
                     "{controller=Home}/{action=Index}");
             });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    // 设置默认路由
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello, World!");
+            //    });
+
+            //    // 配置控制器路由
+            //    endpoints.MapControllers();
+            //});
         }
     }
 }

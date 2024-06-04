@@ -14,6 +14,9 @@ using Ae.Account.Api.Common.Constant;
 using Ae.Account.Api.Common.Extension;
 using ApolloErp.Component.Http;
 using Ae.Account.Api.Filters;
+using Ae.Account.Api.Common.Format;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Ae.Account.Api
 {
@@ -39,14 +42,22 @@ namespace Ae.Account.Api
                 {
                     builder.AllowAnyOrigin() //允许任何来源的主机访问
                         .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials(); //指定处理cookie
+                        .AllowAnyHeader();
+                        //.AllowCredentials(); //指定处理cookie
                 });
             });
 
-            services.AddMvc()
-                .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc()
+            //    .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddControllers()
+            //    .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
+            services.AddMvc(options => {
+                options.EnableEndpointRouting = false;  //关闭Endpoint的路由支持来兼容
+                options.SuppressAsyncSuffixInActionNames = false;  //关闭新特性：Async结尾会默认去除
+            })
+                .AddNewtonsoftJson()
+                .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
 
             services.AddRouting(options => options.LowercaseUrls = true);
 
@@ -92,9 +103,10 @@ namespace Ae.Account.Api
             #endregion Extended configuration
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (!env.IsProduction())
+            //app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -130,6 +142,18 @@ namespace Ae.Account.Api
                     "default",
                     "{controller=ZHome}/{action=Index}");
             });
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    // 设置默认路由
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello, World!");
+            //    });
+
+            //    // 配置控制器路由
+            //    endpoints.MapControllers();
+            //});
         }
     }
 }

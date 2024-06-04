@@ -4,7 +4,7 @@ using System.Text;
 using Castle.Components.DictionaryAdapter;
 using Google.Protobuf.Collections;
 using Newtonsoft.Json;
-using Ae.Shop.Api.Common.Format.DateTime;
+using Ae.Shop.Api.Common.Format;
 
 namespace Ae.Shop.Api.Core.Response
 {

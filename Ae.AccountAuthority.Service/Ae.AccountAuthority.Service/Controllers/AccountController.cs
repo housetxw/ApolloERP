@@ -18,6 +18,9 @@ using Ae.AccountAuthority.Service.Filters;
 
 namespace Ae.AccountAuthority.Service.Controllers
 {
+    /// <summary>
+    /// 账号
+    /// </summary>
     [Route("[controller]/[action]")]
     //[Filter(nameof(AccountController))]
     public class AccountController : Controller

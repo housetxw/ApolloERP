@@ -59,7 +59,7 @@ namespace Ae.C.Login.Api.Imp.Services
         private readonly IUserThirdRespository iUserThirdRespository;
         private readonly ILoginLogRepository iLoginLogRepository;
         private readonly RedisClient redisClient;
-        private readonly string redisKey = "Rg:C:LoginAuthentication";
+        private readonly string redisKey = "Ae:C:LoginAuthentication";
         private readonly IHttpContextAccessor _context;
         private readonly SmsClient smsClient;
 

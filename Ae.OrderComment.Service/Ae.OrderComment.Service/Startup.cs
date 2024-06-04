@@ -17,6 +17,9 @@ using Ae.OrderComment.Service.Client.Clients;
 using ApolloErp.Component.Http;
 using ApolloErp.Redis;
 using Ae.OrderComment.Service.Filters;
+using Ae.OrderComment.Service.Common.Format;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Ae.OrderComment.Service
 {
@@ -42,17 +45,26 @@ namespace Ae.OrderComment.Service
                 {
                     builder.AllowAnyOrigin() //允许任何来源的主机访问
                     .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials();//指定处理cookie
+                    .AllowAnyHeader();
+                    //.AllowCredentials();//指定处理cookie
                 });
             });
 
-            services.AddMvc()
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-                })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc()
+            //    .AddJsonOptions(options =>
+            //    {
+            //        options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            //    })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddControllers()
+            //.AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
+            services.AddMvc(options => {
+                options.EnableEndpointRouting = false;  //关闭Endpoint的路由支持来兼容
+                options.SuppressAsyncSuffixInActionNames = false;  //关闭新特性：Async结尾会默认去除
+            })
+                .AddNewtonsoftJson()
+                .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
+
             services.AddRouting(options => options.LowercaseUrls = true);
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -93,9 +105,10 @@ namespace Ae.OrderComment.Service
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (!env.IsProduction())
+            //app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -131,8 +144,18 @@ namespace Ae.OrderComment.Service
                     "default",
                     "{controller=Home}/{action=Index}");
             });
-            
-            
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    // 设置默认路由
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello, World!");
+            //    });
+
+            //    // 配置控制器路由
+            //    endpoints.MapControllers();
+            //});
+
         }
     }
 }

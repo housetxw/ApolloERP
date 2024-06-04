@@ -27,6 +27,9 @@ using Ae.BaoYang.Service.Client.Clients;
 using Ae.BaoYang.Service.Extension;
 using ApolloErp.Component.Http;
 using Ae.BaoYang.Service.Filters;
+using Ae.BaoYang.Service.Common.Format;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Ae.BaoYang.Service
 {
@@ -42,9 +45,25 @@ namespace Ae.BaoYang.Service
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc()
-                .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation(o =>
+            //services.AddMvc()
+            //    .AddJsonOptions(options => { options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss"; })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation(o =>
+            //    {
+            //        o.RegisterValidatorsFromAssemblyContaining<BaoYangPartAdaptationsRequestValidator>();
+            //    });
+            //services.AddControllers()
+            //    .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); })
+            //    .AddFluentValidation(o =>
+            //    {
+            //        o.RegisterValidatorsFromAssemblyContaining<BaoYangPartAdaptationsRequestValidator>();
+            //    });
+            services.AddMvc(options => {
+                options.EnableEndpointRouting = false;  //关闭Endpoint的路由支持来兼容
+                options.SuppressAsyncSuffixInActionNames = false;  //关闭新特性：Async结尾会默认去除
+            })
+                .AddNewtonsoftJson()
+                .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); })
+                .AddFluentValidation(o =>
                 {
                     o.RegisterValidatorsFromAssemblyContaining<BaoYangPartAdaptationsRequestValidator>();
                 });
@@ -98,9 +117,10 @@ namespace Ae.BaoYang.Service
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (!env.IsProduction())
+            //app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -134,6 +154,17 @@ namespace Ae.BaoYang.Service
                     "default",
                     "{controller=Home}/{action=Index}");
             });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    // 设置默认路由
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello, World!");
+            //    });
+
+            //    // 配置控制器路由
+            //    endpoints.MapControllers();
+            //});
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Ae.FMS.Service.Controllers
     /// <summary>
     /// Home
     /// </summary>
+    /// 
+    [Route("[controller]/[action]")]
     public class HomeController : ControllerBase
     {
 

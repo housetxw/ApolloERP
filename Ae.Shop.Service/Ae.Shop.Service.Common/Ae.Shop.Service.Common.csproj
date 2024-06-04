@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <Version>1.0.0</Version>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <Version>6.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,11 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Castle.Core" Version="4.4.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="1.0.1" />
-    <PackageReference Include="ApolloErp.Log" Version="1.0.2" />
-    <PackageReference Include="ApolloErp.Message" Version="1.0.1" />
+    <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Log" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Message" Version="6.0.0" />
+	  <PackageReference Include="Castle.Core" Version="5.1.1" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	  <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
 </Project>

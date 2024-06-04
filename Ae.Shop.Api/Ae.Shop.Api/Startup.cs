@@ -14,6 +14,9 @@ using System;
 using System.Reflection;
 using ApolloErp.Component.Http;
 using Ae.Shop.Api.Filters;
+using Ae.Shop.Api.Common.Format;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Ae.Shop.Api
 {
@@ -35,17 +38,26 @@ namespace Ae.Shop.Api
                 {
                     builder.AllowAnyOrigin()
                     .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials();
+                    .AllowAnyHeader();
+                    //.AllowCredentials();
                 });
             });
 
-            services.AddMvc()
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-                })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc()
+            //    .AddJsonOptions(options =>
+            //    {
+            //        options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            //    })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddControllers()
+            //.AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
+            services.AddMvc(options => {
+                options.EnableEndpointRouting = false;  //关闭Endpoint的路由支持来兼容
+                options.SuppressAsyncSuffixInActionNames = false;  //关闭新特性：Async结尾会默认去除
+            })
+                .AddNewtonsoftJson()
+                .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
+
             services.AddRouting(options => options.LowercaseUrls = true);
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -97,11 +109,10 @@ namespace Ae.Shop.Api
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors("AllowCors");
-
-            if (!env.IsProduction())
+            //app.UseRouting();
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
@@ -124,6 +135,7 @@ namespace Ae.Shop.Api
             app.UseLoginAuth(Configuration);
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowCors");
 
             app.UseMvc(routes =>
             {
@@ -131,6 +143,17 @@ namespace Ae.Shop.Api
                     "default",
                     "{controller=Home}/{action=Index}");
             });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    // 设置默认路由
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync("Hello, World!");
+            //    });
+
+            //    // 配置控制器路由
+            //    endpoints.MapControllers();
+            //});
         }
     }
 }

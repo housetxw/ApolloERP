@@ -9,6 +9,9 @@ using Ae.AccountAuthority.Service.Filters;
 
 namespace Ae.AccountAuthority.Service.Controllers
 {
+    /// <summary>
+    /// 权限
+    /// </summary>
     [Route("[controller]/[action]")]
     //[Filter(nameof(AuthorityController))]
     public class AuthorityController : Controller

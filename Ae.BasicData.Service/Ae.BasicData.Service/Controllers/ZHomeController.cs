@@ -11,7 +11,7 @@ namespace Ae.BasicData.Service.Controllers
     /// <summary>
     /// Home
     /// </summary>
-    //[Route("[controller]/[action]")]
+    [Route("[controller]/[action]")]
     //[Filter(nameof(ZHomeController))]
     public class ZHomeController : ControllerBase
     {

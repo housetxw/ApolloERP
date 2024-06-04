@@ -19,6 +19,8 @@ using Ae.B.Login.Api.Common.Extension;
 using Ae.B.Login.Api.Core.Model;
 using ApolloErp.Component.Http;
 using Ae.B.Login.Api.Filters;
+using Ae.B.Login.Api.Common.Format;
+using Microsoft.Extensions.Hosting;
 
 namespace Ae.B.Login.Api
 {
@@ -46,17 +48,23 @@ namespace Ae.B.Login.Api
                 {
                     builder.AllowAnyOrigin() //允许任何来源的主机访问
                     .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials();//指定处理cookie
+                    .AllowAnyHeader();
+                    //.AllowCredentials();//指定处理cookie
                 });
             });
 
-            services.AddMvc()
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-                })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc()
+            //    .AddJsonOptions(options =>
+            //    {
+            //        options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            //    })
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+        
+            services.AddMvc(options => {
+                options.EnableEndpointRouting = false;
+                options.SuppressAsyncSuffixInActionNames = false;
+            }).AddNewtonsoftJson()
+            .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new DatetimeJsonConverter("yyyy-MM-dd HH:mm:ss")); });
 
             services.AddRouting(options => options.LowercaseUrls = true);
 
@@ -107,8 +115,9 @@ namespace Ae.B.Login.Api
             #endregion Extended configuration
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //app.UseRouting();
             if (!env.IsProduction())
             {
                 app.UseDeveloperExceptionPage();
@@ -145,7 +154,11 @@ namespace Ae.B.Login.Api
                     "default",
                     "{controller=ZHome}/{action=Index}");
             });
-
+            //app.UseEndpoints(endpoints =>
+            //{
+                //endpoints.MapControllers();
+            //    endpoints.MapControllerRoute("default", "{controller=ZHome}/{action=Index}");
+            //});
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Ae.ShopOrder.Service.Core.Enums;
+﻿using Ae.ShopOrder.Service.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;

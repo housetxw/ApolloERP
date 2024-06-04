@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <Version>1.0.0</Version>
+	  <TargetFramework>net6.0</TargetFramework>
+    <Version>6.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,11 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="3.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="ApolloErp.Log" Version="1.0.2" />
-    <PackageReference Include="ApolloErp.Login.Auth" Version="1.0.0" />
-    <PackageReference Include="ApolloErp.Web" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="ApolloErp.Log" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
+    <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
   </ItemGroup>
 
 </Project>

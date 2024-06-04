@@ -1,0 +1,31 @@
+#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["Ae.AccountAuthority.Service/Ae.AccountAuthority.Service.csproj", "Ae.AccountAuthority.Service/"]
+COPY ["Ae.AccountAuthority.Service.Imp/Ae.AccountAuthority.Service.Imp.csproj", "Ae.AccountAuthority.Service.Imp/"]
+COPY ["Ae.AccountAuthority.Service.Client/Ae.AccountAuthority.Service.Client.csproj", "Ae.AccountAuthority.Service.Client/"]
+COPY ["Ae.AccountAuthority.Service.Common/Ae.AccountAuthority.Service.Common.csproj", "Ae.AccountAuthority.Service.Common/"]
+COPY ["Ae.AccountAuthority.Service.Dal/Ae.AccountAuthority.Service.Dal.csproj", "Ae.AccountAuthority.Service.Dal/"]
+COPY ["Ae.AccountAuthority.Service.Core/Ae.AccountAuthority.Service.Core.csproj", "Ae.AccountAuthority.Service.Core/"]
+RUN dotnet nuget add source  http://nuget.aerp.com.cn/nuget -n aerp.nuget
+RUN dotnet restore "./Ae.AccountAuthority.Service/Ae.AccountAuthority.Service.csproj"
+COPY . .
+WORKDIR "/src/Ae.AccountAuthority.Service"
+RUN dotnet build "./Ae.AccountAuthority.Service.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./Ae.AccountAuthority.Service.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENV ASPNETCORE_ENVIRONMENT=Production
+ENTRYPOINT ["dotnet", "Ae.AccountAuthority.Service.dll"]

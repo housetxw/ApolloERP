@@ -6,6 +6,8 @@ using Ae.Product.Service.Dal.Model.Config;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ApolloErp.Web.WebApi;
+using ApolloErp.Data.DapperExtensions;
 
 namespace Ae.Product.Service.Imp.Mappers
 {
@@ -17,6 +19,9 @@ namespace Ae.Product.Service.Imp.Mappers
                 .ForMember(t => t.ImageUrl, (m) => m.MapFrom(t => t.ImageUrl.AddImageDomain())).ReverseMap();
             CreateMap<ConfigFrontCategoryDo, ConfigFrontCategoryVo>()
                 .ForMember(t => t.ImageUrl, (m) => m.MapFrom(t => t.ImageUrl.AddImageDomain())).ReverseMap();
+
+            CreateMap<PagedEntity<ConfigAdvertisementDo>, ApiPagedResultData<ConfigAdvertisementVo>>()
+                .ReverseMap();
 
             CreateMap<FctProductDO, ConfigHotProductVo>().ReverseMap();
 

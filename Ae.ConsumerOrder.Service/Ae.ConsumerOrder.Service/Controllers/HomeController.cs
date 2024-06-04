@@ -10,6 +10,7 @@ namespace Ae.ConsumerOrder.Service.Controllers
     /// <summary>
     /// Home
     /// </summary>
+    [Route("[controller]/[action]")]
     public class HomeController : ControllerBase
     {
 

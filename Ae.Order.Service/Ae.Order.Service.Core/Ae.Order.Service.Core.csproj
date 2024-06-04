@@ -1,21 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <Version>6.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.1\Ae.Order.Service.Core.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net6.0\Ae.Order.Service.Core.xml</DocumentationFile>
     <OutputPath></OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp2.1\Ae.Order.Service.Core.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net6.0\Ae.Order.Service.Core.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApolloErp.Web" Version="1.0.1" />
-    <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
+    <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.8.0" />
   </ItemGroup>
 
   <ItemGroup>

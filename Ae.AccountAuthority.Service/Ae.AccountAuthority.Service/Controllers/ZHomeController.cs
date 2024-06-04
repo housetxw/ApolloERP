@@ -10,6 +10,7 @@ namespace Ae.AccountAuthority.Service.Controllers
     /// <summary>
     /// Home
     /// </summary>
+    [Route("[controller]/[action]")]
     public class ZHomeController : Controller
     {
         private readonly ApolloErpLogger<ZHomeController> logger;

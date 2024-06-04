@@ -1,0 +1,31 @@
+#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["Ae.BasicData.Service/Ae.BasicData.Service.csproj", "Ae.BasicData.Service/"]
+COPY ["Ae.BasicData.Service.Imp/Ae.BasicData.Service.Imp.csproj", "Ae.BasicData.Service.Imp/"]
+COPY ["Ae.BasicData.Service.Client/Ae.BasicData.Service.Client.csproj", "Ae.BasicData.Service.Client/"]
+COPY ["Ae.BasicData.Service.Common/Ae.BasicData.Service.Common.csproj", "Ae.BasicData.Service.Common/"]
+COPY ["Ae.BasicData.Service.Core/Ae.BasicData.Service.Core.csproj", "Ae.BasicData.Service.Core/"]
+COPY ["Ae.BasicData.Service.Dal/Ae.BasicData.Service.Dal.csproj", "Ae.BasicData.Service.Dal/"]
+RUN dotnet nuget add source  http://nuget.aerp.com.cn/nuget -n aerp.nuget
+RUN dotnet restore "./Ae.BasicData.Service/Ae.BasicData.Service.csproj"
+COPY . .
+WORKDIR "/src/Ae.BasicData.Service"
+RUN dotnet build "./Ae.BasicData.Service.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./Ae.BasicData.Service.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENV ASPNETCORE_ENVIRONMENT=Staging
+ENTRYPOINT ["dotnet", "Ae.BasicData.Service.dll"]

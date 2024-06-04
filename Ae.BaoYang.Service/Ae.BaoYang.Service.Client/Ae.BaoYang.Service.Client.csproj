@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <Version>6.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApolloErp.Component.Http" Version="2.0.1" />
-    <PackageReference Include="ApolloErp.Web" Version="1.0.1" />
+    <PackageReference Include="ApolloErp.Component.Http" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

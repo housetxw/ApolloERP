@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Internal;
 using ApolloErp.Log;
 using ApolloErp.Login.Auth;
 using ApolloErp.Web.WebApi;
@@ -198,17 +197,17 @@ namespace Ae.Account.Api.Controllers
             var res = await appSvc.GetApplicationListAnyCondition(reqVo);
             var valid = reqVo.Id > 0 ? res.FindAll(f => f.Id != reqVo.Id) : res;
 
-            if (!EnumerableExtensions.Any(valid)) return errMsg;
+            if (!Enumerable.Any(valid)) return errMsg;
 
-            if (EnumerableExtensions.Any(valid.FindAll(v => string.Equals(reqVo.Name, v.Name))))
+            if (Enumerable.Any(valid.FindAll(v => string.Equals(reqVo.Name, v.Name))))
             {
                 errMsg += "，系统名称";
             }
-            if (EnumerableExtensions.Any(valid.FindAll(v => string.Equals(reqVo.Initialism, v.Initialism))))
+            if (Enumerable.Any(valid.FindAll(v => string.Equals(reqVo.Initialism, v.Initialism))))
             {
                 errMsg += "，系统简称";
             }
-            if (EnumerableExtensions.Any(valid.FindAll(v => string.Equals(reqVo.Route, v.Route))))
+            if (Enumerable.Any(valid.FindAll(v => string.Equals(reqVo.Route, v.Route))))
             {
                 errMsg += "，系统域名";
             }
