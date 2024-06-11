@@ -1,0 +1,6 @@
+{
+    "registry-mirrors": [
+        "https://mirror.ccs.tencentyun.com"
+    ],
+    "insecure-registries": ["registry.aerp.com.cn"]
+}
