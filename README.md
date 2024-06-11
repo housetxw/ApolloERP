@@ -40,6 +40,7 @@
 ## 开发文档
 
   [转到wiki](https://gitee.com/aerphouse/ApolloERP/wikis/Home)   
+  [增加docker部署](https://gitee.com/aerphouse/ApolloERP/wikis/docker%E9%83%A8%E7%BD%B2%EF%BC%88%E7%AE%80%E6%98%93%EF%BC%89)  
 
 ## 开源地址
 
