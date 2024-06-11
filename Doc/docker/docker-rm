@@ -1,0 +1,37 @@
+
+docker rm      ae.account.api 
+docker rm      ae.accountauthority.service 
+docker rm      ae.basicdata.service 
+docker rm      ae.activity.service 
+docker rm      ae.aftersale.service 
+docker rm      ae.b.activity.api 
+docker rm      ae.b.app.api  
+docker rm      ae.b.fms.api  
+docker rm      ae.b.login.api 
+docker rm      ae.b.order.api 
+docker rm      ae.b.pay.api  
+docker rm      ae.b.product.api  
+docker rm      ae.b.user.api  
+docker rm      ae.baoyang.service 
+docker rm      ae.c.login.api 
+docker rm      ae.c.miniapp.api 
+docker rm     ae.consumerorder.service 
+docker rm     ae.coupon.service  
+docker rm     ae.fileupload.api  
+docker rm    ae.fms.service  
+docker rm    ae.order.service  
+docker rm    ae.ordercomment.service 
+docker rm    ae.pay.service 
+docker rm    ae.product.service 
+docker rm    ae.purchase.service  
+docker rm    ae.receive.service 
+docker rm    ae.reverse.service 
+docker rm    ae.shop.api  
+docker rm    ae.shop.service  
+docker rm    ae.shoporder.service 
+docker rm    ae.stock.service 
+docker rm    ae.user.service   
+docker rm    ae.vehicle.service 
+docker rm    ae.wms.service  
+
+

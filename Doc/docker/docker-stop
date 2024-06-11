@@ -1,0 +1,37 @@
+
+docker stop      ae.account.api 
+docker stop      ae.accountauthority.service 
+docker stop      ae.basicdata.service 
+docker stop      ae.activity.service 
+docker stop      ae.aftersale.service 
+docker stop      ae.b.activity.api 
+docker stop      ae.b.app.api  
+docker stop      ae.b.fms.api  
+docker stop      ae.b.login.api 
+docker stop      ae.b.order.api 
+docker stop      ae.b.pay.api  
+docker stop      ae.b.product.api  
+docker stop      ae.b.user.api  
+docker stop      ae.baoyang.service 
+docker stop      ae.c.login.api 
+docker stop      ae.c.miniapp.api 
+docker stop     ae.consumerorder.service 
+docker stop     ae.coupon.service  
+docker stop     ae.fileupload.api  
+docker stop    ae.fms.service  
+docker stop    ae.order.service  
+docker stop    ae.ordercomment.service 
+docker stop    ae.pay.service 
+docker stop    ae.product.service 
+docker stop    ae.purchase.service  
+docker stop    ae.receive.service 
+docker stop    ae.reverse.service 
+docker stop    ae.shop.api  
+docker stop    ae.shop.service  
+docker stop    ae.shoporder.service 
+docker stop    ae.stock.service 
+docker stop    ae.user.service   
+docker stop    ae.vehicle.service 
+docker stop    ae.wms.service  
+
+

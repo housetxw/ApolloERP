@@ -1,0 +1,37 @@
+
+docker run --name ae.account.api -p 4439:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway   registry.aerp.com.cn/ae.account.api:6.0
+docker run --name  ae.accountauthority.service  -p 8090:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.accountauthority.service:6.0
+docker run --name ae.basicdata.service -p 8089:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway   registry.aerp.com.cn/ae.basicdata.service:6.0
+docker run --name ae.activity.service -p  8104:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.activity.service:6.0
+docker run --name  ae.aftersale.service  -p  8097:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.aftersale.service:6.0
+docker run --name  ae.b.activity.api  -p  4447:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.b.activity.api:6.0
+docker run --name  ae.b.app.api  -p  4434:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.b.app.api:6.0
+docker run --name  ae.b.fms.api  -p  4440:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.b.fms.api:6.0
+docker run --name  ae.b.login.api  -p  4443:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.b.login.api:6.0
+docker run --name  ae.b.order.api  -p  4436:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.b.order.api:6.0
+docker run --name  ae.b.pay.api  -p  4450:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.b.pay.api:6.0
+docker run --name  ae.b.product.api  -p  4438:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.b.product.api:6.0
+docker run --name  ae.b.user.api  -p  4444:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.b.user.api:6.0
+docker run --name  ae.baoyang.service  -p  8087:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.baoyang.service:6.0
+docker run --name  ae.c.login.api  -p  4445:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.c.login.api:6.0
+docker run --name  ae.c.miniapp.api  -p  4432:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.c.miniapp.api:6.0
+docker run --name  ae.consumerorder.service  -p  8082:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.consumerorder.service:6.0
+docker run --name  ae.coupon.service  -p  8084:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.coupon.service:6.0
+docker run --name ae.fileupload.api -p 4446:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway   registry.aerp.com.cn/ae.fileupload.api:6.0
+docker run --name ae.fms.service  -p  8096:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway   registry.aerp.com.cn/ae.fms.service:6.0
+docker run --name  ae.order.service  -p  8081:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.order.service:6.0
+docker run --name  ae.ordercomment.service  -p  8091:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.ordercomment.service:6.0
+docker run --name  ae.pay.service  -p  8085:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.pay.service:6.0
+docker run --name  ae.product.service  -p  8086:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.product.service:6.0
+docker run --name  ae.purchase.service  -p  8098:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.purchase.service:6.0
+docker run --name  ae.receive.service  -p  8093:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.receive.service:6.0
+docker run --name  ae.reverse.service  -p  8103:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.reverse.service:6.0
+docker run --name ae.shop.api -p 4452:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway   registry.aerp.com.cn/ae.shop.api:6.0
+docker run --name  ae.shop.service  -p  8092:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.shop.service:6.0
+docker run --name  ae.shoporder.service  -p  8083:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.shoporder.service:6.0
+docker run --name  ae.stock.service  -p  8099:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.stock.service:6.0
+docker run --name  ae.user.service  -p  8094:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.user.service:6.0
+docker run --name  ae.vehicle.service  -p  8088:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.vehicle.service:6.0
+docker run --name  ae.wms.service  -p  8095:80 -d  -m 256M -v /home/logs:/app/logs  --add-host=service.aerp.com.cn:host-gateway    registry.aerp.com.cn/ae.wms.service:6.0
+
+

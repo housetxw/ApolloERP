@@ -1,0 +1,37 @@
+
+docker pull      registry.aerp.com.cn/ae.account.api:6.0
+docker pull      registry.aerp.com.cn/ae.accountauthority.service:6.0
+docker pull      registry.aerp.com.cn/ae.basicdata.service:6.0
+docker pull      registry.aerp.com.cn/ae.activity.service:6.0
+docker pull      registry.aerp.com.cn/ae.aftersale.service:6.0
+docker pull      registry.aerp.com.cn/ae.b.activity.api:6.0
+docker pull      registry.aerp.com.cn/ae.b.app.api:6.0 
+docker pull      registry.aerp.com.cn/ae.b.fms.api:6.0 
+docker pull      registry.aerp.com.cn/ae.b.login.api:6.0
+docker pull      registry.aerp.com.cn/ae.b.order.api:6.0
+docker pull      registry.aerp.com.cn/ae.b.pay.api:6.0 
+docker pull      registry.aerp.com.cn/ae.b.product.api:6.0 
+docker pull      registry.aerp.com.cn/ae.b.user.api:6.0 
+docker pull      registry.aerp.com.cn/ae.baoyang.service:6.0
+docker pull      registry.aerp.com.cn/ae.c.login.api:6.0
+docker pull      registry.aerp.com.cn/ae.c.miniapp.api:6.0
+docker pull     registry.aerp.com.cn/ae.consumerorder.service:6.0
+docker pull     registry.aerp.com.cn/ae.coupon.service:6.0 
+docker pull     registry.aerp.com.cn/ae.fileupload.api:6.0 
+docker pull    registry.aerp.com.cn/ae.fms.service:6.0 
+docker pull    registry.aerp.com.cn/ae.order.service:6.0 
+docker pull    registry.aerp.com.cn/ae.ordercomment.service:6.0
+docker pull    registry.aerp.com.cn/ae.pay.service:6.0
+docker pull    registry.aerp.com.cn/ae.product.service:6.0
+docker pull    registry.aerp.com.cn/ae.purchase.service:6.0 
+docker pull    registry.aerp.com.cn/ae.receive.service:6.0
+docker pull    registry.aerp.com.cn/ae.reverse.service:6.0
+docker pull    registry.aerp.com.cn/ae.shop.api:6.0 
+docker pull    registry.aerp.com.cn/ae.shop.service:6.0 
+docker pull    registry.aerp.com.cn/ae.shoporder.service:6.0
+docker pull    registry.aerp.com.cn/ae.stock.service:6.0
+docker pull    registry.aerp.com.cn/ae.user.service:6.0  
+docker pull    registry.aerp.com.cn/ae.vehicle.service:6.0
+docker pull    registry.aerp.com.cn/ae.wms.service:6.0 
+
+
