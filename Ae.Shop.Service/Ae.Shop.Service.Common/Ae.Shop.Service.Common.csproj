@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFramework>net6.0</TargetFramework>
-	  <Version>6.0.0</Version>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <Version>8.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="6.0.0" />
-    <PackageReference Include="ApolloErp.Log" Version="6.0.0" />
-    <PackageReference Include="ApolloErp.Message" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="8.0.0" />
+    <PackageReference Include="ApolloErp.Log" Version="8.0.0" />
+    <PackageReference Include="ApolloErp.Message" Version="8.0.0" />
 	  <PackageReference Include="Castle.Core" Version="5.1.1" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	  <PackageReference Include="System.Net.Http" Version="4.3.4" />

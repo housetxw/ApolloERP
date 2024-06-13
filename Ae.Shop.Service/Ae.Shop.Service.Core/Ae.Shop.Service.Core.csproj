@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFramework>net6.0</TargetFramework>
-	  <Version>6.0.0</Version>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <Version>8.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net6.0\Ae.Shop.Service.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net8.0\Ae.Shop.Service.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Web" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>

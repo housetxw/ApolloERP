@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-	  <TargetFramework>net6.0</TargetFramework>
-	  <Version>6.0.0</Version>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <Version>8.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net6.0\Ae.B.User.Api.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net8.0\Ae.B.User.Api.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\net6.0\Ae.B.User.Api.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net8.0\Ae.B.User.Api.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
-    <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Web" Version="8.0.0" />
 	  <PackageReference Include="log4net" Version="2.0.17" />
 	  <PackageReference Include="NLog" Version="5.3.2" />
 	  <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.11" />
