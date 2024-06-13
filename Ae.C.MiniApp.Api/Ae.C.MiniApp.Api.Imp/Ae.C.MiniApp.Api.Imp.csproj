@@ -17,8 +17,8 @@
   <ItemGroup>
 	  <PackageReference Include="aliyun-net-sdk-core" Version="1.5.11" />
 	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
-    <PackageReference Include="Qiniu.Shared" Version="7.2.15" />
-    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
+	  <PackageReference Include="Qiniu.Shared" Version="7.2.15" />
+ 
   </ItemGroup>
 
   <ItemGroup>
