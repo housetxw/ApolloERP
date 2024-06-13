@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <PackageReference Include="ApolloErp.Web" Version="8.0.0" />
-    <PackageReference Include="xunit.extensibility.core" Version="2.8.0" />
   </ItemGroup>
 
   <ItemGroup>
