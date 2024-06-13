@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFramework>net6.0</TargetFramework>
+	  <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net6.0\Ae.Account.Api.Core.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net8.0\Ae.Account.Api.Core.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
