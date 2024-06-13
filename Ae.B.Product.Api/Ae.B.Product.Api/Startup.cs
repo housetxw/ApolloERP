@@ -16,7 +16,7 @@ using ApolloErp.Web.WebApi;
 using System.Reflection;
 using ApolloErp.Web.Swagger;
 using System.Net.Http;
-using FluentValidation.AspNetCore;
+//using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using ApolloErp.Log;
 using ApolloErp.Login.Auth;
