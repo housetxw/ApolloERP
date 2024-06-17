@@ -3,12 +3,12 @@ import {
   get
 } from '../utils/request'
 
-// const publicUrl = 'http://192.168.3.252:4432/'
-// const loginPublicUrl = 'http://192.168.3.252:4445/'
+const publicUrl = 'https://api8.aerp.com.cn:4432/'
+const loginPublicUrl = 'https://api8.aerp.com.cn:4445/'
 // const publicUrl = 'https://ut.cminiapi.aerp.com.cn/'
 // const loginPublicUrl = 'https://ut.cloginapi.aerp.com.cn/'
-const publicUrl = 'https://cminiapi.aerp.com.cn/'
-const loginPublicUrl = 'https://cloginapi.aerp.com.cn/'
+// const publicUrl = 'https://cminiapi.aerp.com.cn/'
+// const loginPublicUrl = 'https://cloginapi.aerp.com.cn/'
 export function GetOrderPackageCards(data) {
   return get(`${publicUrl}OrderQuery/GetOrderPackageCards`, data)
 }
