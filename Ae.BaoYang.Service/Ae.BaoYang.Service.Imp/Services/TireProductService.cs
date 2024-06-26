@@ -211,7 +211,7 @@ namespace Ae.BaoYang.Service.Imp.Services
                         CategoryType = config.CategoryType,
                         ZhName = config.DisplayName,
                         BriefDescription = config.BriefDescription,
-                        ImageUrl = config.ImageUrl,
+                        ImageUrl = ImageHelper.AddImageDomain(config.ImageUrl), 
                         Tags = new List<TagInfo>()
                     };
                     var siLunProduct = await GetProductsByPidList(new List<string>() {siLunPid});
@@ -270,7 +270,7 @@ namespace Ae.BaoYang.Service.Imp.Services
                 CategoryType = config.CategoryType,
                 ZhName = config.DisplayName,
                 BriefDescription = config.BriefDescription,
-                ImageUrl = config.ImageUrl,
+                ImageUrl = ImageHelper.AddImageDomain(config.ImageUrl),
                 Tags = new List<TagInfo>(),
                 Products = result
             };
@@ -295,7 +295,7 @@ namespace Ae.BaoYang.Service.Imp.Services
                 CategoryType = config.CategoryType,
                 ZhName = config.DisplayName,
                 BriefDescription = config.BriefDescription,
-                ImageUrl = config.ImageUrl,
+                ImageUrl = ImageHelper.AddImageDomain(config.ImageUrl),
                 Tags = new List<TagInfo>(),
                 Products = await GetTireProducts(tireSize, oePid, provinceId, cityId, userAttentionPid, limit)
             };

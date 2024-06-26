@@ -20,6 +20,11 @@ namespace Ae.BaoYang.Service.Common.Helper
                 return string.Empty;
             }
 
+            if (url.StartsWith("https://") || url.StartsWith("http://"))
+            {
+                return url;
+            }
+
             var imageDomain = "https://m.aerp.com.cn";
             var imageUrl = url.TrimStart('/');
             imageUrl = string.Concat(imageDomain, "/", imageUrl);
