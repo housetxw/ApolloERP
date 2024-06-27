@@ -19,7 +19,7 @@
     <PackageReference Include="ApolloErp.Common" Version="6.0.1" />
     <PackageReference Include="ApolloErp.Component.Http" Version="6.0.0" />
     <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="6.0.0" />
-    <PackageReference Include="ApolloErp.Log" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Log" Version="6.0.1" />
     <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
     <PackageReference Include="ApolloErp.Message" Version="6.0.0" />
     <PackageReference Include="ApolloErp.Web" Version="6.0.0" />

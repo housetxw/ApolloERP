@@ -17,7 +17,7 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Qiniu.Shared" Version="7.2.15" />
-    <PackageReference Include="ApolloErp.Log" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Log" Version="6.0.1" />
     <PackageReference Include="ApolloErp.Redis" Version="6.0.0" />
   </ItemGroup>
 

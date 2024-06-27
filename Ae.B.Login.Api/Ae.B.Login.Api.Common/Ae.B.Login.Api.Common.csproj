@@ -19,7 +19,7 @@
 	  <PackageReference Include="Castle.Core" Version="5.1.1" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
-    <PackageReference Include="ApolloErp.Log" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Log" Version="6.0.1" />
     <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
     <PackageReference Include="ApolloErp.Message" Version="6.0.0" />
     <PackageReference Include="ApolloErp.Redis" Version="6.0.0" />

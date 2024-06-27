@@ -9,7 +9,7 @@ namespace Ae.Account.Api.Controllers
     /// <summary>
     /// Home
     /// </summary>
-    [Route("[controller]/[action]")]
+    //[Route("[controller]/[action]")]
     //[Filter(nameof(ZHomeController))]
     public class ZHomeController : ControllerBase
     {
