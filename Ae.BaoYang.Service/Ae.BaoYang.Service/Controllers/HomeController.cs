@@ -10,7 +10,7 @@ namespace Ae.BaoYang.Service.Controllers
     /// <summary>
     /// Home
     /// </summary>
-    [Route("[controller]/[action]")]
+    //[Route("[controller]/[action]")]
     public class HomeController : ControllerBase
     {
       

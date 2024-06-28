@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <PackageReference Include="ApolloErp.Component.Http" Version="6.0.0" />
-    <PackageReference Include="ApolloErp.Log" Version="6.0.0" />
     <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
     <PackageReference Include="ApolloErp.Message" Version="6.0.0" />
     <PackageReference Include="ApolloErp.SkyWalking" Version="6.0.0" />
