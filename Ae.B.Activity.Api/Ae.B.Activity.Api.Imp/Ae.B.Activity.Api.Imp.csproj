@@ -12,14 +12,12 @@
 
   <ItemGroup>
 	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
-    <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="6.0.0" />
-    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
+	  <PackageReference Include="ApolloErp.Data.DapperExtensions" Version="6.0.1" />
+	  <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Ae.B.Activity.Api.Client\Ae.B.Activity.Api.Client.csproj" />
-    <ProjectReference Include="..\Ae.B.Activity.Api.Common\Ae.B.Activity.Api.Common.csproj" />
-    <ProjectReference Include="..\Ae.B.Activity.Api.Core\Ae.B.Activity.Api.Core.csproj" />
   </ItemGroup>
 
 </Project>
