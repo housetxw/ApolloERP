@@ -15,14 +15,9 @@
 
   <ItemGroup>
     <Compile Remove="logs\**" />
-    <Compile Remove="Properties\PublishProfiles\**" />
     <Content Remove="logs\**" />
-    <Content Remove="Properties\PublishProfiles\**" />
     <EmbeddedResource Remove="logs\**" />
-    <EmbeddedResource Remove="Properties\PublishProfiles\**" />
     <None Remove="logs\**" />
-    <None Remove="Properties\PublishProfiles\**" />
-    <_WebToolingArtifacts Remove="Properties\PublishProfiles\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,17 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="wwwroot\" />
     <Folder Include="dll\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ApolloErp.SkyWalking" Version="6.0.0" />
-    <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
 	  <PackageReference Include="log4net" Version="2.0.17" />
-	  <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.11" />
-	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.1" />
-	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.30" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.31" />
   </ItemGroup>
 
   <ItemGroup>

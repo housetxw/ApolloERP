@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Web" Version="6.0.1" />
   </ItemGroup>
 
 

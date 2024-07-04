@@ -20,16 +20,15 @@
 
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.17" />
-	  <PackageReference Include="NLog" Version="5.3.2" />
-	  <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.11" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
-    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
-    <PackageReference Include="ApolloErp.Message" Version="6.0.0" />
+    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.2" />
+    <PackageReference Include="ApolloErp.Message" Version="6.0.1" />
     <PackageReference Include="ApolloErp.SkyWalking" Version="6.0.0" />
-    <PackageReference Include="ApolloErp.Web" Version="6.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
-	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.30" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.31" />
+	  <PackageReference Include="System.Net.Http" Version="4.3.4" />
+	  <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,7 +12,7 @@
 
   <ItemGroup>
 	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
-    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.1" />
+    <PackageReference Include="ApolloErp.Login.Auth" Version="6.0.2" />
   </ItemGroup>
 
   <ItemGroup>

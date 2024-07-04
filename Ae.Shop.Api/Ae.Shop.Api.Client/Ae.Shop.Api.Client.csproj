@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApolloErp.Component.Http" Version="6.0.0" />
+	  <PackageReference Include="ApolloErp.Component.Http" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Castle.Components.DictionaryAdapter;
-using Google.Protobuf.Collections;
 using Newtonsoft.Json;
 using Ae.Shop.Api.Common.Format;
 

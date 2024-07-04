@@ -5,6 +5,9 @@
 	  <Version>6.0.0</Version>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="ApolloErp.Data.DapperExtensions" Version="6.0.1" />
+	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ae.Shop.Api.Common\Ae.Shop.Api.Common.csproj" />
     <ProjectReference Include="..\Ae.Shop.Api.Core\Ae.Shop.Api.Core.csproj" />
