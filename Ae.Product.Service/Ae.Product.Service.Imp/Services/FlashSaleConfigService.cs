@@ -79,6 +79,13 @@ namespace Ae.Product.Service.Imp.Services
                                                 AND `status` = '已生效' ", new { currnet_date = DateTime.Now });
 
                 var productCodes = result.Select(r => r.ProductId).ToList();
+                if (!productCodes.Any())
+                {
+                    res.Code = ResultCode.Success;
+                    res.Data = new List<FlashSaleConfigDTO>();
+                    return res;
+                }
+
                 //商品信息
                 var productInfos = _productRepository.GetProductsByProductCode(productCodes);
                 var vo = _mapper.Map<List<FlashSaleConfigDTO>>(result);
