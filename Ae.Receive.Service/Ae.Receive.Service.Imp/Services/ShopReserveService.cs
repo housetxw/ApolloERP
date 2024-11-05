@@ -2275,18 +2275,24 @@ namespace Ae.Receive.Service.Imp.Services
                     CreateBy = request.CreateBy,
                     CreateTime = dt
                 }));
-                using (TransactionScope ts = new TransactionScope())
-                {
-                    var configItem = await _shopReserveTimeConfigRepository.GetReserveTimeConfigByDateTypeAsync(request.ShopId,
-                        request.WeekDay, request.YearDay, request.ConfigType);
-                    if (configItem != null && configItem.Any())
-                    {
-                        await _shopReserveTimeConfigRepository.DeleteReserveTimeConfigAsync(request.ShopId,
-                        request.WeekDay, request.YearDay, request.ConfigType);
-                    }
-                    configItems.ForEach(o => _shopReserveTimeConfigRepository.InsertAsync(o));
-                    ts.Complete();
-                }
+
+                await _shopReserveTimeConfigRepository.DeleteReserveTimeConfigAsync(request.ShopId,
+                request.WeekDay, request.YearDay, request.ConfigType);
+
+                _shopReserveTimeConfigRepository.InsertBatch(configItems);
+
+                //using (TransactionScope ts = new TransactionScope())
+                //{
+                //    var configItem = await _shopReserveTimeConfigRepository.GetReserveTimeConfigByDateTypeAsync(request.ShopId,
+                //        request.WeekDay, request.YearDay, request.ConfigType);
+                //    if (configItem != null && configItem.Any())
+                //    {
+                //        await _shopReserveTimeConfigRepository.DeleteReserveTimeConfigAsync(request.ShopId,
+                //        request.WeekDay, request.YearDay, request.ConfigType);
+                //    }
+                //    configItems.ForEach(o => _shopReserveTimeConfigRepository.InsertAsync(o));
+                //    ts.Complete();
+                //}
                 return true;
             }
             else
