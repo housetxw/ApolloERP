@@ -553,8 +553,11 @@ export default {
     // 顶部tabbar切换事件
     onChangeTitle(event) {
       let that = this
-      that.topIndex = event.mp.detail.index
-      // that.active = event.mp.detail.index
+      that.topIndex = event.mp.detail.index      
+      if (that.active === that.topIndex) {
+        return;
+      }
+      that.active = event.mp.detail.index
       that.PageIndex = 1
       that.PageSize = 10
       that.searchLoading = false
