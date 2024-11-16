@@ -789,8 +789,9 @@ namespace Ae.Order.Service.Dal.Repository.Order
 
         public async Task<PagedEntity<OrderDO>> GetUninstalledOrderList(GetUninstalledOrderListRequest request)
         {
+            //已提交已确认的订单都算未安装
             var pageList = await GetListPagedAsync(request.PageIndex, request.PageSize,
-                "where user_id=@UserId and order_status=20 and is_need_install=1 and sign_status=1 and install_status=0 and reserve_status=0",
+                "where user_id=@UserId and order_status <= 20 and is_need_install=1 and sign_status=1 and install_status=0 and reserve_status=0",
                 "id desc", new { request.UserId });
             return pageList;
         }
