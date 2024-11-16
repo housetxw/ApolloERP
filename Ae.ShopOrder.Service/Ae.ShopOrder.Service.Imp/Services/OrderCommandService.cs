@@ -1689,6 +1689,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
             #endregion
 
             #region 组装用户
+            user.BirthDay = string.IsNullOrEmpty(user.BirthDay) ? "1900-01-01" : user.BirthDay;
 
             var orderUserDO = _mapper.Map<OrderUserDO>(user);
             //orderUserDO.UserId = request.Data.UserId;
