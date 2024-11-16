@@ -160,7 +160,7 @@ SELECT
 	        AND config_type = 1 
 	        AND (year_day >= @StartDate
 	        AND year_day < @EndDate )
-        GROUP BY  YearDay 
+        GROUP BY  YearDay ,WeekDay,ConfigType 
 UNION ALL
         SELECT
 	        week_day WeekDay,
@@ -173,7 +173,7 @@ UNION ALL
 	        shop_id = @ShopId
 	        AND is_deleted = 0 
 	        AND config_type = 0 
-        GROUP BY WeekDay
+        GROUP BY YearDay ,WeekDay,ConfigType
 ) t ";
 
             IEnumerable<ShopReserveTimeConfigDO> result = new List<ShopReserveTimeConfigDO>();
