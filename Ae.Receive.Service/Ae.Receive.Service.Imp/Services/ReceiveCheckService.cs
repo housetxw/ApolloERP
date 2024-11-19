@@ -1974,7 +1974,7 @@ namespace Ae.Receive.Service.Imp.Services
         {
             DateTime now = DateTime.Now;
 
-            using (TransactionScope ts = new TransactionScope())
+            //using (TransactionScope ts = new TransactionScope())
             {
                 if (updateField != null && updateField.Any())
                 {
@@ -1995,7 +1995,7 @@ namespace Ae.Receive.Service.Imp.Services
                     UpdateTime = now
                 });
 
-                ts.Complete();
+                //ts.Complete();
 
                 return true;
             }
