@@ -120,14 +120,14 @@ namespace Ae.Shop.Service.Dal.Repositorys.ShopCustomer
                     var sqlList = @"SELECT id, referrer_type referrerType, shop_id ShopId, user_id UserId
                                         FROM shop_user_relation " + whrClu;
 
-                    var resTmp = conn.QueryFirstOrDefaultAsync<ShopReferrerCustomerResDTO>(sql, param);
-                    var listTmp = conn.QueryAsync<ShopUserRelationDO>(sqlList, param);
+                    var resTmp = await conn.QueryFirstOrDefaultAsync<ShopReferrerCustomerResDTO>(sql, param);
+                    var listTmp = await conn.QueryAsync<ShopUserRelationDO>(sqlList, param);
 
-                    Task.WaitAll(resTmp, listTmp);
+                    //Task.WaitAll(resTmp, listTmp);
 
-                    res.ShopId = resTmp.Result.ShopId;
-                    res.Amount = resTmp.Result.Amount;
-                    res.UserIds.AddRange(listTmp.Result
+                    res.ShopId = resTmp.ShopId;
+                    res.Amount = resTmp.Amount;
+                    res.UserIds.AddRange(listTmp
                         .Select(s => s.UserId.ToString())
                         .Distinct().ToList());
                 });
