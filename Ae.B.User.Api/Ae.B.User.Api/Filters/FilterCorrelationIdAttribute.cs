@@ -97,6 +97,8 @@ namespace Ae.B.User.Api.Filters
             //方法执行后
             public async Task OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next)
             {
+                if (stopwatch == null) { stopwatch = Stopwatch.StartNew(); }
+                if (_loggerWatch == null) { _loggerWatch = new LoggerWatch(); }
                 var objectResult = context.Result as ObjectResult;
                 stopwatch?.Stop();
                 _loggerWatch.ResponseResult = JsonConvert.SerializeObject(objectResult?.Value);
@@ -133,6 +135,8 @@ namespace Ae.B.User.Api.Filters
             //记录逻辑异常信息到日志
             private void RecordCustomExceptionLog(ExceptionContext ctx)
             {
+                if (stopwatch == null) { stopwatch = Stopwatch.StartNew(); }
+                if (_loggerWatch == null) { _loggerWatch = new LoggerWatch(); }
                 stopwatch?.Stop();
                 _loggerWatch.TotalTime = stopwatch.ElapsedMilliseconds;
                 var sb = new StringBuilder();
@@ -167,6 +171,8 @@ namespace Ae.B.User.Api.Filters
             //记录系统异常信息到日志
             private void RecordExceptionLog(ExceptionContext ctx)
             {
+                if (stopwatch == null) { stopwatch = Stopwatch.StartNew(); }
+                if (_loggerWatch == null) { _loggerWatch = new LoggerWatch(); }
                 stopwatch?.Stop();
                 _loggerWatch.TotalTime = stopwatch.ElapsedMilliseconds;
                 var sb = new StringBuilder();
