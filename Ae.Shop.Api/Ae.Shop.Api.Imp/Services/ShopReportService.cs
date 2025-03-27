@@ -47,14 +47,14 @@ namespace Ae.Shop.Api.Imp.Services
             var organizationId = identityService.GetOrganizationId();
             long.TryParse(organizationId, out long shopId);
             request.ShopId = shopId;
-            if (string.IsNullOrWhiteSpace(request.StartDate))
-            {
-                request.StartDate = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
-            }
-            if (string.IsNullOrWhiteSpace(request.EndDate))
-            {
-                request.EndDate = DateTime.Now.ToString("yyyy-MM-dd");
-            }
+            //if (string.IsNullOrWhiteSpace(request.StartDate))
+            //{
+            //    request.StartDate = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+            //}
+            //if (string.IsNullOrWhiteSpace(request.EndDate))
+            //{
+            //    request.EndDate = DateTime.Now.ToString("yyyy-MM-dd");
+            //}
             return await _shopMangeClient.GetEmployeePerformanceList(request);
         }
 

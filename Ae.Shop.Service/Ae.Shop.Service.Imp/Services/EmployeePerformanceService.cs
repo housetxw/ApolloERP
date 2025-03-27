@@ -1567,7 +1567,7 @@ namespace Ae.Shop.Service.Imp.Services
                 request.EmployeeName = employee.Name;
                 request.Mobile = employee.Mobile;
 
-                _logger.Info($"GetTechPerformanceListV4 request= " + JsonConvert.SerializeObject(request));
+                //_logger.Info($"GetTechPerformanceListV4 request= " + JsonConvert.SerializeObject(request));
                 result = await employeePerformanceReportRepository.GetTechPerformanceListV4(request); 
             }
             else if (request.StartDate >= Convert.ToDateTime("2022-05-01"))
@@ -1580,12 +1580,12 @@ namespace Ae.Shop.Service.Imp.Services
                 request.EmployeeName = employee.Name;
                 request.Mobile = employee.Mobile;
 
-                _logger.Info($"GetTechPerformanceListV3 request= " + JsonConvert.SerializeObject(request));
+                //_logger.Info($"GetTechPerformanceListV3 request= " + JsonConvert.SerializeObject(request));
                 result = await employeePerformanceReportRepository.GetTechPerformanceListV3(request);
             }
             else
             {
-                _logger.Info($"GetTechPerformanceList request= " + JsonConvert.SerializeObject(request));
+                //_logger.Info($"GetTechPerformanceList request= " + JsonConvert.SerializeObject(request));
                 result = await employeePerformanceReportRepository.GetTechPerformanceList(request);
             }
             return result;
@@ -1607,7 +1607,7 @@ namespace Ae.Shop.Service.Imp.Services
                 request.EmployeeName = employee.Name;
                 request.Mobile = employee.Mobile;
 
-                _logger.Info($"GetTechPerformanceDetailV4 request= " + JsonConvert.SerializeObject(request));
+                //_logger.Info($"GetTechPerformanceDetailV4 request= " + JsonConvert.SerializeObject(request));
                 result = await employeePerformanceReportRepository.GetTechPerformanceDetailV4(request);
             }
             else if (request.StartDate >= Convert.ToDateTime("2022-05-01"))
@@ -1620,12 +1620,12 @@ namespace Ae.Shop.Service.Imp.Services
                 request.EmployeeName = employee.Name;
                 request.Mobile = employee.Mobile;
 
-                _logger.Info($"GetTechPerformanceDetailV3 request= " + JsonConvert.SerializeObject(request));
+                //_logger.Info($"GetTechPerformanceDetailV3 request= " + JsonConvert.SerializeObject(request));
                 result = await employeePerformanceReportRepository.GetTechPerformanceDetailV3(request);
             }
             else
             {
-                _logger.Info($"GetTechPerformanceDetail request= " + JsonConvert.SerializeObject(request));
+                //_logger.Info($"GetTechPerformanceDetail request= " + JsonConvert.SerializeObject(request));
                 result = await employeePerformanceReportRepository.GetTechPerformanceDetail(request);
             }
      

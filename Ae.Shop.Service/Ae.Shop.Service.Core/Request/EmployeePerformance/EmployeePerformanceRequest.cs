@@ -23,13 +23,13 @@ namespace Ae.Shop.Service.Core.Request
         /// <summary>
         ///  开始日期
         /// </summary>
-        [Required(ErrorMessage = "开始日期不能为空")]
+        //[Required(ErrorMessage = "开始日期不能为空")]
         public DateTime StartDate { get; set; }
 
         /// <summary>
         ///  结束日期
         /// </summary>
-        [Required(ErrorMessage = "结束日期不能为空")]
+        //[Required(ErrorMessage = "结束日期不能为空")]
         public DateTime EndDate { get; set; }
     }
 
