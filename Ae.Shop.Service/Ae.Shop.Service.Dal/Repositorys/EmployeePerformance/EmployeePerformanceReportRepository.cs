@@ -765,17 +765,19 @@ cfg.config_type,cfg.config_point
                 StartDate = request.StartDate.ToString("yyyy-MM-dd"),
                 EndDate = request.EndDate.AddDays(1).ToString("yyyy-MM-dd")
             };
-            OpenConnection(async conn =>
+            await OpenConnectionAsync(async conn =>
             {
                 result = await conn.QueryAsync<TechPerformanceDto>(sql + sortFiled, paras);
-                foreach (var item in result)
-                {
-                    item.EmployeeId = request.EmployeeId;
-                    item.EmployeeName = request.EmployeeName;
-                    item.Mobile = request.Mobile;
+                if (result !=  null && result.Any()) {
+                    foreach (var item in result)
+                    {
+                        item.EmployeeId = request.EmployeeId;
+                        item.EmployeeName = request.EmployeeName;
+                        item.Mobile = request.Mobile;
+                    }
                 }
-            }
-            );
+                
+            });
             return result.ToList();
         }
 
@@ -838,17 +840,19 @@ cfg.config_type,cfg.config_point
                 StartDate = request.StartDate.ToString("yyyy-MM-dd"),
                 EndDate = request.EndDate.AddDays(1).ToString("yyyy-MM-dd")
             };
-            OpenConnection(async conn =>
+            await OpenConnectionAsync(async conn =>
             {
                 result = await conn.QueryAsync<TechPerformanceDetailDto>(sql + groupFiled + sortFiled, paras);
-                foreach (var item in result)
+                if (result != null && result.Any())
                 {
-                    item.EmployeeId = request.EmployeeId;
-                    item.EmployeeName = request.EmployeeName;
-                    item.Mobile = request.Mobile;
+                    foreach (var item in result)
+                    {
+                        item.EmployeeId = request.EmployeeId;
+                        item.EmployeeName = request.EmployeeName;
+                        item.Mobile = request.Mobile;
+                    }
                 }
-            }
-            );
+            });
             return result.ToList();
 
         }
