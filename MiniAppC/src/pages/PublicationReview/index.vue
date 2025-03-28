@@ -110,7 +110,7 @@ export default {
         sourceType: ['album', 'camera'],
         success(res) {
           wx.uploadFile({
-            url: 'https://0eeuvgg657.52http.net//QiNiu/UploadStream',
+            url: 'https://cminiapi.aerp.com.cn/QiNiu/UploadStream',
             filePath: res.tempFilePaths[0],
             name: 'file',
             formData: {
@@ -119,7 +119,7 @@ export default {
             },
             header: {
               'Content-Type': 'multipart/form-data', // 记得设置
-              'Content-Type': 'application/json',
+              // 'Content-Type': 'application/json',
               Authorization:
                 'Bearer ' + wx.getStorageSync('tokenInfo').accessToken
             },

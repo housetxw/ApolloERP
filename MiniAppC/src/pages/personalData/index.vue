@@ -1,14 +1,15 @@
 <template>
   <div class="demo_page">
-    <div class="top_title_user row" @tap="changeImg">
+    <!-- <div class="top_title_user row" @tap="changeImg"> -->
+    <div class="top_title_user row">
       <p class="p1">头像</p>
       <p class="p2">
-        <img :src="src" alt class="user_img" />
-        <!-- <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
-          alt
-          style="width:24rpx;height:24rpx;margin-left:15rpx;"
-        />-->
+        <!-- <img :src="src" alt class="user_img" /> -->
+     
+        <button class="avatar-wrapper" open-type="chooseAvatar" @chooseavatar="onChooseAvatar">
+          <image class="avatar user_img" :src="src"></image>
+        </button>
+
       </p>
     </div>
     <div class="top_title row" @tap="nickName">
@@ -16,7 +17,7 @@
       <p class="p2">
         {{nickname}}
         <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
+          :src="src1"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -42,7 +43,7 @@
       <p class="p2">
         {{birthday}}
         <!-- <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
+          :src="src1"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />-->
@@ -53,7 +54,7 @@
       <p class="p2">
         {{username}}
         <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
+          :src="src1"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -64,7 +65,7 @@
       <p class="p2">
         {{userTelDes}}
         <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
+          :src="src1"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -75,7 +76,7 @@
       <p class="p2">
         {{drivingLicence}}
         <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
+          :src="src1"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -86,7 +87,7 @@
       <p class="p2">
         {{memberLevel}}
         <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
+          :src="src1"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -97,7 +98,7 @@
       <p class="p2">
         {{point}}
         <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
+          :src="src1"
           alt
           style="width:24rpx;height:24rpx;margin-left:15rpx;"
         />
@@ -107,7 +108,7 @@
       <p class="p1">收货地址</p>
       <p class="p2">
         <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
+          :src="src1"
           alt
           style="width:24rpx;height:24rpx"
         />
@@ -117,7 +118,7 @@
       <p class="p1">注销账号</p>
       <p class="p2">
         <!-- <img
-          src="https://m.aerp.com.cn/mini-app-main/maintenance_jump_icon.png"
+          :src="src1"
           alt
           style="width:24rpx;height:24rpx"
         />-->
@@ -126,7 +127,9 @@
   </div>
 </template>
 <script>
-import { GetuserInfor } from '../../api'
+import { GetuserInfor,
+  EditUserInfo 
+ } from '../../api'
 export default {
   data() {
     return {
@@ -140,6 +143,7 @@ export default {
       userTelDes: '',
       drivingLicence: '',
       src: ``, // 用户头像
+      src1: `${this.globalData.imgPubUrl}maintenance_jump_icon.png`,
       url1: `${this.globalData.imgPubUrl}mine_man.png`,
       url2: `${this.globalData.imgPubUrl}mine_man_click.png`,
       url3: `${this.globalData.imgPubUrl}mine_woman.png`,
@@ -174,63 +178,142 @@ export default {
     // 修改姓名
     realName() {
       this.$router.push('/pages/realName/main')
-    }
-    // 修改性别
-    // changeSex(){
-    //  let that = this;
-    //   wx.showActionSheet({
-    //     itemList: ["男", "女"],
+    },
+    // 修改性别    
+    changeSex() {
+      let that = this;
+      wx.showActionSheet({
+        itemList: ["男", "女"],
+        itemColor: "#333",
+        success(res) {
+          if (!res.cancel) {
+            let genderNumber = (res.tapIndex + 1)
+            EditUserInfo({
+              gender: genderNumber
+            })
+              .then(res => {
+                if (res.data == true) {
+                  that.gender = genderNumber
+                  wx.showToast({ title: '修改成功', icon: 'none' })
+                }
+              })
+              .catch(err => {
+                wx.showToast({ title: '修改失败', icon: 'none' })
+              });
+          }
+        }
+      });
+    },
 
-    //     itemColor: "#333",
-
-    //     success(res) {
-    //       if (!res.cancel) {
-    //         if (res.tapIndex == 0) {
-    //           that.chooseWxImageShop("album"); //从相册中选择
-    //         } else if (res.tapIndex == 1) {
-    //           that.chooseWxImageShop("camera"); //手机拍照
-    //         }
-    //       }
-    //     }
-    //   });
-    // },
     // 修改头像
+    changeImg() {
+      let that = this;
+      wx.showActionSheet({
+        itemList: ["从相册中选择", "拍照"],
+        itemColor: "#333",
+        success(res) {
+          if (!res.cancel) {
+            if (res.tapIndex == 0) {
+              that.chooseWxImageShop("album"); //从相册中选择
+            } else if (res.tapIndex == 1) {
+              that.chooseWxImageShop("camera"); //手机拍照
+            }
+          }
+        }
+      });
+    },
+    chooseWxImageShop(type) {
+      let that = this;
+      wx.chooseImage({
+        count: 1,
+        sizeType: ["original", "compressed"],
+        sourceType: [type],
+        success(res) {
+          // tempFilePath可以作为img标签的src属性显示图片
+          const tempFilePaths = res.tempFilePaths[0];
+          console.log(tempFilePaths)
+          wx.uploadFile({
+            url: `${this.globalData.publicUrl}QiNiu/UploadStream`, // 仅为示例，非真实的接口地址
+            filePath: tempFilePaths,
+            name: 'file',
+            formData: {
+              File: 'file',
+              Directory: 'miniApp/headUrl'
+            },
+            header: {
+              'Content-Type': 'multipart/form-data', // 记得设置
+              // 'Content-Type': 'application/json',
+              Authorization:
+                'Bearer ' + wx.getStorageSync('tokenInfo').accessToken
+            },
+            success(resa) {
+              let url = JSON.parse(resa.data).data
+              url = this.globalData.imgRootUrl + url
+              EditUserInfo({
+                headUrl: url
+              })
+                .then(res => {
+                  if (res.data == true) {
+                    that.src = url
+                    wx.showToast({ title: '头像修改成功', icon: 'none' })
+                  }
+                })
+                .catch(err => {
+                  wx.showToast({ title: '头像更新失败', icon: 'none' })
+                });
+            },
+            fail(data) {
+              console.log('上传错误信息', data)
+            }
+          })
+        }
+      });
+    },
+    onChooseAvatar(e) {
+      let that = this
+      const { avatarUrl } = e.target
+      wx.uploadFile({
+        url: `${this.globalData.publicUrl}QiNiu/UploadStream`, // 仅为示例，非真实的接口地址
+        filePath: avatarUrl,
+        name: 'file',
+        formData: {
+          File: 'file',
+          Directory: 'miniApp/headUrl'
+        },
+        header: {
+          'Content-Type': 'multipart/form-data', // 记得设置
+          //'Content-Type': 'application/json',
+          Authorization:
+            'Bearer ' + wx.getStorageSync('tokenInfo').accessToken
+        },
+        success(resa) {
+          let url = JSON.parse(resa.data).data
+          url = this.globalData.imgRootUrl + url
+          EditUserInfo({
+            headUrl: url
+          })
+            .then(res => {
+              if (res.data == true) {
+                that.src = url
+                wx.showToast({ title: '头像修改成功', icon: 'none' })
+              }
+            })
+            .catch(err => {
+              wx.showToast({ title: '头像更新失败', icon: 'none' })
+            });
+        },
+        fail(data) {
+          console.log('上传错误信息', data)
+        }
+      })
+    }
 
-    // changeImg() {
-    //   let that = this;
-    //   wx.showActionSheet({
-    //     itemList: ["从相册中选择", "拍照"],
-
-    //     itemColor: "#333",
-
-    //     success(res) {
-    //       if (!res.cancel) {
-    //         if (res.tapIndex == 0) {
-    //           that.chooseWxImageShop("album"); //从相册中选择
-    //         } else if (res.tapIndex == 1) {
-    //           that.chooseWxImageShop("camera"); //手机拍照
-    //         }
-    //       }
-    //     }
-    //   });
-    // },
-    // chooseWxImageShop(type) {
-    //   let that = this;
-    //   wx.chooseImage({
-    //     count: 1,
-    //     sizeType: ["original", "compressed"],
-    //     sourceType: [type],
-    //     success(res) {
-    //       // tempFilePath可以作为img标签的src属性显示图片
-    //       const tempFilePaths = res.tempFilePaths;
-    //     }
-    //   });
-    // }
   },
   onShow() {
     let that = this
     GetuserInfor('')
-      .then(res => {
+      .then(res => {        
+        // 在这里可以确保DOM已经更新
         that.src = res.data.headUrl
         that.nickname = res.data.nickName
         that.username = res.data.userName
@@ -284,9 +367,17 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    .user_img {
+    .avatar-wrapper {
+      padding: 0;
+      margin: 0;
       width: 106rpx;
       height: 106rpx;
+
+      .user_img {
+        width: 106rpx;
+        height: 106rpx;
+      }
+
     }
   }
 }

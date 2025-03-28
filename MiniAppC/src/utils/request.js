@@ -72,12 +72,12 @@ function createFly () {
       response => {
         // 只将请求结果的data字段返回
         tryHideFullScreenLoading()
-        console.log(
-          'fly response ===>',
-          response.request.url,
-          response.data,
-          response
-        )
+        // console.log(
+        //   'fly response ===>',
+        //   response.request.url,
+        //   response.data,
+        //   response
+        // )
         const statusCode = response.engine.status
         // 对有code的进行code检查
         if (statusCode === 200) {

@@ -256,7 +256,7 @@ export default {
 
     GetuserInfor('')
       .then(res => {
-        // that.src = res.data.headUrl
+        that.src = res.data.headUrl
         that.coupon = res.data.availCouponCount
         that.packageCardNum = res.data.packageCardNum
         that.numbersrc = res.data.memberUrl
