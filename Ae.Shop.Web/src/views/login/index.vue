@@ -2,19 +2,19 @@
   <div class="mainlogin">
     <div class="container">
       <div class="content">
-        <!-- <header>
-          <img class="left" src="@/assets/login_images/logo.png" />
+        <header>
+          <img class="left" src="@/assets/login_images/newLog.png" />
           <div class="box">
             <div class="title"></div>
             <div class="title2"> </div>
           </div>
-        </header> -->
+        </header>
         <!-- <div class="box2" >
        <img  class=" bg" src="@/assets/login_images/car.png">
         </div>-->
         <div
           class="box2"
-          :style="{backgroundImage:'url('+require('@/assets/login_images/car.png')+')',backgroundSize: 'cover'}"
+          :style="{backgroundImage:'url('+require('@/assets/login_images/login.png')+')',backgroundSize: 'cover'}"
         >
           <div class="login-container">
             <el-form
@@ -25,8 +25,12 @@
               auto-complete="on"
               label-position="left"
             >
+              <!-- <div class="title-container">
+                <h3 class="title">欢迎登录</h3>
+              </div> -->
+
               <div class="title-container">
-                <h3 class="title">门店管理系统</h3>
+                <h3 class="title">智慧门店管理系统</h3>
               </div>
 
               <el-form-item prop="username">
@@ -397,7 +401,7 @@ $cursor: #fff;
 </style>
 
 <style lang="scss" scoped>
-$cl: #304156;
+$cl: #307ddb;
 $bg: #2d3a4b;
 $dark_gray: #889aa4;
 $light_gray: #eee;
@@ -428,12 +432,13 @@ $light_gray: #eee;
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
   }
   .content {
-    // width: 1200px;
-    height: 100%;
-    width: 100%;
+    width: 1600px;
+    height: 800px;
+    // height: 100%;
+    // width: 100%;
   }
   .left {
     float: left;
@@ -462,8 +467,8 @@ $light_gray: #eee;
     // padding-top: 50px;
     // width: 1200px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: top;
     width: 100%;
     height: 100%;
     // background: no-repeat center;
@@ -474,10 +479,11 @@ $light_gray: #eee;
     background-color: #fff;
     overflow: hidden;
     position: relative;
-    top: 140px;
+    top: 200px;
+    right: 200px;
     .login-form {
       position: relative;
-      width: 520px;
+      width: 320px;
       max-width: 100%;
       padding: 40px 35px 0;
       margin: 0 auto;

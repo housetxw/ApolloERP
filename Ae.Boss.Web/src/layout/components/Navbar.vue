@@ -13,7 +13,7 @@
       <div class="right-menu">
         <div>
           <h1 class="b1">
-            <img src="@/assets/shouye_images/touxiang.png" />
+            <img src="@/assets/shouye_images/touxiang.png" style="width: 36px; height: 36px;" />
           </h1>
           <span class="s2">{{ userInfo.employeeName }}</span>
 
@@ -135,7 +135,7 @@ export default {
       float: left;
       height: 46px;
       width: 46px;
-      margin-top: 0;
+      margin-top: 5px;
     }
     .s2 {
       margin: 0 23px;

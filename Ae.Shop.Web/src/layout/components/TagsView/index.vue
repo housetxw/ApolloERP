@@ -217,7 +217,7 @@ export default {
       height: 26px;
       line-height: 26px;
       border: 1px solid #d8dce5;
-      color: #495060;
+      color: #49604f;
       background: #fff;
       padding: 0 8px;
       font-size: 12px;
@@ -230,9 +230,9 @@ export default {
         margin-right: 15px;
       }
       &.active {
-        background-color: #42b983;
+        background-color: #1767f3;
         color: #fff;
-        border-color: #42b983;
+        border-color: #1767f3;
         &::before {
           content: "";
           background: #fff;

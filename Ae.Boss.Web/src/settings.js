@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Boss管理系统',
+  title: '门店后台管理',
 
   /**
    * @type {boolean} true | false
