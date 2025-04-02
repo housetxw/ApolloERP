@@ -24,7 +24,7 @@
     },
     data() {
       return {
-        title: 'BOSS管理系统',
+        title: '门店后台管理',
         logo: require('@/assets/login_images/logo.png')
       }
     }
@@ -47,7 +47,7 @@
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background: #2b2f3a;
+    background: #1767f3;
     text-align: center;
     overflow: hidden;
 
@@ -65,7 +65,7 @@
       & .sidebar-title {
         display: inline-block;
         margin: 0;
-        color: #EA5921;
+        color: #f6f4f3;
         font-weight: 600;
         line-height: 50px;
         font-size: 14px;
