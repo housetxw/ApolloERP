@@ -13,8 +13,9 @@
       <div class="right-menu">
         <div>
           <span class="s2">
-            {{ userInfo.organizationName }}
             <SwitchLogin />
+            {{ userInfo.organizationName }}--
+            {{ userInfo.employeeName }}
           </span>
 
           <span class="s1" @click="logout">
@@ -111,7 +112,7 @@ export default {
     }
     >>> .el-button.is-circle {
       padding: 16px;
-      background: #304156;
+      background: #67c23a;
       font-size: 12px;
       color: white;
     }

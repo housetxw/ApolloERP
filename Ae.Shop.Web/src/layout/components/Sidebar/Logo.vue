@@ -47,7 +47,7 @@
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background: #2b2f3a;
+    background: #1767f3;
     text-align: center;
     overflow: hidden;
 
