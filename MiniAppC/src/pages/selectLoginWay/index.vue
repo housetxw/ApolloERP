@@ -1,13 +1,13 @@
 <template>
   <div>
   <view class="wx_quick_login">
-    <image class="wx_img" src="https://m.aerp.com.cn/mini-app-main/select_we.png"></image>
-    <view class="wx_text">微信用户快速登录</view>
+    <image class="wx_img" src="https://m.aerp.com.cn/mini-app-main/select_phone.png"></image>
+    <view class="wx_text">手机号快捷登录</view>
     <button class="wx_login_btn" form-type="submit" open-type="getPhoneNumber" @getphonenumber="getPhoneNumber"></button>
   </view>
   <view class="phone_login" @click="tapPhoneLogin">
-    <image class="phone_img" src="https://m.aerp.com.cn/mini-app-main/select_phone.png"></image>
-    <view class="phone_text">手机号登录</view>
+    <image class="phone_img" src="https://m.aerp.com.cn/mini-app-main/Password.png"></image>
+    <view class="phone_text">手机验证码登录</view>
     <button class="getformbtn" form-type="submit"></button>
   </view>
   </div>
@@ -92,7 +92,7 @@ button::after {
     font-size: 32rpx;
     color: #ffffff;
     line-height: 32rpx;
-    margin-left: 30rpx;
+    margin-left: 40rpx;
   }
   .wx_login_btn {
     position: absolute;
