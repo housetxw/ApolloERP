@@ -125,7 +125,7 @@ button::after {
     font-size: 32rpx;
     color: #666666;
     line-height: 32rpx;
-    margin-left: 70rpx;
+    margin-left: 40rpx;
   }
 }
 </style>
