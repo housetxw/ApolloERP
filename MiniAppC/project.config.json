@@ -30,14 +30,17 @@
     "disableUseStrict": false,
     "useStaticServer": true,
     "useCompilerPlugins": false,
-    "minifyWXML": true
+    "minifyWXML": true,
+    "condition": true
   },
   "miniprogramRoot": "dist/wx/",
   "compileType": "miniprogram",
   "appid": "wx48091b1fd1f7ad7d",
   "projectname": "miniappc-main",
   "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
+  "simulatorPluginLibVersion": {
+    "wxext14566970e7e9f62": "3.6.5-29"
+  },
   "condition": {},
   "libVersion": "2.17.0",
   "srcMiniprogramRoot": "dist/wx/",
@@ -48,5 +51,6 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "projectArchitecture": "multiPlatform"
 }
