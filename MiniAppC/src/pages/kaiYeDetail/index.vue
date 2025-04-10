@@ -8,7 +8,7 @@
       <div class="content">
 
         <div class="button" @click="toGetCoupon">点击领取</div>
-        <div class="button" @click="toGetCard" style="margin-top:780rpx">立即购买</div>
+        <div class="button" @click="toGetCard" style="margin-top:780rpx">立即【测试】</div>
       </div>
     </image>
   </div>

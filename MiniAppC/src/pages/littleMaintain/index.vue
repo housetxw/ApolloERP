@@ -166,7 +166,7 @@
                     mode="aspectFit"
                   />
                 </p>
-                <!-- 加入购物车图片  与  关注商品图片  -->
+                <!-- 加入【测试车】图片  与  关注商品图片  -->
                 <!-- <div v-if="itemb.isPackageProduct">
                 <img
                   style="margin-left:80rpx;width:44rpx;height:44rpx;"
@@ -957,7 +957,7 @@ export default {
         ) {
           wx.showModal({
             title: '提示',
-            content: '购买机油需和基础保养服务一起购买'
+            content: '【测试】机油需和基础保养服务一起【测试】'
           })
         } else {
           this.$router.push({

@@ -15,7 +15,7 @@
         <div class="seckillItemDec">{{item.description}}</div>
 
         <div class="seckillItemPrice">¥{{item.price}} <span class="subPrice">¥{{item.salesPrice}}</span></div>
-        <div class="seckillItemRBottom"> <span>剩余数量:{{item.num}}</span><span class="button">立即抢购</span> </div>
+        <div class="seckillItemRBottom"> <span>剩余数量:{{item.num}}</span><span class="button">立即【测试】</span> </div>
 
       </div>
     </div>

@@ -196,7 +196,7 @@ export default {
         // },
         // {
         //   src: `${this.globalData.imgPubUrl}mine_my_cart.png`,
-        //   txt: '购物车'
+        //   txt: '【测试车】'
         // },
         {
           src: `${this.globalData.imgPubUrl}mine_address.png`,
@@ -400,7 +400,7 @@ export default {
         // case 4: // 我的关注(已完成)
         //   this.$router.push('/pages/myConcern/main')
         //   break
-        // case 7: // 购物车
+        // case 7: // 【测试车】
         //   wx.showToast({ title: '敬请期待', icon: 'none' })
         //   break
         case 4: // 收货地址(已完成)

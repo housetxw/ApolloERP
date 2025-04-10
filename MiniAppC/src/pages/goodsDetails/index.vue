@@ -98,7 +98,7 @@
     <div style="height:100rpx; background:#fff;margin-bottom:20rpx;"></div>
     <div class="bottom">
       <div class="bbutton" @tap="back()">返回</div>
-      <!-- <div  class="bbutton1" @tap="sure()">单独购买</div> -->
+      <!-- <div  class="bbutton1" @tap="sure()">单独【测试】</div> -->
     </div>
     <div class="goTop">
       <img src="https://m.aerp.com.cn/mini-app-main/toTop.png" alt @tap="goTopAction" />

@@ -170,7 +170,7 @@
                     <p class="desP2">{{itemm.description}}</p>
                     <p class="desP3">¥{{itemm.price}}</p>
                   </div>
-                  <p class="butt" @click="buy(itemm)">抢购</p>
+                  <p class="butt" @click="buy(itemm)">【测试】</p>
                 </div>
               </div>
             </div>

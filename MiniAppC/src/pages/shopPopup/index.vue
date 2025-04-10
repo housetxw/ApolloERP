@@ -84,9 +84,9 @@
       </div>
       <!-- 按钮 -->
       <div class="btn">
-        <p class="p1" @tap="addshopCard">加入购物车</p>
+        <p class="p1" @tap="addshopCard">加入【测试车】</p>
         <p class="p2" @tap="CardType">
-          <text>按车型购买</text>
+          <text>按车型【测试】</text>
           <text>到店安装</text>
         </p>
       </div>
@@ -97,7 +97,7 @@
       <!-- 弹窗按钮二 -->
       <div class="position_two" @tap="CardStore">
         <p class="pos_twp">
-          <text>按车型购买</text>
+          <text>按车型【测试】</text>
           <text>按车型适配到店安装</text>
         </p>
       </div>
@@ -136,9 +136,9 @@ export default {
     AttributeClick(item) {},
     // 属性2点击事件
     BttributeClick(item1) {},
-    // 加入购物车
+    // 加入【测试车】
     addshopCard() {},
-    // 按车型购买
+    // 按车型【测试】
     CardType() {},
     // 确定
     Besure() {},

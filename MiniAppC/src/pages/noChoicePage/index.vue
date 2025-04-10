@@ -113,9 +113,9 @@
       <img :src="src2" alt class="img_img" />
       <img :src="src3" alt class="img_img" />
       <div>
-        <p class="addBtn_p1">加入购物车</p>
+        <p class="addBtn_p1">加入【测试车】</p>
         <p class="addBtn_p2">
-          <text class="txt1">按车型购买</text>
+          <text class="txt1">按车型【测试】</text>
           <text class="txt2">到店安装</text>
         </p>
       </div>
@@ -126,7 +126,7 @@
       <img :src="src2" alt class="img_img" />
       <img :src="src3" alt class="img_img" />
       <p class="two_wenzi">
-        <text>按车型购买</text>
+        <text>按车型【测试】</text>
         <text>按车型适配到店安装</text>
       </p>
       <div class="posi_img">2</div>
@@ -136,8 +136,8 @@
       <img :src="src2" alt class="img_img" />
       <img :src="src3" alt class="img_img" />
       <div class="three_btn">
-        <p class="p1">加入购物车</p>
-        <p class="p2">立即购买</p>
+        <p class="p1">加入【测试车】</p>
+        <p class="p2">立即【测试】</p>
       </div>
       <div class="posi_img">2</div>
     </div>

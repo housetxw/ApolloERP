@@ -4,7 +4,7 @@
       <div class="itemL">
         <div class="tit">{{item.name}}</div>
 
-        <div class="date">购买日期：{{item.createTime}}</div>
+        <div class="date">【测试】日期：{{item.createTime}}</div>
         <div class="des">订单号：{{item.orderNo}}</div>
       </div>
       <div class="itemR">立即使用</div>

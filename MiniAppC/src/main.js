@@ -19,7 +19,7 @@ globalData.addressSure = false
 globalData.isCarShow = false
 globalData.reservedTime = null
 globalData.serviceType = ''
-// 产生类型（0普通产生 1购买核销码产生 2使用核销码产生 3再次购买产生 4追加下单产生 5 上门服务 6 会员卡 7 代客下单 8:代理门店押金单 9：代理门店押金单 10:推广门店下单 11：技师先生（ 工作室下单） 
+// 产生类型（0普通产生 1【测试】核销码产生 2使用核销码产生 3再次【测试】产生 4追加下单产生 5 上门服务 6 会员卡 7 代客下单 8:代理门店押金单 9：代理门店押金单 10:推广门店下单 11：技师先生（ 工作室下单） 
 globalData.ProductType = ''
 globalData.code = ''
 globalData.homeAddress = null

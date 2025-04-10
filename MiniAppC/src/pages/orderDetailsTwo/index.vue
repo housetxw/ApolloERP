@@ -97,7 +97,7 @@
             <p class="d2">{{itemm.description}}</p>
             <p class="d3">¥{{itemm.price}}</p>
           </div>
-          <p class="butt" @click="buy(itemm)">抢购</p>
+          <p class="butt" @click="buy(itemm)">【测试】</p>
         </div>
       </div>
       <div @click="showMore" class="moreList" v-if="recommendProductInfos.length>1">
@@ -689,8 +689,8 @@ export default {
       } else if (item.showFunctionName === '取消订单') {
         console.log('取消订单')
         this.showOrder = true
-      } else if (item.showFunctionName === '再次购买') {
-        console.log('再次购买')
+      } else if (item.showFunctionName === '再次【测试】') {
+        console.log('再次【测试】')
       } else if (item.showFunctionName === '申请预约') {
         console.log('申请预约')
         this.$router.push({

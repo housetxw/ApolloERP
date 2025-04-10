@@ -85,11 +85,11 @@
 
     <div class="bottom" v-if="isFromShare">
       <!-- <div class="bbutton" @tap="back()">返回</div> -->
-      <div class="bbutton2" @tap="sure()">购买</div>
+      <div class="bbutton2" @tap="sure()">【测试】</div>
     </div>
     <div class="bottom" v-else>
       <div class="bbutton" @tap="back()">返回</div>
-      <div class="bbutton1" @tap="sure()">购买</div>
+      <div class="bbutton1" @tap="sure()">【测试】</div>
     </div>
     <!-- 发动机弹框 -->
     <div style="width:100%;" v-if="showPopup">

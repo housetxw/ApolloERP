@@ -501,7 +501,7 @@ export default {
       } else if (itema.showFunctionName === '取消订单') {
         this.showOrder = true
         this.shopnumorderNo = item1.orderNo
-      } else if (itema.showFunctionName === '再次购买') {
+      } else if (itema.showFunctionName === '再次【测试】') {
         this.buyAgain(item1.orderNo, item1.actualAmount)
       } else if (itema.showFunctionName === '申请预约') {
         this.$router.push({

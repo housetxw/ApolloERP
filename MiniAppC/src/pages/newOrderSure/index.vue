@@ -6,7 +6,7 @@
         <div class="seckillItemTit">AERPH1000 5W-30 全合成机...</div>
         <div class="seckillItemDec">SN PLUS级 减少油耗 抑制油泥</div>
         <div class="seckillItemPrice">¥99.99</div>
-        <div class="seckillItemRBottom">立即抢购</div>
+        <div class="seckillItemRBottom">立即【测试】</div>
       </div>
     </div>
   </div>

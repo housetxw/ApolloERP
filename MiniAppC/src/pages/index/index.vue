@@ -59,7 +59,7 @@
               <text class="item">{{ timeData.seconds }}</text>
             </van-count-down>
           </div>
-          <div class="seckillTopR">超值好物 立即抢购<img src="https://m.aerp.com.cn/mini-app-main/white_arrow.png" alt style="width:9rpx;height:16rpx;margin-left:13rpx;" /></div>
+          <div class="seckillTopR">超值好物 立即【测试】<img src="https://m.aerp.com.cn/mini-app-main/white_arrow.png" alt style="width:9rpx;height:16rpx;margin-left:13rpx;" /></div>
         </div>
         <div class="seckillBottom">
           <div class="seckillItem" v-for="(item, index) in seckillList" :key="index">

@@ -441,7 +441,7 @@ export function PostOrder(data) {
   return post(`${publicUrl}OrderCommand/SubmitOrder`, data)
 }
 
-// 再次购买
+// 再次【测试】
 export function PostAgainBuy(data) {
   return post(`${publicUrl}OrderCommand/BuyAgain`, data)
 }
