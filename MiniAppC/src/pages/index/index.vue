@@ -215,7 +215,10 @@ export default {
       (59 - myDate.getMinutes()) * 60 * 1000 +
       (60 - myDate.getSeconds()) * 1000
     this.checkUpdate()
-    this.autoLogin()
+    // this.autoLogin()
+    this.getCity()
+    this.getIndexpage()
+
     this.getHotProductPageList()
     this.getPackageCardProduct()
     this.getActiveFlashSaleConfigs()
