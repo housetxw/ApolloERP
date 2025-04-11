@@ -57,6 +57,7 @@ namespace Ae.Account.Api.Client.Clients.AccountAuthorityServer
         public async Task<List<EmployeeRoleListDTO>> GetEmployeeRoleListByEmpIdAsync(EmployeeRoleListReqDTO req)
         {
             var res = await client.GetAsJsonAsync<EmployeeRoleListReqDTO, List<EmployeeRoleListDTO>>(configuration["AccountAuthorityServer:GetEmployeeRoleListByEmpIdAsync"], req);
+            logger.Info($"GetEmployeeRoleListByEmpIdAsync req={JsonConvert.SerializeObject(req)} 返回值：{JsonConvert.SerializeObject(res)}");
             return res;
         }
 
