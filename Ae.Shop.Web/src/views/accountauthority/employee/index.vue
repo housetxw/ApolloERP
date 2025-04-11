@@ -455,7 +455,7 @@
           </section>
 
           <!-- userInfo.employeeType !== 1 -->
-          <section class="range_section" v-if="false">
+          <section class="range_section" v-if="userInfo.employeeType !== 1">
             <el-divider content-position="left">管辖范围</el-divider>
 
             <el-table
@@ -1107,16 +1107,16 @@ export default {
     },
 
     GetRoleList(orgId, type) {
-      // empSvc
-      //   .GetRoleList({
-      //     organizationId: this.organizationId,
-      //     type: this.employeeType,
-      //   })
-      roleSvc
-        .GetRoleListByOrgId({
+      empSvc
+        .GetRoleList({
           organizationId: this.organizationId,
           type: this.employeeType,
         })
+      // roleSvc
+      //   .GetRoleListByOrgId({
+      //     organizationId: this.organizationId,
+      //     type: this.employeeType,
+      //   })
         .then(
           (res) => {
             this.roledata = res.data;
@@ -1280,7 +1280,7 @@ export default {
           // this.getUnitsForSelByType(empType);
           this.getDepartmentSelByOrgIdType(orgId, empType);
           this.getJobListByOrgIdForWeb(orgId, empType);
-          //this.GetRangeRoleListByOrgId(orgId, empType);
+          this.GetRangeRoleListByOrgId(orgId, empType);
           this.GetRoleList(orgId, empType);
           this.$forceUpdate();
         })
@@ -1394,7 +1394,7 @@ export default {
       this.checked = false;
       // this.getUnitsForSelByType(this.formModel.type);
       this.getJobListByOrgIdForWeb();
-      //this.GetRangeRoleListByOrgId();
+      this.GetRangeRoleListByOrgId();
       this.GetRoleList();
       // this.roleIds = [];
       this.loading = false;
