@@ -2281,7 +2281,7 @@ namespace Ae.Receive.Service.Imp.Services
 
                 _shopReserveTimeConfigRepository.InsertBatch(configItems);
 
-                //using (TransactionScope ts = new TransactionScope())
+                //using (TransactionScope ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 //{
                 //    var configItem = await _shopReserveTimeConfigRepository.GetReserveTimeConfigByDateTypeAsync(request.ShopId,
                 //        request.WeekDay, request.YearDay, request.ConfigType);

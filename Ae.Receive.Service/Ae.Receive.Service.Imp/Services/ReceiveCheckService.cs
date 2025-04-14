@@ -1649,7 +1649,7 @@ namespace Ae.Receive.Service.Imp.Services
                     break;
             }
 
-            using (TransactionScope ts = new TransactionScope())
+            using (TransactionScope ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
                 var checkId = await shopReceiveCheckRepository.InsertAsync<long>(shopReceiveCheckDo);
 
@@ -1737,7 +1737,7 @@ namespace Ae.Receive.Service.Imp.Services
 
             var normalProject = checkResult.Where(_ => !_.ResultWords.Any(t => t.Id == 3)).ToList();
             var normalCount = normalProject.Select(_ => _.CheckItemMainId).Distinct().ToList().Count;
-            using (TransactionScope ts = new TransactionScope())
+            using (TransactionScope ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
                 var checkId = await shopReceiveCheckRepository.InsertAsync<long>(shopReceiveCheckDo);
 
@@ -1887,7 +1887,7 @@ namespace Ae.Receive.Service.Imp.Services
                     break;
             }
 
-            using (TransactionScope ts = new TransactionScope())
+            using (TransactionScope ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
                 if (updateField != null && updateField.Any())
                 {
@@ -1974,7 +1974,7 @@ namespace Ae.Receive.Service.Imp.Services
         {
             DateTime now = DateTime.Now;
 
-            //using (TransactionScope ts = new TransactionScope())
+            //using (TransactionScope ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
                 if (updateField != null && updateField.Any())
                 {
@@ -2021,7 +2021,7 @@ namespace Ae.Receive.Service.Imp.Services
 
             var normalProject = checkResult.Where(_ => !_.ResultWords.Any(t => t.Id == 3)).ToList();
             var normalCount = normalProject.Select(_ => _.CheckItemMainId).Distinct().ToList().Count;
-            using (TransactionScope ts = new TransactionScope())
+            using (TransactionScope ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
                 await shopReceiveCheckLogRepository.BatchDeleteLastUpgradeData(checkId, CategoryId, receiveCheckClassfyEnum.ToString(), submitBy);
 
