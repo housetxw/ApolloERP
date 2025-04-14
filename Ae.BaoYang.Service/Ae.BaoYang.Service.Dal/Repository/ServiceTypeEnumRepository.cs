@@ -19,7 +19,7 @@ namespace Ae.BaoYang.Service.Dal.Repository
 
         public async Task<IEnumerable<ServiceTypeEnumDO>> GetServiceTypeEnum()
         {
-            return await GetListAsync<ServiceTypeEnumDO>("");
+            return await GetListAsync<ServiceTypeEnumDO>("where is_deleted = 0");
         }
     }
 }

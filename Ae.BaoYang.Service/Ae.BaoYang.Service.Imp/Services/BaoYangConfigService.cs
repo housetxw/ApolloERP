@@ -48,7 +48,7 @@ namespace Ae.BaoYang.Service.Imp.Services
         private readonly IBaoYangPartsMapConfigRepository _baoYangPartsMapConfigRepository;
         private readonly IVehicleTypeTimingRepository _vehicleTypeTimingRepository;
         private readonly IBaoYangPartAccessoryMapRepository _baoYangPartAccessoryMapRepository;
-        private readonly string redisKey = "Rg:BaoYang:Service:BaoYangConfig";
+        private readonly string redisKey = "Ae:BaoYang:Service:BaoYangConfig";
         private readonly RedisClient _redisClient;
         private readonly IBaoYangService _baoYangService;
         private readonly IVehicleTypeRepository _vehicleTypeRepository;
@@ -355,7 +355,7 @@ namespace Ae.BaoYang.Service.Imp.Services
                             PartName = partName,
                             PartCode = partCode.PartCode,
                             OePartCode = request.OePartCode,
-                            Source = "RG-BOSS",
+                            Source = "AE-BOSS",
                             Brand = partCode.Brand,
                             CreateBy = request.SubmitBy
                         });
@@ -394,7 +394,7 @@ namespace Ae.BaoYang.Service.Imp.Services
                             Tid = tid,
                             PartName = partCode.PartType,
                             PartCode = partCode.PartCode,
-                            Source = "RG-BOSS",
+                            Source = "AE-BOSS",
                             Brand = partCode.Brand,
                             CreateBy = request.SubmitBy
                         });
@@ -441,7 +441,7 @@ namespace Ae.BaoYang.Service.Imp.Services
                                     PartName = partName,
                                     PartCode = partCode.PartCode,
                                     OePartCode = normalItem.OePartCode,
-                                    Source = "RG-BOSS",
+                                    Source = "AE-BOSS",
                                     Brand = partCode.Brand,
                                     CreateBy = request.SubmitBy
                                 });
@@ -465,7 +465,7 @@ namespace Ae.BaoYang.Service.Imp.Services
                                     Tid = tid,
                                     PartName = partCode.PartType,
                                     PartCode = partCode.PartCode,
-                                    Source = "RG-BOSS",
+                                    Source = "AE-BOSS",
                                     Brand = partCode.Brand,
                                     CreateBy = request.SubmitBy
                                 });

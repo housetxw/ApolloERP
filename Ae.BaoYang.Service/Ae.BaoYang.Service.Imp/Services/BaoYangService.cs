@@ -56,7 +56,7 @@ namespace Ae.BaoYang.Service.Imp.Services
         private readonly IBaoYangPropertyAdaptationRepository _baoYangPropertyAdaptationRepository;
         private readonly IBaoYangPropertyDescriptionRepository _baoYangPropertyDescriptionRepository;
         private readonly IServiceTypeEnumRepository _serviceTypeEnumRepository;
-        private readonly string redisKey = "Rg:BaoYang:Service:BaoYang";
+        private readonly string redisKey = "Ae:BaoYang:Service:BaoYang";
         private readonly IConfiguration _configuration;
         private readonly IBaoYangInstallFeeConfigRepository _baoYangInstallFeeConfigRepository;
         private readonly IBaoYangPrioritySettingRepository _baoYangPrioritySettingRepository;
@@ -3213,7 +3213,7 @@ namespace Ae.BaoYang.Service.Imp.Services
                     ServiceType = _.ServiceType,
                     Description = _.Description,
                     DisplayName = _.DisplayName,
-                    ImageUrl = _.ImageUrl,
+                    ImageUrl = ImageHelper.AddImageDomain( _.ImageUrl),
                     RouteUrl = _.RouteUrl,
                     DepositAmount = _.DepositAmount
                 }).ToList();

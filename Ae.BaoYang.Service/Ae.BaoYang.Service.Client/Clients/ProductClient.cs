@@ -21,7 +21,7 @@ namespace Ae.BaoYang.Service.Client.Clients
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IConfiguration _configuration;
         private readonly ApolloErpLogger<ProductClient> _logger;
-        private readonly string redisKey = "Rg:BaoYang:Service:ProductClient";
+        private readonly string redisKey = "Ae:BaoYang:Service:ProductClient";
         private readonly RedisClient _redisClient;
 
         public ProductClient(IHttpClientFactory httpClientFactory, IConfiguration configuration,
