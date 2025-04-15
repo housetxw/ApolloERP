@@ -210,7 +210,7 @@ export default {
       condition: {
         id: undefined,
         initialism: "",
-        isDeleted: undefined,
+        isDeleted: 0,
         pageIndex: 1,
         pageSize: 20
       },

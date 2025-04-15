@@ -390,7 +390,7 @@ export default {
         id: undefined,
         applicationId: undefined,
         type: undefined,
-        isDeleted: undefined,
+        isDeleted: 0,
         pageIndex: 1,
         pageSize: 20
       },

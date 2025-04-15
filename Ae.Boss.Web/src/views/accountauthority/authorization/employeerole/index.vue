@@ -339,7 +339,7 @@ export default {
         type: undefined,
         id: undefined,
         employeeName: "",
-        isDeleted: undefined,
+        isDeleted: 0,
         pageIndex: 1,
         pageSize: 20
       },

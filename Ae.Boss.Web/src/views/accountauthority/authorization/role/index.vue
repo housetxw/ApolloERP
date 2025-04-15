@@ -488,7 +488,7 @@ export default {
         organizationId: undefined,
         id: undefined,
         type: undefined,
-        isDeleted: undefined,
+        isDeleted: 0,
         pageIndex: 1,
         pageSize: 20,
       },

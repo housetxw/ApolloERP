@@ -625,7 +625,7 @@ export default {
         mobile: "",
         type: undefined,
         employeeName: "",
-        isDeleted: undefined,
+        isDeleted: 0,
         pageIndex: 1,
         pageSize: 10,
       },
