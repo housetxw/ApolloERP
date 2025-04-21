@@ -1844,7 +1844,8 @@ namespace Ae.ShopOrder.Service.Imp.Services
                     {
                         ArrivalId = request.Data.ArrivalId,
                         OrderNo = orderNo,
-                        UserId = request.Data.UserId
+                        UserId = request.Data.UserId,
+                        CreateBy = createBy
                     });
                 }
 
