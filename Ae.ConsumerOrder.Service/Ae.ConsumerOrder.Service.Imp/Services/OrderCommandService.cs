@@ -556,7 +556,7 @@ namespace Ae.ConsumerOrder.Service.Imp.Services
                 #region 用户为钻石会员 价格 折扣处理
 
                 //钻石折扣
-                var payOrderPointValue = Convert.ToInt32(configuration["OrderConfig:PayOrderPointValue"]);
+                //var payOrderPointRate = Convert.ToDecimal(configuration["OrderConfig:PayOrderPointRate"]);
                 OrderDiscountDO orderDiscountDO = null;
                 if ((getUserInfoResult?.Data?.MemberGrade ?? 0) == 50)//钻石折扣
                 {
@@ -1553,48 +1553,61 @@ namespace Ae.ConsumerOrder.Service.Imp.Services
                 //自动审核占库并同步相应状态
                 await CheckOrder(new CheckOrderRequest() { OrderNo = request.OrderNo, CheckType = 1, IsCheckPass = true, UpdateBy = "OrderPaySuccessNotify" });
 
-                //积分充值
-                //var payOrderPointValue = Convert.ToInt32(configuration["OrderConfig:PayOrderPointValue"]);
-                //积分规则改成支付成功后按支付金额送积分，只取整数部分，1元=1积分
-                int payOrderPointValue = Convert.ToInt32(Math.Floor(request.PayAmount));
-                if (payOrderPointValue > 0)
+                #region 积分充值
+                if (request.PayAmount > 0)
                 {
-                    int referrerPointValue = payOrderPointValue;
+                    var payOrderPointRate = Convert.ToDecimal(configuration["OrderConfig:PayOrderPointRate"]);
+                    var payOrderPointRate40 = Convert.ToDecimal(configuration["OrderConfig:PayOrderPointRate40"]);
+                    var payOrderPointRate50 = Convert.ToDecimal(configuration["OrderConfig:PayOrderPointRate50"]);
+                    var payOrderPointRateReferrer = Convert.ToDecimal(configuration["OrderConfig:PayOrderPointRateReferrer"]);
+                    //积分规则改成支付成功后按支付金额送积分，只取整数部分，1元=1积分*比率
+                    var amt = request.PayAmount * payOrderPointRate;
+                    var amtReferrer = amt * payOrderPointRateReferrer;
 
                     var userInfo = await userClient.GetUserInfo(new GetUserInfoRequest()
                     {
                         UserId = order.UserId
                     });
-
-                    if ((userInfo?.Data?.MemberGrade ?? 0) == 50)//砖石会员 积分double
+                    var userGrade = userInfo?.Data?.MemberGrade ?? 0;
+                    if (userGrade == 40)//铂金会员 积分
                     {
-                        payOrderPointValue *= 2;
+                        amt *= payOrderPointRate40;
                     }
-                    var operateUserPointRequest = new OperateUserPointRequest()
+                    else if (userGrade == 50)//砖石会员 积分double
                     {
-                        UserId = order.UserId,
-                        OperateType = UserPointOperateTypeEnum.PayOrder,
-                        PointValue = payOrderPointValue,
-                        ReferrerNo = order.OrderNo,
-                        SubmitBy = request.UpdateBy,
-                        Remark = order.UserPhone
-                    };
-                    var operateUserPointResult = await userClient.OperateUserPoint(operateUserPointRequest);
-                    logger.Info($"OrderPaySuccessNotify 购买成功赠送积分 operateUserPointRequest={JsonConvert.SerializeObject(operateUserPointRequest)} operateUserPointResult={JsonConvert.SerializeObject(operateUserPointResult)}");
-
-                    if (userInfo?.Data?.Channel == ChannelType.Consumer && !string.IsNullOrEmpty(userInfo?.Data?.ReferrerUserId))
+                        amt *= payOrderPointRate50;
+                    }
+                    int payOrderPointValue = Convert.ToInt32(Math.Floor(amt));
+                    if (payOrderPointValue > 0)
                     {
-                        await userClient.OperateUserPoint(new OperateUserPointRequest
+                        var operateUserPointRequest = new OperateUserPointRequest()
                         {
-                            UserId = userInfo?.Data?.ReferrerUserId,
-                            OperateType = UserPointOperateTypeEnum.ReferrerOrder,
-                            PointValue = referrerPointValue,
+                            UserId = order.UserId,
+                            OperateType = UserPointOperateTypeEnum.PayOrder,
+                            PointValue = payOrderPointValue,
                             ReferrerNo = order.OrderNo,
                             SubmitBy = request.UpdateBy,
-                            Remark = $"推荐订单：{order.UserPhone}"
-                        });
+                            Remark = order.UserPhone
+                        };
+                        var operateUserPointResult = await userClient.OperateUserPoint(operateUserPointRequest);
+                        logger.Info($"OrderPaySuccessNotify 购买成功赠送积分 operateUserPointRequest={JsonConvert.SerializeObject(operateUserPointRequest)} operateUserPointResult={JsonConvert.SerializeObject(operateUserPointResult)}");
+
+                        if (userInfo?.Data?.Channel == ChannelType.Consumer && !string.IsNullOrEmpty(userInfo?.Data?.ReferrerUserId))
+                        {
+                            int referrerPointValue = Convert.ToInt32(Math.Floor(amtReferrer));
+                            await userClient.OperateUserPoint(new OperateUserPointRequest
+                            {
+                                UserId = userInfo?.Data?.ReferrerUserId,
+                                OperateType = UserPointOperateTypeEnum.ReferrerOrder,
+                                PointValue = referrerPointValue,
+                                ReferrerNo = order.OrderNo,
+                                SubmitBy = request.UpdateBy,
+                                Remark = $"推荐订单：{order.UserPhone}"
+                            });
+                        }
                     }
                 }
+                #endregion
 
                 if (order.ProduceType == ProductTypeEnum.VipCard.ToInt())
                 {
