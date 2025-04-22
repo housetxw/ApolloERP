@@ -5114,7 +5114,10 @@ namespace Ae.ShopOrder.Service.Imp.Services
             });
 
             //积分充值
-            UpdateUserPointByOrder(orderInfo);
+            if (orderInfo.ActualAmount > 0)
+            {
+                UpdateUserPointByOrder(orderInfo);
+            }
 
             return result;
         }
@@ -5127,22 +5130,31 @@ namespace Ae.ShopOrder.Service.Imp.Services
         private async Task UpdateUserPointByOrder(OrderDTO request)
         {
             var order = request;
-            //var payOrderPointValue = Convert.ToInt32(configuration["OrderConfig:PayOrderPointValue"]);
-            //积分规则改成支付成功后按支付金额送积分，只取整数部分，1元=1积分
-            int payOrderPointValue = Convert.ToInt32(Math.Floor(order.ActualAmount));
+            var payOrderPointRate = Convert.ToDecimal(_configuration["OrderConfig:PayOrderPointRate"]);
+            var payOrderPointRate40 = Convert.ToDecimal(_configuration["OrderConfig:PayOrderPointRate40"]);
+            var payOrderPointRate50 = Convert.ToDecimal(_configuration["OrderConfig:PayOrderPointRate50"]);
+            var payOrderPointRateReferrer = Convert.ToDecimal(_configuration["OrderConfig:PayOrderPointRateReferrer"]);
+            //积分规则改成支付成功后按支付金额送积分，只取整数部分，1元=1积分*比率
+            var amt = order.ActualAmount * payOrderPointRate;
+            var amtReferrer = amt * payOrderPointRateReferrer;
+
+            var userInfo = await userClient.GetUserInfo(new GetUserInfoRequest()
+            {
+                UserId = order.UserId
+            });
+            var userGrade = userInfo?.Data?.MemberGrade ?? 0;
+            if (userGrade == 40)//铂金会员 积分
+            {
+                amt *= payOrderPointRate40;
+            }
+            else if (userGrade == 50)//砖石会员 积分double
+            {
+                amt *= payOrderPointRate50;
+            }
+            int payOrderPointValue = Convert.ToInt32(Math.Floor(amt));
+           
             if (payOrderPointValue > 0)
             {
-                int referrerPointValue = payOrderPointValue;
-
-                var userInfo = await _userClient.GetUserInfo(new GetUserInfoRequest()
-                {
-                    UserId = order.UserId
-                });
-
-                if ((userInfo?.Data?.MemberGrade ?? 0) == 50)//砖石会员 积分double
-                {
-                    payOrderPointValue *= 2;
-                }
                 var operateUserPointRequest = new OperateUserPointRequest()
                 {
                     UserId = order.UserId,
@@ -5158,6 +5170,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
 
                 if (userInfo?.Data?.Channel == ChannelType.Consumer && !string.IsNullOrEmpty(userInfo?.Data?.ReferrerUserId))
                 {
+                    int referrerPointValue = Convert.ToInt32(Math.Floor(amtReferrer));
                     await _userClient.OperateUserPoint(new OperateUserPointRequest
                     {
                         UserId = userInfo?.Data?.ReferrerUserId,
@@ -5165,7 +5178,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                         PointValue = referrerPointValue,
                         ReferrerNo = order.OrderNo,
                         SubmitBy = request.UpdateBy,
-                        Remark = order.UserId
+                        Remark = $"推荐订单：{order.UserPhone}"
                     });
                 }
             }
