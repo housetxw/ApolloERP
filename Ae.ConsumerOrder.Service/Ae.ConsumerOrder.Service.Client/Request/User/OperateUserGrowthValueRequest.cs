@@ -23,6 +23,10 @@ namespace Ae.ConsumerOrder.Service.Client.Request
         /// 积分值
         /// </summary>
         public int GrowthValue { get; set; }
+        /// <summary>
+        /// 关联编号
+        /// </summary>
+        public string ReferrerNo { get; set; }
 
         /// <summary>
         /// 提交人

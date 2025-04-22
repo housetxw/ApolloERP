@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-using Ae.User.Service.Core.Enums;
 
-namespace Ae.User.Service.Core.Request
+namespace Ae.ShopOrder.Service.Client.Request.User
 {
-    /// <summary>
-    /// 操作用户成长值request
-    /// </summary>
     public class OperateUserGrowthValueRequest
     {
         /// <summary>
@@ -23,7 +19,7 @@ namespace Ae.User.Service.Core.Request
         public UserGrowthOperateTypeEnum OperateType { get; set; }
 
         /// <summary>
-        /// 成长值
+        /// 积分值
         /// </summary>
         public int GrowthValue { get; set; }
         /// <summary>

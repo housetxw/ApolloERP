@@ -61,5 +61,12 @@ namespace Ae.ShopOrder.Service.Client.Clients.User.Impl
             var response = await client.PostAsJsonAsync<OperateUserPointRequest, ApiResult<bool>>(configuration["UserServer:OperateUserPoint"], request);
             return response;
         }
+
+        public async Task<ApiResult<bool>> OperateUserGrowthValue(OperateUserGrowthValueRequest request)
+        {
+            var client = clientFactory.CreateClient("UserServer");
+            var response = await client.PostAsJsonAsync<OperateUserGrowthValueRequest, ApiResult<bool>>(configuration["UserServer:OperateUserGrowthValue"], request);
+            return response;
+        }
     }
 }

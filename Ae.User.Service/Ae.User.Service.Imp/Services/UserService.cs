@@ -540,6 +540,7 @@ namespace Ae.User.Service.Imp.Services
                 OperationType = request.OperateType.ToString(),
                 Description = EnumHelper.GetEnumDescription(request.OperateType),
                 PointValue = request.GrowthValue,
+                ReferrerNo = request.ReferrerNo,
                 Remark = request.Remark,
                 CreateBy = request.SubmitBy,
                 CreateTime = DateTime.Now,

@@ -5113,7 +5113,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
                 OrderNo = orderInfo?.OrderNo
             });
 
-            //积分充值
+            //更新积分和成长值
             if (orderInfo.ActualAmount > 0)
             {
                 UpdateUserPointByOrder(orderInfo);
@@ -5123,7 +5123,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
         }
 
         /// <summary>
-        /// 订单完成后更新用户积分
+        /// 订单完成后更新用户积分和成长值
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -5182,6 +5182,24 @@ namespace Ae.ShopOrder.Service.Imp.Services
                     });
                 }
             }
+
+            #region 更新会员成长值
+            int payOrderGrowthValue = Convert.ToInt32(Math.Floor(request.ActualAmount));
+            if (payOrderGrowthValue > 0)
+            {
+                await userClient.OperateUserGrowthValue(new OperateUserGrowthValueRequest()
+                {
+                    UserId = order.UserId,
+                    GrowthValue = payOrderGrowthValue,
+                    OperateType = UserGrowthOperateTypeEnum.UserPurchase,
+                    ReferrerNo = order.OrderNo,
+                    Remark = order.UserPhone,
+                    SubmitBy = order.CreateBy
+                });
+            }
+
+            #endregion
+
         }
 
         /// <summary>

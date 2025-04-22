@@ -1590,7 +1590,7 @@ namespace Ae.ConsumerOrder.Service.Imp.Services
                             Remark = order.UserPhone
                         };
                         var operateUserPointResult = await userClient.OperateUserPoint(operateUserPointRequest);
-                        logger.Info($"OrderPaySuccessNotify 购买成功赠送积分 operateUserPointRequest={JsonConvert.SerializeObject(operateUserPointRequest)} operateUserPointResult={JsonConvert.SerializeObject(operateUserPointResult)}");
+                        //logger.Info($"OrderPaySuccessNotify 购买成功赠送积分 operateUserPointRequest={JsonConvert.SerializeObject(operateUserPointRequest)} operateUserPointResult={JsonConvert.SerializeObject(operateUserPointResult)}");
 
                         if (userInfo?.Data?.Channel == ChannelType.Consumer && !string.IsNullOrEmpty(userInfo?.Data?.ReferrerUserId))
                         {
@@ -1609,22 +1609,29 @@ namespace Ae.ConsumerOrder.Service.Imp.Services
                 }
                 #endregion
 
-                if (order.ProduceType == ProductTypeEnum.VipCard.ToInt())
+                #region 更新会员成长值
+                int payOrderGrowthValue = Convert.ToInt32(Math.Floor(request.PayAmount));
+                if (payOrderGrowthValue > 0)
                 {
                     await userClient.OperateUserGrowthValue(new OperateUserGrowthValueRequest()
                     {
-                        GrowthValue = 20000,
-                        OperateType = UserGrowthOperateTypeEnum.UserPurchase,
-                        Remark = order.OrderNo,
-                        SubmitBy = order.CreateBy,
-                        UserId = order.UserId
-                    });
-                    var addUserCouponResult = await couponClient.AddUserCouponForDiamondMemeber(new Client.Request.Coupon.AddUserCouponForDiamondMemeberRequest()
-                    {
                         UserId = order.UserId,
-                        UserIP = string.Empty
+                        GrowthValue = payOrderGrowthValue,
+                        OperateType = UserGrowthOperateTypeEnum.UserPurchase,
+                        ReferrerNo = order.OrderNo,
+                        Remark = order.UserPhone,
+                        SubmitBy = order.CreateBy
                     });
                 }
+
+                #endregion
+
+                //钻石会员发放指定优惠券，先去掉，后续改为配置。
+                //var addUserCouponResult = await couponClient.AddUserCouponForDiamondMemeber(new Client.Request.Coupon.AddUserCouponForDiamondMemeberRequest()
+                //{
+                //    UserId = order.UserId,
+                //    UserIP = string.Empty
+                //});
 
                 var orderProducts = await orderProductRepository.GetOrderProducts(order.Id);
                

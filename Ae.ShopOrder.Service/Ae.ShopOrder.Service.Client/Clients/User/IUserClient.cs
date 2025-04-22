@@ -46,5 +46,12 @@ namespace Ae.ShopOrder.Service.Client.Clients.User
         /// <param name="request"></param>
         /// <returns></returns>
         Task<ApiResult<bool>> OperateUserPoint(OperateUserPointRequest request);
+        /// <summary>
+        /// 操作用户成长值
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        Task<ApiResult<bool>> OperateUserGrowthValue(OperateUserGrowthValueRequest request);
+
     }
 }
