@@ -100,7 +100,6 @@ namespace Ae.ShopOrder.Service.Imp.Services
         private readonly IOrderInsuranceCompanyRepository _orderInsuranceCompanyRepository;
         private readonly IOrderPackageCardRepository _orderPackageCardRepository;
         private readonly IVerificationRulePidRepository _verificationRulePidRepository;
-        private readonly IUserClient userClient;
         private readonly IPayClient iPayClient;
         private readonly IOrderRelationRepository _orderRelationRepository;
         private readonly IOrderSaleRepository _orderSaleRepository;
@@ -5074,7 +5073,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
             await _orderRepository.UpdateOrderCompleteStatus(orderNo, request.UpdateBy);
 
             //订单安装后扣减库存，不区分RGC/RGB
-            _shopStockClient.OrderInstallReduceStock(new Core.Request.Stock.OrderInstallReduceStockRequest
+            await _shopStockClient.OrderInstallReduceStock(new Core.Request.Stock.OrderInstallReduceStockRequest
             {
                 QueueNo = orderNo,
                 CreateBy = request.UpdateBy,
@@ -5084,7 +5083,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
 
 
             // 计算门店对账公司对账金额
-            _fmsClient.CalculationReconciliationFee(new CalculationReconciliationFeeRequest()
+            await _fmsClient.CalculationReconciliationFee(new CalculationReconciliationFeeRequest()
             {
                 OrderNo = orderNo,
                 CreateBy = request.UpdateBy
@@ -5093,11 +5092,11 @@ namespace Ae.ShopOrder.Service.Imp.Services
             //月结对账支付订单
             if (orderInfo?.ProduceType == BuyProductTypeEnum.MonthReconciliationOrder.ToSbyte())
             {
-                UpdateMonthReconciliationRefOrder(orderNo, request.UpdateBy, request.PayChannel);
+                await UpdateMonthReconciliationRefOrder(orderNo, request.UpdateBy, request.PayChannel);
             }
 
             //更新员工绩效订单
-            _employeePerformanceService.UpdateOrderPerformance(new BatchUpdateOrderRequest()
+            await _employeePerformanceService.UpdateOrderPerformance(new BatchUpdateOrderRequest()
             {
                 OrderNos = new List<string>() { orderNo },
                 ShopId = orderInfo ?.ShopId ?? 0,
@@ -5106,17 +5105,17 @@ namespace Ae.ShopOrder.Service.Imp.Services
             });
 
             // 订单完结发放促销优惠卷-当分享人达到10人下保养订单时即发放指定优惠券
-            _orderCommandForCClient.SharingPromotion(new SharingPromotionRequest()
-            {
-                UserId = orderInfo?.UserId,
-                ActualAmount = orderInfo?.ActualAmount ?? 0,
-                OrderNo = orderInfo?.OrderNo
-            });
+            //await _orderCommandForCClient.SharingPromotion(new SharingPromotionRequest()
+            //{
+            //    UserId = orderInfo?.UserId,
+            //    ActualAmount = orderInfo?.ActualAmount ?? 0,
+            //    OrderNo = orderInfo?.OrderNo
+            //});
 
             //更新积分和成长值
             if (orderInfo.ActualAmount > 0)
             {
-                UpdateUserPointByOrder(orderInfo);
+                await UpdateUserPointByOrder(orderInfo);
             }
 
             return result;
@@ -5129,19 +5128,23 @@ namespace Ae.ShopOrder.Service.Imp.Services
         /// <returns></returns>
         private async Task UpdateUserPointByOrder(OrderDTO request)
         {
+            //_logger.Info($"UpdateUserPointByOrder operateUserPointRequest={JsonConvert.SerializeObject(request)} ");
+
             var order = request;
             var payOrderPointRate = Convert.ToDecimal(_configuration["OrderConfig:PayOrderPointRate"]);
             var payOrderPointRate40 = Convert.ToDecimal(_configuration["OrderConfig:PayOrderPointRate40"]);
             var payOrderPointRate50 = Convert.ToDecimal(_configuration["OrderConfig:PayOrderPointRate50"]);
             var payOrderPointRateReferrer = Convert.ToDecimal(_configuration["OrderConfig:PayOrderPointRateReferrer"]);
+          
             //积分规则改成支付成功后按支付金额送积分，只取整数部分，1元=1积分*比率
             var amt = order.ActualAmount * payOrderPointRate;
             var amtReferrer = amt * payOrderPointRateReferrer;
 
-            var userInfo = await userClient.GetUserInfo(new GetUserInfoRequest()
+            var userInfo = await _userClient.GetUserInfo(new GetUserInfoRequest()
             {
                 UserId = order.UserId
             });
+            //_logger.Info($"UpdateUserPointByOrder userInfo={JsonConvert.SerializeObject(userInfo)} ");
             var userGrade = userInfo?.Data?.MemberGrade ?? 0;
             if (userGrade == 40)//铂金会员 积分
             {
@@ -5164,9 +5167,8 @@ namespace Ae.ShopOrder.Service.Imp.Services
                     SubmitBy = request.UpdateBy,
                     Remark = order.UserPhone
                 };
-                //var operateUserPointResult = await
-                await _userClient.OperateUserPoint(operateUserPointRequest);
-                //_logger.Info($"OrderPaySuccessNotify 购买成功赠送积分 operateUserPointRequest={JsonConvert.SerializeObject(operateUserPointRequest)} operateUserPointResult={JsonConvert.SerializeObject(operateUserPointResult)}");
+                var operateUserPointResult = await _userClient.OperateUserPoint(operateUserPointRequest);
+                //_logger.Info($"UpdateUserPointByOrder 积分 operateUserPointRequest={JsonConvert.SerializeObject(operateUserPointRequest)} operateUserPointResult={JsonConvert.SerializeObject(operateUserPointResult)}");
 
                 if (userInfo?.Data?.Channel == ChannelType.Consumer && !string.IsNullOrEmpty(userInfo?.Data?.ReferrerUserId))
                 {
@@ -5187,7 +5189,7 @@ namespace Ae.ShopOrder.Service.Imp.Services
             int payOrderGrowthValue = Convert.ToInt32(Math.Floor(request.ActualAmount));
             if (payOrderGrowthValue > 0)
             {
-                await userClient.OperateUserGrowthValue(new OperateUserGrowthValueRequest()
+                await _userClient.OperateUserGrowthValue(new OperateUserGrowthValueRequest()
                 {
                     UserId = order.UserId,
                     GrowthValue = payOrderGrowthValue,
