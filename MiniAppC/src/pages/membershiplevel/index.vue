@@ -7,7 +7,7 @@
             <div class="box_one">
               <div class="top">
                 <p class="p1">当前等级：{{member}}</p>
-                <p class="p2">距离{{nextMemberGrade}}还需6563成长值哦~</p>
+                <p class="p2">距离{{nextMemberGrade}}还需{{nextNeedGrade}}成长值哦~</p>
               </div>
               <div class="bottom">
                 <p class="num">
@@ -88,7 +88,7 @@
                 </p>
               </div>
               <div class="show_onebox_two">
-                <p class="txt1">{{itema.remark}}</p>
+                <p class="txt1">{{itema.referrerNo}}</p>
                 <p class="txt2">{{itema.createTime}}</p>
               </div>
             </div>
@@ -119,6 +119,7 @@ export default {
       member: '铂金会员', //当前等级
       nextMemberGrade: '', //下一等级
       currentGrowthValue: '', //当前成长值
+      nextNeedGrade: '', //距离下一个等级需要的成长值
       memberarr: [
         {
           src: `${this.globalData.imgPubUrl}minevip_vip_zero.png`,
@@ -147,7 +148,7 @@ export default {
       ],
       memberGrades: [], //成长等级
       growthDetail: [], //成长明细
-      src: `${this.globalData.imgPubUrl}minevip_bigvip_five.png`,
+      src: `${this.globalData.imgPubUrl}minevip_bigvip_zero.png`,
       src1: `${this.globalData.imgPubUrl}minevip_vip_zero.png`,
       src3: `${this.globalData.imgPubUrl}minevip_vip_one.png`,
       src4: `${this.globalData.imgPubUrl}minevip_vip_two.png`,
@@ -178,10 +179,25 @@ export default {
     GetMemberGrade('')
       .then(res => {
         that.member = res.data.displayName
-        that.nextMemberGrade = res.data.nextMemberGrade
+        that.nextMemberGrade = res.data.nextDisplayName
         that.currentGrowthValue = res.data.currentGrowthValue
+        that.nextNeedGrade = res.data.nextNeedGrade
         that.memberGrades = res.data.memberGrades
         that.growthDetail = res.data.growthDetail
+
+        let mg = res.data.memberGrade
+        that.progress = mg * 2 + 10
+        if (mg == 10) {
+          that.src = `${this.globalData.imgPubUrl}minevip_bigvip_one.png`
+        } else if (mg == 20) {
+          that.src = `${this.globalData.imgPubUrl}minevip_bigvip_two.png`
+        } else if (mg == 30) {
+          that.src = `${this.globalData.imgPubUrl}minevip_bigvip_three.png`
+        } else if (mg == 40) {
+          that.src = `${this.globalData.imgPubUrl}minevip_bigvip_four.png`
+        } else if (mg == 50) {
+          that.src = `${this.globalData.imgPubUrl}minevip_bigvip_five.png`
+        }
       })
       .catch(err => {})
   }

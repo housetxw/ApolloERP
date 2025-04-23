@@ -92,7 +92,7 @@ namespace Ae.C.MiniApp.Api.Client.Clients.User
             }
             else
             {
-                _logger.Info($"GetMemberLevel_Error {result.Message}");
+                _logger.Error($"GetMemberLevel_Error {result.Message}");
                 throw new CustomException(result.Message);
             }
         }

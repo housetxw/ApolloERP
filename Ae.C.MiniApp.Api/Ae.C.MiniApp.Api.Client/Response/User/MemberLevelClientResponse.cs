@@ -25,7 +25,15 @@ namespace Ae.C.MiniApp.Api.Client.Response.User
         /// <summary>
         /// 下一个会员等级
         /// </summary>
-        public int? NextMemberGrade { get; set; }
+        public int NextMemberGrade { get; set; }
+        /// <summary>
+        /// 距离下一个等级需要的成长值
+        /// </summary>
+        public int NextNeedGrade { get; set; } = 0;
+        /// <summary>
+        /// 下一个会员等级名称
+        /// </summary>
+        public string NextDisplayName { get; set; } = string.Empty;
 
         /// <summary>
         /// 成长明细

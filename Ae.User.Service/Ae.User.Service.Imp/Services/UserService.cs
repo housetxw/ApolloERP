@@ -375,6 +375,8 @@ namespace Ae.User.Service.Imp.Services
             if (nextGrade != null)
             {
                 result.NextMemberGrade = nextGrade.MemberGrade;
+                result.NextDisplayName = nextGrade.Description;
+                result.NextNeedGrade = nextGrade.StartValue - result.CurrentGrowthValue;
             }
 
             result.GrowthDetail = pointRecord.Where(_ => _.BusinessType == 1).Select(_ => new UserPointRecordVo
@@ -383,6 +385,7 @@ namespace Ae.User.Service.Imp.Services
                 Description = _.Description,
                 CreateTime = _.CreateTime.ToString("yyyy-MM-dd HH:mm:ss"),
                 PointValue = _.PointValue,
+                ReferrerNo = _.ReferrerNo,
                 Remark = _.Remark
             }).ToList();
 
