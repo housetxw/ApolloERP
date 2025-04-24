@@ -375,7 +375,7 @@ namespace Ae.C.Login.Api.Imp.Services
             log.LoginTime = DateTime.Now;
             log.LoginType = LoginType.SMSCode;
 
-            string specialCode = "aerptest"; //特殊验证码，用作测试
+            string specialCode = "250424"; //特殊验证码，用作测试
 
             //验证验证码
             string code = await redisClient.Redis.StringGetAsync(redisKey + ":VerCodeValite:" + request.MobileNumber);
