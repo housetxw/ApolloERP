@@ -375,7 +375,7 @@ namespace Ae.C.Login.Api.Imp.Services
             log.LoginTime = DateTime.Now;
             log.LoginType = LoginType.SMSCode;
 
-            string specialCode = "RgJFKjkxMjBKU0lKc34lIyJ9"; //特殊验证码，和java登录对接用
+            string specialCode = "aerptest"; //特殊验证码，用作测试
 
             //验证验证码
             string code = await redisClient.Redis.StringGetAsync(redisKey + ":VerCodeValite:" + request.MobileNumber);
@@ -409,7 +409,7 @@ namespace Ae.C.Login.Api.Imp.Services
                 isSucess = await iUserRespository.CreateUser(userInsert);
                 if (!isSucess)
                 {
-                    logger.Error($"RG注册失败:Request:{JsonConvert.SerializeObject(request)}");
+                    logger.Error($"注册失败:Request:{JsonConvert.SerializeObject(request)}");
                     throw new CustomException("登录失败");
                 }
 
@@ -446,7 +446,7 @@ namespace Ae.C.Login.Api.Imp.Services
 
             result.TokenInfo = tokenInfo;
             result.UserInfo = userInfo;
-            logger.Info($"RgLogin登录成功:user:{JsonConvert.SerializeObject(result)}");
+            logger.Info($"Login登录成功:user:{JsonConvert.SerializeObject(result)}");
             log.State = LoginState.Success;
             log.Comment = "手机号登录成功";
             log.LoginName = userInfo.UserId.ToString();
