@@ -295,7 +295,7 @@
     </rg-page>
 
     <rg-dialog
-      :title="formModel.id ? '编辑采销单：'+formModel.id+'  '+formModel.hcType : '新增采销单'"
+      :title="(formModel.id ? '编辑采销单：'+formModel.id+'  '+formModel.hcType : '新增采销单') + '   提示：门店采购需要在门店系统中操作'"
       :visible.sync="dialogFormVisible"
       :before-close="cancelForm"
       width="80%"
