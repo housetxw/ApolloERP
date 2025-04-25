@@ -523,18 +523,24 @@ namespace Ae.Shop.Service.Imp.Services
                 });
 
                 roleType = company.SystemType;
-                var getRoles = await accountAuthorityClient.GetRoleListByOrgIdAndType(new RoleListReqDTO()
+
+                if (!string.IsNullOrEmpty(defaultRoleName))
                 {
-                    Features = roleType,
-                    Type = (RoleType)company.Type,
-                    OrganizationId = 0
-                });
-                if (getRoles?.Data?.Count() > 0)
-                {
-                    req.RoleIds = new List<long>();
-                    var roleId = getRoles?.Data?.Where(_ => _.Name.Trim() == defaultRoleName)?.FirstOrDefault()?.Id ?? 0;
-                    if (roleId > 0)
-                        req.RoleIds.Add(roleId);
+                    var getRoles = await accountAuthorityClient.GetRoleListByOrgIdAndType(new RoleListReqDTO()
+                    {
+                        Features = roleType,
+                        Type = (RoleType)company.Type,
+                        OrganizationId = 0
+                    });
+                    if (getRoles?.Data?.Count() > 0)
+                    {
+                        var roleId = getRoles?.Data?.Where(_ => _.Name.Trim() == defaultRoleName)?.FirstOrDefault()?.Id ?? 0;
+                        if (roleId > 0) //角色参数可能有值，如果有设置默认角色，则替换掉原来参数
+                        {
+                            req.RoleIds = new List<long>() { roleId };
+                            //req.RoleIds.Add(roleId);
+                        }
+                    }
                 }
             }
 
