@@ -144,9 +144,9 @@ namespace Ae.AccountAuthority.Service.Controllers
         /// <param name="req"></param>
         /// <returns></returns>
         [HttpPost]
-        public bool SaveRoleAuthority([FromBody] RoleAuthorityReqDTO req)
+        public async Task<bool> SaveRoleAuthority([FromBody] RoleAuthorityReqDTO req)
         {
-            return roleSvc.SaveRoleAuthority(req);
+            return await roleSvc.SaveRoleAuthority(req);
         }
 
         /// <summary>

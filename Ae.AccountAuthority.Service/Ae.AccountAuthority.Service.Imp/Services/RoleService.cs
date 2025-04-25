@@ -41,10 +41,10 @@ namespace Ae.AccountAuthority.Service.Imp.Services
             return res;
         }
 
-        public bool SaveRoleAuthority(RoleAuthorityReqDTO req)
+        public async Task<bool> SaveRoleAuthority(RoleAuthorityReqDTO req)
         {
             var reqDo = mapper.Map<RoleAuthorityReqDO>(req);
-            return roleAuthorityRepo.SaveRoleAuthority(reqDo);
+            return await roleAuthorityRepo.SaveRoleAuthority(reqDo);
         }
 
         public async Task<bool> UpdateRoleById(RoleDTO req)

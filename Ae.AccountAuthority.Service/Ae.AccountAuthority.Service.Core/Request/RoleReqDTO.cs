@@ -50,6 +50,7 @@ namespace Ae.AccountAuthority.Service.Core.Request
     public class RoleAuthorityListReqByRoleIdDTO
     {
         public long RoleId { get; set; }
+        public int IsDeleted { get; set; } = 0;
     }
 
     public class RoleAuthorityReqDTO

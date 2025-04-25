@@ -9,7 +9,7 @@ namespace Ae.AccountAuthority.Service.Dal.Repositorys.IDAL
 {
     public interface IRoleAuthorityRepository
     {
-        bool SaveRoleAuthority(RoleAuthorityReqDO reqList);
+        Task<bool> SaveRoleAuthority(RoleAuthorityReqDO reqList);
 
         Task<List<RoleAuthorityDO>> GetRoleAuthorityListByRoleId(RoleAuthorityListReqByRoleIdDTO req);
     }

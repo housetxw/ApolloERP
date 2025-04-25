@@ -33,56 +33,116 @@ namespace Ae.AccountAuthority.Service.Dal.Repositorys.DAL
         }
 
         // ---------------------------------- 接口实现 --------------------------------------
-        public bool SaveRoleAuthority(RoleAuthorityReqDO req)
+        public async Task<bool> SaveRoleAuthority(RoleAuthorityReqDO req)
         {
             if (null == req)
             {
                 logger.Warn(JsonConvert.SerializeObject(req).GenArgumentErrorInfo());
                 return false;
             }
+            if (req.RoleId <= 0)
+            { return false; }
 
-            var res = false;
-            var delFlag = true;
-
-            OpenConnectionAsync(async conn =>
+            var updateTime = DateTime.Now;
+            try
             {
-                var tran = conn.BeginTransaction();
-
-                try
+                var checkRoleAuthorityList = (await GetRoleAuthorityListByRoleId(new RoleAuthorityListReqByRoleIdDTO
                 {
-                    var checkRoleAuthorityList = (await GetRoleAuthorityListByRoleId(new RoleAuthorityListReqByRoleIdDTO { RoleId = req.RoleId })).Any();
-                    if (checkRoleAuthorityList && req.RoleId > 0)
+                    RoleId = req.RoleId,
+                    IsDeleted = -1
+                }));
+
+                if (checkRoleAuthorityList.Any())
+                {
+                    foreach (var roleAuthority in checkRoleAuthorityList)
                     {
-                        delFlag = DeleteRoleAuthorityByRoleId(req, conn);
-                        if (!delFlag)
+                        roleAuthority.IsDeleted = true;
+                        roleAuthority.UpdateBy = req.UpdateBy;
+                        roleAuthority.UpdateTime = updateTime;
+                    }
+                }
+                if (req.AddList.Any())
+                {
+                    foreach (var item in req.AddList)
+                    {
+                        var roleAuthority = checkRoleAuthorityList.Where(_ => _.AuthorityId == item.AuthorityId)?.FirstOrDefault();
+                        if (roleAuthority == null)
                         {
-                            var msg = $"{CommonConstant.DBDeleteFailed}{CommonConstant.ParameterReqDetail}\n" +
-                                      $"{JsonConvert.SerializeObject(req)}";
-                            logger.Error(msg);
+                            item.IsDeleted = false;
+                            item.CreateTime = updateTime;
+                            await InsertAsync(item);
                         }
-                        res = true;
+                        else
+                        {
+                            roleAuthority.IsDeleted = false;
+                            roleAuthority.HalfCheck = item.HalfCheck;
+                        }
                     }
-
-                    if (delFlag && req.AddList.Any())
-                    {
-                        //await InsertBatchAsync(req.AddList);
-                        var insSql = @"INSERT role_authority (role_id, authority_id, half_check, create_by)
-                                       VALUES (@RoleId, @AuthorityId, @HalfCheck, @CreateBy)";
-                        res = conn.Execute(insSql, req.AddList) > 0;
-                    }
-
-                    tran.Commit();
                 }
-                catch (Exception e)
+
+                if (checkRoleAuthorityList.Any())
                 {
-                    tran.Rollback();
+                    var param = new List<string>
+                    {
+                        "IsDeleted","HalfCheck","UpdateBy","UpdateTime"
+                    };
 
-                    logger.Error(JsonConvert.SerializeObject(req).GenDBExceptionInfo(CommonConstant.DBInsertException), e);
-                    throw new CustomException(CommonConstant.InternalDBError);
+                    foreach (var roleAuthority in checkRoleAuthorityList)
+                    {
+                        await UpdateAsync(roleAuthority, param);
+                    }
                 }
-            });
+            }
+            catch (Exception e)
+            {
+                logger.Error(JsonConvert.SerializeObject(req).GenDBExceptionInfo(CommonConstant.DBInsertException), e);
+                throw new CustomException(CommonConstant.InternalDBError);
+            }
+            return true;
 
-            return res;
+
+            //var res = false;
+            //var delFlag = true;
+
+            //OpenConnectionAsync(async conn =>
+            //{
+            //    var tran = conn.BeginTransaction();
+
+            //    try
+            //    {
+            //        var checkRoleAuthorityList = (await GetRoleAuthorityListByRoleId(new RoleAuthorityListReqByRoleIdDTO { RoleId = req.RoleId })).Any();
+            //        if (checkRoleAuthorityList && req.RoleId > 0)
+            //        {
+            //            delFlag = DeleteRoleAuthorityByRoleId(req, conn);
+            //            if (!delFlag)
+            //            {
+            //                var msg = $"{CommonConstant.DBDeleteFailed}{CommonConstant.ParameterReqDetail}\n" +
+            //                          $"{JsonConvert.SerializeObject(req)}";
+            //                logger.Error(msg);
+            //            }
+            //            res = true;
+            //        }
+
+            //        if (delFlag && req.AddList.Any())
+            //        {
+            //            //await InsertBatchAsync(req.AddList);
+            //            var insSql = @"INSERT role_authority (role_id, authority_id, half_check, create_by)
+            //                           VALUES (@RoleId, @AuthorityId, @HalfCheck, @CreateBy)";
+            //            res = conn.Execute(insSql, req.AddList) > 0;
+            //        }
+
+            //        tran.Commit();
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        tran.Rollback();
+
+            //        logger.Error(JsonConvert.SerializeObject(req).GenDBExceptionInfo(CommonConstant.DBInsertException), e);
+            //        throw new CustomException(CommonConstant.InternalDBError);
+            //    }
+            //});
+
+            //return res;
         }
 
         public async Task<List<RoleAuthorityDO>> GetRoleAuthorityListByRoleId(RoleAuthorityListReqByRoleIdDTO req)
@@ -102,7 +162,17 @@ namespace Ae.AccountAuthority.Service.Dal.Repositorys.DAL
             var sql = @"SELECT ra.id, ra.role_id roleId, ra.authority_id authorityId, ra.half_check halfCheck,
                         ra.is_deleted isdeleted, ra.create_by createby, ra.create_time createtime, ra.update_by updateby, ra.update_time updatetime 
                         FROM role_authority ra
-                        WHERE ra.is_deleted = 0 AND ra.role_id = @roleId";
+                        WHERE 0 = 0 AND ra.role_id = @roleId";
+
+            if (req.IsDeleted >= 0)
+            {
+                param.Add("@isDeleted", req.IsDeleted);
+                sql += " AND ra.is_deleted = @isDeleted ";
+            }
+            else
+            {
+                sql += " AND (ra.is_deleted = 0 or ra.is_deleted = 1) ";
+            }
             await OpenSlaveConnectionAsync(async conn => { res = await conn.QueryAsync<RoleAuthorityDO>(sql, param); });
 
             return res.ToList();

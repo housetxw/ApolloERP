@@ -14,7 +14,7 @@ namespace Ae.AccountAuthority.Service.Core.Interfaces
 
         Task<bool> CreateRole(RoleDTO req);
 
-        bool SaveRoleAuthority(RoleAuthorityReqDTO req);
+        Task<bool> SaveRoleAuthority(RoleAuthorityReqDTO req);
 
         Task<bool> UpdateRoleById(RoleDTO req);
 
