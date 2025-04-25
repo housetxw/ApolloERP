@@ -308,9 +308,9 @@
         </el-form-item>
       </template>
       <template v-slot:header_btn>
-        <el-button type="primary" icon="el-icon-plus" @click="newOrder()"
+        <!-- <el-button type="primary" icon="el-icon-plus" @click="newOrder()"
           >新增</el-button
-        >
+        > -->
       </template>
       <template v-slot:tb_cols>
         <rg-table-column prop="orderNo" label="订单编号" class-name="order">
