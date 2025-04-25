@@ -553,7 +553,7 @@ export default {
         pageIndex: 1,
         pageSize: 10,
         warehouseType: undefined,
-        statstatusus: undefined
+        status: '正常'
       },
 
       deleteFormModel: {
@@ -571,7 +571,15 @@ export default {
 
       editformTitle: undefined,
       editformVisible: undefined,
-      statusSel: [],
+      statusSel: [
+        {
+          value: "正常",
+          label: "正常"
+        },
+        {
+          value: "作废",
+          label: "作废"
+        },],
       typeSel: [
         {
           value: "轮胎",
@@ -984,18 +992,18 @@ export default {
     },
 
     fetchData() {
-      appWarehouseSvc
-        .getBasicInfoList(this.statusSelCondition)
-        .then(
-          res => {
-            //  this.tableData = res.data;
-            this.statusSel = res.data;
-          },
-          error => {
-            console.log(error);
-          }
-        )
-        .catch(() => {});
+      // appWarehouseSvc
+      //   .getBasicInfoList(this.statusSelCondition)
+      //   .then(
+      //     res => {
+      //       //  this.tableData = res.data;
+      //       this.statusSel = res.data;
+      //     },
+      //     error => {
+      //       console.log(error);
+      //     }
+      //   )
+      //   .catch(() => {});
 
       appWarehouseSvc
         .getWarehousePages(this.condition)
