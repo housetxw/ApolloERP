@@ -111,7 +111,11 @@ namespace Ae.Product.Service.Dal.Repository.Imp
         /// <returns></returns>
         public async Task<List<DimCategoryDO>> GetAllCategory(long shopId)
         {
-            var result = await GetListAsync("WHERE is_deleted = 0 and shop_id = " + shopId.ToString());
+            string sqlWhere = "";
+            if (shopId > 1)
+            { sqlWhere = " and shop_id = " + shopId.ToString(); }
+
+            var result = await GetListAsync("WHERE is_deleted = 0 " + sqlWhere);
 
             return result?.ToList() ?? new List<DimCategoryDO>();
         }
