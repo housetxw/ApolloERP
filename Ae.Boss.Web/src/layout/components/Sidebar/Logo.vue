@@ -24,7 +24,7 @@
     },
     data() {
       return {
-        title: '门店后台管理',
+        title: '总部后台管理',
         logo: require('@/assets/login_images/logo.png')
       }
     }
