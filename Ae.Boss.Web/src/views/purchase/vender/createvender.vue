@@ -12,7 +12,7 @@
                 <el-form-item label="供应商全称" prop="venderName">
                   <el-input v-model="formModel.venderName"></el-input>
                 </el-form-item>
-                <el-form-item label="级别" prop="classType">
+                <!-- <el-form-item label="级别" prop="classType">
                   <el-select v-model="formModel.classType" placeholder="请选择级别">
                     <el-option
                       v-for="item in classTypeoptions"
@@ -21,7 +21,7 @@
                       :value="item.value"
                     ></el-option>
                   </el-select>
-                </el-form-item>
+                </el-form-item> -->
 
                 <el-form-item label="供应商类型" prop="supplyType">
                   <el-select v-model="formModel.supplyType" placeholder="请选择类型">
@@ -33,20 +33,17 @@
                     ></el-option>
                   </el-select>
                 </el-form-item>
-                <el-form-item label="电话号码" prop="telNum">
-                  <el-input v-model="formModel.telNum"></el-input>
-                </el-form-item>
-                <el-form-item label="一般纳税资格" prop="qualification">
+                <el-form-item label="工商注册号" prop="qualification">
                   <el-input v-model="formModel.qualification"></el-input>
                 </el-form-item>
-
-                <el-form-item label="营业执照" prop="businessLicense">
-                  <el-input v-model="formModel.businessLicense"></el-input>
-                </el-form-item>
-
                 <el-form-item label="组织机构代码" prop="organizationCode">
                   <el-input v-model="formModel.organizationCode"></el-input>
                 </el-form-item>
+
+                <el-form-item label="统一社会信用代码" prop="businessLicense">
+                  <el-input v-model="formModel.businessLicense"></el-input>
+                </el-form-item>
+
                 <br />
                 <el-form-item label="省" prop="provinceId">
                   <el-select
@@ -103,6 +100,9 @@
                   </el-select>
                 </el-form-item>
                 <br />
+                <el-form-item label="电话号码" prop="telNum">
+                  <el-input v-model="formModel.telNum"></el-input>
+                </el-form-item>
                 <el-form-item label="办公地址" prop="officeAddress">
                   <el-input style="width:400px;" v-model="formModel.officeAddress"></el-input>
                 </el-form-item>
@@ -123,24 +123,24 @@
                   <el-input v-model="formModel.financeName"></el-input>
                 </el-form-item>
 
-                <el-form-item label="财务联系人方式" prop="financeTel">
+                <el-form-item label="财务联系人电话" prop="financeTel">
                   <el-input v-model="formModel.financeTel"></el-input>
                 </el-form-item>
 
-                <el-form-item label="注册地址" prop="registerAddress">
-                  <el-input style="width:400px;" v-model="formModel.registerAddress"></el-input>
-                </el-form-item>
                 <br />
-                <el-form-item label="开户行" prop="bank">
+                <el-form-item label="开户行（含支行）" prop="bank">
                   <el-input v-model="formModel.bank"></el-input>
+                </el-form-item>
+                <el-form-item label="账户名称" prop="payee">
+                  <el-input v-model="formModel.payee"></el-input>
                 </el-form-item>
 
                 <el-form-item label="银行账号" prop="account">
                   <el-input v-model="formModel.account"></el-input>
                 </el-form-item>
 
-                <el-form-item label="收款单位" prop="payee">
-                  <el-input v-model="formModel.payee"></el-input>
+                <el-form-item label="注册地址" prop="registerAddress">
+                  <el-input style="width:400px;" v-model="formModel.registerAddress"></el-input>
                 </el-form-item>
               </el-form>
             </el-tab-pane>
@@ -163,8 +163,19 @@
                     ></el-option>
                   </el-select>
                 </el-form-item>
+                <el-form-item label="销售负责人" prop="enterpriseName">
+                  <el-input v-model="formModel.enterpriseName"></el-input>
+                </el-form-item>
 
-                <el-form-item label="合作模式" prop="cooperationType">
+                <el-form-item label="负责人电话" prop="enterpriseTel">
+                  <el-input v-model="formModel.enterpriseTel"></el-input>
+                </el-form-item>
+
+                <el-form-item label="邮箱地址" prop="emailAddress">
+                  <el-input v-model="formModel.emailAddress"></el-input>
+                </el-form-item>
+
+                <!-- <el-form-item label="合作模式" prop="cooperationType">
                   <el-select
                     v-model="formModel.cooperationType"
                     size="small"
@@ -180,8 +191,8 @@
                       :value="item.value"
                     ></el-option>
                   </el-select>
-                </el-form-item>
-                <el-form-item label="返利模式">
+                </el-form-item> -->
+                <!-- <el-form-item label="返利模式">
                   <el-select
                     v-model="formModel.rebateType"
                     size="small"
@@ -197,17 +208,17 @@
                       :value="item.value"
                     ></el-option>
                   </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <br />
-                <el-form-item label="零采联系人">
+                <!-- <el-form-item label="零采联系人">
                   <el-input v-model="formModel.bizName"></el-input>
                 </el-form-item>
 
                 <el-form-item label="零采联系方式">
                   <el-input v-model="formModel.bizTel"></el-input>
-                </el-form-item>
+                </el-form-item> -->
 
-                <el-form-item label="零采账期">
+                <!-- <el-form-item label="零采账期">
                   <el-select
                     v-model="formModel.paymentDay"
                     size="small"
@@ -223,26 +234,19 @@
                       :value="item.value"
                     ></el-option>
                   </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <br />
-                <el-form-item label="批采联系人">
+                <!-- <el-form-item label="批采联系人">
                   <el-input v-model="formModel.bulkBizName"></el-input>
                 </el-form-item>
 
                 <el-form-item label="批采联系方式">
                   <el-input v-model="formModel.bulkBizTel"></el-input>
-                </el-form-item>
+                </el-form-item> -->
                 <br />
-                <el-form-item label="企业负责人" prop="enterpriseName">
-                  <el-input v-model="formModel.enterpriseName"></el-input>
-                </el-form-item>
-
-                <el-form-item label="联系方式" prop="enterpriseTel">
-                  <el-input v-model="formModel.enterpriseTel"></el-input>
-                </el-form-item>
               </el-form>
             </el-tab-pane>
-            <el-tab-pane label="售后信息">
+            <!-- <el-tab-pane label="售后信息">
               <el-form :model="formModel" :inline="true" :rules="rules" ref="formModel">
                 <el-form-item label="售后联系人">
                   <el-input v-model="formModel.overSaleName"></el-input>
@@ -250,10 +254,6 @@
 
                 <el-form-item label="联系方式">
                   <el-input v-model="formModel.overSaleTel"></el-input>
-                </el-form-item>
-
-                <el-form-item label="邮箱地址" prop="emailAddress">
-                  <el-input v-model="formModel.emailAddress"></el-input>
                 </el-form-item>
 
                 <el-form-item label="传真">
@@ -264,7 +264,7 @@
                   <el-input v-model="formModel.overSaleAddress"></el-input>
                 </el-form-item>
               </el-form>
-            </el-tab-pane>
+            </el-tab-pane> -->
           </el-tabs>
 
           <div slot="footer" class="dialog-footer" style="margin-top:10px;">
@@ -313,7 +313,7 @@ export default {
       ],
       shipmentTypeoptions: [
         { value: "供应商送货", label: "供应商送货" },
-        { value: "总部自提", label: "总部自提" },
+        { value: "自提", label: "自提" },
         { value: "快递", label: "快递" },
         { value: "物流", label: "物流" }
       ],
@@ -422,14 +422,14 @@ export default {
         ],
         classType: [
           {
-            required: true,
+            required: false,
             message: "请选择级别",
             trigger: "blur"
           }
         ],
         shipmentType: [
           {
-            required: true,
+            required: false,
             message: "请选择发货方式",
             trigger: "blur"
           }
@@ -437,70 +437,70 @@ export default {
 
         telNum: [
           {
-            required: true,
+            required: false,
             message: "请填写手机号",
             trigger: "blur"
           }
         ],
         supplyType: [
           {
-            required: true,
+            required: false,
             message: "请选择供应商类型",
             trigger: "blur"
           }
         ],
         qualification: [
           {
-            required: true,
-            message: "请填写纳税资格号",
+            required: false,
+            message: "请填写工商注册号",
             trigger: "blur"
           }
         ],
         businessLicense: [
           {
-            required: true,
-            message: "请填写营业执照",
+            required: false,
+            message: "请填写统一社会信用代码",
             trigger: "blur"
           }
         ],
         organizationCode: [
           {
-            required: true,
+            required: false,
             message: "请填写组织机构代码",
             trigger: "blur"
           }
         ],
         provinceId: [
           {
-            required: true,
+            required: false,
             message: "请选择省",
             trigger: "blur"
           }
         ],
         cityId: [
           {
-            required: true,
+            required: false,
             message: "请选择市",
             trigger: "blur"
           }
         ],
         districtId: [
           {
-            required: true,
+            required: false,
             message: "请选择区",
             trigger: "blur"
           }
         ],
         officeAddress: [
           {
-            required: true,
+            required: false,
             message: "请选择办公地址",
             trigger: "blur"
           }
         ],
         taxPoint: [
           {
-            required: true,
+            required: false,
             message: "请填写税点",
             trigger: "blur"
           }
@@ -508,28 +508,28 @@ export default {
 
         financeName: [
           {
-            required: true,
+            required: false,
             message: "请填写财务联系人",
             trigger: "blur"
           }
         ],
         financeTel: [
           {
-            required: true,
+            required: false,
             message: "请填写财务联系方式",
             trigger: "blur"
           }
         ],
         registerAddress: [
           {
-            required: true,
+            required: false,
             message: "请填写注册地址",
             trigger: "blur"
           }
         ],
         bank: [
           {
-            required: true,
+            required: false,
             message: "请填写开户行",
             trigger: "blur"
           }
@@ -537,35 +537,35 @@ export default {
 
         account: [
           {
-            required: true,
+            required: false,
             message: "请填写银行账户",
             trigger: "blur"
           }
         ],
         payee: [
           {
-            required: true,
+            required: false,
             message: "请填写收款单位",
             trigger: "blur"
           }
         ],
         emailAddress: [
           {
-            required: true,
+            required: false,
             message: "请填写邮箱地址",
             trigger: "blur"
           }
         ],
         enterpriseName: [
           {
-            required: true,
+            required: false,
             message: "请填写企业负责人",
             trigger: "blur"
           }
         ],
         enterpriseTel: [
           {
-            required: true,
+            required: false,
             message: "请填写企业联系电话",
             trigger: "blur"
           }

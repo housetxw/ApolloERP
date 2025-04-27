@@ -19,13 +19,21 @@
             <el-input
               v-model="condition.id"
               clearable
-              style="width:175px;"
-              placeholder="请输入编号"
+              style="width:100px;"
+              placeholder="编号"
               size="mini"
             />
-            <!-- 后期会修改为名称检索 -->
           </el-form-item>
           <el-form-item>
+            <el-input
+              v-model="condition.venderShortName"
+              clearable
+              style="width:175px;"
+              placeholder="请输入名称"
+              size="mini"
+            />
+          </el-form-item>
+          <!-- <el-form-item>
             <el-select
               v-model="condition.venderId"
               size="mini"
@@ -40,7 +48,7 @@
                 :value="item.id"
               ></el-option>
             </el-select>
-          </el-form-item>
+          </el-form-item> -->
           <el-form-item>
             <el-select
               v-model="condition.type"
@@ -232,6 +240,7 @@ export default {
         pageSize: 10,
         id: undefined,
         venderId: undefined,
+        venderShortName: undefined,
         type: undefined,
         supplyType: undefined,
         provinceId: undefined,
@@ -520,7 +529,7 @@ export default {
     fetchData() {
       this.getSupplyType();
       this.getVenderStatus();
-      this.getVenders();
+      // this.getVenders();
       appVenderSvc
         .getVenderList(this.condition)
         .then(

@@ -395,7 +395,7 @@ export const asyncRoutes = [
       name: 'shopstockindex', // component name
       component: () => import('@/views/stock/shopstockindex'),
       meta: {
-        title: '库存查询',
+        title: '门店库存查询',
         icon: 'system'
       }
     },
