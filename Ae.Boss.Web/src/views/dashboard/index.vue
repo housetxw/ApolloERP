@@ -2,7 +2,7 @@
   <div class="dashboard-container">
     <div class="dashboard-text">
       <!-- name: {{ userInfo.employeeName }}  -->
-      <h3>  
+      <!-- <h3>  
       AERP多门店新零售互联网养车连锁系统
       </h3> 
       <div>
@@ -43,7 +43,7 @@ Email：apolloerp@189.cn <br>
 
 <br><br><br>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div>

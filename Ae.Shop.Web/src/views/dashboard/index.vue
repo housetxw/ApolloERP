@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">
-      <h3>  
+      <!-- <h3>  
       AERP多门店新零售互联网养车连锁系统
       </h3> 
       <div>
@@ -48,7 +48,7 @@ https://gitee.com/aerphouse/ApolloERP.git <br>
 
 <br><br><br>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div>
