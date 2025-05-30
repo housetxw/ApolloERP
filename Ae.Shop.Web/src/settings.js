@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '门店管理系统',
+  title: 'icar门店管理系统',
 
   /**
    * @type {boolean} true | false

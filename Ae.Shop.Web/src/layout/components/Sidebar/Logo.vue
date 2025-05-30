@@ -24,7 +24,7 @@
     },
     data() {
       return {
-        title: '门店管理系统',
+        title: 'icar门店管理系统',
         logo: require('@/assets/login_images/logo.png')
       }
     }
