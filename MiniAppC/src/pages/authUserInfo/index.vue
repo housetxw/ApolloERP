@@ -1,7 +1,7 @@
 <template>
   <div>
     <view class="page-wp">
-      <view class="title">欢迎加入AERP！</view>
+      <view class="title">欢迎加入icar！</view>
       <view class="info">
         <view class="info-tit">请确认授权以下信息</view>
         <view class="info-desc">获取你的公开信息（昵称、头像等）</view>
