@@ -5,7 +5,7 @@ import {
 
 // const publicUrl = 'http://11.168.3.218:4432/'
 // const loginPublicUrl = 'http://11.168.3.218:4445/'
-const publicUrl = 'https://ut.cminiapi.aerp.com.cn/'
+const publicUrl = 'https://ut2.cminiapi.aerp.com.cn/'
 const loginPublicUrl = 'https://ut.cloginapi.aerp.com.cn/'
 // const publicUrl = 'https://cminiapi.aerp.com.cn/'
 // const loginPublicUrl = 'https://cloginapi.aerp.com.cn/'
