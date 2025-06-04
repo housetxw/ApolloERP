@@ -7,8 +7,8 @@ import {
 // const loginPublicUrl = 'http://11.168.3.218:4445/'
 const publicUrl = 'https://ut.cminiapi.aerp.com.cn/'
 const loginPublicUrl = 'https://ut.cloginapi.aerp.com.cn/'
-// const publicUrl = 'https://cminiapi.midbridge.cn/'
-// const loginPublicUrl = 'https://cloginapi.midbridge.cn/'
+// const publicUrl = 'https://cminiapi.aerp.com.cn/'
+// const loginPublicUrl = 'https://cloginapi.aerp.com.cn/'
 export function GetOrderPackageCards(data) {
   return get(`${publicUrl}OrderQuery/GetOrderPackageCards`, data)
 }
