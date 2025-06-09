@@ -7,7 +7,7 @@
         <view class="info-desc">获取你的公开信息（昵称、头像等）</view>
       </view>
       <view class="btn">
-        微信授权
+        同意授权
         <!-- <button class="getformbtn" open-type="getUserInfo" @getuserinfo="getUserInfo"></button> -->        
           <!-- open-type="openSetting"   -->
         <button
