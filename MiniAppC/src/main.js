@@ -12,6 +12,7 @@ const app = new Vue(App)
 app.$mount()
 let globalData = {}
 globalData.imgPubUrl = 'https://m.aerp.com.cn/mini-app-main/'
+globalData.publicUrl = 'https://cminiapi.aerp.com.cn/'
 globalData.currCityInfo = {}
 globalData.tokenInfo = ''
 

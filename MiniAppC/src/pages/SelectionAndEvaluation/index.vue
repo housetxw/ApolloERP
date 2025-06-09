@@ -380,7 +380,7 @@ export default {
         sourceType: ['album', 'camera'],
         success(res) {
           wx.uploadFile({
-            url: 'https://cminiapi.aerp.com.cn/QiNiu/UploadStream', // 仅为示例，非真实的接口地址
+            url: `${this.globalData.publicUrl}QiNiu/UploadStream`, // 仅为示例，非真实的接口地址
             filePath: res.tempFilePaths[0],
             name: 'file',
             formData: {

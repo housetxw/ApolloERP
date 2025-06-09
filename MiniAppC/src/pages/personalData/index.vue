@@ -248,7 +248,7 @@ export default {
             },
             success(resa) {
               let url = JSON.parse(resa.data).data
-              url = this.globalData.imgRootUrl + url
+              url = 'https://m.aerp.com.cn/' + url
               EditUserInfo({
                 headUrl: url
               })
@@ -288,7 +288,7 @@ export default {
         },
         success(resa) {
           let url = JSON.parse(resa.data).data
-          url = this.globalData.imgRootUrl + url
+          url = 'https://m.aerp.com.cn/' + url
           EditUserInfo({
             headUrl: url
           })
