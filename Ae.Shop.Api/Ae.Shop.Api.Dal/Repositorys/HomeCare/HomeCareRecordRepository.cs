@@ -109,7 +109,7 @@ namespace Ae.Shop.Api.Dal.Repositorys
 			                          {sqlWhere.ToString()}  
 			                        ORDER BY hcr.id
 		                        ) T
-		                        ORDER BY t.id DESC
+		                        ORDER BY T.id DESC
 		                        LIMIT @index, @size
 	                        ) t
                         )";

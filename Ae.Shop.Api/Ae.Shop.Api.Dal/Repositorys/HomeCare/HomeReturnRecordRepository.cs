@@ -102,7 +102,7 @@ namespace Ae.Shop.Api.Dal.Repositorys.HomeCare
 			                          {sqlWhere.ToString()}  
 			                        ORDER BY hrr.id
 		                        ) T
-		                        ORDER BY t.id DESC
+		                        ORDER BY T.id DESC
 		                        LIMIT @index, @size
 	                        ) t
                         )";
