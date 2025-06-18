@@ -94,7 +94,11 @@ namespace Ae.C.Login.Api.Imp.Services
         public async Task<GetWxOpenIdResponse> GetWxOpenId(GetWxOpenIdRequest request, string refreshUri)
         {
             GetWxOpenIdResponse result = new GetWxOpenIdResponse();
-
+            if (request.PlatForm == 200) //代表测试Test用户
+            {
+                result.IsExistUser = false;
+                return result;
+            }
             //调用微信接口获取openid
             GetJsCodeResponse wxOpenId = await weChatClient.GetJscode2session((LoginPlatform)request.PlatForm, request.WxCode);
             if (wxOpenId == null || string.IsNullOrEmpty(wxOpenId.openid) || wxOpenId.errcode != 0)
