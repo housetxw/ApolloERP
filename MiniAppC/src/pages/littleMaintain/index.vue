@@ -357,11 +357,11 @@ export default {
   },
   onLoad(options) {
     this.showContent = true
-    console.log(
-      this.carArrFirst,
-      'carArrFirst',
-      Object.keys(this.carArrFirst).length
-    )
+    // console.log(
+    //   this.carArrFirst,
+    //   'carArrFirst',
+    //   Object.keys(this.carArrFirst).length
+    // )
     this.carArrFirst1 = this.carArrFirst
     let that = this
     // 获取系统信息
@@ -378,7 +378,7 @@ export default {
         // console.log(`that.windowHeight:${that.windowHeight}`)
       }
     })
-    console.log('options.baoYangType', options.baoYangType)
+    // console.log('options.baoYangType', options.baoYangType)
     if (options.baoYangType == undefined) {
       options.baoYangType = ['xby']
       that.baoYangType1 = ['xby']
@@ -386,14 +386,14 @@ export default {
       that.baoYangType1 = JSON.parse(options.baoYangType)
     }
     // console.log('options.baoYangType', options.baoYangType)
-    console.log(that.baoYangType1, 'that.baoYangType1')
+    // console.log(that.baoYangType1, 'that.baoYangType1')
 
     that.globalData.serviceType = 'toHome'
-    console.log('globalData.serviceType', that.globalData.serviceType)
+    // console.log('globalData.serviceType', that.globalData.serviceType)
     that.globalData.OrderType = 2
-    console.log('globalData.OrderType', that.globalData.OrderType)
+    // console.log('globalData.OrderType', that.globalData.OrderType)
     this.globalData.ProductType = 5
-    console.log('globalData.ProductType', that.globalData.ProductType)
+    // console.log('globalData.ProductType', that.globalData.ProductType)
 
     // 活动商品pid
     // console.log(222, this.$route.query.pid)
@@ -403,9 +403,9 @@ export default {
     // this.CategoryId = options.CategoryId
   },
   mounted() {
-    console.log(this.baoYangType1[0], 'this.baoYangType1[0]')
+    // console.log(this.baoYangType1[0], 'this.baoYangType1[0]')
     if (this.baoYangType1[0] == 'dby') {
-      console.log(23456)
+      // console.log(23456)
       wx.setNavigationBarTitle({
         title: '紧急救援'
       })
@@ -445,9 +445,9 @@ export default {
     },
     // 商品数量
     countChange(e) {
-      console.log(`商品的值`, e)
+      // console.log(`商品的值`, e)
       var index = e.currentTarget.dataset.index // 获取当前点击事件的下标索引
-      console.log(index, 'index')
+      // console.log(index, 'index')
 
       // var item1 = e.currentTarget.dataset.item1
       var item = e.currentTarget.dataset.item
@@ -455,21 +455,21 @@ export default {
       var index1 = e.currentTarget.dataset.index1
 
       var indexaa1 = e.currentTarget.dataset.indexaa1
-      console.log('index1', index1)
-      console.log('this.boxarr[index1]', this.boxarr[index1])
-      console.log(
-        this.boxarr[index1].packageItems[indexa].items[indexaa1].products[index]
-          .count
-      )
+      // console.log('index1', index1)
+      // console.log('this.boxarr[index1]', this.boxarr[index1])
+      // console.log(
+      //   this.boxarr[index1].packageItems[indexa].items[indexaa1].products[index]
+      //     .count
+      // )
       // itema.items[0].products,indexb
       var itema = e.currentTarget.dataset.itema
 
-      console.log(this.boxarr, 'All')
+      // console.log(this.boxarr, 'All')
       this.boxarr[index1].packageItems[indexa].items[indexaa1].products[
         index
       ].count =
         e.mp.detail
-      console.log('item', item)
+      // console.log('item', item)
       // console.log('productAll', productAll)
       // console.log('count', this.boxarr[index1].items[indexaa1].products)
       // item1[index].count = e.mp.detail
@@ -488,16 +488,16 @@ export default {
       //   itemb.count = 1
       // }
       // this.$forceUpdate()
-      console.log('itema2', itemall)
+      // console.log('itema2', itemall)
       productInfos = []
       itemb.isDefaultSelect = !itemb.isDefaultSelect
-      console.log(itemall)
+      // console.log(itemall)
       itemall.forEach((itema1, indexa1) => {
         itema1.packageItems.forEach((itembb, indexbb) => {
           if (itembb.isDefaultExpand == true) {
             itembb.items.forEach((itembb1, indexbb1) => {
               itembb1.products.forEach((itemb, indexb) => {
-                console.log(itemb, 'itemb')
+                // console.log(itemb, 'itemb')
                 if (itemb.isDefaultSelect) {
                   let product1 = {}
                   product1.vest = itembb.zhName
@@ -533,7 +533,7 @@ export default {
     },
 
     getShop() {
-      console.log(111, 'getshop')
+      console.log(5002, 'getshop')
       let that = this
       if (this.$store.state.curCityInfo.city) {
         wx.getLocation({
@@ -543,7 +543,7 @@ export default {
           success: res => {
             that.longitude = res.longitude
             that.latitude = res.latitude
-            console.log(that.latitude)
+            // console.log(that.latitude)
             let rquestshop = {
               shopIds: [],
               longitude: res.longitude,
@@ -554,13 +554,13 @@ export default {
               pageSize: 1,
               type: 4
             }
-            console.log('rquestshop', rquestshop)
+            // console.log('rquestshop', rquestshop)
             // 获取附近门店列表
 
             PostNearbyStore(rquestshop)
               .then(res => {
-                console.log(`获取附近门店列表成功函数,${JSON.stringify(res)}`)
-                console.log('length', res.data.items.length)
+                // console.log(`获取附近门店列表成功函数,${JSON.stringify(res)}`)
+                // console.log('length', res.data.items.length)
                 that.storeArr.address = res.data.items[0].address
                 that.storeArr.simpleName = res.data.items[0].simpleName
                 that.storeArr.img = res.data.items[0].img
@@ -574,7 +574,7 @@ export default {
                 }
               })
               .catch(err => {
-                console.log(`获取附近门店列表失败函数,${err}`)
+                // console.log(`获取附近门店列表失败函数,${err}`)
                 wx.showToast({
                   title: '该地区暂时无法提供上门服务',
                   icon: 'none'
@@ -611,7 +611,7 @@ export default {
                 }
               })
               .catch(err => {
-                console.log(`获取附近门店列表失败函数,${err}`)
+                // console.log(`获取附近门店列表失败函数,${err}`)
                 wx.showToast({
                   title: '该地区暂时无法提供上门服务',
                   icon: 'none'
@@ -624,7 +624,7 @@ export default {
     getMaintainPackage() {
       productInfos = []
       let that = this
-      console.log('baoYangType1', that.baoYangType1)
+      console.log('5003  getMaintainPackage', that.baoYangType1)
       let request = {
         vehicle: {
           vehicleId: that.carArrFirst.vehicleId,
@@ -705,11 +705,11 @@ export default {
               })
             })
             that.boxarr = listarr
-            console.log('boxarr', that.boxarr)
+            // console.log('boxarr', that.boxarr)
             // that.boxarr.forEach(item => {
 
             // })
-            console.log(112, productInfos)
+            // console.log(112, productInfos)
 
             that.boxarr.forEach(item => {
               item.packageItems.forEach((resa, index) => {
@@ -723,7 +723,7 @@ export default {
 
                   // ress[0].isPackageProduct = false
                 })
-                console.log(122, productInfos)
+                // console.log(122, productInfos)
 
                 if (resa.isDefaultExpand) {
                   if (resa.items.length > 0) {
@@ -736,7 +736,7 @@ export default {
                           product1.number = resc.count
                           product1.index = index
                           productInfos.push(product1)
-                          console.log(121, productInfos)
+                          // console.log(121, productInfos)
                         }
                       })
                     })
@@ -745,7 +745,7 @@ export default {
               })
             })
 
-            console.log('boxarr', that.boxarr)
+            // console.log('boxarr', that.boxarr)
             if (productInfos.length === 0) {
               this.money = '0.00'
               return false
@@ -841,29 +841,29 @@ export default {
     },
     // 小保养服务
     serviceClick(itema, indexa, item1, index1) {
-      console.log(121, itema.isDefaultExpand)
+      // console.log(121, itema.isDefaultExpand)
       itema.isDefaultExpand = !itema.isDefaultExpand
-      console.log(221, item1.packageItems)
-      console.log(223, itema.groupName)
-      console.log(223, itema.items)
-      console.log('indexa', indexa)
-      console.log(this.boxarr[index1].packageItems[indexa].items)
+      // console.log(221, item1.packageItems)
+      // console.log(223, itema.groupName)
+      // console.log(223, itema.items)
+      // console.log('indexa', indexa)
+      // console.log(this.boxarr[index1].packageItems[indexa].items)
       if (itema.packageType == 'xby') {
-        console.log(1)
+        // console.log(1)
         for (var i = 0; i < item1.packageItems.length; i++) {
           if (item1.packageItems[i].packageType == 'dby') {
-            console.log(2)
+            // console.log(2)
             item1.packageItems[i].isDefaultExpand = false
 
             this.$forceUpdate()
           }
         }
       } else if (itema.packageType == 'dby') {
-        console.log(3)
+        // console.log(3)
         for (var i = 0; i < item1.packageItems.length; i++) {
           // console.log(288, item1.packageItems[i].groupName)
           if (item1.packageItems[i].packageType == 'xby') {
-            console.log(4)
+            // console.log(4)
             item1.packageItems[i].isDefaultExpand = false
             //  productInfos = this.delArrVal(productInfos, indexa)
             this.$forceUpdate()
@@ -871,11 +871,11 @@ export default {
         }
       }
       if (itema.isDefaultExpand) {
-        console.log()
+        // console.log()
         // itema.items[0].products.forEach((itemaa, indexaa) => {
         //   itemaa.isDefaultSelect = false
         // })
-        console.log(itema, 'itema')
+        // console.log(itema, 'itema')
         if (itema.items.length > 0 && itema.items[0].products.length > 0) {
           let product = itema.items[0].products.find(ele => {
             return (ele.isDefaultSelect = true)
@@ -884,7 +884,7 @@ export default {
         this.$forceUpdate()
         // this.baoYangBox[showIndex1].packageItems
       } else {
-        console.log(itema, 'itema1')
+        // console.log(itema, 'itema1')
       }
       productInfos = []
       this.boxarr.forEach((itema1, indexa1) => {
@@ -892,7 +892,7 @@ export default {
           if (itembb.isDefaultExpand == true) {
             itembb.items.forEach((itembb1, indexbb1) => {
               itembb1.products.forEach((itemb, indexb) => {
-                console.log(itemb, 'itemb')
+                // console.log(itemb, 'itemb')
                 if (itemb.isDefaultSelect) {
                   let product1 = {}
                   product1.vest = itembb.zhName
@@ -1004,13 +1004,13 @@ export default {
           showCancel: true,
           success(res) {
             if (res.confirm) {
-              that.$router.push('/pages/myCard/main')
+              that.$router.push('/pages/carBrand/main')
             } else if (res.cancel) {
               wx.navigateBack({})
             }
           },
           fail() {
-            that.$router.push('/pages/myCard/main')
+            that.$router.push('/pages/carBrand/main')
           }
         })
       }
@@ -1209,6 +1209,7 @@ export default {
     // });
 
     if (this.globalData.isCarShow == true && this.showContent == true) {
+      console.log(`5001`)
       this.getPageDetail()
       this.getShop()
       this.$forceUpdate()
