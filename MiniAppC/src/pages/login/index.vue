@@ -36,7 +36,8 @@
       >立即登录</van-button>
     </div>
     <p class="position">
-      登录即代表您已阅读并同意
+      <checkbox style="transform:scale(0.6)" :checked="checked" @click="change" id="agreeChk"/>
+      勾选即代表您已阅读并同意
       <text @click="privacyClick">《AERP用户协议》</text>
     </p>
   </div>
@@ -54,7 +55,8 @@ export default {
       color: '#FF6324',
       signInColor: '#E8E8E8',
       yzmtext: '发送验证码',
-      isLock: false
+      isLock: false,
+      checked:false
     }
   },
   methods: {
@@ -114,6 +116,21 @@ export default {
     },
     // 立即登录事件
     onClickButtonSubmit() {
+      let that = this;
+      if(!this.checked){
+        wx.showModal({
+          content: '请勾选用户协议',
+          confirmText: '确定',
+          confirmColor: '#FF6324',
+          success(res) {
+            if (res.confirm) {
+              that.checked = true
+            } else if (res.cancel) {
+            }
+          }
+        })
+        return false
+      }
       if (this.value1 === '' || this.value2 === '') {
         wx.showModal({
           content: '请填入手机号或验证码',
@@ -166,6 +183,9 @@ export default {
           }, 1000)
         }
       }
+    },
+    change() {
+      this.checked = !this.checked
     }
   }
 }
