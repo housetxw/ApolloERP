@@ -282,19 +282,20 @@ export default {
         },
         header: {
           'Content-Type': 'multipart/form-data', // 记得设置
-          //'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
           Authorization:
             'Bearer ' + wx.getStorageSync('tokenInfo').accessToken
         },
         success(resa) {
           let url = JSON.parse(resa.data).data
-          url = 'https://m.aerp.com.cn/' + url
+          that.url = 'https://m.aerp.com.cn/' + url
+          that.src = that.url;
+          that.globalData.userInfo.headUrl = that.url;
           EditUserInfo({
-            headUrl: url
+            headUrl: that.url
           })
             .then(res => {
               if (res.data == true) {
-                that.src = url
                 wx.showToast({ title: '头像修改成功', icon: 'none' })
               }
             })
