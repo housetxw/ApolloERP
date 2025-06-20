@@ -105,8 +105,13 @@ function createFly () {
         tryHideFullScreenLoading()
         const statusCode = res.engine.status
         if (statusCode === 401) {
-          wx.navigateTo({
-            url: '/pages/authUserInfo/main'
+          // wx.navigateTo({
+          //   url: '/pages/authUserInfo/main'
+          // })
+          wx.showToast({
+            title: "请登录后查看",
+            icon: 'none',
+            duration: 2000,
           })
         } else {
           return Promise.reject(res)

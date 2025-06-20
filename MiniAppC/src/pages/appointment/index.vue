@@ -316,6 +316,14 @@ export default {
       if (this.showBottom == true) {
         return false
       }
+      if(!that.globalData.userInfo){
+        wx.showToast({
+            title: '请登录后查看',
+            icon:'none',
+          	duration: 2000
+        })
+        return;
+      }
       let rquest = {
         userId: that.globalData.userInfo.userId,
         pageIndex: that.PageIndex,
@@ -352,6 +360,14 @@ export default {
       let that = this
       if (this.showBottom == true) {
         return false
+      }
+      if(!that.globalData.userInfo){
+        wx.showToast({
+            title: '请登录后查看',
+            icon:'none',
+          	duration: 2000
+        })
+        return;
       }
       let data = {
         UserId: that.globalData.userInfo.userId,
