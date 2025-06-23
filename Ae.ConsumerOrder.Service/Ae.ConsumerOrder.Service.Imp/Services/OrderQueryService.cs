@@ -2197,7 +2197,7 @@ namespace Ae.ConsumerOrder.Service.Imp.Services
                     EndValidTime = orderPackageCode?.EndValidTime ?? DateTime.Now,
                     Status = orderPackageCode?.Status ?? 0,
                     Code = orderPackageCode.Code,
-                    QRCodeBase64String = $"data:image/jpg;base64,{QrCodeCreateHelper.GetQRCode(orderPackageCode.Code)}"
+                    QRCodeBase64String = $"data:image/png;base64,{QrCodeCreateHelper.GetQRCode(orderPackageCode.Code)}"
                 }
             };
         }
