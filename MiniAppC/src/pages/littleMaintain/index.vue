@@ -302,7 +302,7 @@ import {
 import eventBus from '../../utils/eventBus.js'
 let productInfos = []
 let productAll = []
-
+let pids = []
 export default {
   data() {
     return {
@@ -490,6 +490,7 @@ export default {
       // this.$forceUpdate()
       // console.log('itema2', itemall)
       productInfos = []
+      pids = []
       itemb.isDefaultSelect = !itemb.isDefaultSelect
       // console.log(itemall)
       itemall.forEach((itema1, indexa1) => {
@@ -505,6 +506,7 @@ export default {
                   product1.number = itemb.count
                   product1.index = indexbb
                   productInfos.push(product1)
+                  pids.push(itemb.pid)
                 }
               })
             })
@@ -623,8 +625,9 @@ export default {
     },
     getMaintainPackage() {
       productInfos = []
+      pids = []
       let that = this
-      console.log('5003  getMaintainPackage', that.baoYangType1)
+      // console.log('5003  getMaintainPackage', that.baoYangType1)
       let request = {
         vehicle: {
           vehicleId: that.carArrFirst.vehicleId,
@@ -736,6 +739,7 @@ export default {
                           product1.number = resc.count
                           product1.index = index
                           productInfos.push(product1)
+                          pids.push(resc.pid)
                           // console.log(121, productInfos)
                         }
                       })
@@ -887,6 +891,7 @@ export default {
         // console.log(itema, 'itema1')
       }
       productInfos = []
+      pids = []
       this.boxarr.forEach((itema1, indexa1) => {
         itema1.packageItems.forEach((itembb, indexbb) => {
           if (itembb.isDefaultExpand == true) {
@@ -900,6 +905,7 @@ export default {
                   product1.number = itemb.count
                   product1.index = indexbb
                   productInfos.push(product1)
+                  pids.push(itemb.pid)  
                 }
               })
             })
@@ -966,6 +972,7 @@ export default {
               cardID: this.cardID,
               storeid: this.storeid,
               productInfos: JSON.stringify(productInfos),
+              pids: JSON.stringify(pids),
               orderType: 2,
               storeArr: JSON.stringify(this.storeArr)
             }

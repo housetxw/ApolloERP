@@ -318,7 +318,7 @@ export default {
       //   itemb.count = 1
       // }
       // this.$forceUpdate()
-      console.log('itema2', itemall)
+      // console.log('itema2', itemall)
       productInfos = []
       pids = []
       itemb.isDefaultSelect = !itemb.isDefaultSelect
@@ -456,7 +456,7 @@ export default {
                           product1.number = resc.count
                           product1.index = index
                           productInfos.push(product1)
-                          pids.push(itemb.pid)
+                          pids.push(resc.pid)
                         }
                       })
                     })
@@ -466,7 +466,7 @@ export default {
             })
             // that.boxarr = that.boxarr
 
-            console.log('boxarr', that.boxarr)
+            // console.log('boxarr', that.boxarr)
             if (productInfos.length === 0) {
               this.money = '0.00'
               return false

@@ -616,7 +616,7 @@ export default {
     }
   },
   mounted() {
-    console.log(112233334, this.globalData.OrderType)
+    // console.log(112233334, this.globalData.OrderType)
     let that = this
     eventBus.$on('selectCoupon', item => {
       that.userCouponDisplayName = item.displayName
