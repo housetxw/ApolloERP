@@ -630,13 +630,11 @@ namespace Ae.OrderComment.Service.Imp.Services
 
                 long commentId = 0;
                 var orderCommentResponse = new OrderCommentResponse();
-                var orderResponse = orderClient.GetFreshFramerOrderDetail(new Client.Request.GetFreshFramerOrderDetailRequest
-                {
-                    OrderNo = request.OrderNo
-                });
-
+                var orderResponse = orderClient.GetOrderDetail(new GetOrderDetailClientRequest()
+                { OrderNo = request.OrderNo, UserId = request.UserId });
                 var userInfo = userClient.GetUserInfo(new GetUserInfoClientRequest() { UserId = request.UserId });
-
+                var carInfo =
+                    orderClient.GetCarByOrderNo(new GetCarByOrderNoClientRequest() { OrderNo = request.OrderNo });
                 var shopInfo = shopManageClient.GetShopSimpleInfoAsync(new GetShopSimpleInfoClientRequest()
                 { ShopId = request.Shop.ShopId });
 
@@ -657,7 +655,8 @@ namespace Ae.OrderComment.Service.Imp.Services
 
                 var labelList = commentLabelConfigRepository.GetCommentLabelListByIds(labelIds);
 
-                await Task.WhenAll(orderResponse, userInfo, shopInfo, labelList);
+                await Task.WhenAll(orderResponse, userInfo, carInfo, shopInfo, labelList);
+                var carResult = carInfo.Result.Data;
 
                 if (orderResponse.Result.Data != null && userInfo.Result.Data != null && shopInfo.Result.Data != null &&
                     labelList.Result != null)
@@ -666,13 +665,13 @@ namespace Ae.OrderComment.Service.Imp.Services
                     //主表
                     var commentDO = new CommentDO();
                     commentDO.OrderNo = request.OrderNo;
-                    commentDO.Channel = Convert.ToSByte(orderResponse.Result.Data.OrderChannel);
-                    commentDO.OrderType = Convert.ToSByte(orderResponse.Result.Data.OrderType);
+                    commentDO.Channel = orderResponse.Result.Data.OrderChannel;
+                    commentDO.OrderType = orderResponse.Result.Data.OrderType;
                     commentDO.UserId = request.UserId;
                     commentDO.UserNickName = userInfo.Result.Data.NickName;
                     commentDO.HeadUrl = userInfo.Result.Data.HeadUrl;
-                    commentDO.CarId = Guid.Empty.ToString();
-                    commentDO.Vehicle = string.Empty;
+                    commentDO.CarId = carResult?.CarId ?? Guid.Empty.ToString();
+                    commentDO.Vehicle = carResult?.Vehicle ?? string.Empty;
                     commentDO.ShopId = orderResponse.Result.Data.ShopId;
                     commentDO.ShopName = orderResponse.Result.Data.ShopName;
                     commentDO.IsAnonymous = Convert.ToSByte(request.IsAnonymous);
@@ -695,7 +694,7 @@ namespace Ae.OrderComment.Service.Imp.Services
                     { ImageUrl = o, RelationType = 1, CreateBy = userInfo.Result.Data.UserName, CreateTime = dt }));
 
 
-                    using (TransactionScope ts = new TransactionScope())
+                    //using (TransactionScope ts = new TransactionScope())
                     {
                         //添加主评论
                         commentId = await orderCommentRepository.InsertAsync(commentDO);
@@ -742,52 +741,173 @@ namespace Ae.OrderComment.Service.Imp.Services
 
                         //添加商品评论
                         //List<CommentDetailProductDO> Products = new List<CommentDetailProductDO>();
-                        foreach (var packageProduct in orderResponse.Result.Data.Products)
+                        foreach (var item in orderResponse.Result.Data.Products)
                         {
-                            foreach (var procutItem in request.Products)
+                            if (item.PackageOrProduct != null)
                             {
-                                if (packageProduct.Id == procutItem.OrderProductId)
+                                int productCommentId = 0;
+
+                                if (item.PackageOrProduct.ProductAttribute == 1)
                                 {
-                                    var commentDetailProductDO = new CommentDetailProductDO();
-                                    commentDetailProductDO.CommentId = commentId;
-                                    commentDetailProductDO.OrderProductId = packageProduct.Id;
-                                    commentDetailProductDO.ProductId = packageProduct.ProductId;
-                                    commentDetailProductDO.ProductDisplayName = packageProduct.DisplayName;
-                                    commentDetailProductDO.ProductImageUrl = packageProduct.ImageUrl;
-                                    commentDetailProductDO.Price = packageProduct.Price;
-                                    commentDetailProductDO.Number = packageProduct.Number;
-                                    commentDetailProductDO.Unit = packageProduct.Unit;
-                                    commentDetailProductDO.Score = procutItem.Score;
-                                    commentDetailProductDO.IsAnonymous =
-                                        Convert.ToSByte(request.IsAnonymous);
-                                    commentDetailProductDO.CreateBy = userInfo.Result.Data.UserName;
-                                    commentDetailProductDO.CreateTime = dt;
-
-                                    //添加商品评论
-                                    int productCommentId =
-                                             await commentDetailProductRepository.InsertAsync(
-                                                 commentDetailProductDO);
-                                    if (productCommentId > 0)
+                                    foreach (var packageProduct in item.PackageProducts)
                                     {
-                                        foreach (var itemLabel in procutItem.SelectedLabelIds)
+                                        foreach (var procutItem in request.Products)
                                         {
-                                            foreach (var labelItem in labelList.Result)
+                                            if (packageProduct.Id == procutItem.OrderProductId)
                                             {
-                                                if (itemLabel == labelItem.Id)
-                                                {
-                                                    var productLabelDO = new CommentLabelSelectedDO()
-                                                    {
+                                                var commentDetailProductDO = new CommentDetailProductDO();
+                                                commentDetailProductDO.CommentId = commentId;
+                                                commentDetailProductDO.OrderProductId = packageProduct.Id;
+                                                commentDetailProductDO.ProductId = packageProduct.ProductId;
+                                                commentDetailProductDO.ProductDisplayName = packageProduct.DisplayName;
+                                                commentDetailProductDO.ProductImageUrl = packageProduct.ImageUrl;
+                                                commentDetailProductDO.Price = packageProduct.Price;
+                                                commentDetailProductDO.Number = packageProduct.Number;
+                                                commentDetailProductDO.Unit = packageProduct.Unit;
+                                                commentDetailProductDO.Score = procutItem.Score;
+                                                commentDetailProductDO.IsAnonymous =
+                                                    Convert.ToSByte(request.IsAnonymous);
+                                                commentDetailProductDO.CreateBy = userInfo.Result.Data.UserName;
+                                                commentDetailProductDO.CreateTime = dt;
 
-                                                        LabelId = itemLabel,
-                                                        CommentId = commentId,
-                                                        CommentDetailId = productCommentId,
-                                                        CommentDetailType = 3,
-                                                        LabelName = labelItem.LabelName,
-                                                        CreateBy = userInfo.Result.Data.UserName,
-                                                        CreateTime = dt,
-                                                    };
-                                                    await commentLabelSelectedRepository.InsertAsync(
-                                                        productLabelDO);
+                                                //添加商品评论
+                                                productCommentId =
+                                                    await commentDetailProductRepository.InsertAsync(
+                                                        commentDetailProductDO);
+                                                if (productCommentId > 0)
+                                                {
+                                                    foreach (var itemLabel in procutItem.SelectedLabelIds)
+                                                    {
+                                                        foreach (var labelItem in labelList.Result)
+                                                        {
+                                                            if (itemLabel == labelItem.Id)
+                                                            {
+                                                                var productLabelDO = new CommentLabelSelectedDO()
+                                                                {
+
+                                                                    LabelId = itemLabel,
+                                                                    CommentId = commentId,
+                                                                    CommentDetailId = productCommentId,
+                                                                    CommentDetailType = 3,
+                                                                    LabelName = labelItem.LabelName,
+                                                                    CreateBy = userInfo.Result.Data.UserName,
+                                                                    CreateTime = dt,
+                                                                };
+                                                                await commentLabelSelectedRepository.InsertAsync(
+                                                                    productLabelDO);
+                                                            }
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (var procutItem in request.Products)
+                                    {
+                                        if (item.PackageOrProduct.Id == procutItem.OrderProductId)
+                                        {
+                                            var commentDetailProductDO = new CommentDetailProductDO();
+                                            commentDetailProductDO.CommentId = commentId;
+                                            commentDetailProductDO.OrderProductId = item.PackageOrProduct.Id;
+                                            commentDetailProductDO.ProductId = item.PackageOrProduct.ProductId;
+                                            commentDetailProductDO.ProductDisplayName =
+                                                item.PackageOrProduct.DisplayName;
+                                            commentDetailProductDO.ProductImageUrl = item.PackageOrProduct.ImageUrl;
+                                            commentDetailProductDO.Price = item.PackageOrProduct.Price;
+                                            commentDetailProductDO.Number = item.PackageOrProduct.Number;
+                                            commentDetailProductDO.Unit = item.PackageOrProduct.Unit;
+                                            commentDetailProductDO.Score = procutItem.Score;
+                                            commentDetailProductDO.IsAnonymous = Convert.ToSByte(request.IsAnonymous);
+                                            commentDetailProductDO.CreateBy = userInfo.Result.Data.UserName;
+                                            commentDetailProductDO.CreateTime = dt;
+
+                                            //添加商品评论
+                                            productCommentId =
+                                                await commentDetailProductRepository
+                                                    .InsertAsync(commentDetailProductDO);
+                                            if (productCommentId > 0)
+                                            {
+                                                foreach (var itemLabel in procutItem.SelectedLabelIds)
+                                                {
+                                                    foreach (var labelItem in labelList.Result)
+                                                    {
+                                                        if (itemLabel == labelItem.Id)
+                                                        {
+                                                            var productLabelDO = new CommentLabelSelectedDO()
+                                                            {
+
+                                                                LabelId = itemLabel,
+                                                                CommentId = commentId,
+                                                                CommentDetailId = productCommentId,
+                                                                CommentDetailType = 3,
+                                                                LabelName = labelItem.LabelName,
+                                                                CreateBy = userInfo.Result.Data.UserName,
+                                                                CreateTime = dt,
+                                                            };
+                                                            await commentLabelSelectedRepository.InsertAsync(
+                                                                productLabelDO);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        if (orderResponse.Result.Data.Services != null && orderResponse.Result.Data.Services.Any())
+                        {
+                            int productCommentId = 0;
+                            foreach (var packageProduct in orderResponse.Result.Data.Services)
+                            {
+                                foreach (var procutItem in request.Products)
+                                {
+                                    if (packageProduct.Id == procutItem.OrderProductId)
+                                    {
+                                        var commentDetailProductDO = new CommentDetailProductDO();
+                                        commentDetailProductDO.CommentId = commentId;
+                                        commentDetailProductDO.OrderProductId = packageProduct.Id;
+                                        commentDetailProductDO.ProductId = packageProduct.ProductId;
+                                        commentDetailProductDO.ProductDisplayName = packageProduct.DisplayName;
+                                        commentDetailProductDO.ProductImageUrl = packageProduct.ImageUrl;
+                                        commentDetailProductDO.Price = packageProduct.Price;
+                                        commentDetailProductDO.Number = packageProduct.Number;
+                                        commentDetailProductDO.Unit = packageProduct.Unit;
+                                        commentDetailProductDO.Score = procutItem.Score;
+                                        commentDetailProductDO.IsAnonymous = Convert.ToSByte(request.IsAnonymous);
+                                        commentDetailProductDO.CreateBy = userInfo.Result.Data.UserName;
+                                        commentDetailProductDO.CreateTime = dt;
+
+                                        //添加商品评论
+                                        productCommentId =
+                                            await commentDetailProductRepository.InsertAsync(commentDetailProductDO);
+                                        if (productCommentId > 0)
+                                        {
+                                            foreach (var itemLabel in procutItem.SelectedLabelIds)
+                                            {
+                                                foreach (var labelItem in labelList.Result)
+                                                {
+                                                    if (itemLabel == labelItem.Id)
+                                                    {
+                                                        var productLabelDO = new CommentLabelSelectedDO()
+                                                        {
+
+                                                            LabelId = itemLabel,
+                                                            CommentId = commentId,
+                                                            CommentDetailId = productCommentId,
+                                                            CommentDetailType = 3,
+                                                            LabelName = labelItem.LabelName,
+                                                            CreateBy = userInfo.Result.Data.UserName,
+                                                            CreateTime = dt,
+                                                        };
+                                                        await commentLabelSelectedRepository
+                                                            .InsertAsync(productLabelDO);
+                                                    }
                                                 }
                                             }
 
@@ -798,7 +918,7 @@ namespace Ae.OrderComment.Service.Imp.Services
                         }
 
 
-                        ts.Complete();
+                        //ts.Complete();
                     }
 
                     if (autoCheck) //自动审核
