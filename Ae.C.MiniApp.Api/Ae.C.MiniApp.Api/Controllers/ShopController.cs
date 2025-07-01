@@ -116,6 +116,7 @@ namespace Ae.C.MiniApp.Api.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ApiResult<List<ShopLocationVO>>> GetRegionByCityId([FromQuery] GetRegionByCityIdRequest request)
         {
             var result = await shopService.GetRegionByCityId(request);
