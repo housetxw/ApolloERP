@@ -56,7 +56,7 @@ namespace Ae.Shop.Api.Imp.Services
                 }
             }
             request.CompanyId = companyId;
-            request.ShopTypes = new List<int> { 2 };
+            request.ShopTypes = new List<int> { 2,4 };
 
             var res = await shopMangeClient.GetShopListAsync(request);
 

@@ -511,7 +511,7 @@ namespace Ae.Shop.Api.Imp.Services
 
                 }
 
-                var result = await _shopManageService.GetCompanyShopList(new GetShopListRequest() { SimpleName = request.SimpleName, ShopTypes = new List<int> { 2 } });
+                var result = await _shopManageService.GetCompanyShopList(new GetShopListRequest() { SimpleName = request.SimpleName, ShopTypes = new List<int> { 2,4 } });
                 _logger.Info($"SVC:{JsonConvert.SerializeObject(result)}");
 
                 if (result.Code == ResultCode.Success)
