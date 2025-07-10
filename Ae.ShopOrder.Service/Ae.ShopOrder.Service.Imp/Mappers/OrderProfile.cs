@@ -147,7 +147,11 @@ namespace Ae.ShopOrder.Service.Imp.Mappers
 
             CreateMap<VerificationRuleDO, VerificationRuleDTO>();
 
-            CreateMap<SaveVerificationRuleRequest, VerificationRuleDO>();
+            CreateMap<SaveVerificationRuleRequest, VerificationRuleDO>()
+                .ForMember(dest => dest.EarliestUseDate,
+                opt => opt.MapFrom(src => string.IsNullOrWhiteSpace(src.EarliestUseDate) ? new DateTime(1900, 1, 1) : DateTime.Parse(src.EarliestUseDate)))
+                .ForMember(dest => dest.LatestUseDate,
+                opt => opt.MapFrom(src => string.IsNullOrWhiteSpace(src.LatestUseDate) ? new DateTime(1900, 1, 1) : DateTime.Parse(src.LatestUseDate)));
 
 
             CreateMap<SaveBeautiyOrPackageCardVerificationProductRequest, VerificationRulePidDO>();
