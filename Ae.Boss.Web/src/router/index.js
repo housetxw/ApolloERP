@@ -1073,124 +1073,124 @@ export const asyncRoutes = [
       }
     }]
   },
-  // {
-  //   path: "/activity",
-  //   component: Layout,
-  //   redirect: "/activity/promote",
-  //   alwaysShow: true,
-  //   name: "activity", // component name
-  //   meta: {
-  //     title: "推广内容管理",
-  //     icon: "shopmanage"
-  //   },
-  //   children: [{
-  //     path: "article",
-  //     name: "article", // component name
-  //     component: () => import("@/views/activity/promote/article"),
-  //     meta: {
-  //       title: "文章转载管理",
-  //       icon: "faqlist"
-  //     }
-  //   },
-  //   {
-  //     path: "poster",
-  //     name: "poster", // component name
-  //     component: () => import("@/views/activity/promote/poster"),
-  //     meta: {
-  //       title: "营销海报管理",
-  //       icon: "faqlist"
-  //     }
-  //   },
-  //   {
-  //     path: "friendjokes",
-  //     name: "friendjokes", // component name
-  //     component: () => import("@/views/activity/promote/friendjokes"),
-  //     meta: {
-  //       title: "朋友圈段子管理",
-  //       icon: "faqlist"
-  //     }
-  //   },
-  //   {
-  //     path: "createfriendjokes",
-  //     name: "createfriendjokes", // component name
-  //     component: () => import("@/views/activity/promote/createfriendjokes"),
-  //     meta: {
-  //       title: "新建朋友圈段子",
-  //       icon: "faqlist"
-  //     },
-  //     hidden: true
-  //   },
-  //   {
-  //     path: "editfriendjokes",
-  //     name: "editfriendjokes", // component name
-  //     component: () => import("@/views/activity/promote/editfriendjokes"),
-  //     meta: {
-  //       title: "编辑朋友圈段子",
-  //       icon: "faqlist"
-  //     },
-  //     hidden: true
-  //   },
-  //   {
-  //     path: "editarticle",
-  //     name: "editarticle", // component name
-  //     component: () => import("@/views/activity/promote/editarticle"),
-  //     meta: {
-  //       title: "文章转载详情",
-  //       icon: "faqlist"
-  //     },
-  //     hidden: true
-  //   },
-  //   {
-  //     path: "createarticle",
-  //     name: "createarticle", // component name
-  //     component: () => import("@/views/activity/promote/createarticle"),
-  //     meta: {
-  //       title: "创建文章转载",
-  //       icon: "faqlist"
-  //     },
-  //     hidden: true
-  //   },
-  //   {
-  //     path: "reviewarticle",
-  //     name: "reviewarticle", // component name
-  //     component: () => import("@/views/activity/promote/reviewarticle"),
-  //     meta: {
-  //       title: "预览文章",
-  //       icon: "faqlist"
-  //     },
-  //     hidden: true
-  //   },
-  //   {
-  //     path: "installguideindex",
-  //     name: "installguideindex", // component name
-  //     component: () => import("@/views/activity/installguide/installguideindex"),
-  //     meta: {
-  //       title: "安装指导配置",
-  //       icon: "faqlist"
-  //     }
-  //   },
-  //   {
-  //     path: "addinstallguide",
-  //     name: "addinstallguide", // component name
-  //     component: () => import("@/views/activity/installguide/addinstallguide"),
-  //     meta: {
-  //       title: "新增安装指导",
-  //       icon: "faqlist"
-  //     },
-  //     hidden: true
-  //   },
-  //   {
-  //     path: "updateinstallguide",
-  //     name: "updateinstallguide", // component name
-  //     component: () => import("@/views/activity/installguide/updateinstallguide"),
-  //     meta: {
-  //       title: "更改安装指导",
-  //       icon: "faqlist"
-  //     },
-  //     hidden: true
-  //   }
-  //   ]
-  // },
+  {
+    path: "/activity",
+    component: Layout,
+    redirect: "/activity/promote",
+    alwaysShow: true,
+    name: "activity", // component name
+    meta: {
+      title: "推广内容管理",
+      icon: "shopmanage"
+    },
+    children: [{
+      path: "article",
+      name: "article", // component name
+      component: () => import("@/views/activity/promote/article"),
+      meta: {
+        title: "文章转载管理",
+        icon: "guide"
+      }
+    },
+    {
+      path: "poster",
+      name: "poster", // component name
+      component: () => import("@/views/activity/promote/poster"),
+      meta: {
+        title: "营销海报管理",
+        icon: "guide"
+      }
+    },
+    {
+      path: "friendjokes",
+      name: "friendjokes", // component name
+      component: () => import("@/views/activity/promote/friendjokes"),
+      meta: {
+        title: "朋友圈段子管理",
+        icon: "guide"
+      }
+    },
+    {
+      path: "createfriendjokes",
+      name: "createfriendjokes", // component name
+      component: () => import("@/views/activity/promote/createfriendjokes"),
+      meta: {
+        title: "新建朋友圈段子",
+        icon: "guide"
+      },
+      hidden: true
+    },
+    {
+      path: "editfriendjokes",
+      name: "editfriendjokes", // component name
+      component: () => import("@/views/activity/promote/editfriendjokes"),
+      meta: {
+        title: "编辑朋友圈段子",
+        icon: "guide"
+      },
+      hidden: true
+    },
+    {
+      path: "editarticle",
+      name: "editarticle", // component name
+      component: () => import("@/views/activity/promote/editarticle"),
+      meta: {
+        title: "文章转载详情",
+        icon: "guide"
+      },
+      hidden: true
+    },
+    {
+      path: "createarticle",
+      name: "createarticle", // component name
+      component: () => import("@/views/activity/promote/createarticle"),
+      meta: {
+        title: "创建文章转载",
+        icon: "guide"
+      },
+      hidden: true
+    },
+    {
+      path: "reviewarticle",
+      name: "reviewarticle", // component name
+      component: () => import("@/views/activity/promote/reviewarticle"),
+      meta: {
+        title: "预览文章",
+        icon: "guide"
+      },
+      hidden: true
+    },
+    {
+      path: "installguideindex",
+      name: "installguideindex", // component name
+      component: () => import("@/views/activity/installguide/installguideindex"),
+      meta: {
+        title: "安装指导配置",
+        icon: "documentation"
+      }
+    },
+    {
+      path: "addinstallguide",
+      name: "addinstallguide", // component name
+      component: () => import("@/views/activity/installguide/addinstallguide"),
+      meta: {
+        title: "新增安装指导",
+        icon: "documentation"
+      },
+      hidden: true
+    },
+    {
+      path: "updateinstallguide",
+      name: "updateinstallguide", // component name
+      component: () => import("@/views/activity/installguide/updateinstallguide"),
+      meta: {
+        title: "更改安装指导",
+        icon: "documentation"
+      },
+      hidden: true
+    }
+    ]
+  },
   {
     path: '/ordercommment',
     component: Layout,
