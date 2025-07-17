@@ -19,7 +19,7 @@ namespace Ae.OrderComment.Service.Core.Model
         /// <summary>
         /// 技师级别
         /// </summary>
-        public int TechLevel { get; set; }
+        public string TechLevel { get; set; }
 
         public string TechLevelStr { get; set; }
 

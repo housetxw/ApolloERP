@@ -335,7 +335,8 @@ namespace Ae.OrderComment.Service.Imp.Services
                     item.TypeStr = ((CommentTypeEnum)item.Type).GetEnumDescription();
                     item.IsCheck = item.CheckStatus == 0 ? false : true;
 
-                    item.TechLevelStr = ((TechLevelEnum)item.TechLevel).GetEnumDescription();
+                    //item.TechLevelStr = ((TechLevelEnum)item.TechLevel).GetEnumDescription();
+                    item.TechLevelStr = item.TechLevel;
                     item.IsCheck = item.CheckStatus == 0 ? false : true;
                     if (commentImageDic.ContainsKey(item.Id))
                     {
