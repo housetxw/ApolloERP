@@ -401,7 +401,7 @@
                 </el-col>
               </el-form-item>
             </el-row>
-            <el-row>
+            <!-- <el-row>
               <el-form-item label="供应商">
                 <el-col :span="6">
                   <el-select
@@ -420,8 +420,8 @@
                   </el-select>
                 </el-col>
               </el-form-item>
-            </el-row>
-            <el-row>
+            </el-row> -->
+            <!-- <el-row>
               <el-col :span="14">
                 <el-form-item label="类型:" prop="type">
                   <el-radio-group v-model="formModel.type">
@@ -432,8 +432,8 @@
                   </el-radio-group>
                 </el-form-item>
               </el-col>
-            </el-row>
-            <el-row>
+            </el-row> -->
+            <!-- <el-row>
               <el-col :span="14">
                 <el-form-item label="系统版本:" prop="systemType">
                   <el-radio-group v-model="formModel.systemType">
@@ -444,7 +444,7 @@
                   </el-radio-group>
                 </el-form-item>
               </el-col>
-            </el-row>
+            </el-row> -->
             <el-divider content-position="left">
               <h3>工商注册信息</h3>
             </el-divider>
@@ -758,6 +758,8 @@ export default {
         accountOpeningLicense: "",
         introduction: "",
         depositAmount: 0,
+        venderId: undefined,
+        systemType: 3,
       },
       formModel: {
         id: 0,
@@ -766,7 +768,7 @@ export default {
         parentId: 0,
         status: 0,
         type: 0,
-        level: 0,
+        level: 1,
         provinceId: "请选择",
         cityId: "请选择",
         districtId: "请选择",
@@ -788,7 +790,7 @@ export default {
         introduction: "",
         depositAmount: 0,
         venderId: undefined,
-        systemType: 0,
+        systemType: 3,
       },
       venderList: [],
       companyStatusModel: {
@@ -960,17 +962,17 @@ export default {
     },
 
     getVenders() {
-      shopManageSvc
-        .getVenders()
-        .then(
-          (res) => {
-            this.venderList = res.data;
-          },
-          (error) => {
-            console.log(error);
-          }
-        )
-        .catch(() => {});
+      // shopManageSvc
+      //   .getVenders()
+      //   .then(
+      //     (res) => {
+      //       this.venderList = res.data;
+      //     },
+      //     (error) => {
+      //       console.log(error);
+      //     }
+      //   )
+      //   .catch(() => {});
     },
 
     edit(sel) {
@@ -999,6 +1001,9 @@ export default {
         //model就是上面的数据源
         return item.regionId === this.formModel.districtId; //筛选出匹配数据
       });
+      if (this.formModel.registerTime == "" || this.formModel.registerTime == undefined) {
+        this.formModel.registerTime == "1900-01-01"
+      }
       this.formModel.district = objDistrict.name;
       console.log("save formModel: " + JSON.stringify(this.formModel));
       this.$refs[formName].validate((valid) => {

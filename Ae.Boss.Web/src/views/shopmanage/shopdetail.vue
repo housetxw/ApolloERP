@@ -29,21 +29,20 @@
                   />
                 </el-form-item>
 
-                <el-form-item label="门店全称:">
+                <el-form-item label="门店全称:" prop="fullName">
                   <el-input
-                    v-model="shop.simpleName"
-                    :disabled="true"
+                    v-model="shop.fullName"
                     placeholder="请输入门店全称"
                   />
                 </el-form-item>
               </el-row>
               <el-row :gutter="10">
-                <el-form-item label="店公司名称:" prop="shopCompanyName">
+                <!-- <el-form-item label="店公司名称:" prop="shopCompanyName">
                   <el-input
                     v-model="shop.shopCompanyName"
                     placeholder="请输入公司名称"
                   />
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="所属公司:" prop="companyName">
                   <!-- <el-input
                     v-model="shop.companyName"
@@ -90,12 +89,12 @@
               <el-row :gutter="20">
                 <el-form-item label="门店类型:" prop="type">
                   <el-radio-group v-model="shop.type">
-                    <el-radio :label="1">合作店</el-radio>
-                    <el-radio :label="2">工场店</el-radio>
+                    <!-- <el-radio :label="1">合作店</el-radio> -->
+                    <el-radio :label="2">自营店</el-radio>
                     <el-radio :label="4">上门养护</el-radio>
-                    <el-radio :label="8">认证店</el-radio>
+                    <!-- <el-radio :label="8">认证店</el-radio>
                     <el-radio :label="16">技师</el-radio>
-                    <el-radio :label="32">前置仓</el-radio>
+                    <el-radio :label="32">前置仓</el-radio> -->
                   </el-radio-group>
                 </el-form-item>
               </el-row>
@@ -135,7 +134,7 @@
                   </div>
                 </el-form-item>
               </el-row>
-              <el-row :gutter="20">
+              <!-- <el-row :gutter="20">
                 <el-form-item label="服务范围:" prop="serviceRegion">
                   <el-input
                     v-model="shop.serviceRegion"
@@ -143,7 +142,7 @@
                     style="width: 600px"
                   ></el-input>
                 </el-form-item>
-              </el-row>
+              </el-row> -->
               <el-row :gutter="20">
                 <el-form-item label="门店联系人:" prop="contact">
                   <el-input v-model="shop.contact" placeholder="请输入联系人" />
@@ -209,7 +208,7 @@
                   </el-radio-group>
                 </el-form-item>
               </el-row>
-              <el-row :gutter="20">
+              <!-- <el-row :gutter="20">
                 <el-form-item label="系统版本:" prop="systemType">
                   <el-radio-group v-model="shop.systemType">
                     <el-radio :label="0">普通</el-radio>
@@ -217,7 +216,7 @@
                     <el-radio :label="2">个人 </el-radio>
                   </el-radio-group>
                 </el-form-item>
-              </el-row>
+              </el-row> -->
               <el-row :gutter="20">
                 <el-form-item label="门店标签:">
                   <!-- <el-checkbox-group v-model="tagGroup">
@@ -1119,7 +1118,7 @@ export default {
         isSendMessage: 0,
         companyId: 0,
         companyName: "",
-        systemType: 0,
+        systemType: 1,
         serviceRegion: "",
       },
       shopConfig: {
@@ -1268,9 +1267,9 @@ export default {
         fullName: [
           { required: true, message: "请输入门店全称", trigger: "blur" },
         ],
-        shopCompanyName: [
-          { required: true, message: "请输入店公司名称", trigger: "blur" },
-        ],
+        // shopCompanyName: [
+        //   { required: true, message: "请输入店公司名称", trigger: "blur" },
+        // ],
         //新增校验
         contact: [
           { required: true, message: "请输入门店联系人", trigger: "blur" },
@@ -1756,9 +1755,10 @@ export default {
           (res) => {
             //  debugger;
             this.shop = res.data.shop;
-            this.companySel = [
+            if (this.shop.companyId > 0) {
+              this.companySel = [
               { key: this.shop.companyId, value: this.shop.companyName },
-            ];
+            ];}
             shopManageSvc
               .GetShopServiceArea(this.shopInfoCondition)
               .then(
@@ -2496,6 +2496,12 @@ export default {
       if (this.selectBrands.length > 0) {
         this.shop.brandNames = this.selectBrands;
       }
+      
+      let objCompany = {};
+      objCompany = this.companySel.find((item) => {
+        return item.key === this.shop.companyId; //筛选出匹配数据
+      });
+      this.shop.companyName = objCompany.value;
 
       this.$refs.shop.validate((valid) => {
         if (valid) {
@@ -2504,7 +2510,7 @@ export default {
               ShopId: this.id,
               simpleName: this.shop.simpleName, // 简单名称
               fullName: this.shop.fullName, // 店全称
-              shopCompanyName: this.shop.shopCompanyName, // 店公司名称
+              // shopCompanyName: this.shop.shopCompanyName, // 店公司名称
               businessType: this.shop.businessType, // 营业类型
               type: this.shop.type, // 门店类型
               Status: this.shop.status,
@@ -2522,6 +2528,7 @@ export default {
               isCreateAccount: this.shop.isCreateAccount,
               isSendMessage: this.shop.isSendMessage,
               companyId: this.shop.companyId,
+              shopCompanyName: this.shop.companyName, // 公司名称
               systemType: this.shop.systemType,
             })
             .then(
@@ -2978,6 +2985,7 @@ export default {
                     res.data.items != undefined &&
                     res.data.items.length > 0
                   ) {
+                    this.companySel = [];
                     for (let i in res.data.items) {
                       this.companySel.push({
                         key: res.data.items[i].id,

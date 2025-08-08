@@ -22,31 +22,55 @@
                   />
                 </el-form-item>
 
-                <el-form-item label="门店全称:">
+                <el-form-item label="门店全称:" prop="fullName">
                   <el-input
-                    v-model="shop.simpleName"
-                    :disabled="true"
+                    v-model="shop.fullName"                  
                     placeholder="请输入门店全称"
                   />
                 </el-form-item>
               </el-row>
               <el-row :gutter="10">
-                <el-form-item label="店公司名称:" prop="shopCompanyName">
+                <!-- <el-form-item label="店公司名称:" prop="shopCompanyName">
                   <el-input
                     v-model="shop.shopCompanyName"
                     placeholder="请输入公司名称"
                   />
+                </el-form-item> -->
+                <el-form-item label="所属公司:" prop="companyName">
+                  <!-- <el-input
+                    v-model="shop.companyName"
+                    placeholder="请输入公司名称"
+                  /> -->
+                  <el-select
+                    v-model="shop.companyId"
+                    filterable
+                    remote
+                    clearable
+                    reserve-keyword
+                    placeholder="请输入公司名称"
+                    :remote-method="getCompanyinfo"
+                    :loading="loading"
+                    style="width: 300px"
+                  >
+                    <el-option
+                      v-for="item in companySel"
+                      :key="item.key"
+                      :label="item.value"
+                      :value="item.key"
+                    ></el-option>
+                  </el-select>
                 </el-form-item>
+
               </el-row>
               <el-row :gutter="20">
                 <el-form-item label="门店类型:" prop="type">
                   <el-radio-group v-model="shop.type">
-                    <el-radio :label="1">合作店</el-radio>
-                    <el-radio :label="2">工场店</el-radio>
+                    <!-- <el-radio :label="1">合作店</el-radio> -->
+                    <el-radio :label="2">自营店</el-radio>
                     <el-radio :label="4">上门养护</el-radio>
-                    <el-radio :label="8">认证店</el-radio>
+                    <!-- <el-radio :label="8">认证店</el-radio>
                     <el-radio :label="16">技师</el-radio>
-                    <el-radio :label="32">前置仓</el-radio>
+                    <el-radio :label="32">前置仓</el-radio> -->
                   </el-radio-group>
                 </el-form-item>
               </el-row>
@@ -145,7 +169,7 @@
                   </el-radio-group>
                 </el-form-item>
               </el-row>
-               <el-row :gutter="20">
+               <!-- <el-row :gutter="20">
                 <el-form-item
                   label="系统版本:"
                   prop="systemType"
@@ -156,7 +180,7 @@
                     <el-radio :label="2">个人 </el-radio>
                   </el-radio-group>
                 </el-form-item>
-              </el-row>
+              </el-row> -->
               <el-row :gutter="20">
                 <el-form-item label="门店标签:">
                   <!-- <el-checkbox-group v-model="tagGroup">
@@ -420,7 +444,7 @@
         </el-container>
         <!-- 配置信息结束 -->
         <!-- 服务信息开始 -->
-        <el-container>
+        <!-- <el-container>
           <el-header>服务信息</el-header>
           <el-main>
             <el-form
@@ -503,7 +527,7 @@
               </el-row>
             </el-form>
           </el-main>
-        </el-container>
+        </el-container> -->
         <!-- 服务信息结束 -->
         <!-- 图片信息开始 -->
         <el-container>
@@ -897,9 +921,10 @@ export default {
       shop: {
         simpleName: "", // 简单名称
         fullName: "", // 店全称
+        companyId: 0,
         companyName: "", // 公司名称
         businessType: 0, // 营业类型
-        type: 0, // 门店类型
+        type: 2, // 门店类型
         brand: "", // 品牌
         description: "", // 描述
         provinceId: "请选择", // 省
@@ -940,7 +965,7 @@ export default {
         shopProofImgs: [],
         businessLienseImgs: [],
         managementLicenseImgs: [],
-        systemType:0
+        systemType:1
       },
       shopConfig: {
         shopCertification: 0, // 门店认证
@@ -1085,9 +1110,9 @@ export default {
         fullName: [
           { required: true, message: "请输入门店全称", trigger: "blur" },
         ],
-        shopCompanyName: [
-          { required: true, message: "请输入店公司名称", trigger: "blur" },
-        ],
+        // shopCompanyName: [
+        //   { required: true, message: "请输入店公司名称", trigger: "blur" },
+        // ],
         type: [{ required: true, message: "请选门店类型", trigger: "change" }],
         status: [
           { required: true, message: "请选择营业状态", trigger: "change" },
@@ -1156,6 +1181,19 @@ export default {
         leaseEndDate: [
           { required: true, message: "请选择结束日期", trigger: "blur" },
         ],
+      },
+      loading: false,
+      companySel: [],
+      companyCondition: {
+        pageIndex: 1,
+        pageSize: 10,
+        parentId: 1,
+        name: undefined,
+        provinceId: undefined,
+        cityId: undefined,
+        districtId: undefined,
+        status: "-1",
+        parentId:-1
       },
     };
   },
@@ -2054,23 +2092,29 @@ export default {
         return false;
       }
 
-      // if (that.shop.fullName == "") {
+      if (that.shop.fullName == "") {
+        this.$message({
+          message: "请填写门店全称",
+          type: "error",
+          offset: "80"
+        });
+        return false;
+      }
+
+      // if (that.shop.shopCompanyName == "") {
       //   this.$message({
-      //     message: "请填写门店全称",
+      //     message: "请填写店公司名称",
       //     type: "error",
-      //     offset: "80"
+      //     offset: "80",
       //   });
       //   return false;
       // }
 
-      if (that.shop.shopCompanyName == "") {
-        this.$message({
-          message: "请填写店公司名称",
-          type: "error",
-          offset: "80",
-        });
-        return false;
-      }
+      let objCompany = {};
+      objCompany = that.companySel.find((item) => {
+        return item.key === that.shop.companyId; //筛选出匹配数据
+      });
+      that.shop.companyName = objCompany.value;
 
       if (that.shop.type == "") {
         this.$message({
@@ -2161,6 +2205,43 @@ export default {
       //     return false
       //   }
       //  }
+    },
+    getCompanyinfo(query) {
+      if (query != "") {
+        this.loading = true;
+        setTimeout(() => {
+          this.loading = false;
+          this.companyCondition.name = query;
+          shopManageSvc
+            .getPageCompanyListForShopAsync(this.companyCondition)
+            .then(
+              (res) => {
+                debugger;
+                if (res.data != undefined) {
+                  if (
+                    res.data.items != undefined &&
+                    res.data.items.length > 0
+                  ) {
+                    this.companySel = [];
+                    for (let i in res.data.items) {
+                      this.companySel.push({
+                        key: res.data.items[i].id,
+                        value: res.data.items[i].simpleName,
+                      });
+                    }
+                  }
+                }
+
+              },
+              (error) => {
+                console.log(error);
+              }
+            )
+            .catch(() => {});
+        }, 200);
+      } else {
+        this.options = [];
+      }
     },
   },
 };
