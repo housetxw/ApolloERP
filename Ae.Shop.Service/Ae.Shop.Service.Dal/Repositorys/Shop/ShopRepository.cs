@@ -93,8 +93,8 @@ COUNT(*) as cs
 FROM
     shop s
     LEFT JOIN shop_config sc ON s.id = sc.shop_id";
-            string sql = @"SELECT
 
+            string sql = @"SELECT
     s.id,
 	s.simple_name SimpleName,
 	s.full_name FullName,
@@ -122,7 +122,7 @@ FROM
 
             var para = new DynamicParameters();
             StringBuilder condition = new StringBuilder();
-            condition.Append(" WHERE s.is_deleted = 0");
+            condition.Append(" WHERE s.is_deleted = 0  AND s.type > 0 ");
             if (!string.IsNullOrEmpty(model.SimpleName))
             {
                 condition.Append(" AND s.simple_name LIKE CONCAT('%',@SimpleName,'%')");
